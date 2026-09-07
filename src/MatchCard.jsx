@@ -18,6 +18,12 @@ export default function MatchCard({ homeTeam, awayTeam, prediction }) {
           🏠 Home Win — {matchResult.homeWin.probability}%
         </div>
         <div style={styles.pill}>
+          🤝 Draw — {matchResult.draw.probability}%
+        </div>
+        <div style={styles.pill}>
+          ✈️ Away Win — {matchResult.awayWin.probability}%
+        </div>
+        <div style={styles.pill}>
           ⚽ BTTS — {btts.yes.probability}%
         </div>
         <div style={styles.pill}>
