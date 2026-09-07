@@ -6,31 +6,33 @@ const {
   fetchRecentMatches,
   teamStatsFromStanding,
   computeLeagueAvg,
+  fetchUpcomingFixtures,
 } = require('./src/engine/fetchTeamData.cjs');
 
-// A few fixed matchups to start — we'll pull real upcoming fixtures later
-const FIXTURES = [
-  { home: 'Chelsea FC', away: 'Liverpool FC' },
-  { home: 'Arsenal FC', away: 'Manchester City FC' },
-  { home: 'Manchester United FC', away: 'Tottenham Hotspur FC' },
-];
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 async function run() {
   const table = await fetchStandings('PL');
   const leagueAvg = computeLeagueAvg(table);
+  const fixtures = await fetchUpcomingFixtures('PL', 8);
   const results = [];
 
-  for (const fixture of FIXTURES) {
-    const homeRow = table.find((r) => r.team.name === fixture.home);
-    const awayRow = table.find((r) => r.team.name === fixture.away);
+  for (const fixture of fixtures) {
+    const homeRow = table.find((r) => r.team.name === fixture.homeTeam);
+    const awayRow = table.find((r) => r.team.name === fixture.awayTeam);
     if (!homeRow || !awayRow) {
-      console.log(`Skipping ${fixture.home} vs ${fixture.away} — team not found`);
+      console.log(`Skipping ${fixture.homeTeam} vs ${fixture.awayTeam} — team not found in standings`);
       continue;
     }
 
     const homeStats = teamStatsFromStanding(homeRow);
     const awayStats = teamStatsFromStanding(awayRow);
+
+    await sleep(6500);
     const homeRecent = await fetchRecentMatches(homeRow.team.id);
+    await sleep(6500);
     const awayRecent = await fetchRecentMatches(awayRow.team.id);
 
     const prediction = predictMatch({
@@ -43,17 +45,18 @@ async function run() {
     });
 
     results.push({
-      homeTeam: fixture.home.replace(' FC', ''),
-      awayTeam: fixture.away.replace(' FC', ''),
+      homeTeam: fixture.homeTeam.replace(' FC', ''),
+      awayTeam: fixture.awayTeam.replace(' FC', ''),
+      kickoff: fixture.kickoff,
       prediction,
     });
 
-    console.log(`Done: ${fixture.home} vs ${fixture.away}`);
+    console.log(`Done: ${fixture.homeTeam} vs ${fixture.awayTeam}`);
   }
 
   fs.mkdirSync('public', { recursive: true });
   fs.writeFileSync('public/predictions.json', JSON.stringify(results, null, 2));
-  console.log('Saved to public/predictions.json');
+  console.log(`Saved ${results.length} predictions to public/predictions.json`);
 }
 
 run().catch((err) => console.error('Error:', err.message));

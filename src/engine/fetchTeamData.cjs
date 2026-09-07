@@ -1,4 +1,4 @@
-// fetchTeamData.js
+// fetchTeamData.cjs
 // Fetches live team stats + recent form from football-data.org
 
 const API_TOKEN = process.env.FOOTBALL_API_KEY;
@@ -10,7 +10,7 @@ async function fetchStandings(competitionCode) {
   });
   if (!res.ok) throw new Error(`Standings fetch failed: ${res.status}`);
   const data = await res.json();
-  return data.standings[0].table; // total table (not home/away split)
+  return data.standings[0].table;
 }
 
 async function fetchRecentMatches(teamId, limit = 5) {
@@ -29,9 +29,21 @@ async function fetchRecentMatches(teamId, limit = 5) {
   });
 }
 
-/**
- * Build the exact input shape predictMatch() expects, for one team.
- */
+async function fetchUpcomingFixtures(competitionCode, limit = 5) {
+  const res = await fetch(
+    `${BASE_URL}/competitions/${competitionCode}/matches?status=SCHEDULED`,
+    { headers: { "X-Auth-Token": API_TOKEN } }
+  );
+  if (!res.ok) throw new Error(`Fixtures fetch failed: ${res.status}`);
+  const data = await res.json();
+
+  return data.matches.slice(0, limit).map((m) => ({
+    homeTeam: m.homeTeam.name,
+    awayTeam: m.awayTeam.name,
+    kickoff: m.utcDate,
+  }));
+}
+
 function teamStatsFromStanding(standingRow) {
   return {
     goalsFor: standingRow.goalsFor,
@@ -40,9 +52,6 @@ function teamStatsFromStanding(standingRow) {
   };
 }
 
-/**
- * Compute league-wide average goals per game from the full standings table.
- */
 function computeLeagueAvg(table) {
   let totalGoals = 0;
   let totalGames = 0;
@@ -59,4 +68,5 @@ module.exports = {
   fetchRecentMatches,
   teamStatsFromStanding,
   computeLeagueAvg,
+  fetchUpcomingFixtures,
 };
