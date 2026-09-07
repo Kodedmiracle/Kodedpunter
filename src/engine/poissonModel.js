@@ -16,8 +16,6 @@ function poissonProb(lambda, k) {
 
 /**
  * Calculate attack/defense strength for a team relative to league average.
- * stats = { goalsFor, goalsAgainst, playedGames }
- * leagueAvg = { avgGoalsFor, avgGoalsAgainst } (per game, league-wide)
  */
 function calculateStrength(stats, leagueAvg) {
   const gamesPlayed = stats.playedGames || 1;
@@ -31,28 +29,29 @@ function calculateStrength(stats, leagueAvg) {
 }
 
 /**
- * Weighted recent form modifier from last N results.
- * recentMatches = array of { goalsFor, goalsAgainst } most recent first
- * More recent matches weighted higher.
+ * Weighted recent form modifier — returns a RATIO relative to the team's
+ * own season average, capped so hot/cold streaks can't blow up xG.
+ * recentMatches = array of { goalsFor, goalsAgainst }, most recent first
+ * seasonAvgGoalsFor = that team's own goals-for per game this season
  */
-function calculateFormModifier(recentMatches) {
+function calculateFormModifier(recentMatches, seasonAvgGoalsFor) {
   if (!recentMatches || recentMatches.length === 0) return 1.0;
 
   const weights = [0.35, 0.25, 0.2, 0.12, 0.08]; // last 5, most recent first
   let weightedFor = 0;
-  let weightedAgainst = 0;
   let totalWeight = 0;
 
   recentMatches.slice(0, 5).forEach((match, i) => {
     const w = weights[i] || 0.05;
     weightedFor += match.goalsFor * w;
-    weightedAgainst += match.goalsAgainst * w;
     totalWeight += w;
   });
 
-  const avgFor = weightedFor / totalWeight;
-  // Form modifier: >1 means scoring above their own season average
-  return avgFor > 0 ? avgFor : 0.8;
+  const recentAvg = weightedFor / totalWeight;
+  const ratio = seasonAvgGoalsFor > 0 ? recentAvg / seasonAvgGoalsFor : 1.0;
+
+  // Cap between 0.6 and 1.6 so a hot/cold streak can't distort xG too far
+  return Math.max(0.6, Math.min(1.6, ratio));
 }
 
 /**
@@ -72,13 +71,13 @@ function calculateExpectedGoals({
     homeStrength.attackStrength *
     awayStrength.defenseStrength *
     homeAdvantage *
-    (homeForm / 1.0 || 1);
+    homeForm;
 
   const awayXG =
     leagueAvg.avgGoalsFor *
     awayStrength.attackStrength *
     homeStrength.defenseStrength *
-    (awayForm / 1.0 || 1);
+    awayForm;
 
   return { homeXG: Math.max(homeXG, 0.1), awayXG: Math.max(awayXG, 0.1) };
 }
@@ -163,7 +162,6 @@ function round(p) {
 
 /**
  * Confidence scoring based on probability magnitude.
- * Simple threshold approach for now — will refine using sample size/data quality later.
  */
 function getConfidence(probabilityPercent) {
   if (probabilityPercent >= 80) return "VERY HIGH";
@@ -187,8 +185,11 @@ function predictMatch({
   const homeStrength = calculateStrength(homeTeamStats, leagueAvg);
   const awayStrength = calculateStrength(awayTeamStats, leagueAvg);
 
-  const homeForm = calculateFormModifier(homeRecentMatches);
-  const awayForm = calculateFormModifier(awayRecentMatches);
+  const homeSeasonAvg = homeTeamStats.goalsFor / (homeTeamStats.playedGames || 1);
+  const awaySeasonAvg = awayTeamStats.goalsFor / (awayTeamStats.playedGames || 1);
+
+  const homeForm = calculateFormModifier(homeRecentMatches, homeSeasonAvg);
+  const awayForm = calculateFormModifier(awayRecentMatches, awaySeasonAvg);
 
   const { homeXG, awayXG } = calculateExpectedGoals({
     homeStrength,
@@ -202,7 +203,6 @@ function predictMatch({
   const matrix = buildScoreMatrix(homeXG, awayXG);
   const markets = deriveMarkets(matrix);
 
-  // Attach confidence to each market
   const withConfidence = {
     matchResult: mapConfidence(markets.matchResult),
     doubleChance: mapConfidence(markets.doubleChance),
