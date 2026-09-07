@@ -1,0 +1,290 @@
+[
+  {
+    "homeTeam": "Chelsea",
+    "awayTeam": "Liverpool",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 36,
+          "confidence": "LOW"
+        },
+        "draw": {
+          "probability": 15.9,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 38.9,
+          "confidence": "LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 51.9,
+          "confidence": "MEDIUM"
+        },
+        "homeOrAway": {
+          "probability": 74.9,
+          "confidence": "HIGH"
+        },
+        "drawOrAway": {
+          "probability": 54.8,
+          "confidence": "MEDIUM"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 83.5,
+          "confidence": "VERY HIGH"
+        },
+        "no": {
+          "probability": 16.5,
+          "confidence": "VERY LOW"
+        }
+      },
+      "overUnder": {
+        "over15": {
+          "probability": 89.7,
+          "confidence": "VERY HIGH"
+        },
+        "under15": {
+          "probability": 10.3,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 86.4,
+          "confidence": "VERY HIGH"
+        },
+        "under25": {
+          "probability": 13.6,
+          "confidence": "VERY LOW"
+        },
+        "over35": {
+          "probability": 79.5,
+          "confidence": "HIGH"
+        },
+        "under35": {
+          "probability": 20.5,
+          "confidence": "VERY LOW"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "3-3",
+          "probability": 4.9
+        },
+        {
+          "score": "2-3",
+          "probability": 4.7
+        },
+        {
+          "score": "3-2",
+          "probability": 4.5
+        },
+        {
+          "score": "2-2",
+          "probability": 4.2
+        },
+        {
+          "score": "3-4",
+          "probability": 4.1
+        }
+      ],
+      "expectedGoals": {
+        "home": 3.18,
+        "away": 3.29
+      }
+    }
+  },
+  {
+    "homeTeam": "Arsenal",
+    "awayTeam": "Manchester City",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 51.9,
+          "confidence": "MEDIUM"
+        },
+        "draw": {
+          "probability": 30.9,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 17.3,
+          "confidence": "VERY LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 82.7,
+          "confidence": "VERY HIGH"
+        },
+        "homeOrAway": {
+          "probability": 69.1,
+          "confidence": "HIGH"
+        },
+        "drawOrAway": {
+          "probability": 48.1,
+          "confidence": "LOW"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 29.9,
+          "confidence": "VERY LOW"
+        },
+        "no": {
+          "probability": 70.1,
+          "confidence": "HIGH"
+        }
+      },
+      "overUnder": {
+        "over15": {
+          "probability": 52.5,
+          "confidence": "MEDIUM"
+        },
+        "under15": {
+          "probability": 47.5,
+          "confidence": "LOW"
+        },
+        "over25": {
+          "probability": 25.8,
+          "confidence": "VERY LOW"
+        },
+        "under25": {
+          "probability": 74.2,
+          "confidence": "HIGH"
+        },
+        "over35": {
+          "probability": 10.2,
+          "confidence": "VERY LOW"
+        },
+        "under35": {
+          "probability": 89.8,
+          "confidence": "VERY HIGH"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "1-0",
+          "probability": 20.7
+        },
+        {
+          "score": "0-0",
+          "probability": 17.2
+        },
+        {
+          "score": "2-0",
+          "probability": 12.4
+        },
+        {
+          "score": "1-1",
+          "probability": 11.6
+        },
+        {
+          "score": "0-1",
+          "probability": 9.6
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.2,
+        "away": 0.56
+      }
+    }
+  },
+  {
+    "homeTeam": "Manchester United",
+    "awayTeam": "Tottenham Hotspur",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 90,
+          "confidence": "VERY HIGH"
+        },
+        "draw": {
+          "probability": 6.5,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 0.6,
+          "confidence": "VERY LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 96.5,
+          "confidence": "VERY HIGH"
+        },
+        "homeOrAway": {
+          "probability": 90.6,
+          "confidence": "VERY HIGH"
+        },
+        "drawOrAway": {
+          "probability": 7.1,
+          "confidence": "VERY LOW"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 8.7,
+          "confidence": "VERY LOW"
+        },
+        "no": {
+          "probability": 91.3,
+          "confidence": "VERY HIGH"
+        }
+      },
+      "overUnder": {
+        "over15": {
+          "probability": 77.3,
+          "confidence": "HIGH"
+        },
+        "under15": {
+          "probability": 22.7,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 55,
+          "confidence": "MEDIUM"
+        },
+        "under25": {
+          "probability": 45,
+          "confidence": "LOW"
+        },
+        "over35": {
+          "probability": 32.6,
+          "confidence": "VERY LOW"
+        },
+        "under35": {
+          "probability": 67.4,
+          "confidence": "HIGH"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "2-0",
+          "probability": 20.9
+        },
+        {
+          "score": "3-0",
+          "probability": 20.2
+        },
+        {
+          "score": "4-0",
+          "probability": 14.7
+        },
+        {
+          "score": "1-0",
+          "probability": 14.3
+        },
+        {
+          "score": "5-0",
+          "probability": 8.6
+        }
+      ],
+      "expectedGoals": {
+        "home": 2.91,
+        "away": 0.1
+      }
+    }
+  }
+]
