@@ -1,4 +1,4 @@
-export default function MatchCard({ competition, homeTeam, awayTeam, prediction }) {
+export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, prediction, onSelect }) {
   const { matchResult, btts, overUnder, expectedGoals } = prediction;
 
   return (
@@ -23,6 +23,15 @@ export default function MatchCard({ competition, homeTeam, awayTeam, prediction 
         <div style={styles.pill}>📈 Over 1.5 — {overUnder.over15.probability}%</div>
         <div style={styles.pill}>📈 Over 2.5 — {overUnder.over25.probability}%</div>
       </div>
+
+      <button
+        style={styles.button}
+        onClick={() =>
+          onSelect({ competition, homeTeam, awayTeam, kickoff, prediction })
+        }
+      >
+        View Analysis
+      </button>
     </div>
   );
 }
@@ -62,11 +71,22 @@ const styles = {
     display: "flex",
     flexWrap: "wrap",
     gap: "8px",
+    marginBottom: "12px",
   },
   pill: {
     background: "#2a2a2a",
     borderRadius: "20px",
     padding: "6px 12px",
     fontSize: "13px",
+  },
+  button: {
+    background: "#2563eb",
+    color: "#fff",
+    border: "none",
+    borderRadius: "8px",
+    padding: "10px",
+    width: "100%",
+    fontSize: "14px",
+    fontWeight: "bold",
   },
 };

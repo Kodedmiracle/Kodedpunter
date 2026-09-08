@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import MatchCard from "./MatchCard";
+import MatchDetail from "./MatchDetail";
 import "./App.css";
 
 function App() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedMatch, setSelectedMatch] = useState(null);
 
   useEffect(() => {
     fetch("/predictions.json")
@@ -22,6 +24,12 @@ function App() {
         setLoading(false);
       });
   }, []);
+
+  if (selectedMatch) {
+    return (
+      <MatchDetail match={selectedMatch} onBack={() => setSelectedMatch(null)} />
+    );
+  }
 
   return (
     <div style={styles.app}>
@@ -46,7 +54,9 @@ function App() {
           competition={match.competition}
           homeTeam={match.homeTeam}
           awayTeam={match.awayTeam}
+          kickoff={match.kickoff}
           prediction={match.prediction}
+          onSelect={setSelectedMatch}
         />
       ))}
     </div>
