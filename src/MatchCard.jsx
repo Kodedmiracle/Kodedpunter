@@ -1,8 +1,10 @@
-export default function MatchCard({ homeTeam, awayTeam, prediction }) {
+export default function MatchCard({ competition, homeTeam, awayTeam, prediction }) {
   const { matchResult, btts, overUnder, expectedGoals } = prediction;
 
   return (
     <div style={styles.card}>
+      {competition && <div style={styles.competitionTag}>{competition}</div>}
+
       <div style={styles.header}>
         <span style={styles.team}>{homeTeam}</span>
         <span style={styles.vs}>vs</span>
@@ -14,24 +16,12 @@ export default function MatchCard({ homeTeam, awayTeam, prediction }) {
       </div>
 
       <div style={styles.highlights}>
-        <div style={styles.pill}>
-          🏠 Home Win — {matchResult.homeWin.probability}%
-        </div>
-        <div style={styles.pill}>
-          🤝 Draw — {matchResult.draw.probability}%
-        </div>
-        <div style={styles.pill}>
-          ✈️ Away Win — {matchResult.awayWin.probability}%
-        </div>
-        <div style={styles.pill}>
-          ⚽ BTTS — {btts.yes.probability}%
-        </div>
-        <div style={styles.pill}>
-          📈 Over 1.5 — {overUnder.over15.probability}%
-        </div>
-        <div style={styles.pill}>
-          📈 Over 2.5 — {overUnder.over25.probability}%
-        </div>
+        <div style={styles.pill}>🏠 Home Win — {matchResult.homeWin.probability}%</div>
+        <div style={styles.pill}>🤝 Draw — {matchResult.draw.probability}%</div>
+        <div style={styles.pill}>✈️ Away Win — {matchResult.awayWin.probability}%</div>
+        <div style={styles.pill}>⚽ BTTS — {btts.yes.probability}%</div>
+        <div style={styles.pill}>📈 Over 1.5 — {overUnder.over15.probability}%</div>
+        <div style={styles.pill}>📈 Over 2.5 — {overUnder.over25.probability}%</div>
       </div>
     </div>
   );
@@ -45,6 +35,17 @@ const styles = {
     margin: "12px 0",
     color: "#fff",
     fontFamily: "sans-serif",
+  },
+  competitionTag: {
+    display: "inline-block",
+    background: "#333",
+    color: "#aaa",
+    fontSize: "11px",
+    padding: "3px 8px",
+    borderRadius: "10px",
+    marginBottom: "8px",
+    textTransform: "uppercase",
+    letterSpacing: "0.5px",
   },
   header: {
     display: "flex",

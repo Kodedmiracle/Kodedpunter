@@ -27,6 +27,11 @@ function App() {
     <div style={styles.app}>
       <h1 style={styles.title}>⚽ Kodedpunter</h1>
       <p style={styles.subtitle}>Statistical match predictions</p>
+      <p style={styles.disclaimer}>
+        ⚠️ Champions League predictions are provisional until the 2026–27
+        league phase kicks off — teams show as evenly matched until real
+        season data exists.
+      </p>
 
       {loading && <p style={styles.status}>Loading predictions...</p>}
       {error && <p style={styles.status}>Error: {error}</p>}
@@ -38,6 +43,7 @@ function App() {
       {matches.map((match, i) => (
         <MatchCard
           key={i}
+          competition={match.competition}
           homeTeam={match.homeTeam}
           awayTeam={match.awayTeam}
           prediction={match.prediction}
@@ -62,7 +68,13 @@ const styles = {
   subtitle: {
     color: "#888",
     fontSize: "13px",
+    marginBottom: "8px",
+  },
+  disclaimer: {
+    color: "#e0a030",
+    fontSize: "12px",
     marginBottom: "20px",
+    maxWidth: "500px",
   },
   status: {
     color: "#888",

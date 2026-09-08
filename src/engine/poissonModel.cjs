@@ -1,7 +1,6 @@
-// poissonModel.js
+// poissonModel.cjs
 // Core Poisson-based prediction engine for Kodedpunter
 
-// Factorial helper for Poisson PMF
 function factorial(n) {
   if (n <= 1) return 1;
   let result = 1;
@@ -9,18 +8,17 @@ function factorial(n) {
   return result;
 }
 
-// Poisson probability mass function: P(X = k) given mean lambda
 function poissonProb(lambda, k) {
   return (Math.pow(lambda, k) * Math.exp(-lambda)) / factorial(k);
 }
 
-/**
- * Calculate attack/defense strength for a team relative to league average.
- */
 function calculateStrength(stats, leagueAvg) {
-  const gamesPlayed = stats.playedGames || 1;
-  const avgFor = stats.goalsFor / gamesPlayed;
-  const avgAgainst = stats.goalsAgainst / gamesPlayed;
+  if (!stats.playedGames || stats.playedGames === 0) {
+    return { attackStrength: 1.0, defenseStrength: 1.0 };
+  }
+
+  const avgFor = stats.goalsFor / stats.playedGames;
+  const avgAgainst = stats.goalsAgainst / stats.playedGames;
 
   return {
     attackStrength: avgFor / leagueAvg.avgGoalsFor,
@@ -28,16 +26,10 @@ function calculateStrength(stats, leagueAvg) {
   };
 }
 
-/**
- * Weighted recent form modifier — returns a RATIO relative to the team's
- * own season average, capped so hot/cold streaks can't blow up xG.
- * recentMatches = array of { goalsFor, goalsAgainst }, most recent first
- * seasonAvgGoalsFor = that team's own goals-for per game this season
- */
 function calculateFormModifier(recentMatches, seasonAvgGoalsFor) {
   if (!recentMatches || recentMatches.length === 0) return 1.0;
 
-  const weights = [0.35, 0.25, 0.2, 0.12, 0.08]; // last 5, most recent first
+  const weights = [0.35, 0.25, 0.2, 0.12, 0.08];
   let weightedFor = 0;
   let totalWeight = 0;
 
@@ -50,14 +42,9 @@ function calculateFormModifier(recentMatches, seasonAvgGoalsFor) {
   const recentAvg = weightedFor / totalWeight;
   const ratio = seasonAvgGoalsFor > 0 ? recentAvg / seasonAvgGoalsFor : 1.0;
 
-  // Cap between 0.6 and 1.6 so a hot/cold streak can't distort xG too far
   return Math.max(0.6, Math.min(1.6, ratio));
 }
 
-/**
- * Expected goals for home and away team.
- * homeAdvantage: multiplier applied to home attack (typically 1.1–1.4)
- */
 function calculateExpectedGoals({
   homeStrength,
   awayStrength,
@@ -80,12 +67,7 @@ function calculateExpectedGoals({
     awayForm;
 
   return { homeXG: Math.max(homeXG, 0.1), awayXG: Math.max(awayXG, 0.1) };
-}
-
-/**
- * Build a full scoreline probability matrix up to maxGoals each side.
- */
-function buildScoreMatrix(homeXG, awayXG, maxGoals = 6) {
+}function buildScoreMatrix(homeXG, awayXG, maxGoals = 6) {
   const matrix = [];
   for (let h = 0; h <= maxGoals; h++) {
     const row = [];
@@ -97,9 +79,6 @@ function buildScoreMatrix(homeXG, awayXG, maxGoals = 6) {
   return matrix;
 }
 
-/**
- * Derive all market probabilities from the score matrix.
- */
 function deriveMarkets(matrix) {
   let homeWin = 0, draw = 0, awayWin = 0;
   let btts = 0;
@@ -157,24 +136,16 @@ function deriveMarkets(matrix) {
 }
 
 function round(p) {
-  return Math.round(p * 1000) / 10; // percentage, 1 decimal place
+  return Math.round(p * 1000) / 10;
 }
 
-/**
- * Confidence scoring based on probability magnitude.
- */
 function getConfidence(probabilityPercent) {
   if (probabilityPercent >= 80) return "VERY HIGH";
   if (probabilityPercent >= 65) return "HIGH";
   if (probabilityPercent >= 50) return "MEDIUM";
   if (probabilityPercent >= 35) return "LOW";
   return "VERY LOW";
-}
-
-/**
- * Main entry point: takes raw team data, returns full prediction object.
- */
-function predictMatch({
+}function predictMatch({
   homeTeamStats,
   awayTeamStats,
   homeRecentMatches,
