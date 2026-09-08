@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import MatchCard from "./MatchCard";
 import MatchDetail from "./MatchDetail";
 import BestPicks from "./BestPicks";
+import FilterBar from "./FilterBar";
 import { extractBestPicks } from "./bestPicks.js";
 import "./App.css";
 
@@ -10,6 +11,10 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedMatch, setSelectedMatch] = useState(null);
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [competitionFilter, setCompetitionFilter] = useState("ALL");
+  const [sortBy, setSortBy] = useState("default");
 
   useEffect(() => {
     fetch("/predictions.json")
@@ -26,6 +31,49 @@ function App() {
         setLoading(false);
       });
   }, []);
+
+  const competitions = useMemo(() => {
+    const set = new Set(matches.map((m) => m.competition).filter(Boolean));
+    return [...set];
+  }, [matches]);
+
+  const filteredMatches = useMemo(() => {
+    let result = [...matches];
+
+    if (competitionFilter !== "ALL") {
+      result = result.filter((m) => m.competition === competitionFilter);
+    }
+
+    if (searchTerm.trim()) {
+      const term = searchTerm.trim().toLowerCase();
+      result = result.filter(
+        (m) =>
+          m.homeTeam.toLowerCase().includes(term) ||
+          m.awayTeam.toLowerCase().includes(term) ||
+          (m.competition && m.competition.toLowerCase().includes(term))
+      );
+    }
+
+    if (sortBy === "homeWin") {
+      result.sort(
+        (a, b) =>
+          b.prediction.matchResult.homeWin.probability -
+          a.prediction.matchResult.homeWin.probability
+      );
+    } else if (sortBy === "btts") {
+      result.sort(
+        (a, b) => b.prediction.btts.yes.probability - a.prediction.btts.yes.probability
+      );
+    } else if (sortBy === "over25") {
+      result.sort(
+        (a, b) =>
+          b.prediction.overUnder.over25.probability -
+          a.prediction.overUnder.over25.probability
+      );
+    }
+
+    return result;
+  }, [matches, competitionFilter, searchTerm, sortBy]);
 
   if (selectedMatch) {
     return (
@@ -53,10 +101,26 @@ function App() {
       )}
 
       {!loading && !error && matches.length > 0 && (
-        <BestPicks picks={bestPicks} />
+        <>
+          <BestPicks picks={bestPicks} />
+
+          <FilterBar
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
+            competitionFilter={competitionFilter}
+            onCompetitionChange={setCompetitionFilter}
+            competitions={competitions}
+            sortBy={sortBy}
+            onSortChange={setSortBy}
+          />
+
+          {filteredMatches.length === 0 && (
+            <p style={styles.status}>No matches found.</p>
+          )}
+        </>
       )}
 
-      {matches.map((match, i) => (
+      {filteredMatches.map((match, i) => (
         <MatchCard
           key={i}
           competition={match.competition}
