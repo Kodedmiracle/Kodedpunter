@@ -12,6 +12,16 @@ function poissonProb(lambda, k) {
   return (Math.pow(lambda, k) * Math.exp(-lambda)) / factorial(k);
 }
 
+/**
+ * Calculate attack/defense strength for a team relative to league average.
+ * Uses regression toward the mean for small sample sizes: a team's raw
+ * strength ratio is blended with 1.0 (perfectly average), weighted by how
+ * many games they've played. Full confidence in raw stats is reached at
+ * FULL_CONFIDENCE_GAMES; below that, results get pulled toward average
+ * proportionally, so 2-3 games can't create wild 90%+/1% swings.
+ */
+const FULL_CONFIDENCE_GAMES = 10;
+
 function calculateStrength(stats, leagueAvg) {
   if (!stats.playedGames || stats.playedGames === 0) {
     return { attackStrength: 1.0, defenseStrength: 1.0 };
@@ -20,9 +30,14 @@ function calculateStrength(stats, leagueAvg) {
   const avgFor = stats.goalsFor / stats.playedGames;
   const avgAgainst = stats.goalsAgainst / stats.playedGames;
 
+  const rawAttack = avgFor / leagueAvg.avgGoalsFor;
+  const rawDefense = avgAgainst / leagueAvg.avgGoalsAgainst;
+
+  const confidence = Math.min(stats.playedGames / FULL_CONFIDENCE_GAMES, 1);
+
   return {
-    attackStrength: avgFor / leagueAvg.avgGoalsFor,
-    defenseStrength: avgAgainst / leagueAvg.avgGoalsAgainst,
+    attackStrength: rawAttack * confidence + 1.0 * (1 - confidence),
+    defenseStrength: rawDefense * confidence + 1.0 * (1 - confidence),
   };
 }
 
