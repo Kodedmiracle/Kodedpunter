@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import MatchCard from "./MatchCard";
 import MatchDetail from "./MatchDetail";
+import BestPicks from "./BestPicks";
+import { extractBestPicks } from "./bestPicks.js";
 import "./App.css";
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
     );
   }
 
+  const bestPicks = extractBestPicks(matches, 10);
+
   return (
     <div style={styles.app}>
       <h1 style={styles.title}>⚽ Kodedpunter</h1>
@@ -46,6 +50,10 @@ function App() {
 
       {!loading && !error && matches.length === 0 && (
         <p style={styles.status}>No predictions available yet.</p>
+      )}
+
+      {!loading && !error && matches.length > 0 && (
+        <BestPicks picks={bestPicks} />
       )}
 
       {matches.map((match, i) => (
