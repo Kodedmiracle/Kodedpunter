@@ -102,8 +102,6 @@ function App() {
 
       {!loading && !error && matches.length > 0 && (
         <>
-          <BestPicks picks={bestPicks} />
-
           <FilterBar
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
@@ -113,6 +111,8 @@ function App() {
             sortBy={sortBy}
             onSortChange={setSortBy}
           />
+
+          <BestPicks picks={bestPicks} />
 
           {filteredMatches.length === 0 && (
             <p style={styles.status}>No matches found.</p>
