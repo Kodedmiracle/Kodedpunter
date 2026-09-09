@@ -491,90 +491,90 @@
   },
   {
     "competition": "Champions League",
-    "homeTeam": "FC Barcelona",
-    "awayTeam": "Feyenoord Rotterdam",
-    "kickoff": "2026-09-09T16:45:00Z",
+    "homeTeam": "Fenerbahçe SK",
+    "awayTeam": "AS Roma",
+    "kickoff": "2026-09-10T16:45:00Z",
     "prediction": {
       "matchResult": {
         "homeWin": {
-          "probability": 45.8,
+          "probability": 46.3,
           "confidence": "LOW"
         },
         "draw": {
-          "probability": 20.9,
+          "probability": 19.8,
           "confidence": "VERY LOW"
         },
         "awayWin": {
-          "probability": 32.5,
+          "probability": 32.6,
           "confidence": "VERY LOW"
         }
       },
       "doubleChance": {
         "homeOrDraw": {
-          "probability": 66.7,
+          "probability": 66.2,
           "confidence": "HIGH"
         },
         "homeOrAway": {
-          "probability": 78.3,
+          "probability": 78.9,
           "confidence": "HIGH"
         },
         "drawOrAway": {
-          "probability": 53.4,
+          "probability": 52.4,
           "confidence": "MEDIUM"
         }
       },
       "btts": {
         "yes": {
-          "probability": 71.8,
+          "probability": 75.6,
           "confidence": "HIGH"
         },
         "no": {
-          "probability": 28.2,
+          "probability": 24.4,
           "confidence": "VERY LOW"
         }
       },
       "overUnder": {
         "over15": {
-          "probability": 88.9,
+          "probability": 91,
           "confidence": "VERY HIGH"
         },
         "under15": {
-          "probability": 11.1,
+          "probability": 9,
           "confidence": "VERY LOW"
         },
         "over25": {
-          "probability": 73.1,
+          "probability": 77.9,
           "confidence": "HIGH"
         },
         "under25": {
-          "probability": 26.9,
+          "probability": 22.1,
           "confidence": "VERY LOW"
         },
         "over35": {
-          "probability": 52.9,
+          "probability": 59.5,
           "confidence": "MEDIUM"
         },
         "under35": {
-          "probability": 47.1,
+          "probability": 40.5,
           "confidence": "LOW"
         }
       },
       "topScorelines": [
         {
           "score": "2-1",
-          "probability": 8.2
-        },
-        {
-          "score": "1-1",
-          "probability": 7.8
+          "probability": 7.5
         },
         {
           "score": "2-2",
           "probability": 7.2
         },
         {
+          "score": "1-1",
+          "probability": 6.5
+        },
+        {
           "score": "1-2",
-          "probability": 6.8
+          "probability": 6.2
         },
         {
           "score": "3-1",
@@ -582,97 +582,97 @@
         }
       ],
       "expectedGoals": {
-        "home": 2.1,
-        "away": 1.75
+        "home": 2.3,
+        "away": 1.92
       }
     }
   },
   {
     "competition": "Champions League",
-    "homeTeam": "VfB Stuttgart",
-    "awayTeam": "Viking FK",
-    "kickoff": "2026-09-09T16:45:00Z",
+    "homeTeam": "PSV",
+    "awayTeam": "FK Shakhtar Donetsk",
+    "kickoff": "2026-09-10T16:45:00Z",
     "prediction": {
       "matchResult": {
         "homeWin": {
-          "probability": 45.8,
+          "probability": 46.3,
           "confidence": "LOW"
         },
         "draw": {
-          "probability": 20.9,
+          "probability": 19.8,
           "confidence": "VERY LOW"
         },
         "awayWin": {
-          "probability": 32.5,
+          "probability": 32.6,
           "confidence": "VERY LOW"
         }
       },
       "doubleChance": {
         "homeOrDraw": {
-          "probability": 66.7,
+          "probability": 66.2,
           "confidence": "HIGH"
         },
         "homeOrAway": {
-          "probability": 78.3,
+          "probability": 78.9,
           "confidence": "HIGH"
         },
         "drawOrAway": {
-          "probability": 53.4,
+          "probability": 52.4,
           "confidence": "MEDIUM"
         }
       },
       "btts": {
         "yes": {
-          "probability": 71.8,
+          "probability": 75.6,
           "confidence": "HIGH"
         },
         "no": {
-          "probability": 28.2,
+          "probability": 24.4,
           "confidence": "VERY LOW"
         }
       },
       "overUnder": {
         "over15": {
-          "probability": 88.9,
+          "probability": 91,
           "confidence": "VERY HIGH"
         },
         "under15": {
-          "probability": 11.1,
+          "probability": 9,
           "confidence": "VERY LOW"
         },
         "over25": {
-          "probability": 73.1,
+          "probability": 77.9,
           "confidence": "HIGH"
         },
         "under25": {
-          "probability": 26.9,
+          "probability": 22.1,
           "confidence": "VERY LOW"
         },
         "over35": {
-          "probability": 52.9,
+          "probability": 59.5,
           "confidence": "MEDIUM"
         },
         "under35": {
-          "probability": 47.1,
+          "probability": 40.5,
           "confidence": "LOW"
         }
       },
       "topScorelines": [
         {
           "score": "2-1",
-          "probability": 8.2
-        },
-        {
-          "score": "1-1",
-          "probability": 7.8
+          "probability": 7.5
         },
         {
           "score": "2-2",
           "probability": 7.2
         },
         {
+          "score": "1-1",
+          "probability": 6.5
+        },
+        {
           "score": "1-2",
-          "probability": 6.8
+          "probability": 6.2
         },
         {
           "score": "3-1",
@@ -680,97 +680,97 @@
         }
       ],
       "expectedGoals": {
-        "home": 2.1,
-        "away": 1.75
+        "home": 2.3,
+        "away": 1.92
       }
     }
   },
   {
     "competition": "Champions League",
-    "homeTeam": "Liverpool",
-    "awayTeam": "Club Atlético de Madrid",
-    "kickoff": "2026-09-09T19:00:00Z",
+    "homeTeam": "FC Bayern München",
+    "awayTeam": "FK Bodø/Glimt",
+    "kickoff": "2026-09-10T19:00:00Z",
     "prediction": {
       "matchResult": {
         "homeWin": {
-          "probability": 45.8,
+          "probability": 46.3,
           "confidence": "LOW"
         },
         "draw": {
-          "probability": 20.9,
+          "probability": 19.8,
           "confidence": "VERY LOW"
         },
         "awayWin": {
-          "probability": 32.5,
+          "probability": 32.6,
           "confidence": "VERY LOW"
         }
       },
       "doubleChance": {
         "homeOrDraw": {
-          "probability": 66.7,
+          "probability": 66.2,
           "confidence": "HIGH"
         },
         "homeOrAway": {
-          "probability": 78.3,
+          "probability": 78.9,
           "confidence": "HIGH"
         },
         "drawOrAway": {
-          "probability": 53.4,
+          "probability": 52.4,
           "confidence": "MEDIUM"
         }
       },
       "btts": {
         "yes": {
-          "probability": 71.8,
+          "probability": 75.6,
           "confidence": "HIGH"
         },
         "no": {
-          "probability": 28.2,
+          "probability": 24.4,
           "confidence": "VERY LOW"
         }
       },
       "overUnder": {
         "over15": {
-          "probability": 88.9,
+          "probability": 91,
           "confidence": "VERY HIGH"
         },
         "under15": {
-          "probability": 11.1,
+          "probability": 9,
           "confidence": "VERY LOW"
         },
         "over25": {
-          "probability": 73.1,
+          "probability": 77.9,
           "confidence": "HIGH"
         },
         "under25": {
-          "probability": 26.9,
+          "probability": 22.1,
           "confidence": "VERY LOW"
         },
         "over35": {
-          "probability": 52.9,
+          "probability": 59.5,
           "confidence": "MEDIUM"
         },
         "under35": {
-          "probability": 47.1,
+          "probability": 40.5,
           "confidence": "LOW"
         }
       },
       "topScorelines": [
         {
           "score": "2-1",
-          "probability": 8.2
-        },
-        {
-          "score": "1-1",
-          "probability": 7.8
+          "probability": 7.5
         },
         {
           "score": "2-2",
           "probability": 7.2
         },
         {
+          "score": "1-1",
+          "probability": 6.5
+        },
+        {
           "score": "1-2",
-          "probability": 6.8
+          "probability": 6.2
         },
         {
           "score": "3-1",
@@ -778,97 +778,97 @@
         }
       ],
       "expectedGoals": {
-        "home": 2.1,
-        "away": 1.75
+        "home": 2.3,
+        "away": 1.92
       }
     }
   },
   {
     "competition": "Champions League",
-    "homeTeam": "Paris Saint-Germain",
-    "awayTeam": "ŠK Slovan Bratislava",
-    "kickoff": "2026-09-09T19:00:00Z",
+    "homeTeam": "Manchester United",
+    "awayTeam": "Sabah FK",
+    "kickoff": "2026-09-10T19:00:00Z",
     "prediction": {
       "matchResult": {
         "homeWin": {
-          "probability": 45.8,
+          "probability": 46.3,
           "confidence": "LOW"
         },
         "draw": {
-          "probability": 20.9,
+          "probability": 19.8,
           "confidence": "VERY LOW"
         },
         "awayWin": {
-          "probability": 32.5,
+          "probability": 32.6,
           "confidence": "VERY LOW"
         }
       },
       "doubleChance": {
         "homeOrDraw": {
-          "probability": 66.7,
+          "probability": 66.2,
           "confidence": "HIGH"
         },
         "homeOrAway": {
-          "probability": 78.3,
+          "probability": 78.9,
           "confidence": "HIGH"
         },
         "drawOrAway": {
-          "probability": 53.4,
+          "probability": 52.4,
           "confidence": "MEDIUM"
         }
       },
       "btts": {
         "yes": {
-          "probability": 71.8,
+          "probability": 75.6,
           "confidence": "HIGH"
         },
         "no": {
-          "probability": 28.2,
+          "probability": 24.4,
           "confidence": "VERY LOW"
         }
       },
       "overUnder": {
         "over15": {
-          "probability": 88.9,
+          "probability": 91,
           "confidence": "VERY HIGH"
         },
         "under15": {
-          "probability": 11.1,
+          "probability": 9,
           "confidence": "VERY LOW"
         },
         "over25": {
-          "probability": 73.1,
+          "probability": 77.9,
           "confidence": "HIGH"
         },
         "under25": {
-          "probability": 26.9,
+          "probability": 22.1,
           "confidence": "VERY LOW"
         },
         "over35": {
-          "probability": 52.9,
+          "probability": 59.5,
           "confidence": "MEDIUM"
         },
         "under35": {
-          "probability": 47.1,
+          "probability": 40.5,
           "confidence": "LOW"
         }
       },
       "topScorelines": [
         {
           "score": "2-1",
-          "probability": 8.2
-        },
-        {
-          "score": "1-1",
-          "probability": 7.8
+          "probability": 7.5
         },
         {
           "score": "2-2",
           "probability": 7.2
         },
         {
+          "score": "1-1",
+          "probability": 6.5
+        },
+        {
           "score": "1-2",
-          "probability": 6.8
+          "probability": 6.2
         },
         {
           "score": "3-1",
@@ -876,97 +876,97 @@
         }
       ],
       "expectedGoals": {
-        "home": 2.1,
-        "away": 1.75
+        "home": 2.3,
+        "away": 1.92
       }
     }
   },
   {
     "competition": "Champions League",
-    "homeTeam": "SSC Napoli",
-    "awayTeam": "Arsenal",
-    "kickoff": "2026-09-09T19:00:00Z",
+    "homeTeam": "Como 1907",
+    "awayTeam": "RB Leipzig",
+    "kickoff": "2026-09-10T19:00:00Z",
     "prediction": {
       "matchResult": {
         "homeWin": {
-          "probability": 45.8,
+          "probability": 46.3,
           "confidence": "LOW"
         },
         "draw": {
-          "probability": 20.9,
+          "probability": 19.8,
           "confidence": "VERY LOW"
         },
         "awayWin": {
-          "probability": 32.5,
+          "probability": 32.6,
           "confidence": "VERY LOW"
         }
       },
       "doubleChance": {
         "homeOrDraw": {
-          "probability": 66.7,
+          "probability": 66.2,
           "confidence": "HIGH"
         },
         "homeOrAway": {
-          "probability": 78.3,
+          "probability": 78.9,
           "confidence": "HIGH"
         },
         "drawOrAway": {
-          "probability": 53.4,
+          "probability": 52.4,
           "confidence": "MEDIUM"
         }
       },
       "btts": {
         "yes": {
-          "probability": 71.8,
+          "probability": 75.6,
           "confidence": "HIGH"
         },
         "no": {
-          "probability": 28.2,
+          "probability": 24.4,
           "confidence": "VERY LOW"
         }
       },
       "overUnder": {
         "over15": {
-          "probability": 88.9,
+          "probability": 91,
           "confidence": "VERY HIGH"
         },
         "under15": {
-          "probability": 11.1,
+          "probability": 9,
           "confidence": "VERY LOW"
         },
         "over25": {
-          "probability": 73.1,
+          "probability": 77.9,
           "confidence": "HIGH"
         },
         "under25": {
-          "probability": 26.9,
+          "probability": 22.1,
           "confidence": "VERY LOW"
         },
         "over35": {
-          "probability": 52.9,
+          "probability": 59.5,
           "confidence": "MEDIUM"
         },
         "under35": {
-          "probability": 47.1,
+          "probability": 40.5,
           "confidence": "LOW"
         }
       },
       "topScorelines": [
         {
           "score": "2-1",
-          "probability": 8.2
-        },
-        {
-          "score": "1-1",
-          "probability": 7.8
+          "probability": 7.5
         },
         {
           "score": "2-2",
           "probability": 7.2
         },
         {
+          "score": "1-1",
+          "probability": 6.5
+        },
+        {
           "score": "1-2",
-          "probability": 6.8
+          "probability": 6.2
         },
         {
           "score": "3-1",
@@ -974,8 +974,8 @@
         }
       ],
       "expectedGoals": {
-        "home": 2.1,
-        "away": 1.75
+        "home": 2.3,
+        "away": 1.92
       }
     }
   }
