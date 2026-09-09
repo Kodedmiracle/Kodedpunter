@@ -14,11 +14,12 @@ function sleep(ms) {
 }
 
 const COMPETITIONS = [
-  { code: 'PL', name: 'Premier League' },
-  { code: 'CL', name: 'Champions League' },
+  { code: 'PL', name: 'Premier League', maxFixtures: 10 },
+  { code: 'CL', name: 'Champions League', maxFixtures: 4 },
 ];
 
-async function processCompetition(comp, maxFixtures = 5) {
+async function processCompetition(comp) {
+  const maxFixtures = comp.maxFixtures || 5;
   console.log(`\n--- ${comp.name} ---`);
   const results = [];
 
@@ -72,7 +73,7 @@ async function run() {
 
   for (const comp of COMPETITIONS) {
     try {
-      const compResults = await processCompetition(comp, 5);
+      const compResults = await processCompetition(comp);
       allResults = allResults.concat(compResults);
     } catch (err) {
       console.log(`Error processing ${comp.name}: ${err.message}`);
