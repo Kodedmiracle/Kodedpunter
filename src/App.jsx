@@ -132,6 +132,21 @@ function App() {
           onSelect={setSelectedMatch}
         />
       ))}
+
+      {!loading && !error && matches.length > 0 && (
+        <footer style={styles.footer}>
+          <p style={styles.footerTitle}>How this works</p>
+          <p style={styles.footerText}>
+            Predictions come from a Poisson goal model built on each team's
+            season goals scored/conceded, weighted recent form, and home
+            advantage. Markets like BTTS and Over/Under are derived directly
+            from the resulting expected-goals distribution — not separately
+            guessed. Teams with fewer than 10 games played this season are
+            pulled toward the league average to avoid overreacting to small
+            samples. These are statistical estimates, not guarantees.
+          </p>
+        </footer>
+      )}
     </div>
   );
 }
@@ -162,6 +177,22 @@ const styles = {
   status: {
     color: "#888",
     fontSize: "14px",
+  },
+  footer: {
+    marginTop: "24px",
+    paddingTop: "20px",
+    borderTop: "1px solid #24242e",
+  },
+  footerTitle: {
+    fontSize: "13px",
+    fontWeight: 700,
+    color: "#aaa",
+    marginBottom: "8px",
+  },
+  footerText: {
+    fontSize: "12px",
+    color: "#777",
+    lineHeight: 1.6,
   },
 };
 
