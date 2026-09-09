@@ -1,12 +1,14 @@
 function confidenceColor(confidence) {
   switch (confidence) {
-    case "VERY HIGH": return "#22c55e";
+    case "VERY HIGH": return "#22e584";
     case "HIGH": return "#4ade80";
-    case "MEDIUM": return "#facc15";
+    case "MEDIUM": return "#fbbf24";
     case "LOW": return "#fb923c";
-    default: return "#ef4444";
+    default: return "#f5445c";
   }
 }
+
+const PILL_ACCENTS = ["#8b5cf6", "#fbbf24", "#ec4899", "#22d3ee", "#22e584", "#22e584"];
 
 export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, prediction, recommendedMarket, onSelect }) {
   const { matchResult, btts, overUnder, expectedGoals } = prediction;
@@ -43,7 +45,7 @@ export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, pr
 
       {recommendedMarket && (
         <div style={styles.recommended}>
-          <span style={styles.recommendedLabel}>Model lean</span>
+          <span style={styles.recommendedLabel}>🔥 Model Lean</span>
           <span style={styles.recommendedMarket}>
             {recommendedMarket.icon} {recommendedMarket.key}
           </span>
@@ -53,7 +55,7 @@ export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, pr
 
       <div style={styles.grid}>
         {pills.map((p, i) => (
-          <div key={i} style={styles.pill}>
+          <div key={i} style={{ ...styles.pill, borderTop: `2px solid ${PILL_ACCENTS[i]}` }}>
             <div style={styles.pillTop}>
               <span>{p.icon} {p.label}</span>
             </div>
@@ -72,12 +74,12 @@ export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, pr
 
 const styles = {
   card: {
-    background: "linear-gradient(145deg, #16161d, #0f0f14)",
-    border: "1px solid #24242e",
-    borderRadius: "16px",
+    background: "linear-gradient(160deg, var(--card-1), var(--card-2))",
+    border: "1px solid var(--border)",
+    borderRadius: "18px",
     padding: "18px",
     margin: "14px 0",
-    boxShadow: "0 4px 16px rgba(0,0,0,0.3)",
+    boxShadow: "0 8px 24px rgba(0,0,0,0.45)",
     cursor: "pointer",
   },
   topRow: {
@@ -87,17 +89,17 @@ const styles = {
     marginBottom: "10px",
   },
   competitionTag: {
-    background: "#1e293b",
-    color: "#93c5fd",
+    background: "linear-gradient(90deg, var(--violet), var(--pink))",
+    color: "#fff",
     fontSize: "10px",
-    fontWeight: 700,
+    fontWeight: 800,
     padding: "4px 10px",
     borderRadius: "20px",
     textTransform: "uppercase",
     letterSpacing: "0.6px",
   },
   kickoff: {
-    color: "#666",
+    color: "#8b7aa8",
     fontSize: "11px",
     fontWeight: 600,
   },
@@ -110,45 +112,46 @@ const styles = {
   },
   team: {
     fontSize: "16px",
-    fontWeight: 700,
+    fontWeight: 800,
     lineHeight: 1.2,
   },
   vs: {
-    color: "#555",
+    color: "var(--pink)",
     fontSize: "11px",
-    fontWeight: 700,
+    fontWeight: 800,
   },
   summaryLine: {
     fontSize: "12px",
-    color: "#888",
+    color: "#a191c4",
     marginBottom: "12px",
   },
   recommended: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    background: "rgba(34,197,94,0.08)",
-    border: "1px solid rgba(34,197,94,0.25)",
-    borderRadius: "10px",
+    background: "linear-gradient(90deg, rgba(139,92,246,0.18), rgba(236,72,153,0.18))",
+    border: "1px solid rgba(236,72,153,0.4)",
+    borderRadius: "12px",
     padding: "10px 12px",
     marginBottom: "14px",
+    boxShadow: "0 0 20px rgba(236,72,153,0.12)",
   },
   recommendedLabel: {
     fontSize: "10px",
-    color: "#888",
+    color: "#e0c4ff",
     textTransform: "uppercase",
     letterSpacing: "0.5px",
-    fontWeight: 700,
+    fontWeight: 800,
   },
   recommendedMarket: {
     fontSize: "13px",
-    fontWeight: 700,
+    fontWeight: 800,
     color: "#fff",
   },
   recommendedProb: {
-    fontSize: "15px",
-    fontWeight: 800,
-    color: "#22c55e",
+    fontSize: "16px",
+    fontWeight: 900,
+    color: "#22e584",
   },
   grid: {
     display: "grid",
@@ -157,13 +160,13 @@ const styles = {
     marginBottom: "10px",
   },
   pill: {
-    background: "#1a1a22",
+    background: "rgba(255,255,255,0.03)",
     borderRadius: "10px",
     padding: "8px 10px",
   },
   pillTop: {
     fontSize: "10px",
-    color: "#999",
+    color: "#a191c4",
     marginBottom: "4px",
     whiteSpace: "nowrap",
   },
@@ -172,7 +175,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between",
   },
-  pillValue: { fontSize: "16px", fontWeight: 800, color: "#fff" },
+  pillValue: { fontSize: "16px", fontWeight: 900, color: "#fff" },
   pillDot: {
     width: "8px",
     height: "8px",
@@ -180,7 +183,7 @@ const styles = {
   },
   footerHint: {
     fontSize: "11px",
-    color: "#555",
+    color: "#6b5c8a",
     textAlign: "center",
   },
 };

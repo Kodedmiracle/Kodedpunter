@@ -1,4 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --bg: #0a0510;
+  --bg-elev: #140b24;
+  --card-1: #1a0f33;
+  --card-2: #120a22;
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.16);
+  --violet: #8b5cf6;
+  --violet-glow: rgba(139,92,246,0.35);
+  --pink: #ec4899;
+  --pink-glow: rgba(236,72,153,0.3);
+  --cyan: #22d3ee;
+  --green: #22e584;
+  --amber: #fbbf24;
+  --red: #f5445c;
+}
 
 * {
   box-sizing: border-box;
@@ -7,12 +24,12 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0a0a0f;
+  background: radial-gradient(circle at 20% 0%, #1c0f38 0%, #0a0510 55%);
   color: #fff;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: #2563eb;
+  background: var(--pink);
   color: #fff;
 }
