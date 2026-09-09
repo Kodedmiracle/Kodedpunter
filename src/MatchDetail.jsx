@@ -31,6 +31,16 @@ function generateExplanation(match) {
   return `The model favors ${favoredResult} at ${favoredProb}%, with expected goals of ${expectedGoals.home} for ${homeTeam} and ${expectedGoals.away} for ${awayTeam}. ${goalTendency}, and ${bttsNote}. These are statistical estimates based on current season form and results — not guaranteed outcomes.`;
 }
 
+function confidenceColor(confidence) {
+  switch (confidence) {
+    case "VERY HIGH": return "#22e584";
+    case "HIGH": return "#4ade80";
+    case "MEDIUM": return "#fbbf24";
+    case "LOW": return "#fb923c";
+    default: return "#f5445c";
+  }
+}
+
 export default function MatchDetail({ match, onBack }) {
   const { competition, homeTeam, awayTeam, kickoff, prediction } = match;
   const { matchResult, doubleChance, btts, overUnder, topScorelines, expectedGoals } = prediction;
@@ -44,14 +54,14 @@ export default function MatchDetail({ match, onBack }) {
       {competition && <div style={styles.competitionTag}>{competition}</div>}
 
       <h2 style={styles.title}>
-        {homeTeam} vs {awayTeam}
+        {homeTeam} <span style={styles.vsInline}>vs</span> {awayTeam}
       </h2>
       {kickoff && (
         <p style={styles.kickoff}>{new Date(kickoff).toLocaleString()}</p>
       )}
 
       <div style={styles.xgBox}>
-        Expected Goals: {expectedGoals.home} - {expectedGoals.away}
+        Expected Goals: <span style={styles.xgValue}>{expectedGoals.home} – {expectedGoals.away}</span>
       </div>
 
       <p style={styles.explanation}>{generateExplanation(match)}</p>
@@ -85,7 +95,7 @@ export default function MatchDetail({ match, onBack }) {
       <Section title="Most Likely Scorelines">
         {topScorelines.map((s, i) => (
           <div key={i} style={styles.scoreRow}>
-            <span>{s.score}</span>
+            <span style={styles.scoreValue}>{s.score}</span>
             <span style={styles.scoreProb}>{s.probability}%</span>
           </div>
         ))}
@@ -110,9 +120,11 @@ function Section({ title, children }) {
 function Row({ label, data }) {
   return (
     <div style={styles.row}>
-      <span>{label}</span>
+      <span style={styles.rowLabel}>{label}</span>
       <span style={styles.rowRight}>
-        {data.probability}% — {data.confidence}
+        <span style={styles.rowProb}>{data.probability}%</span>
+        <span style={{ ...styles.confDot, background: confidenceColor(data.confidence) }} />
+        <span style={styles.confText}>{data.confidence}</span>
       </span>
     </div>
   );
@@ -120,7 +132,7 @@ function Row({ label, data }) {
 
 const styles = {
   container: {
-    background: "#0d0d0d",
+    background: "radial-gradient(circle at 20% 0%, #1c0f38 0%, #0a0510 55%)",
     minHeight: "100vh",
     padding: "20px",
     color: "#fff",
@@ -129,68 +141,90 @@ const styles = {
   backButton: {
     background: "none",
     border: "none",
-    color: "#2563eb",
+    color: "#22d3ee",
     fontSize: "14px",
+    fontWeight: 700,
     marginBottom: "16px",
     padding: 0,
   },
   competitionTag: {
     display: "inline-block",
-    background: "#333",
-    color: "#aaa",
+    background: "linear-gradient(90deg, #8b5cf6, #ec4899)",
+    color: "#fff",
     fontSize: "11px",
-    padding: "3px 8px",
-    borderRadius: "10px",
-    marginBottom: "8px",
+    fontWeight: 800,
+    padding: "4px 10px",
+    borderRadius: "20px",
+    marginBottom: "10px",
     textTransform: "uppercase",
     letterSpacing: "0.5px",
   },
-  title: { fontSize: "20px", marginBottom: "4px" },
-  kickoff: { color: "#888", fontSize: "13px", marginBottom: "12px" },
+  title: { fontSize: "21px", fontWeight: 800, marginBottom: "4px" },
+  vsInline: { color: "#ec4899", fontSize: "14px", fontWeight: 700 },
+  kickoff: { color: "#a191c4", fontSize: "13px", marginBottom: "14px" },
   xgBox: {
-    background: "#1a1a1a",
-    borderRadius: "8px",
-    padding: "10px",
+    background: "linear-gradient(160deg, #1a0f33, #120a22)",
+    border: "1px solid rgba(255,255,255,0.08)",
+    borderRadius: "10px",
+    padding: "12px",
     fontSize: "14px",
+    color: "#a191c4",
     marginBottom: "16px",
   },
+  xgValue: { color: "#fff", fontWeight: 800 },
   explanation: {
     fontSize: "14px",
-    lineHeight: "1.5",
-    color: "#ccc",
-    marginBottom: "20px",
+    lineHeight: "1.6",
+    color: "#c9baE4",
+    marginBottom: "22px",
   },
   section: {
-    background: "#1a1a1a",
-    borderRadius: "10px",
-    padding: "14px",
-    marginBottom: "12px",
+    background: "linear-gradient(160deg, #1a0f33, #120a22)",
+    border: "1px solid rgba(255,255,255,0.08)",
+    borderRadius: "14px",
+    padding: "16px",
+    marginBottom: "14px",
   },
   sectionTitle: {
-    fontSize: "13px",
+    fontSize: "12px",
     textTransform: "uppercase",
-    color: "#888",
-    marginBottom: "8px",
-    letterSpacing: "0.5px",
+    color: "#a191c4",
+    marginBottom: "10px",
+    letterSpacing: "0.6px",
+    fontWeight: 800,
   },
   row: {
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "center",
     fontSize: "14px",
-    padding: "6px 0",
-    borderBottom: "1px solid #2a2a2a",
+    padding: "8px 0",
+    borderBottom: "1px solid rgba(255,255,255,0.06)",
   },
-  rowRight: { color: "#aaa" },
+  rowLabel: { color: "#e5dbf5", fontWeight: 600 },
+  rowRight: {
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+  },
+  rowProb: { fontWeight: 800, color: "#fff" },
+  confDot: {
+    width: "7px",
+    height: "7px",
+    borderRadius: "50%",
+  },
+  confText: { color: "#a191c4", fontSize: "11px", fontWeight: 700 },
   scoreRow: {
     display: "flex",
     justifyContent: "space-between",
     fontSize: "14px",
-    padding: "6px 0",
-    borderBottom: "1px solid #2a2a2a",
+    padding: "8px 0",
+    borderBottom: "1px solid rgba(255,255,255,0.06)",
   },
-  scoreProb: { color: "#aaa" },
+  scoreValue: { fontWeight: 700, color: "#fff" },
+  scoreProb: { color: "#22d3ee", fontWeight: 700 },
   footerNote: {
-    color: "#666",
+    color: "#6b5c8a",
     fontSize: "11px",
     textAlign: "center",
     marginTop: "16px",
