@@ -8,7 +8,7 @@ function confidenceColor(confidence) {
   }
 }
 
-export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, prediction, onSelect }) {
+export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, prediction, recommendedMarket, onSelect }) {
   const { matchResult, btts, overUnder, expectedGoals } = prediction;
 
   const pills = [
@@ -21,7 +21,7 @@ export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, pr
   ];
 
   return (
-    <div style={styles.card}>
+    <div style={styles.card} onClick={() => onSelect({ competition, homeTeam, awayTeam, kickoff, prediction })}>
       <div style={styles.topRow}>
         {competition && <div style={styles.competitionTag}>{competition}</div>}
         {kickoff && (
@@ -37,10 +37,19 @@ export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, pr
         <span style={{ ...styles.team, textAlign: "right" }}>{awayTeam}</span>
       </div>
 
-      <div style={styles.xgRow}>
-        <span style={styles.xgLabel}>Expected Goals</span>
-        <span style={styles.xgValue}>{expectedGoals.home} – {expectedGoals.away}</span>
+      <div style={styles.summaryLine}>
+        xG {expectedGoals.home} – {expectedGoals.away} · BTTS {btts.yes.probability.toFixed(0)}% · O2.5 {overUnder.over25.probability.toFixed(0)}%
       </div>
+
+      {recommendedMarket && (
+        <div style={styles.recommended}>
+          <span style={styles.recommendedLabel}>Model lean</span>
+          <span style={styles.recommendedMarket}>
+            {recommendedMarket.icon} {recommendedMarket.key}
+          </span>
+          <span style={styles.recommendedProb}>{recommendedMarket.data.probability.toFixed(1)}%</span>
+        </div>
+      )}
 
       <div style={styles.grid}>
         {pills.map((p, i) => (
@@ -56,9 +65,7 @@ export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, pr
         ))}
       </div>
 
-      <button style={styles.button} onClick={() => onSelect({ competition, homeTeam, awayTeam, kickoff, prediction })}>
-        View Full Analysis →
-      </button>
+      <div style={styles.footerHint}>Tap for full analysis →</div>
     </div>
   );
 }
@@ -71,6 +78,7 @@ const styles = {
     padding: "18px",
     margin: "14px 0",
     boxShadow: "0 4px 16px rgba(0,0,0,0.3)",
+    cursor: "pointer",
   },
   topRow: {
     display: "flex",
@@ -98,7 +106,7 @@ const styles = {
     gridTemplateColumns: "1fr auto 1fr",
     alignItems: "center",
     gap: "8px",
-    marginBottom: "10px",
+    marginBottom: "8px",
   },
   team: {
     fontSize: "16px",
@@ -110,21 +118,43 @@ const styles = {
     fontSize: "11px",
     fontWeight: 700,
   },
-  xgRow: {
+  summaryLine: {
+    fontSize: "12px",
+    color: "#888",
+    marginBottom: "12px",
+  },
+  recommended: {
     display: "flex",
+    alignItems: "center",
     justifyContent: "space-between",
-    background: "#1a1a22",
-    borderRadius: "8px",
-    padding: "8px 12px",
+    background: "rgba(34,197,94,0.08)",
+    border: "1px solid rgba(34,197,94,0.25)",
+    borderRadius: "10px",
+    padding: "10px 12px",
     marginBottom: "14px",
   },
-  xgLabel: { fontSize: "12px", color: "#888" },
-  xgValue: { fontSize: "12px", fontWeight: 700, color: "#ddd" },
+  recommendedLabel: {
+    fontSize: "10px",
+    color: "#888",
+    textTransform: "uppercase",
+    letterSpacing: "0.5px",
+    fontWeight: 700,
+  },
+  recommendedMarket: {
+    fontSize: "13px",
+    fontWeight: 700,
+    color: "#fff",
+  },
+  recommendedProb: {
+    fontSize: "15px",
+    fontWeight: 800,
+    color: "#22c55e",
+  },
   grid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr",
     gap: "8px",
-    marginBottom: "14px",
+    marginBottom: "10px",
   },
   pill: {
     background: "#1a1a22",
@@ -148,15 +178,9 @@ const styles = {
     height: "8px",
     borderRadius: "50%",
   },
-  button: {
-    background: "#2563eb",
-    color: "#fff",
-    border: "none",
-    borderRadius: "10px",
-    padding: "12px",
-    width: "100%",
-    fontSize: "14px",
-    fontWeight: 700,
-    cursor: "pointer",
+  footerHint: {
+    fontSize: "11px",
+    color: "#555",
+    textAlign: "center",
   },
 };
