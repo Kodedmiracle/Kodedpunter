@@ -1,3 +1,5 @@
+import TeamCrest from "./TeamCrest";
+
 function confidenceColor(confidence) {
   switch (confidence) {
     case "VERY HIGH": return "#22e584";
@@ -10,7 +12,7 @@ function confidenceColor(confidence) {
 
 const PILL_ACCENTS = ["#8b5cf6", "#fbbf24", "#ec4899", "#22d3ee", "#22e584", "#22e584"];
 
-export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, prediction, recommendedMarket, onSelect }) {
+export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, awayCrest, kickoff, prediction, recommendedMarket, onSelect }) {
   const { matchResult, btts, overUnder, expectedGoals } = prediction;
 
   const pills = [
@@ -23,7 +25,7 @@ export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, pr
   ];
 
   return (
-    <div style={styles.card} onClick={() => onSelect({ competition, homeTeam, awayTeam, kickoff, prediction })}>
+    <div style={styles.card} onClick={() => onSelect({ competition, homeTeam, awayTeam, homeCrest, awayCrest, kickoff, prediction })}>
       <div style={styles.topRow}>
         {competition && <div style={styles.competitionTag}>{competition}</div>}
         {kickoff && (
@@ -34,9 +36,15 @@ export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, pr
       </div>
 
       <div style={styles.header}>
-        <span style={styles.team}>{homeTeam}</span>
+        <div style={styles.teamBlock}>
+          <TeamCrest src={homeCrest} name={homeTeam} size={26} />
+          <span style={styles.team}>{homeTeam}</span>
+        </div>
         <span style={styles.vs}>VS</span>
-        <span style={{ ...styles.team, textAlign: "right" }}>{awayTeam}</span>
+        <div style={{ ...styles.teamBlock, justifyContent: "flex-end" }}>
+          <span style={{ ...styles.team, textAlign: "right" }}>{awayTeam}</span>
+          <TeamCrest src={awayCrest} name={awayTeam} size={26} />
+        </div>
       </div>
 
       <div style={styles.summaryLine}>
@@ -74,8 +82,8 @@ export default function MatchCard({ competition, homeTeam, awayTeam, kickoff, pr
 
 const styles = {
   card: {
-    background: "linear-gradient(160deg, var(--card-1), var(--card-2))",
-    border: "1px solid var(--border)",
+    background: "linear-gradient(160deg, #1a0f33, #120a22)",
+    border: "1px solid rgba(255,255,255,0.08)",
     borderRadius: "18px",
     padding: "18px",
     margin: "14px 0",
@@ -89,7 +97,7 @@ const styles = {
     marginBottom: "10px",
   },
   competitionTag: {
-    background: "linear-gradient(90deg, var(--violet), var(--pink))",
+    background: "linear-gradient(90deg, #8b5cf6, #ec4899)",
     color: "#fff",
     fontSize: "10px",
     fontWeight: 800,
@@ -110,13 +118,18 @@ const styles = {
     gap: "8px",
     marginBottom: "8px",
   },
+  teamBlock: {
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+  },
   team: {
-    fontSize: "16px",
+    fontSize: "15px",
     fontWeight: 800,
     lineHeight: 1.2,
   },
   vs: {
-    color: "var(--pink)",
+    color: "#ec4899",
     fontSize: "11px",
     fontWeight: 800,
   },

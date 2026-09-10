@@ -7,6 +7,7 @@ const {
   teamStatsFromStanding,
   computeLeagueAvg,
   fetchUpcomingFixtures,
+  crestFromStandings,
 } = require('./src/engine/fetchTeamData.cjs');
 
 function sleep(ms) {
@@ -30,39 +31,47 @@ async function processCompetition(comp) {
   await sleep(6500);
 
   for (const fixture of fixtures) {
-    const homeRow = table.find((r) => r.team.name === fixture.homeTeam);
-    const awayRow = table.find((r) => r.team.name === fixture.awayTeam);
-    if (!homeRow || !awayRow) {
-      console.log(`Skipping ${fixture.homeTeam} vs ${fixture.awayTeam} — team not found in standings`);
-      continue;
+    try {
+      const homeRow = table.find((r) => r.team.name === fixture.homeTeam);
+      const awayRow = table.find((r) => r.team.name === fixture.awayTeam);
+      if (!homeRow || !awayRow) {
+        console.log(`Skipping ${fixture.homeTeam} vs ${fixture.awayTeam} — team not found in standings`);
+        continue;
+      }
+
+      const homeStats = teamStatsFromStanding(homeRow);
+      const awayStats = teamStatsFromStanding(awayRow);
+
+      await sleep(6500);
+      const homeRecent = await fetchRecentMatches(homeRow.team.id);
+      await sleep(6500);
+      const awayRecent = await fetchRecentMatches(awayRow.team.id);
+
+      const prediction = predictMatch({
+        homeTeamStats: homeStats,
+        awayTeamStats: awayStats,
+        homeRecentMatches: homeRecent,
+        awayRecentMatches: awayRecent,
+        leagueAvg,
+        homeAdvantage: 1.2,
+      });
+
+      results.push({
+        competition: comp.name,
+        homeTeam: fixture.homeTeam.replace(' FC', ''),
+        awayTeam: fixture.awayTeam.replace(' FC', ''),
+        homeCrest: crestFromStandings(table, fixture.homeTeam),
+        awayCrest: crestFromStandings(table, fixture.awayTeam),
+        kickoff: fixture.kickoff,
+        prediction,
+      });
+
+      console.log(`Done: ${fixture.homeTeam} vs ${fixture.awayTeam}`);
+    } catch (err) {
+      // A single flaky fetch shouldn't cost us every fixture already
+      // completed for this competition — skip this one match and continue.
+      console.log(`Skipped ${fixture.homeTeam} vs ${fixture.awayTeam} — ${err.message}`);
     }
-
-    const homeStats = teamStatsFromStanding(homeRow);
-    const awayStats = teamStatsFromStanding(awayRow);
-
-    await sleep(6500);
-    const homeRecent = await fetchRecentMatches(homeRow.team.id);
-    await sleep(6500);
-    const awayRecent = await fetchRecentMatches(awayRow.team.id);
-
-    const prediction = predictMatch({
-      homeTeamStats: homeStats,
-      awayTeamStats: awayStats,
-      homeRecentMatches: homeRecent,
-      awayRecentMatches: awayRecent,
-      leagueAvg,
-      homeAdvantage: 1.2,
-    });
-
-    results.push({
-      competition: comp.name,
-      homeTeam: fixture.homeTeam.replace(' FC', ''),
-      awayTeam: fixture.awayTeam.replace(' FC', ''),
-      kickoff: fixture.kickoff,
-      prediction,
-    });
-
-    console.log(`Done: ${fixture.homeTeam} vs ${fixture.awayTeam}`);
   }
 
   return results;
@@ -76,6 +85,8 @@ async function run() {
       const compResults = await processCompetition(comp);
       allResults = allResults.concat(compResults);
     } catch (err) {
+      // Only reaches here if standings/fixtures themselves fail to load —
+      // per-fixture errors are now caught above and don't propagate up.
       console.log(`Error processing ${comp.name}: ${err.message}`);
     }
   }

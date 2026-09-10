@@ -52,6 +52,14 @@ function teamStatsFromStanding(standingRow) {
   };
 }
 
+// Crest URL for a team, looked up from the standings table by name.
+// Returns null if not found rather than throwing, so a missing crest
+// never breaks the whole run.
+function crestFromStandings(table, teamName) {
+  const row = table.find((r) => r.team.name === teamName);
+  return row && row.team.crest ? row.team.crest : null;
+}
+
 function computeLeagueAvg(table) {
   let totalGoals = 0;
   let totalGames = 0;
@@ -69,4 +77,5 @@ module.exports = {
   teamStatsFromStanding,
   computeLeagueAvg,
   fetchUpcomingFixtures,
+  crestFromStandings,
 };

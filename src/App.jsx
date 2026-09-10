@@ -132,6 +132,8 @@ function App() {
           competition={match.competition}
           homeTeam={match.homeTeam}
           awayTeam={match.awayTeam}
+          homeCrest={match.homeCrest}
+          awayCrest={match.awayCrest}
           kickoff={match.kickoff}
           prediction={match.prediction}
           recommendedMarket={getRecommendedMarket(match, matches)}
