@@ -1,3 +1,5 @@
+import TeamCrest from "./TeamCrest";
+
 function generateExplanation(match) {
   const { homeTeam, awayTeam, prediction } = match;
   const { matchResult, btts, overUnder, expectedGoals } = prediction;
@@ -42,7 +44,7 @@ function confidenceColor(confidence) {
 }
 
 export default function MatchDetail({ match, onBack }) {
-  const { competition, homeTeam, awayTeam, kickoff, prediction } = match;
+  const { competition, homeTeam, awayTeam, homeCrest, awayCrest, kickoff, prediction } = match;
   const { matchResult, doubleChance, btts, overUnder, topScorelines, expectedGoals } = prediction;
 
   return (
@@ -53,9 +55,18 @@ export default function MatchDetail({ match, onBack }) {
 
       {competition && <div style={styles.competitionTag}>{competition}</div>}
 
-      <h2 style={styles.title}>
-        {homeTeam} <span style={styles.vsInline}>vs</span> {awayTeam}
-      </h2>
+      <div style={styles.teamsHeader}>
+        <div style={styles.teamHeaderBlock}>
+          <TeamCrest src={homeCrest} name={homeTeam} size={36} />
+          <span style={styles.teamHeaderName}>{homeTeam}</span>
+        </div>
+        <span style={styles.vsInline}>vs</span>
+        <div style={{ ...styles.teamHeaderBlock, flexDirection: "row-reverse" }}>
+          <TeamCrest src={awayCrest} name={awayTeam} size={36} />
+          <span style={styles.teamHeaderName}>{awayTeam}</span>
+        </div>
+      </div>
+
       {kickoff && (
         <p style={styles.kickoff}>{new Date(kickoff).toLocaleString()}</p>
       )}
@@ -155,13 +166,29 @@ const styles = {
     fontWeight: 800,
     padding: "4px 10px",
     borderRadius: "20px",
-    marginBottom: "10px",
+    marginBottom: "14px",
     textTransform: "uppercase",
     letterSpacing: "0.5px",
   },
-  title: { fontSize: "21px", fontWeight: 800, marginBottom: "4px" },
-  vsInline: { color: "#ec4899", fontSize: "14px", fontWeight: 700 },
-  kickoff: { color: "#a191c4", fontSize: "13px", marginBottom: "14px" },
+  teamsHeader: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: "10px",
+    marginBottom: "4px",
+  },
+  teamHeaderBlock: {
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    flex: 1,
+  },
+  teamHeaderName: {
+    fontSize: "18px",
+    fontWeight: 800,
+  },
+  vsInline: { color: "#ec4899", fontSize: "13px", fontWeight: 700 },
+  kickoff: { color: "#a191c4", fontSize: "13px", marginBottom: "14px", marginTop: "6px" },
   xgBox: {
     background: "linear-gradient(160deg, #1a0f33, #120a22)",
     border: "1px solid rgba(255,255,255,0.08)",
