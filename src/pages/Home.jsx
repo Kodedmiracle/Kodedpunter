@@ -1,12 +1,12 @@
 import { useEffect, useState, useMemo } from "react";
-import MatchCard from "./MatchCard";
-import MatchDetail from "./MatchDetail";
-import BestPicks from "./BestPicks";
-import FilterBar from "./FilterBar";
-import { extractBestPicks, getRecommendedMarket } from "./bestPicks.js";
-import "./App.css";
+import MatchCard from "../MatchCard";
+import MatchDetail from "../MatchDetail";
+import BestPicks from "../BestPicks";
+import FilterBar from "../FilterBar";
+import { extractBestPicks, getRecommendedMarket } from "../bestPicks.js";
+import "../App.css";
 
-function App() {
+function Home() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -85,10 +85,16 @@ function App() {
 
   return (
     <div style={styles.app}>
-      <h1 style={styles.title}>⚽ Kodedpunter</h1>
-      <p style={styles.subtitle}>Statistical match predictions</p>
+      <div style={styles.headerRow}>
+        <div style={styles.logoMark}>⚽</div>
+        <div>
+          <h1 style={styles.title}>Kodedpunter</h1>
+          <p style={styles.subtitle}>Statistical match predictions</p>
+        </div>
+      </div>
+
       <p style={styles.disclaimer}>
-        ⚠️ Champions League predictions are provisional until the 2026–27
+        ⚠️ Champions League predictions are provisional until the 2026-27
         league phase kicks off — teams show as evenly matched until real
         season data exists.
       </p>
@@ -126,43 +132,94 @@ function App() {
           competition={match.competition}
           homeTeam={match.homeTeam}
           awayTeam={match.awayTeam}
+          homeCrest={match.homeCrest}
+          awayCrest={match.awayCrest}
           kickoff={match.kickoff}
           prediction={match.prediction}
           recommendedMarket={getRecommendedMarket(match, matches)}
           onSelect={setSelectedMatch}
         />
       ))}
+
+      {!loading && !error && matches.length > 0 && (
+        <footer style={styles.footer}>
+          <p style={styles.footerTitle}>How this works</p>
+          <p style={styles.footerText}>
+            Predictions come from a Poisson goal model built on each team's
+            season goals scored/conceded, weighted recent form, and home
+            advantage. Markets like BTTS and Over/Under are derived directly
+            from the resulting expected-goals distribution — not separately
+            guessed. Teams with fewer than 10 games played this season are
+            pulled toward the league average to avoid overreacting to small
+            samples. These are statistical estimates, not guarantees.
+          </p>
+        </footer>
+      )}
     </div>
   );
 }
 
 const styles = {
   app: {
-    background: "#0d0d0d",
+    background: "radial-gradient(circle at 20% 0%, #1c0f38 0%, #0a0510 55%)",
     minHeight: "100vh",
     padding: "20px",
     fontFamily: "sans-serif",
   },
+  headerRow: {
+    display: "flex",
+    alignItems: "center",
+    gap: "12px",
+    marginBottom: "10px",
+  },
+  logoMark: {
+    width: "40px",
+    height: "40px",
+    borderRadius: "12px",
+    background: "linear-gradient(145deg, #8b5cf6, #ec4899)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "20px",
+    boxShadow: "0 4px 14px rgba(236,72,153,0.35)",
+  },
   title: {
     color: "#fff",
-    fontSize: "24px",
-    marginBottom: "4px",
+    fontSize: "22px",
+    fontWeight: 900,
+    margin: 0,
   },
   subtitle: {
-    color: "#888",
-    fontSize: "13px",
-    marginBottom: "8px",
+    color: "#a191c4",
+    fontSize: "12px",
+    margin: 0,
   },
   disclaimer: {
-    color: "#e0a030",
+    color: "#fbbf24",
     fontSize: "12px",
     marginBottom: "20px",
     maxWidth: "500px",
   },
   status: {
-    color: "#888",
+    color: "#a191c4",
     fontSize: "14px",
+  },
+  footer: {
+    marginTop: "24px",
+    paddingTop: "20px",
+    borderTop: "1px solid rgba(255,255,255,0.08)",
+  },
+  footerTitle: {
+    fontSize: "13px",
+    fontWeight: 800,
+    color: "#c9baE4",
+    marginBottom: "8px",
+  },
+  footerText: {
+    fontSize: "12px",
+    color: "#6b5c8a",
+    lineHeight: 1.6,
   },
 };
 
-export default App;
+export default Home;
