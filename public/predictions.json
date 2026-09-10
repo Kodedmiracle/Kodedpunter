@@ -401,6 +401,106 @@
   },
   {
     "competition": "Premier League",
+    "homeTeam": "Chelsea",
+    "awayTeam": "Hull City AFC",
+    "homeCrest": "https://crests.football-data.org/61.png",
+    "awayCrest": "https://crests.football-data.org/322.png",
+    "kickoff": "2026-09-12T14:00:00Z",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 33.6,
+          "confidence": "VERY LOW"
+        },
+        "draw": {
+          "probability": 22.4,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 43.6,
+          "confidence": "LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 56,
+          "confidence": "MEDIUM"
+        },
+        "homeOrAway": {
+          "probability": 77.2,
+          "confidence": "HIGH"
+        },
+        "drawOrAway": {
+          "probability": 66,
+          "confidence": "HIGH"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 66.5,
+          "confidence": "HIGH"
+        },
+        "no": {
+          "probability": 33.5,
+          "confidence": "VERY LOW"
+        }
+      },
+      "overUnder": {
+        "over15": {
+          "probability": 85.1,
+          "confidence": "VERY HIGH"
+        },
+        "under15": {
+          "probability": 14.9,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 66,
+          "confidence": "HIGH"
+        },
+        "under25": {
+          "probability": 34,
+          "confidence": "VERY LOW"
+        },
+        "over35": {
+          "probability": 44.2,
+          "confidence": "LOW"
+        },
+        "under35": {
+          "probability": 55.8,
+          "confidence": "MEDIUM"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "1-1",
+          "probability": 9.5
+        },
+        {
+          "score": "1-2",
+          "probability": 8.7
+        },
+        {
+          "score": "2-1",
+          "probability": 7.6
+        },
+        {
+          "score": "2-2",
+          "probability": 6.9
+        },
+        {
+          "score": "0-1",
+          "probability": 6
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.59,
+        "away": 1.83
+      }
+    }
+  },
+  {
+    "competition": "Premier League",
     "homeTeam": "Tottenham Hotspur",
     "awayTeam": "Everton",
     "homeCrest": "https://crests.football-data.org/73.png",
