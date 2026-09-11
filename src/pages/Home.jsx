@@ -6,11 +6,23 @@ import FilterBar from "../FilterBar";
 import { extractBestPicks, getRecommendedMarket } from "../bestPicks.js";
 import "../App.css";
 
+function timeAgo(isoString) {
+  if (!isoString) return null;
+  const diffMs = Date.now() - new Date(isoString).getTime();
+  const mins = Math.floor(diffMs / 60000);
+  if (mins < 60) return `${mins}m ago`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  return `${days}d ago`;
+}
+
 function Home() {
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedMatch, setSelectedMatch] = useState(null);
+  const [generatedAt, setGeneratedAt] = useState(null);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [competitionFilter, setCompetitionFilter] = useState("ALL");
@@ -30,6 +42,15 @@ function Home() {
         setError(err.message);
         setLoading(false);
       });
+  }, []);
+
+  useEffect(() => {
+    fetch("/meta.json")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data?.generatedAt) setGeneratedAt(data.generatedAt);
+      })
+      .catch(() => {});
   }, []);
 
   const competitions = useMemo(() => {
@@ -98,6 +119,10 @@ function Home() {
         league phase kicks off — teams show as evenly matched until real
         season data exists.
       </p>
+
+      {generatedAt && (
+        <p style={styles.status}>Model updated {timeAgo(generatedAt)}</p>
+      )}
 
       {loading && <p style={styles.status}>Loading predictions...</p>}
       {error && <p style={styles.status}>Error: {error}</p>}

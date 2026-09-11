@@ -94,6 +94,7 @@ async function run() {
 
   fs.mkdirSync('public', { recursive: true });
   fs.writeFileSync('public/predictions.json', JSON.stringify(allResults, null, 2));
+  fs.writeFileSync('public/meta.json', JSON.stringify({ generatedAt: new Date().toISOString() }, null, 2));
   console.log(`\nSaved ${allResults.length} total predictions to public/predictions.json`);
 }
 

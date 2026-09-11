@@ -71,7 +71,7 @@ export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, 
       </div>
 
       <div style={styles.summaryLine}>
-        xG {expectedGoals.home} – {expectedGoals.away} · BTTS {btts.yes.probability.toFixed(0)}% · O2.5 {overUnder.over25.probability.toFixed(0)}%
+        Model exp. goals {expectedGoals.home} – {expectedGoals.away} · BTTS {btts.yes.probability.toFixed(0)}% · O2.5 {overUnder.over25.probability.toFixed(0)}%
       </div>
 
       {recommendedMarket && (
