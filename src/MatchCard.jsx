@@ -37,9 +37,13 @@ export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, 
   async function handleTrack(e, pill) {
     e.stopPropagation();
     if (trackedMarkets.includes(pill.key)) return;
+
+    setTrackedMarkets((prev) => [...prev, pill.key]);
+
     const result = await trackPrediction(matchInfo, pill.key, pill.label, pill.value.probability);
-    if (result.data || result.duplicate) {
-      setTrackedMarkets((prev) => [...prev, pill.key]);
+
+    if (result.error && !result.duplicate) {
+      setTrackedMarkets((prev) => prev.filter((k) => k !== pill.key));
     }
   }
 
