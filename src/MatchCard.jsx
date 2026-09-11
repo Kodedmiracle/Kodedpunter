@@ -14,12 +14,12 @@ function confidenceColor(confidence) {
 
 const PILL_ACCENTS = ["#8b5cf6", "#fbbf24", "#ec4899", "#22d3ee", "#22e584", "#22e584"];
 
-export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, awayCrest, kickoff, prediction, recommendedMarket, onSelect }) {
+export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, awayCrest, kickoff, matchId, prediction, recommendedMarket, onSelect }) {
   const { matchResult, btts, overUnder, expectedGoals } = prediction;
   const [trackedMarkets, setTrackedMarkets] = useState([]);
   const [showPicker, setShowPicker] = useState(false);
 
-  const matchInfo = { homeTeam, awayTeam, competition, kickoff };
+  const matchInfo = { homeTeam, awayTeam, competition, kickoff, matchId };
 
   const pills = [
     { key: "home_win", label: "Home Win", value: matchResult.homeWin, icon: "🏠" },

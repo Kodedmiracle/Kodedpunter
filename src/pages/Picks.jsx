@@ -97,6 +97,7 @@ function Picks() {
           key={i}
           competition={match.competition}
           homeTeam={match.homeTeam}
+          matchId={match.matchId}
           awayTeam={match.awayTeam}
           homeCrest={match.homeCrest}
           awayCrest={match.awayCrest}

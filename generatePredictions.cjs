@@ -58,6 +58,7 @@ async function processCompetition(comp) {
 
       results.push({
         competition: comp.name,
+      matchId: fixture.id,
         homeTeam: fixture.homeTeam.replace(' FC', ''),
         awayTeam: fixture.awayTeam.replace(' FC', ''),
         homeCrest: crestFromStandings(table, fixture.homeTeam),

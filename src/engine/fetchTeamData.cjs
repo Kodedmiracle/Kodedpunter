@@ -38,6 +38,7 @@ async function fetchUpcomingFixtures(competitionCode, limit = 5) {
   const data = await res.json();
 
   return data.matches.slice(0, limit).map((m) => ({
+    id: m.id,
     homeTeam: m.homeTeam.name,
     awayTeam: m.awayTeam.name,
     kickoff: m.utcDate,

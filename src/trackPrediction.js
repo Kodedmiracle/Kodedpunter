@@ -1,6 +1,7 @@
 import { supabase } from "./supabaseClient";
 
 function buildMatchId(match) {
+  if (match.matchId) return String(match.matchId);
   return `${match.homeTeam}-${match.awayTeam}-${match.kickoff}`;
 }
 
