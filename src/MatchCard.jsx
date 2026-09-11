@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import TeamCrest from "./TeamCrest";
+import { trackPrediction, getTrackedMarkets } from "./trackPrediction";
 
 function confidenceColor(confidence) {
   switch (confidence) {
@@ -14,15 +16,32 @@ const PILL_ACCENTS = ["#8b5cf6", "#fbbf24", "#ec4899", "#22d3ee", "#22e584", "#2
 
 export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, awayCrest, kickoff, prediction, recommendedMarket, onSelect }) {
   const { matchResult, btts, overUnder, expectedGoals } = prediction;
+  const [trackedMarkets, setTrackedMarkets] = useState([]);
+  const [showPicker, setShowPicker] = useState(false);
+
+  const matchInfo = { homeTeam, awayTeam, competition, kickoff };
 
   const pills = [
-    { label: "Home Win", value: matchResult.homeWin, icon: "🏠" },
-    { label: "Draw", value: matchResult.draw, icon: "🤝" },
-    { label: "Away Win", value: matchResult.awayWin, icon: "✈️" },
-    { label: "BTTS", value: btts.yes, icon: "⚽" },
-    { label: "Over 1.5", value: overUnder.over15, icon: "📈" },
-    { label: "Over 2.5", value: overUnder.over25, icon: "📈" },
+    { key: "home_win", label: "Home Win", value: matchResult.homeWin, icon: "🏠" },
+    { key: "draw", label: "Draw", value: matchResult.draw, icon: "🤝" },
+    { key: "away_win", label: "Away Win", value: matchResult.awayWin, icon: "✈️" },
+    { key: "btts_yes", label: "BTTS", value: btts.yes, icon: "⚽" },
+    { key: "over_1_5", label: "Over 1.5", value: overUnder.over15, icon: "📈" },
+    { key: "over_2_5", label: "Over 2.5", value: overUnder.over25, icon: "📈" },
   ];
+
+  useEffect(() => {
+    getTrackedMarkets(matchInfo).then(setTrackedMarkets);
+  }, [homeTeam, awayTeam, kickoff]);
+
+  async function handleTrack(e, pill) {
+    e.stopPropagation();
+    if (trackedMarkets.includes(pill.key)) return;
+    const result = await trackPrediction(matchInfo, pill.key, pill.label, pill.value.probability);
+    if (result.data || result.duplicate) {
+      setTrackedMarkets((prev) => [...prev, pill.key]);
+    }
+  }
 
   return (
     <div style={styles.card} onClick={() => onSelect({ competition, homeTeam, awayTeam, homeCrest, awayCrest, kickoff, prediction })}>
@@ -76,6 +95,38 @@ export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, 
       </div>
 
       <div style={styles.footerHint}>Tap for full analysis →</div>
+
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowPicker((s) => !s);
+        }}
+        style={styles.trackToggleBtn}
+      >
+        📌 {showPicker ? "Hide markets" : "Track a pick"} {trackedMarkets.length > 0 && `(${trackedMarkets.length} tracked)`}
+      </button>
+
+      {showPicker && (
+        <div style={styles.pickerPanel}>
+          {pills.map((p, i) => {
+            const isTracked = trackedMarkets.includes(p.key);
+            return (
+              <button
+                key={i}
+                onClick={(e) => handleTrack(e, p)}
+                disabled={isTracked}
+                style={{
+                  ...styles.pickerItem,
+                  ...(isTracked ? styles.pickerItemDone : {}),
+                }}
+              >
+                <span>{p.icon} {p.label} · {p.value.probability}%</span>
+                <span>{isTracked ? "✓" : "Track"}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -198,5 +249,41 @@ const styles = {
     fontSize: "11px",
     color: "#6b5c8a",
     textAlign: "center",
+  },
+  trackToggleBtn: {
+    width: "100%",
+    marginTop: "12px",
+    background: "rgba(139,92,246,0.15)",
+    border: "1px solid rgba(139,92,246,0.4)",
+    color: "#c9baE4",
+    borderRadius: "10px",
+    padding: "10px",
+    fontSize: "13px",
+    fontWeight: 700,
+    cursor: "pointer",
+  },
+  pickerPanel: {
+    marginTop: "10px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "6px",
+  },
+  pickerItem: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    background: "rgba(255,255,255,0.04)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    borderRadius: "10px",
+    padding: "10px 12px",
+    color: "#fff",
+    fontSize: "13px",
+    cursor: "pointer",
+  },
+  pickerItemDone: {
+    background: "rgba(34,229,132,0.1)",
+    border: "1px solid rgba(34,229,132,0.4)",
+    color: "#22e584",
+    cursor: "default",
   },
 };
