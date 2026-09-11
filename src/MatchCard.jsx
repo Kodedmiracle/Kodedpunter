@@ -285,8 +285,6 @@ const styles = {
     cursor: "pointer",
   },
   pickerItemDone: {
-    background: "rgba(34,229,132,0.1)",
-    border: "1px solid rgba(34,229,132,0.4)",
     color: "#22e584",
     cursor: "default",
   },
