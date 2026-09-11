@@ -12,9 +12,18 @@ function Tracker() {
 
   async function loadPredictions() {
     setLoading(true);
+
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      setError("Not signed in");
+      setLoading(false);
+      return;
+    }
+
     const { data, error } = await supabase
       .from("predictions")
       .select("*")
+      .eq("user_id", session.user.id)
       .order("created_at", { ascending: false });
 
     if (error) {
