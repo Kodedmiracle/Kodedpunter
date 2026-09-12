@@ -167,20 +167,6 @@ function Home() {
         />
       ))}
 
-      {!loading && !error && matches.length > 0 && (
-        <footer style={styles.footer}>
-          <p style={styles.footerTitle}>How this works</p>
-          <p style={styles.footerText}>
-            Predictions come from a Poisson goal model built on each team's
-            season goals scored/conceded, weighted recent form, and home
-            advantage. Markets like BTTS and Over/Under are derived directly
-            from the resulting expected-goals distribution — not separately
-            guessed. Teams with fewer than 10 games played this season are
-            pulled toward the league average to avoid overreacting to small
-            samples. These are statistical estimates, not guarantees.
-          </p>
-        </footer>
-      )}
     </div>
   );
 }
