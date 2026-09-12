@@ -12,7 +12,6 @@ function confidenceColor(confidence) {
   }
 }
 
-const PILL_ACCENTS = ["#8b5cf6", "#fbbf24", "#ec4899", "#22d3ee", "#22e584", "#22e584"];
 
 export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, awayCrest, kickoff, matchId, prediction, recommendedMarket, onSelect }) {
   const { matchResult, btts, overUnder, expectedGoals } = prediction;
@@ -53,7 +52,7 @@ export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, 
         {competition && <div style={styles.competitionTag}>{competition}</div>}
         {kickoff && (
           <div style={styles.kickoff}>
-            {new Date(kickoff).toLocaleDateString(undefined, { month: "short", day: "numeric" })}
+            {new Date(kickoff).toLocaleDateString(undefined, { month: "short", day: "numeric" })} · {new Date(kickoff).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })}
           </div>
         )}
       </div>
@@ -86,7 +85,7 @@ export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, 
 
       <div style={styles.grid}>
         {pills.map((p, i) => (
-          <div key={i} style={{ ...styles.pill, borderTop: `2px solid ${PILL_ACCENTS[i]}` }}>
+          <div key={i} style={{ ...styles.pill, borderTop: `2px solid ${confidenceColor(p.value.confidence)}` }}>
             <div style={styles.pillTop}>
               <span>{p.icon} {p.label}</span>
             </div>
@@ -107,7 +106,7 @@ export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, 
         }}
         style={styles.trackToggleBtn}
       >
-        📌 {showPicker ? "Hide markets" : "Track a pick"} {trackedMarkets.length > 0 && `(${trackedMarkets.length} tracked)`}
+        📌 {showPicker ? "Hide markets" : "Track a pick"}
       </button>
 
       {showPicker && (
