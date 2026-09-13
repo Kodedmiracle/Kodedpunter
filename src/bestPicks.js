@@ -23,6 +23,12 @@ const USEFULNESS = {
   under25: 0.6,
 };
 
+const INCLUDE_CL_IN_BEST_PICKS = false;
+
+function isProvisional(match) {
+  return match.competition === "Champions League";
+}
+
 function buildCandidates(prediction) {
   const { matchResult, doubleChance, btts, overUnder } = prediction;
   return [
@@ -81,7 +87,11 @@ export function extractBestPicks(matches, limit = 10) {
   if (!matches || matches.length === 0) return [];
 
   const placeholders = findPlaceholderMatches(matches);
-  const realMatches = matches.filter((m) => !placeholders.has(m));
+  const realMatches = matches.filter((m) => {
+    if (placeholders.has(m)) return false;
+    if (!INCLUDE_CL_IN_BEST_PICKS && isProvisional(m)) return false;
+    return true;
+  });
 
   const leans = realMatches.map((m) => {
     const lean = bestMarketForMatch(m.prediction);
@@ -105,5 +115,6 @@ export function extractBestPicks(matches, limit = 10) {
 export function getRecommendedMarket(match, allMatches) {
   const placeholders = findPlaceholderMatches(allMatches);
   if (placeholders.has(match)) return null;
+  if (!INCLUDE_CL_IN_BEST_PICKS && isProvisional(match)) return null;
   return bestMarketForMatch(match.prediction);
 }

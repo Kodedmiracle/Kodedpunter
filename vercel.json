@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/((?!predictions.json|meta.json|assets/).*)", "destination": "/index.html" }
+  ]
+}
