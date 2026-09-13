@@ -82,15 +82,39 @@ function calculateExpectedGoals({
     awayForm;
 
   return { homeXG: Math.max(homeXG, 0.1), awayXG: Math.max(awayXG, 0.1) };
-}function buildScoreMatrix(homeXG, awayXG, maxGoals = 6) {
+}const DIXON_COLES_RHO = -0.13;
+
+function tau(homeGoals, awayGoals, homeXG, awayXG, rho) {
+  if (homeGoals === 0 && awayGoals === 0) return 1 - homeXG * awayXG * rho;
+  if (homeGoals === 0 && awayGoals === 1) return 1 + homeXG * rho;
+  if (homeGoals === 1 && awayGoals === 0) return 1 + awayXG * rho;
+  if (homeGoals === 1 && awayGoals === 1) return 1 - rho;
+  return 1;
+}
+
+function buildScoreMatrix(homeXG, awayXG, maxGoals = 6) {
   const matrix = [];
+  let total = 0;
+
   for (let h = 0; h <= maxGoals; h++) {
     const row = [];
     for (let a = 0; a <= maxGoals; a++) {
-      row.push(poissonProb(homeXG, h) * poissonProb(awayXG, a));
+      const raw = poissonProb(homeXG, h) * poissonProb(awayXG, a);
+      const adjusted = raw * tau(h, a, homeXG, awayXG, DIXON_COLES_RHO);
+      row.push(adjusted);
+      total += adjusted;
     }
     matrix.push(row);
   }
+
+  if (total > 0) {
+    for (let h = 0; h < matrix.length; h++) {
+      for (let a = 0; a < matrix[h].length; a++) {
+        matrix[h][a] = matrix[h][a] / total;
+      }
+    }
+  }
+
   return matrix;
 }
 
@@ -199,6 +223,7 @@ function getConfidence(probabilityPercent) {
       home: Math.round(homeXG * 100) / 100,
       away: Math.round(awayXG * 100) / 100,
     },
+    scoreMatrix: matrix.map((row) => row.map((p) => Math.round(p * 1000) / 10)),
   };
 
   return withConfidence;

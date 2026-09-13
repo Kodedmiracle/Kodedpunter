@@ -1,4 +1,5 @@
 import TeamCrest from "./TeamCrest";
+import ScoreHeatmap from "./ScoreHeatmap";
 
 function generateExplanation(match) {
   const { homeTeam, awayTeam, prediction } = match;
@@ -102,6 +103,10 @@ export default function MatchDetail({ match, onBack }) {
         <Row label="Over 3.5" data={overUnder.over35} />
         <Row label="Under 3.5" data={overUnder.under35} />
       </Section>
+
+      {prediction.scoreMatrix && (
+        <ScoreHeatmap matrix={prediction.scoreMatrix} homeTeam={homeTeam} awayTeam={awayTeam} />
+      )}
 
       <Section title="Most Likely Scorelines">
         {topScorelines.map((s, i) => (
