@@ -15,9 +15,12 @@ function sleep(ms) {
 }
 
 const COMPETITIONS = [
-  { code: 'PL', name: 'Premier League', maxFixtures: 10 },
-  { code: 'CL', name: 'Champions League', maxFixtures: 4 },
-];
+ { code: 'PL',  name: 'Premier League',   maxFixtures: 10 },
+  { code: 'PD',  name: 'La Liga',          maxFixtures: 8 },
+  { code: 'SA',  name: 'Serie A',          maxFixtures: 8 },
+  { code: 'BL1', name: 'Bundesliga',       maxFixtures: 8 },
+  { code: 'FL1', name: 'Ligue 1',          maxFixtures: 8 },
+  { code: 'CL',  name: 'Champions League', maxFixtures: 4 },];
 
 async function processCompetition(comp) {
   const maxFixtures = comp.maxFixtures || 5;
