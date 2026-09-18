@@ -15,17 +15,28 @@ function sleep(ms) {
 }
 
 const COMPETITIONS = [
- { code: 'PL',  name: 'Premier League',   maxFixtures: 10 },
+  { code: 'PL',  name: 'Premier League',   maxFixtures: 10 },
   { code: 'PD',  name: 'La Liga',          maxFixtures: 8 },
   { code: 'SA',  name: 'Serie A',          maxFixtures: 8 },
   { code: 'BL1', name: 'Bundesliga',       maxFixtures: 8 },
   { code: 'FL1', name: 'Ligue 1',          maxFixtures: 8 },
-  { code: 'CL',  name: 'Champions League', maxFixtures: 4 },];
+  { code: 'CL',  name: 'Champions League', maxFixtures: 4 },
+];
 
 async function processCompetition(comp) {
   const maxFixtures = comp.maxFixtures || 5;
   console.log(`\n--- ${comp.name} ---`);
   const results = [];
+
+  const formCache = new Map();
+
+  async function recentFor(teamId) {
+    if (formCache.has(teamId)) return formCache.get(teamId);
+    await sleep(6500);
+    const recent = await fetchRecentMatches(teamId);
+    formCache.set(teamId, recent);
+    return recent;
+  }
 
   const table = await fetchStandings(comp.code);
   await sleep(6500);
@@ -45,10 +56,8 @@ async function processCompetition(comp) {
       const homeStats = teamStatsFromStanding(homeRow);
       const awayStats = teamStatsFromStanding(awayRow);
 
-      await sleep(6500);
-      const homeRecent = await fetchRecentMatches(homeRow.team.id);
-      await sleep(6500);
-      const awayRecent = await fetchRecentMatches(awayRow.team.id);
+      const homeRecent = await recentFor(homeRow.team.id);
+      const awayRecent = await recentFor(awayRow.team.id);
 
       const prediction = predictMatch({
         homeTeamStats: homeStats,
@@ -61,7 +70,7 @@ async function processCompetition(comp) {
 
       results.push({
         competition: comp.name,
-      matchId: fixture.id,
+        matchId: fixture.id,
         homeTeam: fixture.homeTeam.replace(' FC', ''),
         awayTeam: fixture.awayTeam.replace(' FC', ''),
         homeCrest: crestFromStandings(table, fixture.homeTeam),
@@ -72,8 +81,6 @@ async function processCompetition(comp) {
 
       console.log(`Done: ${fixture.homeTeam} vs ${fixture.awayTeam}`);
     } catch (err) {
-      // A single flaky fetch shouldn't cost us every fixture already
-      // completed for this competition — skip this one match and continue.
       console.log(`Skipped ${fixture.homeTeam} vs ${fixture.awayTeam} — ${err.message}`);
     }
   }
@@ -89,15 +96,16 @@ async function run() {
       const compResults = await processCompetition(comp);
       allResults = allResults.concat(compResults);
     } catch (err) {
-      // Only reaches here if standings/fixtures themselves fail to load —
-      // per-fixture errors are now caught above and don't propagate up.
       console.log(`Error processing ${comp.name}: ${err.message}`);
     }
   }
 
   fs.mkdirSync('public', { recursive: true });
   fs.writeFileSync('public/predictions.json', JSON.stringify(allResults, null, 2));
-  fs.writeFileSync('public/meta.json', JSON.stringify({ generatedAt: new Date().toISOString(), matchCount: allResults.length }, null, 2));
+  fs.writeFileSync(
+    'public/meta.json',
+    JSON.stringify({ generatedAt: new Date().toISOString(), matchCount: allResults.length }, null, 2)
+  );
   console.log(`\nSaved ${allResults.length} total predictions to public/predictions.json`);
 }
 
