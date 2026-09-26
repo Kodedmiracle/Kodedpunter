@@ -1,6 +1,6 @@
 const LIST_URL =
   "https://www.sportybet.com/api/ng/factsCenter/pcUpcomingEvents" +
-  "?sportId=sr:sport:1&marketId=1,18,10,29&pageSize=100&pageNum=1&option=1";
+  "?sportId=sr:sport:1&marketId=1,18,10,29&pageSize=100&option=1";
 
 const SHARE_URL =
   "https://www.sportybet.com/api/ng/orders/share?throwInvalidEvent=true";
@@ -21,33 +21,7 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === "GET") {
-      const r = await fetch(LIST_URL + "&_t=" + Date.now(), { headers: HEADERS });
-      const json = await r.json();
-      if (json.bizCode !== 10000) {
-        return res.status(502).json({ ok: false, message: json.message || "list failed", bizCode: json.bizCode });
-      }
       const events = [];
-      for (const tour of json.data.tournaments || []) {
-        for (const ev of tour.events || []) {
-          events.push({
-            eventId: ev.eventId,
-            league: tour.name,
-            home: ev.homeTeamName,
-            away: ev.awayTeamName,
-            start: ev.estimateStartTime,
-          });
-        }
-      }
-      return res.status(200).json({ ok: true, count: events.length, events });
-    }
-
-    if (req.method === "POST") {
-      const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body || {};
-      const outcomes = body.outcomes;
-      if (!Array.isArray(outcomes) || outcomes.length === 0) {
-        return res.status(400).json({ ok: false, message: "outcomes array required" });
-      }
-     const events = [];
       const seen = new Set();
 
       for (const page of [1, 2]) {
@@ -70,6 +44,29 @@ export default async function handler(req, res) {
             });
           }
         }
+      }
+
+      return res.status(200).json({ ok: true, count: events.length, events });
+    }
+
+    if (req.method === "POST") {
+      const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body || {};
+      const outcomes = body.outcomes;
+      if (!Array.isArray(outcomes) || outcomes.length === 0) {
+        return res.status(400).json({ ok: false, message: "outcomes array required" });
+      }
+      const r = await fetch(SHARE_URL, {
+        method: "POST",
+        headers: { ...HEADERS, "Content-Type": "application/json" },
+        body: JSON.stringify({ selections: outcomes }),
+      });
+      const json = await r.json();
+      if (json.bizCode !== 10000 || !json.data || !json.data.shareCode) {
+        return res.status(502).json({
+          ok: false,
+          message: json.message || "SportyBet did not return a code",
+          bizCode: json.bizCode,
+        });
       }
       return res.status(200).json({
         ok: true,
