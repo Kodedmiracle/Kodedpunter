@@ -1,11 +1,3 @@
-// bestPicks.js
-// Picks the single most useful market per match (not just "highest raw
-// probability"), then ranks those across all matches. Markets like Over 1.5
-// are usually high by nature and get down-weighted so they don't dominate
-// every slot. Matches with no real season data yet (all teams look
-// identical) are detected automatically and excluded, rather than
-// hardcoding a competition name that would go stale once real data exists.
-
 const USEFULNESS = {
   homeWin: 1.0,
   draw: 1.0,
@@ -45,10 +37,6 @@ function buildCandidates(prediction) {
   ];
 }
 
-/**
- * The single most useful market for one match: probability weighted by
- * how informative that market typically is, not just raw size.
- */
 function bestMarketForMatch(prediction) {
   const candidates = buildCandidates(prediction);
   return candidates
@@ -56,19 +44,12 @@ function bestMarketForMatch(prediction) {
     .sort((a, b) => b.score - a.score)[0];
 }
 
-/**
- * Detects matches with no real season data yet: every team in a competition
- * defaults to "exactly average," so those matches end up with identical
- * match-result probabilities across the whole competition. Flag any
- * competition where 2+ matches share the exact same signature — this
- * self-corrects once real data exists, instead of hardcoding a league name.
- */
 function findPlaceholderMatches(matches) {
   const bySignature = new Map();
 
   matches.forEach((m) => {
     const r = m.prediction.matchResult;
-    const sig = `${m.competition}|${r.homeWin.probability}|${r.draw.probability}|${r.awayWin.probability}`;
+    const sig = `\( {m.competition}| \){r.homeWin.probability}|\( {r.draw.probability}| \){r.awayWin.probability}`;
     if (!bySignature.has(sig)) bySignature.set(sig, []);
     bySignature.get(sig).push(m);
   });
@@ -97,6 +78,9 @@ export function extractBestPicks(matches, limit = 10) {
     const lean = bestMarketForMatch(m.prediction);
     return {
       matchLabel: `${m.homeTeam} vs ${m.awayTeam}`,
+      homeTeam: m.homeTeam,
+      awayTeam: m.awayTeam,
+      leanKey: lean.key,
       competition: m.competition,
       market: `${lean.icon} ${lean.key}`,
       probability: lean.data.probability,
@@ -110,8 +94,6 @@ export function extractBestPicks(matches, limit = 10) {
   return leans.slice(0, limit);
 }
 
-// Exposed for reuse elsewhere (e.g. showing the "recommended market" on
-// each match card without duplicating this logic).
 export function getRecommendedMarket(match, allMatches) {
   const placeholders = findPlaceholderMatches(allMatches);
   if (placeholders.has(match)) return null;
