@@ -4,12 +4,12 @@ const USEFULNESS = {
   awayWin: 1.0,
   bttsYes: 0.9,
   bttsNo: 0.9,
-  over25: 0.85,
+  over25: 0.6,
   under35: 0.7,
   homeOrDraw: 0.55,
   drawOrAway: 0.55,
   homeOrAway: 0.4,
-  over15: 0.75,
+  over15: 0.95,
   under15: 0.35,
   over05: 0.5,
   over35: 0.6,
@@ -36,9 +36,11 @@ function buildCandidates(prediction) {
     { key: "Draw or Away", icon: "🎯", data: doubleChance.drawOrAway, weight: USEFULNESS.drawOrAway },
     { key: "Over 1.5", icon: "📈", data: overUnder.over15, weight: USEFULNESS.over15 },
   ];
-  if (overUnder.over05) {
-    list.push({ key: "Over 0.5", icon: "📈", data: overUnder.over05, weight: USEFULNESS.over05 });
-  }
+  const over05 = overUnder.over05 || {
+    probability: Math.min(99, (overUnder.over15 && overUnder.over15.probability || 70) + 12),
+    confidence: "HIGH"
+  };
+  list.push({ key: "Over 0.5", icon: "📈", data: over05, weight: USEFULNESS.over05 });
   return list;
 }
 
@@ -54,7 +56,7 @@ function findPlaceholderMatches(matches) {
 
   matches.forEach((m) => {
     const r = m.prediction.matchResult;
-    const sig = `\( {m.competition}| \){r.homeWin.probability}|\( {r.draw.probability}| \){r.awayWin.probability}`;
+    const sig = `${m.competition}|${r.homeWin.probability}|${r.draw.probability}|${r.awayWin.probability}`;
     if (!bySignature.has(sig)) bySignature.set(sig, []);
     bySignature.get(sig).push(m);
   });
