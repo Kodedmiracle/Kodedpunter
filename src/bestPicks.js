@@ -9,8 +9,9 @@ const USEFULNESS = {
   homeOrDraw: 0.55,
   drawOrAway: 0.55,
   homeOrAway: 0.4,
-  over15: 0.35,
+  over15: 0.75,
   under15: 0.35,
+  over05: 0.5,
   over35: 0.6,
   under25: 0.6,
 };
@@ -23,7 +24,7 @@ function isProvisional(match) {
 
 function buildCandidates(prediction) {
   const { matchResult, doubleChance, btts, overUnder } = prediction;
-  return [
+  const list = [
     { key: "Home Win", icon: "🏠", data: matchResult.homeWin, weight: USEFULNESS.homeWin },
     { key: "Draw", icon: "🤝", data: matchResult.draw, weight: USEFULNESS.draw },
     { key: "Away Win", icon: "✈️", data: matchResult.awayWin, weight: USEFULNESS.awayWin },
@@ -35,6 +36,10 @@ function buildCandidates(prediction) {
     { key: "Draw or Away", icon: "🎯", data: doubleChance.drawOrAway, weight: USEFULNESS.drawOrAway },
     { key: "Over 1.5", icon: "📈", data: overUnder.over15, weight: USEFULNESS.over15 },
   ];
+  if (overUnder.over05) {
+    list.push({ key: "Over 0.5", icon: "📈", data: overUnder.over05, weight: USEFULNESS.over05 });
+  }
+  return list;
 }
 
 function bestMarketForMatch(prediction) {
@@ -49,11 +54,10 @@ function findPlaceholderMatches(matches) {
 
   matches.forEach((m) => {
     const r = m.prediction.matchResult;
-    const sig = `${m.competition}|${r.homeWin.probability}|${r.draw.probability}|${r.awayWin.probability}`;
+    const sig = `\( {m.competition}| \){r.homeWin.probability}|\( {r.draw.probability}| \){r.awayWin.probability}`;
     if (!bySignature.has(sig)) bySignature.set(sig, []);
     bySignature.get(sig).push(m);
   });
-
 
   const placeholders = new Set();
   bySignature.forEach((group) => {

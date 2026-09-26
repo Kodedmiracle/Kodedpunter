@@ -121,7 +121,7 @@ function buildScoreMatrix(homeXG, awayXG, maxGoals = 6) {
 function deriveMarkets(matrix) {
   let homeWin = 0, draw = 0, awayWin = 0;
   let btts = 0;
-  let over15 = 0, over25 = 0, over35 = 0;
+  let over05 = 0, let over05 = 0, over15 = 0, over25 = 0, over35 = 0;
   let scorelines = [];
 
   for (let h = 0; h < matrix.length; h++) {
@@ -136,6 +136,7 @@ function deriveMarkets(matrix) {
       if (h > 0 && a > 0) btts += p;
 
       const totalGoals = h + a;
+      if (totalGoals > 0.5) over05 += p;
       if (totalGoals > 1.5) over15 += p;
       if (totalGoals > 2.5) over25 += p;
       if (totalGoals > 3.5) over35 += p;
@@ -160,6 +161,8 @@ function deriveMarkets(matrix) {
       no: round(1 - btts),
     },
     overUnder: {
+      over05: round(over05),
+      under05: round(1 - over05),
       over15: round(over15),
       under15: round(1 - over15),
       over25: round(over25),
