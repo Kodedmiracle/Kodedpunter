@@ -47,18 +47,29 @@ export default async function handler(req, res) {
       if (!Array.isArray(outcomes) || outcomes.length === 0) {
         return res.status(400).json({ ok: false, message: "outcomes array required" });
       }
-      const r = await fetch(SHARE_URL, {
-        method: "POST",
-        headers: { ...HEADERS, "Content-Type": "application/json" },
-        body: JSON.stringify({selections: outcomes }),
-      });
-      const json = await r.json();
-      if (json.bizCode !== 10000 || !json.data || !json.data.shareCode) {
-        return res.status(502).json({
-          ok: false,
-          message: json.message || "SportyBet did not return a code",
-          bizCode: json.bizCode,
-        });
+     const events = [];
+      const seen = new Set();
+
+      for (const page of [1, 2]) {
+        const r = await fetch(
+          LIST_URL + "&pageNum=" + page + "&_t=" + Date.now(),
+          { headers: HEADERS }
+        );
+        const json = await r.json();
+        if (json.bizCode !== 10000) continue;
+        for (const tour of json.data.tournaments || []) {
+          for (const ev of tour.events || []) {
+            if (seen.has(ev.eventId)) continue;
+            seen.add(ev.eventId);
+            events.push({
+              eventId: ev.eventId,
+              league: tour.name,
+              home: ev.homeTeamName,
+              away: ev.awayTeamName,
+              start: ev.estimateStartTime,
+            });
+          }
+        }
       }
       return res.status(200).json({
         ok: true,
