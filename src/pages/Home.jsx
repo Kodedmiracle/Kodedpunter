@@ -102,7 +102,7 @@ function Home() {
     );
   }
 
-  const bestPicks = extractBestPicks(matches, 10);
+  const bestPicks = extractBestPicks(matches, 40);
 
   return (
     <div style={styles.app}>
