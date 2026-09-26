@@ -56,7 +56,17 @@ const ALIASES = {
   "sporting clube de portugal": "sporting",
   "club brugge kv": "club brugge",
   "galatasaray sk": "galatasaray",
-  "sk slavia praha": "slavia prague",
+  "sk slavia praha": "slavia prague","koln": "cologne",
+  "fc koln": "cologne",
+  "1 koln": "cologne",
+  "cologne": "cologne",
+  "paris": "psg",
+  "le mans": "le mans",
+  "le mans fc": "le mans",
+  "stade rennais": "rennes",
+  "rennes": "rennes",
+  "auxerre": "auxerre",
+  "aj auxerre": "auxerre",
 };
 
 function stripAccents(s) {
