@@ -50,7 +50,7 @@ export default async function handler(req, res) {
       const r = await fetch(SHARE_URL, {
         method: "POST",
         headers: { ...HEADERS, "Content-Type": "application/json" },
-        body: JSON.stringify({selecrions: outcomes }),
+        body: JSON.stringify({selections: outcomes }),
       });
       const json = await r.json();
       if (json.bizCode !== 10000 || !json.data || !json.data.shareCode) {
