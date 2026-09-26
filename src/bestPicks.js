@@ -54,7 +54,6 @@ function findPlaceholderMatches(matches) {
     bySignature.get(sig).push(m);
   });
 
-    const sig = `${m.competition}|${r.homeWin.probability}|${r.draw.probability}|${r.awayWin.probability}`;
 
   const placeholders = new Set();
   bySignature.forEach((group) => {
