@@ -62,10 +62,12 @@ export default async function handler(req, res) {
       });
       const json = await r.json();
       if (json.bizCode !== 10000 || !json.data || !json.data.shareCode) {
+        console.log("SportyBet share rejected:", JSON.stringify(json));
         return res.status(502).json({
           ok: false,
           message: json.message || "SportyBet did not return a code",
           bizCode: json.bizCode,
+          debug: json,
         });
       }
       return res.status(200).json({
