@@ -11,7 +11,6 @@ const USEFULNESS = {
   homeOrAway: 1.0,
   over15: 1.0,
   under15: 1.0,
-  over05: 1.0,
   over35: 1.0,
   under25: 1.0,
 };
@@ -36,11 +35,6 @@ function buildCandidates(prediction) {
     { key: "Draw or Away", icon: "🎯", data: doubleChance.drawOrAway, weight: USEFULNESS.drawOrAway },
     { key: "Over 1.5", icon: "📈", data: overUnder.over15, weight: USEFULNESS.over15 },
   ];
-  const over05 = overUnder.over05 || {
-    probability: Math.min(99, (overUnder.over15 && overUnder.over15.probability || 70) + 12),
-    confidence: "HIGH"
-  };
-  list.push({ key: "Over 0.5", icon: "📈", data: over05, weight: USEFULNESS.over05 });
   return list;
 }
 
