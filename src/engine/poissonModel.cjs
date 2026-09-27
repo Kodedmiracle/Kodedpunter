@@ -121,7 +121,7 @@ function buildScoreMatrix(homeXG, awayXG, maxGoals = 6) {
 function deriveMarkets(matrix) {
   let homeWin = 0, draw = 0, awayWin = 0;
   let btts = 0;
-  let over05 = 0, let over05 = 0, over15 = 0, over25 = 0, over35 = 0;
+  let over05 = 0, over15 = 0, over25 = 0, over35 = 0;
   let scorelines = [];
 
   for (let h = 0; h < matrix.length; h++) {
