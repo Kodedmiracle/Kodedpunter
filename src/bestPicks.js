@@ -71,6 +71,9 @@ function findPlaceholderMatches(matches) {
   return placeholders;
 }
 
+const CONFIDENCE_RANK = { 'VERY HIGH': 5, 'HIGH': 4, 'MEDIUM': 3, 'LOW': 2, 'VERY LOW': 1 };
+const MIN_CONFIDENCE = 'HIGH';
+
 export function extractBestPicks(matches, limit = 10) {
   if (!matches || matches.length === 0) return [];
 
@@ -81,20 +84,22 @@ export function extractBestPicks(matches, limit = 10) {
     return true;
   });
 
-  const leans = realMatches.map((m) => {
-    const lean = bestMarketForMatch(m.prediction);
-    return {
-      matchLabel: `${m.homeTeam} vs ${m.awayTeam}`,
-      homeTeam: m.homeTeam,
-      awayTeam: m.awayTeam,
-      leanKey: lean.key,
-      competition: m.competition,
-      market: `${lean.icon} ${lean.key}`,
-      probability: lean.data.probability,
-      confidence: lean.data.confidence,
-      score: lean.score,
-    };
-  });
+  const leans = realMatches
+    .map((m) => {
+      const lean = bestMarketForMatch(m.prediction);
+      return {
+        matchLabel: `${m.homeTeam} vs ${m.awayTeam}`,
+        homeTeam: m.homeTeam,
+        awayTeam: m.awayTeam,
+        leanKey: lean.key,
+        competition: m.competition,
+        market: `${lean.icon} ${lean.key}`,
+        probability: lean.data.probability,
+        confidence: lean.data.confidence,
+        score: lean.score,
+      };
+    })
+    .filter((l) => CONFIDENCE_RANK[l.confidence] >= CONFIDENCE_RANK[MIN_CONFIDENCE]);
 
   leans.sort((a, b) => b.score - a.score);
 
