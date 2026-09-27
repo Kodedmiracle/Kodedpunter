@@ -114,12 +114,6 @@ function Home() {
         </div>
       </div>
 
-      <p style={styles.disclaimer}>
-        ⚠️ Champions League predictions are provisional until the 2026-27
-        league phase kicks off — teams show as evenly matched until real
-        season data exists.
-      </p>
-
       {generatedAt && (
         <p style={styles.status}>Model updated {timeAgo(generatedAt)}</p>
       )}

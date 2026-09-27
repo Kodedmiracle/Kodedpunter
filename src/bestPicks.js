@@ -16,7 +16,7 @@ const USEFULNESS = {
   under25: 1.0,
 };
 
-const INCLUDE_CL_IN_BEST_PICKS = false;
+const INCLUDE_CL_IN_BEST_PICKS = true;
 
 function isProvisional(match) {
   return match.competition === "Champions League";
