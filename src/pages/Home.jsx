@@ -27,6 +27,7 @@ function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [competitionFilter, setCompetitionFilter] = useState("ALL");
   const [sortBy, setSortBy] = useState("default");
+  const [dateFilter, setDateFilter] = useState("TODAY");
 
   useEffect(() => {
     fetch("/predictions.json")
@@ -61,6 +62,16 @@ function Home() {
   const filteredMatches = useMemo(() => {
     let result = [...matches];
 
+    if (dateFilter === "TODAY") {
+      const watNow = new Date(Date.now() + 60 * 60 * 1000);
+      const watToday = watNow.toISOString().slice(0, 10);
+      result = result.filter((m) => {
+        if (!m.kickoff) return false;
+        const watKickoff = new Date(new Date(m.kickoff).getTime() + 60 * 60 * 1000);
+        return watKickoff.toISOString().slice(0, 10) === watToday;
+      });
+    }
+
     if (competitionFilter !== "ALL") {
       result = result.filter((m) => m.competition === competitionFilter);
     }
@@ -94,7 +105,7 @@ function Home() {
     }
 
     return result;
-  }, [matches, competitionFilter, searchTerm, sortBy]);
+  }, [matches, competitionFilter, searchTerm, sortBy, dateFilter]);
 
   if (selectedMatch) {
     return (
@@ -135,6 +146,8 @@ function Home() {
             competitions={competitions}
             sortBy={sortBy}
             onSortChange={setSortBy}
+            dateFilter={dateFilter}
+            onDateFilterChange={setDateFilter}
           />
 
           <BestPicks picks={bestPicks} />
