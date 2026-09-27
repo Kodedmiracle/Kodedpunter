@@ -152,7 +152,12 @@ function Home() {
 
           <BestPicks picks={bestPicks} />
 
-          {filteredMatches.length === 0 && (
+          {filteredMatches.length === 0 && dateFilter === "TODAY" && (
+            <p style={styles.status}>
+              No matches in our tracked leagues today — check back tomorrow, or switch to "All Upcoming" to see what's coming this week.
+            </p>
+          )}
+          {filteredMatches.length === 0 && dateFilter !== "TODAY" && (
             <p style={styles.status}>No matches found.</p>
           )}
         </>
