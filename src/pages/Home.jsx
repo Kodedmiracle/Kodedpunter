@@ -113,7 +113,7 @@ function Home() {
     );
   }
 
-  const bestPicks = extractBestPicks(matches, 40);
+  const bestPicks = extractBestPicks(filteredMatches, 40);
 
   return (
     <div style={styles.app}>
