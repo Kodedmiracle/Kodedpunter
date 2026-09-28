@@ -240,8 +240,26 @@ function mapConfidence(marketObj) {
   return out;
 }
 
+function predictFromXG(homeXG, awayXG) {
+  const matrix = buildScoreMatrix(homeXG, awayXG);
+  const markets = deriveMarkets(matrix);
+  return {
+    matchResult: mapConfidence(markets.matchResult),
+    doubleChance: mapConfidence(markets.doubleChance),
+    btts: mapConfidence(markets.btts),
+    overUnder: mapConfidence(markets.overUnder),
+    topScorelines: markets.topScorelines,
+    expectedGoals: {
+      home: Math.round(homeXG * 100) / 100,
+      away: Math.round(awayXG * 100) / 100,
+    },
+    scoreMatrix: matrix.map((row) => row.map((p) => Math.round(p * 1000) / 10)),
+  };
+}
+
 module.exports = {
   predictMatch,
+  predictFromXG,
   calculateStrength,
   calculateFormModifier,
   calculateExpectedGoals,
