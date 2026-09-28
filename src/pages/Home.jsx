@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import MatchCard from "../MatchCard";
 import MatchDetail from "../MatchDetail";
 import BestPicks from "../BestPicks";
+import BookToday from "../BookToday";
 import FilterBar from "../FilterBar";
 import { extractBestPicks, getRecommendedMarket } from "../bestPicks.js";
 import "../App.css";
@@ -155,6 +156,8 @@ function Home() {
           />
 
           <BestPicks picks={bestPicks} />
+
+          <BookToday matches={filteredMatches} allMatches={matches} />
 
           {filteredMatches.length === 0 && dateFilter === "TODAY" && (
             <p style={styles.status}>
