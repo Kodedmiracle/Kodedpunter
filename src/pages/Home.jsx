@@ -30,13 +30,17 @@ function Home() {
   const [dateFilter, setDateFilter] = useState("TODAY");
 
   useEffect(() => {
-    fetch("/predictions.json")
-      .then((res) => {
+    Promise.all([
+      fetch("/predictions.json").then((res) => {
         if (!res.ok) throw new Error("Could not load predictions");
         return res.json();
-      })
-      .then((data) => {
-        setMatches(data);
+      }),
+      fetch("/extra-predictions.json")
+        .then((res) => (res.ok ? res.json() : []))
+        .catch(() => []),
+    ])
+      .then(([main, extra]) => {
+        setMatches([...main, ...extra]);
         setLoading(false);
       })
       .catch((err) => {
