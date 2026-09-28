@@ -28,9 +28,15 @@ jobs:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: node collectResults.cjs
 
+      - name: Build team ratings
+        run: node buildRatings.cjs
+
+      - name: Generate extra predictions
+        run: node generateExtraPredictions.cjs
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
-          git diff --cached --quiet || (git commit -m "Collect daily fixtures and results" && git pull --rebase origin main && git push)
+          git add data/ public/extra-predictions.json
+          git diff --cached --quiet || (git commit -m "Collect results and refresh extra predictions" && git pull --rebase origin main && git push)
