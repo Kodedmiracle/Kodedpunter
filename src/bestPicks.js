@@ -2,17 +2,17 @@ const USEFULNESS = {
   homeWin: 1.0,
   draw: 1.0,
   awayWin: 1.0,
-  bttsYes: 1.0,
-  bttsNo: 1.0,
-  over25: 1.0,
-  under35: 1.0,
-  homeOrDraw: 1.0,
-  drawOrAway: 1.0,
-  homeOrAway: 1.0,
-  over15: 1.0,
-  under15: 1.0,
-  over35: 1.0,
-  under25: 1.0,
+  bttsYes: 0.9,
+  bttsNo: 0.9,
+  over25: 0.85,
+  under35: 0.75,
+  homeOrDraw: 0.55,
+  drawOrAway: 0.55,
+  homeOrAway: 0.4,
+  over15: 0.4,
+  under15: 0.45,
+  over35: 0.65,
+  under25: 0.7,
 };
 
 const INCLUDE_CL_IN_BEST_PICKS = true;
@@ -23,7 +23,7 @@ function isProvisional(match) {
 
 function buildCandidates(prediction) {
   const { matchResult, doubleChance, btts, overUnder } = prediction;
-  const list = [
+  return [
     { key: "Home Win", icon: "🏠", data: matchResult.homeWin, weight: USEFULNESS.homeWin },
     { key: "Draw", icon: "🤝", data: matchResult.draw, weight: USEFULNESS.draw },
     { key: "Away Win", icon: "✈️", data: matchResult.awayWin, weight: USEFULNESS.awayWin },
@@ -35,7 +35,6 @@ function buildCandidates(prediction) {
     { key: "Draw or Away", icon: "🎯", data: doubleChance.drawOrAway, weight: USEFULNESS.drawOrAway },
     { key: "Over 1.5", icon: "📈", data: overUnder.over15, weight: USEFULNESS.over15 },
   ];
-  return list;
 }
 
 function bestMarketForMatch(prediction) {
@@ -50,7 +49,14 @@ function findPlaceholderMatches(matches) {
 
   matches.forEach((m) => {
     const r = m.prediction.matchResult;
-    const sig = `${m.competition}|${r.homeWin.probability}|${r.draw.probability}|${r.awayWin.probability}`;
+    const sig =
+      m.competition +
+      "|" +
+      r.homeWin.probability +
+      "|" +
+      r.draw.probability +
+      "|" +
+      r.awayWin.probability;
     if (!bySignature.has(sig)) bySignature.set(sig, []);
     bySignature.get(sig).push(m);
   });
@@ -65,8 +71,14 @@ function findPlaceholderMatches(matches) {
   return placeholders;
 }
 
-const CONFIDENCE_RANK = { 'VERY HIGH': 5, 'HIGH': 4, 'MEDIUM': 3, 'LOW': 2, 'VERY LOW': 1 };
-const MIN_CONFIDENCE = 'HIGH';
+const CONFIDENCE_RANK = {
+  "VERY HIGH": 5,
+  HIGH: 4,
+  MEDIUM: 3,
+  LOW: 2,
+  "VERY LOW": 1,
+};
+const MIN_CONFIDENCE = "MEDIUM";
 
 export function extractBestPicks(matches, limit = 10) {
   if (!matches || matches.length === 0) return [];
@@ -95,7 +107,11 @@ export function extractBestPicks(matches, limit = 10) {
     })
     .filter((l) => CONFIDENCE_RANK[l.confidence] >= CONFIDENCE_RANK[MIN_CONFIDENCE]);
 
-  leans.sort((a, b) => b.score - a.score);
+  leans.sort((a, b) => {
+    const confDiff = CONFIDENCE_RANK[b.confidence] - CONFIDENCE_RANK[a.confidence];
+    if (confDiff !== 0) return confDiff;
+    return b.score - a.score;
+  });
 
   return leans.slice(0, limit);
 }
