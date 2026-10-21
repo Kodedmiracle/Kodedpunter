@@ -6091,180 +6091,6 @@
   },
   {
     "competition": "Ligue 1",
-    "matchId": 559655,
-    "homeTeam": "Toulouse",
-    "awayTeam": "ES Troyes AC",
-    "homeCrest": "https://crests.football-data.org/511.png",
-    "awayCrest": "https://crests.football-data.org/531.png",
-    "kickoff": "2026-10-24T15:15:00Z",
-    "prediction": {
-      "matchResult": {
-        "homeWin": {
-          "probability": 66.7,
-          "confidence": "HIGH"
-        },
-        "draw": {
-          "probability": 19.6,
-          "confidence": "VERY LOW"
-        },
-        "awayWin": {
-          "probability": 13.7,
-          "confidence": "VERY LOW"
-        }
-      },
-      "doubleChance": {
-        "homeOrDraw": {
-          "probability": 86.3,
-          "confidence": "VERY HIGH"
-        },
-        "homeOrAway": {
-          "probability": 80.4,
-          "confidence": "VERY HIGH"
-        },
-        "drawOrAway": {
-          "probability": 33.3,
-          "confidence": "VERY LOW"
-        }
-      },
-      "btts": {
-        "yes": {
-          "probability": 61,
-          "confidence": "MEDIUM"
-        },
-        "no": {
-          "probability": 39,
-          "confidence": "LOW"
-        }
-      },
-      "overUnder": {
-        "over05": {
-          "probability": 96.1,
-          "confidence": "VERY HIGH"
-        },
-        "under05": {
-          "probability": 3.9,
-          "confidence": "VERY LOW"
-        },
-        "over15": {
-          "probability": 87.7,
-          "confidence": "VERY HIGH"
-        },
-        "under15": {
-          "probability": 12.3,
-          "confidence": "VERY LOW"
-        },
-        "over25": {
-          "probability": 68.3,
-          "confidence": "HIGH"
-        },
-        "under25": {
-          "probability": 31.7,
-          "confidence": "VERY LOW"
-        },
-        "over35": {
-          "probability": 46.5,
-          "confidence": "LOW"
-        },
-        "under35": {
-          "probability": 53.5,
-          "confidence": "MEDIUM"
-        }
-      },
-      "topScorelines": [
-        {
-          "score": "2-1",
-          "probability": 9.6
-        },
-        {
-          "score": "2-0",
-          "probability": 9
-        },
-        {
-          "score": "1-1",
-          "probability": 8.8
-        },
-        {
-          "score": "3-1",
-          "probability": 7.9
-        },
-        {
-          "score": "3-0",
-          "probability": 7.4
-        }
-      ],
-      "expectedGoals": {
-        "home": 2.47,
-        "away": 1.07
-      },
-      "scoreMatrix": [
-        [
-          3.9,
-          2.1,
-          1.7,
-          0.6,
-          0.2,
-          0,
-          0
-        ],
-        [
-          6.3,
-          8.8,
-          4.1,
-          1.5,
-          0.4,
-          0.1,
-          0
-        ],
-        [
-          9,
-          9.6,
-          5.1,
-          1.8,
-          0.5,
-          0.1,
-          0
-        ],
-        [
-          7.4,
-          7.9,
-          4.2,
-          1.5,
-          0.4,
-          0.1,
-          0
-        ],
-        [
-          4.6,
-          4.9,
-          2.6,
-          0.9,
-          0.2,
-          0.1,
-          0
-        ],
-        [
-          2.3,
-          2.4,
-          1.3,
-          0.5,
-          0.1,
-          0,
-          0
-        ],
-        [
-          0.9,
-          1,
-          0.5,
-          0.2,
-          0.1,
-          0,
-          0
-        ]
-      ]
-    }
-  },
-  {
-    "competition": "Ligue 1",
     "matchId": 559652,
     "homeTeam": "Racing Club de Lens",
     "awayTeam": "Paris",
@@ -7135,6 +6961,180 @@
   },
   {
     "competition": "Ligue 1",
+    "matchId": 559655,
+    "homeTeam": "Toulouse",
+    "awayTeam": "ES Troyes AC",
+    "homeCrest": "https://crests.football-data.org/511.png",
+    "awayCrest": "https://crests.football-data.org/531.png",
+    "kickoff": "2026-10-25T16:15:00Z",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 66.7,
+          "confidence": "HIGH"
+        },
+        "draw": {
+          "probability": 19.6,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 13.7,
+          "confidence": "VERY LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 86.3,
+          "confidence": "VERY HIGH"
+        },
+        "homeOrAway": {
+          "probability": 80.4,
+          "confidence": "VERY HIGH"
+        },
+        "drawOrAway": {
+          "probability": 33.3,
+          "confidence": "VERY LOW"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 61,
+          "confidence": "MEDIUM"
+        },
+        "no": {
+          "probability": 39,
+          "confidence": "LOW"
+        }
+      },
+      "overUnder": {
+        "over05": {
+          "probability": 96.1,
+          "confidence": "VERY HIGH"
+        },
+        "under05": {
+          "probability": 3.9,
+          "confidence": "VERY LOW"
+        },
+        "over15": {
+          "probability": 87.7,
+          "confidence": "VERY HIGH"
+        },
+        "under15": {
+          "probability": 12.3,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 68.3,
+          "confidence": "HIGH"
+        },
+        "under25": {
+          "probability": 31.7,
+          "confidence": "VERY LOW"
+        },
+        "over35": {
+          "probability": 46.5,
+          "confidence": "LOW"
+        },
+        "under35": {
+          "probability": 53.5,
+          "confidence": "MEDIUM"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "2-1",
+          "probability": 9.6
+        },
+        {
+          "score": "2-0",
+          "probability": 9
+        },
+        {
+          "score": "1-1",
+          "probability": 8.8
+        },
+        {
+          "score": "3-1",
+          "probability": 7.9
+        },
+        {
+          "score": "3-0",
+          "probability": 7.4
+        }
+      ],
+      "expectedGoals": {
+        "home": 2.47,
+        "away": 1.07
+      },
+      "scoreMatrix": [
+        [
+          3.9,
+          2.1,
+          1.7,
+          0.6,
+          0.2,
+          0,
+          0
+        ],
+        [
+          6.3,
+          8.8,
+          4.1,
+          1.5,
+          0.4,
+          0.1,
+          0
+        ],
+        [
+          9,
+          9.6,
+          5.1,
+          1.8,
+          0.5,
+          0.1,
+          0
+        ],
+        [
+          7.4,
+          7.9,
+          4.2,
+          1.5,
+          0.4,
+          0.1,
+          0
+        ],
+        [
+          4.6,
+          4.9,
+          2.6,
+          0.9,
+          0.2,
+          0.1,
+          0
+        ],
+        [
+          2.3,
+          2.4,
+          1.3,
+          0.5,
+          0.1,
+          0,
+          0
+        ],
+        [
+          0.9,
+          1,
+          0.5,
+          0.2,
+          0.1,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "competition": "Ligue 1",
     "matchId": 559656,
     "homeTeam": "AJ Auxerre",
     "awayTeam": "Le Mans",
@@ -7309,354 +7309,6 @@
   },
   {
     "competition": "Champions League",
-    "matchId": 575368,
-    "homeTeam": "Como 1907",
-    "awayTeam": "Manchester United",
-    "homeCrest": "https://crests.football-data.org/7397.png",
-    "awayCrest": "https://crests.football-data.org/66.png",
-    "kickoff": "2026-10-21T16:45:00Z",
-    "prediction": {
-      "matchResult": {
-        "homeWin": {
-          "probability": 40.9,
-          "confidence": "LOW"
-        },
-        "draw": {
-          "probability": 28.9,
-          "confidence": "VERY LOW"
-        },
-        "awayWin": {
-          "probability": 30.2,
-          "confidence": "VERY LOW"
-        }
-      },
-      "doubleChance": {
-        "homeOrDraw": {
-          "probability": 69.8,
-          "confidence": "HIGH"
-        },
-        "homeOrAway": {
-          "probability": 71.1,
-          "confidence": "HIGH"
-        },
-        "drawOrAway": {
-          "probability": 59.1,
-          "confidence": "MEDIUM"
-        }
-      },
-      "btts": {
-        "yes": {
-          "probability": 55.9,
-          "confidence": "MEDIUM"
-        },
-        "no": {
-          "probability": 44.1,
-          "confidence": "LOW"
-        }
-      },
-      "overUnder": {
-        "over05": {
-          "probability": 91.6,
-          "confidence": "VERY HIGH"
-        },
-        "under05": {
-          "probability": 8.4,
-          "confidence": "VERY LOW"
-        },
-        "over15": {
-          "probability": 76.5,
-          "confidence": "HIGH"
-        },
-        "under15": {
-          "probability": 23.5,
-          "confidence": "VERY LOW"
-        },
-        "over25": {
-          "probability": 50.3,
-          "confidence": "MEDIUM"
-        },
-        "under25": {
-          "probability": 49.7,
-          "confidence": "LOW"
-        },
-        "over35": {
-          "probability": 28.2,
-          "confidence": "VERY LOW"
-        },
-        "under35": {
-          "probability": 71.8,
-          "confidence": "HIGH"
-        }
-      },
-      "topScorelines": [
-        {
-          "score": "1-1",
-          "probability": 13.8
-        },
-        {
-          "score": "2-1",
-          "probability": 8.9
-        },
-        {
-          "score": "0-0",
-          "probability": 8.4
-        },
-        {
-          "score": "1-0",
-          "probability": 8.4
-        },
-        {
-          "score": "1-2",
-          "probability": 7.5
-        }
-      ],
-      "expectedGoals": {
-        "home": 1.46,
-        "away": 1.23
-      },
-      "scoreMatrix": [
-        [
-          8.4,
-          6.8,
-          5.1,
-          2.1,
-          0.6,
-          0.2,
-          0
-        ],
-        [
-          8.4,
-          13.8,
-          7.5,
-          3.1,
-          0.9,
-          0.2,
-          0
-        ],
-        [
-          7.3,
-          8.9,
-          5.5,
-          2.2,
-          0.7,
-          0.2,
-          0
-        ],
-        [
-          3.5,
-          4.3,
-          2.7,
-          1.1,
-          0.3,
-          0.1,
-          0
-        ],
-        [
-          1.3,
-          1.6,
-          1,
-          0.4,
-          0.1,
-          0,
-          0
-        ],
-        [
-          0.4,
-          0.5,
-          0.3,
-          0.1,
-          0,
-          0,
-          0
-        ],
-        [
-          0.1,
-          0.1,
-          0.1,
-          0,
-          0,
-          0,
-          0
-        ]
-      ]
-    }
-  },
-  {
-    "competition": "Champions League",
-    "matchId": 575369,
-    "homeTeam": "Lille OSC",
-    "awayTeam": "Galatasaray SK",
-    "homeCrest": "https://crests.football-data.org/521.png",
-    "awayCrest": "https://crests.football-data.org/610.png",
-    "kickoff": "2026-10-21T16:45:00Z",
-    "prediction": {
-      "matchResult": {
-        "homeWin": {
-          "probability": 58.2,
-          "confidence": "MEDIUM"
-        },
-        "draw": {
-          "probability": 18,
-          "confidence": "VERY LOW"
-        },
-        "awayWin": {
-          "probability": 23.8,
-          "confidence": "VERY LOW"
-        }
-      },
-      "doubleChance": {
-        "homeOrDraw": {
-          "probability": 76.2,
-          "confidence": "HIGH"
-        },
-        "homeOrAway": {
-          "probability": 82,
-          "confidence": "VERY HIGH"
-        },
-        "drawOrAway": {
-          "probability": 41.8,
-          "confidence": "LOW"
-        }
-      },
-      "btts": {
-        "yes": {
-          "probability": 83.3,
-          "confidence": "VERY HIGH"
-        },
-        "no": {
-          "probability": 16.7,
-          "confidence": "VERY LOW"
-        }
-      },
-      "overUnder": {
-        "over05": {
-          "probability": 98.9,
-          "confidence": "VERY HIGH"
-        },
-        "under05": {
-          "probability": 1.1,
-          "confidence": "VERY LOW"
-        },
-        "over15": {
-          "probability": 96.8,
-          "confidence": "VERY HIGH"
-        },
-        "under15": {
-          "probability": 3.2,
-          "confidence": "VERY LOW"
-        },
-        "over25": {
-          "probability": 88.2,
-          "confidence": "VERY HIGH"
-        },
-        "under25": {
-          "probability": 11.8,
-          "confidence": "VERY LOW"
-        },
-        "over35": {
-          "probability": 74.4,
-          "confidence": "HIGH"
-        },
-        "under35": {
-          "probability": 25.6,
-          "confidence": "VERY LOW"
-        }
-      },
-      "topScorelines": [
-        {
-          "score": "3-2",
-          "probability": 6.3
-        },
-        {
-          "score": "3-1",
-          "probability": 6.2
-        },
-        {
-          "score": "2-2",
-          "probability": 6.1
-        },
-        {
-          "score": "2-1",
-          "probability": 6
-        },
-        {
-          "score": "4-2",
-          "probability": 4.9
-        }
-      ],
-      "expectedGoals": {
-        "home": 3.12,
-        "away": 2.03
-      },
-      "scoreMatrix": [
-        [
-          1.1,
-          0.7,
-          1.2,
-          0.8,
-          0.4,
-          0.2,
-          0.1
-        ],
-        [
-          1.4,
-          4.3,
-          3.9,
-          2.6,
-          1.3,
-          0.5,
-          0.2
-        ],
-        [
-          3,
-          6,
-          6.1,
-          4.1,
-          2.1,
-          0.8,
-          0.3
-        ],
-        [
-          3.1,
-          6.2,
-          6.3,
-          4.3,
-          2.2,
-          0.9,
-          0.3
-        ],
-        [
-          2.4,
-          4.9,
-          4.9,
-          3.3,
-          1.7,
-          0.7,
-          0.2
-        ],
-        [
-          1.5,
-          3,
-          3.1,
-          2.1,
-          1.1,
-          0.4,
-          0.1
-        ],
-        [
-          0.8,
-          1.6,
-          1.6,
-          1.1,
-          0.6,
-          0.2,
-          0.1
-        ]
-      ]
-    }
-  },
-  {
-    "competition": "Champions League",
     "matchId": 575370,
     "homeTeam": "Real Madrid CF",
     "awayTeam": "RB Leipzig",
@@ -7666,79 +7318,83 @@
     "prediction": {
       "matchResult": {
         "homeWin": {
-          "probability": 26.3,
+          "probability": 26.4,
           "confidence": "VERY LOW"
         },
         "draw": {
-          "probability": 18.8,
+          "probability": 19,
           "confidence": "VERY LOW"
         },
         "awayWin": {
-          "probability": 55,
+          "probability": 54.6,
           "confidence": "MEDIUM"
         }
       },
       "doubleChance": {
         "homeOrDraw": {
-          "probability": 45,
+          "probability": 45.4,
           "confidence": "LOW"
         },
         "homeOrAway": {
-          "probability": 81.2,
+          "probability": 81,
           "confidence": "VERY HIGH"
         },
         "drawOrAway": {
-          "probability": 73.7,
+          "probability": 73.6,
           "confidence": "HIGH"
         }
       },
       "btts": {
         "yes": {
-          "probability": 83.1,
+          "probability": 82.5,
           "confidence": "VERY HIGH"
         },
         "no": {
-          "probability": 16.9,
+          "probability": 17.5,
           "confidence": "VERY LOW"
         }
       },
       "overUnder": {
         "over05": {
-          "probability": 98.8,
+          "probability": 98.7,
           "confidence": "VERY HIGH"
         },
         "under05": {
-          "probability": 1.2,
+          "probability": 1.3,
           "confidence": "VERY LOW"
         },
         "over15": {
-          "probability": 96.4,
+          "probability": 96.2,
           "confidence": "VERY HIGH"
         },
         "under15": {
-          "probability": 3.6,
+          "probability": 3.8,
           "confidence": "VERY LOW"
         },
         "over25": {
-          "probability": 87.3,
+          "probability": 86.5,
           "confidence": "VERY HIGH"
         },
         "under25": {
-          "probability": 12.7,
+          "probability": 13.5,
           "confidence": "VERY LOW"
         },
         "over35": {
-          "probability": 72.8,
+          "probability": 71.6,
           "confidence": "HIGH"
         },
         "under35": {
-          "probability": 27.2,
+          "probability": 28.4,
           "confidence": "VERY LOW"
         }
       },
       "topScorelines": [
         {
           "score": "2-2",
+          "probability": 6.5
+        },
+        {
+          "score": "1-2",
           "probability": 6.4
         },
         {
@@ -7746,74 +7402,70 @@
           "probability": 6.3
         },
         {
-          "score": "1-2",
+          "score": "1-3",
           "probability": 6.2
         },
         {
-          "score": "1-3",
-          "probability": 6.1
-        },
-        {
           "score": "1-1",
-          "probability": 4.7
+          "probability": 5
         }
       ],
       "expectedGoals": {
-        "home": 2.07,
-        "away": 2.96
+        "home": 2.04,
+        "away": 2.9
       },
       "scoreMatrix": [
         [
-          1.2,
-          1.5,
+          1.3,
+          1.6,
+          3.1,
           3,
-          2.9,
           2.2,
           1.3,
           0.6
         ],
         [
           0.9,
-          4.7,
+          5,
+          6.4,
           6.2,
-          6.1,
           4.5,
-          2.7,
+          2.6,
           1.3
         ],
         [
           1.5,
-          4.3,
-          6.4,
+          4.5,
+          6.5,
           6.3,
-          4.6,
-          2.7,
-          1.4
+          4.5,
+          2.6,
+          1.3
         ],
         [
           1,
           3,
           4.4,
-          4.3,
-          3.2,
-          1.9,
+          4.2,
+          3.1,
+          1.8,
           0.9
         ],
         [
           0.5,
           1.5,
-          2.3,
           2.2,
-          1.7,
-          1,
-          0.5
+          2.2,
+          1.6,
+          0.9,
+          0.4
         ],
         [
           0.2,
           0.6,
           0.9,
           0.9,
-          0.7,
+          0.6,
           0.4,
           0.2
         ],
@@ -7840,39 +7492,39 @@
     "prediction": {
       "matchResult": {
         "homeWin": {
-          "probability": 63.5,
+          "probability": 63.2,
           "confidence": "MEDIUM"
         },
         "draw": {
-          "probability": 16.3,
+          "probability": 16.5,
           "confidence": "VERY LOW"
         },
         "awayWin": {
-          "probability": 20.2,
+          "probability": 20.4,
           "confidence": "VERY LOW"
         }
       },
       "doubleChance": {
         "homeOrDraw": {
-          "probability": 79.8,
+          "probability": 79.6,
           "confidence": "HIGH"
         },
         "homeOrAway": {
-          "probability": 83.7,
+          "probability": 83.5,
           "confidence": "VERY HIGH"
         },
         "drawOrAway": {
-          "probability": 36.5,
+          "probability": 36.8,
           "confidence": "LOW"
         }
       },
       "btts": {
         "yes": {
-          "probability": 84.8,
+          "probability": 84.3,
           "confidence": "VERY HIGH"
         },
         "no": {
-          "probability": 15.2,
+          "probability": 15.7,
           "confidence": "VERY LOW"
         }
       },
@@ -7886,27 +7538,27 @@
           "confidence": "VERY LOW"
         },
         "over15": {
-          "probability": 97.8,
+          "probability": 97.6,
           "confidence": "VERY HIGH"
         },
         "under15": {
-          "probability": 2.2,
+          "probability": 2.4,
           "confidence": "VERY LOW"
         },
         "over25": {
-          "probability": 91.1,
+          "probability": 90.6,
           "confidence": "VERY HIGH"
         },
         "under25": {
-          "probability": 8.9,
+          "probability": 9.4,
           "confidence": "VERY LOW"
         },
         "over35": {
-          "probability": 79.5,
+          "probability": 78.5,
           "confidence": "HIGH"
         },
         "under35": {
-          "probability": 20.5,
+          "probability": 21.5,
           "confidence": "VERY LOW"
         }
       },
@@ -7917,87 +7569,435 @@
         },
         {
           "score": "3-1",
-          "probability": 6.1
+          "probability": 6.2
         },
         {
           "score": "4-2",
-          "probability": 5.6
+          "probability": 5.5
+        },
+        {
+          "score": "2-2",
+          "probability": 5.4
         },
         {
           "score": "4-1",
           "probability": 5.4
-        },
-        {
-          "score": "2-2",
-          "probability": 5.3
         }
       ],
       "expectedGoals": {
-        "home": 3.55,
-        "away": 2.06
+        "home": 3.48,
+        "away": 2.03
       },
       "scoreMatrix": [
         [
           0.8,
-          0.4,
-          0.8,
+          0.5,
+          0.9,
           0.6,
           0.3,
           0.1,
           0
         ],
         [
-          1,
-          3.3,
-          3,
-          2,
+          1.1,
+          3.5,
+          3.1,
+          2.1,
           1.1,
           0.4,
           0.1
         ],
         [
-          2.5,
-          5.1,
+          2.6,
           5.3,
-          3.6,
+          5.4,
+          3.7,
           1.9,
           0.8,
           0.3
         ],
         [
-          3,
-          6.1,
+          3.1,
+          6.2,
           6.3,
-          4.3,
+          4.2,
           2.2,
           0.9,
           0.3
         ],
         [
-          2.6,
+          2.7,
           5.4,
-          5.6,
-          3.8,
-          2,
+          5.5,
+          3.7,
+          1.9,
           0.8,
           0.3
         ],
         [
           1.9,
           3.8,
-          3.9,
-          2.7,
-          1.4,
-          0.6,
+          3.8,
+          2.6,
+          1.3,
+          0.5,
           0.2
         ],
         [
           1.1,
-          2.3,
-          2.3,
-          1.6,
+          2.2,
+          2.2,
+          1.5,
           0.8,
           0.3,
+          0.1
+        ]
+      ]
+    }
+  },
+  {
+    "competition": "Champions League",
+    "matchId": 575372,
+    "homeTeam": "FC Bayern München",
+    "awayTeam": "Arsenal",
+    "homeCrest": "https://crests.football-data.org/5.png",
+    "awayCrest": "https://crests.football-data.org/57.png",
+    "kickoff": "2026-10-21T19:00:00Z",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 51.5,
+          "confidence": "MEDIUM"
+        },
+        "draw": {
+          "probability": 23.1,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 25.3,
+          "confidence": "VERY LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 74.7,
+          "confidence": "HIGH"
+        },
+        "homeOrAway": {
+          "probability": 76.9,
+          "confidence": "HIGH"
+        },
+        "drawOrAway": {
+          "probability": 48.5,
+          "confidence": "LOW"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 69,
+          "confidence": "HIGH"
+        },
+        "no": {
+          "probability": 31,
+          "confidence": "VERY LOW"
+        }
+      },
+      "overUnder": {
+        "over05": {
+          "probability": 96.2,
+          "confidence": "VERY HIGH"
+        },
+        "under05": {
+          "probability": 3.8,
+          "confidence": "VERY LOW"
+        },
+        "over15": {
+          "probability": 88.6,
+          "confidence": "VERY HIGH"
+        },
+        "under15": {
+          "probability": 11.4,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 69.7,
+          "confidence": "HIGH"
+        },
+        "under25": {
+          "probability": 30.3,
+          "confidence": "VERY LOW"
+        },
+        "over35": {
+          "probability": 48.4,
+          "confidence": "LOW"
+        },
+        "under35": {
+          "probability": 51.6,
+          "confidence": "MEDIUM"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "1-1",
+          "probability": 9.7
+        },
+        {
+          "score": "2-1",
+          "probability": 9.2
+        },
+        {
+          "score": "2-2",
+          "probability": 6.7
+        },
+        {
+          "score": "3-1",
+          "probability": 6.5
+        },
+        {
+          "score": "1-2",
+          "probability": 6.3
+        }
+      ],
+      "expectedGoals": {
+        "home": 2.14,
+        "away": 1.47
+      },
+      "scoreMatrix": [
+        [
+          3.8,
+          2.9,
+          2.9,
+          1.4,
+          0.5,
+          0.2,
+          0
+        ],
+        [
+          4.7,
+          9.7,
+          6.3,
+          3.1,
+          1.1,
+          0.3,
+          0.1
+        ],
+        [
+          6.2,
+          9.2,
+          6.7,
+          3.3,
+          1.2,
+          0.4,
+          0.1
+        ],
+        [
+          4.4,
+          6.5,
+          4.8,
+          2.4,
+          0.9,
+          0.3,
+          0.1
+        ],
+        [
+          2.4,
+          3.5,
+          2.6,
+          1.3,
+          0.5,
+          0.1,
+          0
+        ],
+        [
+          1,
+          1.5,
+          1.1,
+          0.5,
+          0.2,
+          0.1,
+          0
+        ],
+        [
+          0.4,
+          0.5,
+          0.4,
+          0.2,
+          0.1,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "competition": "Champions League",
+    "matchId": 575373,
+    "homeTeam": "Club Brugge KV",
+    "awayTeam": "Racing Club de Lens",
+    "homeCrest": "https://crests.football-data.org/851.png",
+    "awayCrest": "https://crests.football-data.org/546.png",
+    "kickoff": "2026-10-21T19:00:00Z",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 44.5,
+          "confidence": "LOW"
+        },
+        "draw": {
+          "probability": 20.5,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 35,
+          "confidence": "LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 65,
+          "confidence": "HIGH"
+        },
+        "homeOrAway": {
+          "probability": 79.5,
+          "confidence": "HIGH"
+        },
+        "drawOrAway": {
+          "probability": 55.5,
+          "confidence": "MEDIUM"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 82.4,
+          "confidence": "VERY HIGH"
+        },
+        "no": {
+          "probability": 17.6,
+          "confidence": "VERY LOW"
+        }
+      },
+      "overUnder": {
+        "over05": {
+          "probability": 98.5,
+          "confidence": "VERY HIGH"
+        },
+        "under05": {
+          "probability": 1.5,
+          "confidence": "VERY LOW"
+        },
+        "over15": {
+          "probability": 95.5,
+          "confidence": "VERY HIGH"
+        },
+        "under15": {
+          "probability": 4.5,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 84.8,
+          "confidence": "VERY HIGH"
+        },
+        "under25": {
+          "probability": 15.2,
+          "confidence": "VERY LOW"
+        },
+        "over35": {
+          "probability": 68.9,
+          "confidence": "HIGH"
+        },
+        "under35": {
+          "probability": 31.1,
+          "confidence": "VERY LOW"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "2-2",
+          "probability": 7
+        },
+        {
+          "score": "2-1",
+          "probability": 6.3
+        },
+        {
+          "score": "3-2",
+          "probability": 5.9
+        },
+        {
+          "score": "1-1",
+          "probability": 5.7
+        },
+        {
+          "score": "1-2",
+          "probability": 5.6
+        }
+      ],
+      "expectedGoals": {
+        "home": 2.51,
+        "away": 2.23
+      },
+      "scoreMatrix": [
+        [
+          1.5,
+          1.3,
+          2.2,
+          1.7,
+          0.9,
+          0.4,
+          0.2
+        ],
+        [
+          1.6,
+          5.7,
+          5.6,
+          4.2,
+          2.3,
+          1,
+          0.4
+        ],
+        [
+          2.8,
+          6.3,
+          7,
+          5.2,
+          2.9,
+          1.3,
+          0.5
+        ],
+        [
+          2.4,
+          5.3,
+          5.9,
+          4.3,
+          2.4,
+          1.1,
+          0.4
+        ],
+        [
+          1.5,
+          3.3,
+          3.7,
+          2.7,
+          1.5,
+          0.7,
+          0.3
+        ],
+        [
+          0.7,
+          1.7,
+          1.8,
+          1.4,
+          0.8,
+          0.3,
+          0.1
+        ],
+        [
+          0.3,
+          0.7,
+          0.8,
+          0.6,
+          0.3,
+          0.1,
           0.1
         ]
       ]
