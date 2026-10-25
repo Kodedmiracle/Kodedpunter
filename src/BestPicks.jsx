@@ -8,15 +8,18 @@ export default function BestPicks({ picks }) {
   const [url, setUrl] = useState("");
   const [error, setError] = useState("");
   const [skipped, setSkipped] = useState([]);
+  const [summary, setSummary] = useState("");
+  const [targetOdds, setTargetOdds] = useState(10);
 
   if (!picks || picks.length === 0) return null;
 
-  async function bookOnSporty() {
+  async function bookOnSporty(mode, target) {
     setStatus("loading");
     setError("");
     setCode("");
     setUrl("");
     setSkipped([]);
+    setSummary("");
 
     try {
       const listRes = await fetch("/api/sporty-book");
@@ -26,7 +29,43 @@ export default function BestPicks({ picks }) {
       const outcomes = [];
       const missed = [];
 
-      for (const pick of picks) {
+      const oddsOf = (pick) => {
+        const lean = leanToSporty(pick.leanKey);
+        if (!lean) return null;
+        const ev = (list.events || []).find((e) =>
+          sameMatch(pick.homeTeam, pick.awayTeam, e.home, e.away)
+        );
+        if (!ev || !ev.odds) return null;
+        return ev.odds[lean.marketId + "|" + (lean.specifier || "") + "|" + lean.outcomeId] || null;
+      };
+
+      let combined = 1;
+      let chosen = picks;
+      if (mode === "top" || mode === "odds") {
+        const eligible = picks.filter((p) => oddsOf(p));
+        if (mode === "top") {
+          chosen = eligible.slice(0, target);
+        } else {
+          chosen = [];
+          let run = 1;
+          for (const p of eligible) {
+            const next = run * oddsOf(p);
+            if (next >= target) {
+              if (
+                chosen.length === 0 ||
+                Math.abs(Math.log(next / target)) < Math.abs(Math.log(run / target))
+              ) {
+                chosen.push(p);
+              }
+              break;
+            }
+            chosen.push(p);
+            run = next;
+          }
+        }
+      }
+
+      for (const pick of chosen) {
         const lean = leanToSporty(pick.leanKey);
         if (!lean) {
           missed.push(pick.matchLabel + " (unknown market)");
@@ -45,6 +84,8 @@ export default function BestPicks({ picks }) {
           outcomeId: lean.outcomeId,
         };
         if (lean.specifier) outcome.specifier = lean.specifier;
+        const oo = oddsOf(pick);
+        if (oo) combined *= oo;
         outcomes.push(outcome);
       }
 
@@ -62,6 +103,7 @@ export default function BestPicks({ picks }) {
       const booked = await bookRes.json();
       if (!booked.ok) throw new Error(booked.message || "SportyBet rejected the slip");
 
+      setSummary(outcomes.length + " picks · combined odds " + combined.toFixed(2));
       setCode(booked.shareCode);
       setUrl(booked.shareURL);
       setStatus("done");
@@ -88,18 +130,47 @@ export default function BestPicks({ picks }) {
         </div>
       ))}
 
-      <button
-        type="button"
-        onClick={bookOnSporty}
-        disabled={status === "loading"}
-        style={styles.button}
-      >
-        {status === "loading" ? "Booking…" : "Book on SportyBet NG"}
-      </button>
+      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+        <button
+          type="button"
+          onClick={() => bookOnSporty("all")}
+          disabled={status === "loading"}
+          style={styles.button}
+        >
+          {status === "loading" ? "Booking…" : "Book all on SportyBet NG"}
+        </button>
+        <button
+          type="button"
+          onClick={() => bookOnSporty("top", 5)}
+          disabled={status === "loading"}
+          style={styles.button}
+        >
+          Best 5 picks
+        </button>
+        <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+          <input
+            type="number"
+            min="2"
+            step="1"
+            value={targetOdds}
+            onChange={(e) => setTargetOdds(e.target.value)}
+            style={{ width: "80px", padding: "12px", borderRadius: "10px", border: "1px solid #444", background: "#1a1a1a", color: "#fff", fontSize: "15px" }}
+          />
+          <button
+            type="button"
+            onClick={() => bookOnSporty("odds", Number(targetOdds) || 10)}
+            disabled={status === "loading"}
+            style={{ ...styles.button, width: "auto", flex: 1 }}
+          >
+            Around {targetOdds} odds
+          </button>
+        </div>
+      </div>
 
       {status === "done" && (
         <div style={styles.result}>
           <div style={styles.code}>{code}</div>
+          {summary && <div style={styles.skip}>{summary}</div>}
           <a href={url} style={styles.link} target="_blank" rel="noreferrer">
             Open slip on SportyBet
           </a>
