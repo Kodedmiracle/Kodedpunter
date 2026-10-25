@@ -78,7 +78,7 @@ const CONFIDENCE_RANK = {
   LOW: 2,
   "VERY LOW": 1,
 };
-const MIN_CONFIDENCE = "MEDIUM";
+const MIN_CONFIDENCE = "HIGH";
 
 export function extractBestPicks(matches, limit = 10) {
   if (!matches || matches.length === 0) return [];
