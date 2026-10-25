@@ -37,19 +37,29 @@ function gradeMarket(marketKey, homeGoals, awayGoals) {
       return totalGoals > 1.5;
     case "over_2_5":
       return totalGoals > 2.5;
+    case "btts_no":
+      return !bothScored;
+    case "under_3_5":
+      return totalGoals < 3.5;
+    case "home_or_draw":
+      return homeGoals >= awayGoals;
+    case "draw_or_away":
+      return awayGoals >= homeGoals;
     default:
       return null; // unknown market, skip
   }
 }
 
-async function run() {
-  console.log("--- Settling pending predictions ---");
+async function settleTable(table) {
+  console.log(`--- Settling pending ${table} ---`);
 
-  const { data: pending, error } = await supabase
-    .from("predictions")
+  let q = supabase
+    .from(table)
     .select("*")
     .is("correct", null)
     .not("match_id", "is", null);
+  if (table === "pick_log") q = q.lt("kickoff", new Date().toISOString());
+  const { data: pending, error } = await q;
 
   if (error) {
     console.error("Failed to fetch pending predictions:", error.message);
@@ -97,7 +107,7 @@ async function run() {
         }
 
         const { error: updateError } = await supabase
-          .from("predictions")
+          .from(table)
           .update({
             correct,
             actual_result: `${homeGoals}-${awayGoals}`,
@@ -118,4 +128,9 @@ async function run() {
   console.log("--- Done ---");
 }
 
-run();
+async function main() {
+  await settleTable("predictions");
+  await settleTable("pick_log");
+}
+
+main();
