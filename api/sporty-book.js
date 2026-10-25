@@ -13,6 +13,22 @@ const HEADERS = {
   Accept: "application/json, text/plain, */*",
 };
 
+const KEEP_LINES = new Set(["", "total=0.5", "total=1.5", "total=2.5", "total=3.5"]);
+
+function oddsFor(ev) {
+  const out = {};
+  for (const m of ev.markets || []) {
+    const spec = m.specifier || "";
+    if (m.id === "18" && !KEEP_LINES.has(spec)) continue;
+    for (const o of m.outcomes || []) {
+      if (o.isActive !== 1) continue;
+      const v = parseFloat(o.odds);
+      if (v > 1) out[m.id + "|" + spec + "|" + o.id] = v;
+    }
+  }
+  return out;
+}
+
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
@@ -41,6 +57,7 @@ export default async function handler(req, res) {
               home: ev.homeTeamName,
               away: ev.awayTeamName,
               start: ev.estimateStartTime,
+              odds: oddsFor(ev),
             });
           }
         }
