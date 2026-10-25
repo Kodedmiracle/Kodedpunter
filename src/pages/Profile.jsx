@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
+import AccuracyPanel from "../AccuracyPanel";
 
 function Profile() {
   const [predictions, setPredictions] = useState([]);
@@ -45,6 +46,8 @@ function Profile() {
     <div className="page">
       <h1>Profile</h1>
       <p>Your accuracy and how the model works.</p>
+
+      <AccuracyPanel />
 
       {loading && <p style={styles.status}>Loading...</p>}
 
