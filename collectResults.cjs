@@ -66,4 +66,7 @@ async function fixturesFor(offsetDays) {
   console.log('Upcoming saved:', upcoming.length, '| leagues:', wanted.size);
   console.log('Yesterday finished:', finished, '| kept:', added);
   console.log('Total results stored:', stored.length);
-})().catch((e) => console.log('FAILED:', e.message));
+})().catch((e) => {
+  console.log('FAILED:', e.message);
+  process.exit(1);
+});
