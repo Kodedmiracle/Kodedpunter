@@ -36,7 +36,11 @@ export default function BestPicks({ picks }) {
           sameMatch(pick.homeTeam, pick.awayTeam, e.home, e.away)
         );
         if (!ev || !ev.odds) return null;
-        return ev.odds[lean.marketId + "|" + (lean.specifier || "") + "|" + lean.outcomeId] || null;
+        return (
+          ev.odds[
+            lean.marketId + "|" + (lean.specifier || "") + "|" + lean.outcomeId
+          ] || null
+        );
       };
 
       let combined = 1;
@@ -53,7 +57,8 @@ export default function BestPicks({ picks }) {
             if (next >= target) {
               if (
                 chosen.length === 0 ||
-                Math.abs(Math.log(next / target)) < Math.abs(Math.log(run / target))
+                Math.abs(Math.log(next / target)) <
+                  Math.abs(Math.log(run / target))
               ) {
                 chosen.push(p);
               }
@@ -101,9 +106,13 @@ export default function BestPicks({ picks }) {
         body: JSON.stringify({ outcomes }),
       });
       const booked = await bookRes.json();
-      if (!booked.ok) throw new Error(booked.message || "SportyBet rejected the slip");
+      if (!booked.ok) {
+        throw new Error(booked.message || "SportyBet rejected the slip");
+      }
 
-      setSummary(outcomes.length + " picks · combined odds " + combined.toFixed(2));
+      setSummary(
+        outcomes.length + " picks · combined odds " + combined.toFixed(2)
+      );
       setCode(booked.shareCode);
       setUrl(booked.shareURL);
       setStatus("done");
@@ -154,7 +163,15 @@ export default function BestPicks({ picks }) {
             step="1"
             value={targetOdds}
             onChange={(e) => setTargetOdds(e.target.value)}
-            style={{ width: "80px", padding: "12px", borderRadius: "10px", border: "1px solid #444", background: "#1a1a1a", color: "#fff", fontSize: "15px" }}
+            style={{
+              width: "80px",
+              padding: "12px",
+              borderRadius: "10px",
+              border: "1px solid #444",
+              background: "#1a1a1a",
+              color: "#fff",
+              fontSize: "15px",
+            }}
           />
           <button
             type="button"
@@ -165,6 +182,10 @@ export default function BestPicks({ picks }) {
             Around {targetOdds} odds
           </button>
         </div>
+        <p style={styles.hint}>
+          % on each pick is our model. “Around X odds” uses SportyBet prices when
+          the match is listed — the final app total can still differ a little.
+        </p>
       </div>
 
       {status === "done" && (
@@ -232,4 +253,10 @@ const styles = {
   link: { color: "#c4b5fd", fontSize: "13px" },
   skip: { marginTop: "8px", fontSize: "11px", color: "#a191c4" },
   err: { marginTop: "10px", color: "#fca5a5", fontSize: "13px" },
+  hint: {
+    marginTop: "8px",
+    fontSize: "11px",
+    color: "#a191c4",
+    lineHeight: 1.4,
+  },
 };
