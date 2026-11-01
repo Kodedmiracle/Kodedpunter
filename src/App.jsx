@@ -8,6 +8,7 @@ import Profile from "./pages/Profile";
 import BottomNav from "./components/BottomNav";
 import { ensureAnonymousSession } from "./supabaseClient";
 import { SlipProvider } from "./SlipContext";
+import SlipBar from "./SlipBar";
 
 export default function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/tracker" element={<Tracker />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
+          <SlipBar />
           <BottomNav />
         </div>
       </BrowserRouter>
