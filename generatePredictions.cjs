@@ -21,6 +21,7 @@ const COMPETITIONS = [
   { code: 'BL1', name: 'Bundesliga',       maxFixtures: 8 },
   { code: 'FL1', name: 'Ligue 1',          maxFixtures: 8 },
   { code: 'CL',  name: 'Champions League', maxFixtures: 4 },
+  { code: 'DED', name: 'Eredivisie',       maxFixtures: 5 },
 ];
 
 async function processCompetition(comp) {
