@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
-import { Home as HomeIcon, TrendingUp, Trophy, LineChart, User } from "lucide-react";
+import { Home as HomeIcon, TrendingUp, CircleDot, LineChart, User } from "lucide-react";
 
 const tabs = [
   { to: "/", icon: HomeIcon, label: "Home" },
   { to: "/picks", icon: TrendingUp, label: "Picks" },
-  { to: "/leagues", icon: Trophy, label: "Leagues" },
+  { to: "/basketball", icon: CircleDot, label: "NBA" },
   { to: "/tracker", icon: LineChart, label: "Tracker" },
   { to: "/profile", icon: User, label: "Profile" },
 ];
@@ -17,7 +17,7 @@ export default function BottomNav() {
           key={to}
           to={to}
           end={to === "/"}
-          className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
+          className={({ isActive }) => "nav-item " + (isActive ? "active" : "")}
         >
           <Icon size={20} />
           <span>{label}</span>
