@@ -23,8 +23,11 @@ const PILL_TO_LEAN = {
   draw: "Draw",
   away_win: "Away Win",
   btts_yes: "BTTS Yes",
+  btts_no: "BTTS No",
   over_1_5: "Over 1.5",
   over_2_5: "Over 2.5",
+  under_2_5: "Under 2.5",
+  under_3_5: "Under 3.5",
 };
 
 export default function MatchCard({
@@ -50,9 +53,11 @@ export default function MatchCard({
     { key: "home_win", label: "Home Win", value: matchResult.homeWin, icon: "🏠" },
     { key: "draw", label: "Draw", value: matchResult.draw, icon: "🤝" },
     { key: "away_win", label: "Away Win", value: matchResult.awayWin, icon: "✈️" },
-    { key: "btts_yes", label: "BTTS", value: btts.yes, icon: "⚽" },
+    { key: "btts_yes", label: "BTTS Yes", value: btts.yes, icon: "⚽" },
     { key: "over_1_5", label: "Over 1.5", value: overUnder.over15, icon: "📈" },
     { key: "over_2_5", label: "Over 2.5", value: overUnder.over25, icon: "📈" },
+    { key: "under_2_5", label: "Under 2.5", value: overUnder.under25, icon: "📉" },
+    { key: "under_3_5", label: "Under 3.5", value: overUnder.under35, icon: "📉" },
   ];
 
   useEffect(() => {
@@ -92,6 +97,23 @@ export default function MatchCard({
       matchLabel: `${homeTeam} vs ${awayTeam}`,
       probability: pill.value.probability,
       confidence: pill.value.confidence,
+    });
+  }
+
+  function handleSelectLean(e) {
+    e.stopPropagation();
+    if (!recommendedMarket) return;
+    toggleLeg({
+      homeTeam,
+      awayTeam,
+      competition,
+      kickoff,
+      matchId,
+      leanKey: recommendedMarket.key,
+      market: `${recommendedMarket.icon} ${recommendedMarket.key}`,
+      matchLabel: `${homeTeam} vs ${awayTeam}`,
+      probability: recommendedMarket.data.probability,
+      confidence: recommendedMarket.data.confidence,
     });
   }
 
@@ -146,8 +168,23 @@ export default function MatchCard({
       </div>
 
       {recommendedMarket && (
-        <div style={styles.recommended}>
-          <span style={styles.recommendedLabel}>🔥 Model Lean</span>
+        <div
+          role="button"
+          onClick={handleSelectLean}
+          style={{
+            ...styles.recommended,
+            ...(isSelected({
+              homeTeam,
+              awayTeam,
+              kickoff,
+              matchId,
+              leanKey: recommendedMarket.key,
+            })
+              ? styles.pillSelected
+              : {}),
+          }}
+        >
+          <span style={styles.recommendedLabel}>🔥 Model Lean · tap to slip</span>
           <span style={styles.recommendedMarket}>
             {recommendedMarket.icon} {recommendedMarket.key}
           </span>
@@ -163,6 +200,7 @@ export default function MatchCard({
             homeTeam,
             awayTeam,
             kickoff,
+            matchId,
             leanKey: PILL_TO_LEAN[p.key],
           });
           return (
@@ -197,7 +235,7 @@ export default function MatchCard({
       </div>
 
       <div style={styles.footerHint}>
-        Tap a market to add to slip · card body opens analysis
+        Tap a market or Model Lean to add to slip · card body opens analysis
       </div>
 
       <button
@@ -301,6 +339,7 @@ const styles = {
     padding: "10px 12px",
     marginBottom: "14px",
     boxShadow: "0 0 20px rgba(236,72,153,0.12)",
+    cursor: "pointer",
   },
   recommendedLabel: {
     fontSize: "10px",
@@ -321,7 +360,7 @@ const styles = {
   },
   grid: {
     display: "grid",
-    gridTemplateColumns: "1fr 1fr 1fr",
+    gridTemplateColumns: "1fr 1fr",
     gap: "8px",
     marginBottom: "10px",
   },

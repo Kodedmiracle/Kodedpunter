@@ -1,12 +1,34 @@
-import { createContext, useContext, useState, useCallback } from "react";
+import { createContext, useContext, useState, useCallback, useEffect } from "react";
 
 const SlipContext = createContext(null);
 
-export function SlipProvider({ children }) {
-  const [legs, setLegs] = useState([]);
+function legId(leg) {
+  return [
+    leg.matchId || "",
+    leg.homeTeam || "",
+    leg.awayTeam || "",
+    leg.leanKey || "",
+    leg.kickoff || "",
+  ].join("|");
+}
 
-  const legId = (leg) =>
-    `\( {leg.homeTeam}| \){leg.awayTeam}|\( {leg.leanKey}| \){leg.kickoff || ""}`;
+export function SlipProvider({ children }) {
+  const [legs, setLegs] = useState(() => {
+    try {
+      const raw = sessionStorage.getItem("koded_slip");
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem("koded_slip", JSON.stringify(legs));
+    } catch {
+      /* ignore */
+    }
+  }, [legs]);
 
   const isSelected = useCallback(
     (leg) => legs.some((l) => legId(l) === legId(leg)),
@@ -23,7 +45,14 @@ export function SlipProvider({ children }) {
     });
   }, []);
 
-  const clearSlip = useCallback(() => setLegs([]), []);
+  const clearSlip = useCallback(() => {
+    setLegs([]);
+    try {
+      sessionStorage.removeItem("koded_slip");
+    } catch {
+      /* ignore */
+    }
+  }, []);
 
   return (
     <SlipContext.Provider value={{ legs, toggleLeg, isSelected, clearSlip }}>
