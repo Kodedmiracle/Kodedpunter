@@ -7,6 +7,7 @@ import Tracker from "./pages/Tracker";
 import Profile from "./pages/Profile";
 import BottomNav from "./components/BottomNav";
 import { ensureAnonymousSession } from "./supabaseClient";
+import { SlipProvider } from "./SlipContext";
 
 export default function App() {
   useEffect(() => {
@@ -14,17 +15,19 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="app-shell">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/picks" element={<Picks />} />
-          <Route path="/leagues" element={<Leagues />} />
-          <Route path="/tracker" element={<Tracker />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-        <BottomNav />
-      </div>
-    </BrowserRouter>
+    <SlipProvider>
+      <BrowserRouter>
+        <div className="app-shell">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/picks" element={<Picks />} />
+            <Route path="/leagues" element={<Leagues />} />
+            <Route path="/tracker" element={<Tracker />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+          <BottomNav />
+        </div>
+      </BrowserRouter>
+    </SlipProvider>
   );
 }
