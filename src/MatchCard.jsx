@@ -1,22 +1,48 @@
 import { useState, useEffect } from "react";
 import TeamCrest from "./TeamCrest";
 import { trackPrediction, getTrackedMarkets } from "./trackPrediction";
+import { useSlip } from "./SlipContext";
 
 function confidenceColor(confidence) {
   switch (confidence) {
-    case "VERY HIGH": return "#22e584";
-    case "HIGH": return "#4ade80";
-    case "MEDIUM": return "#fbbf24";
-    case "LOW": return "#fb923c";
-    default: return "#f5445c";
+    case "VERY HIGH":
+      return "#22e584";
+    case "HIGH":
+      return "#4ade80";
+    case "MEDIUM":
+      return "#fbbf24";
+    case "LOW":
+      return "#fb923c";
+    default:
+      return "#f5445c";
   }
 }
 
+const PILL_TO_LEAN = {
+  home_win: "Home Win",
+  draw: "Draw",
+  away_win: "Away Win",
+  btts_yes: "BTTS Yes",
+  over_1_5: "Over 1.5",
+  over_2_5: "Over 2.5",
+};
 
-export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, awayCrest, kickoff, matchId, prediction, recommendedMarket, onSelect }) {
+export default function MatchCard({
+  competition,
+  homeTeam,
+  awayTeam,
+  homeCrest,
+  awayCrest,
+  kickoff,
+  matchId,
+  prediction,
+  recommendedMarket,
+  onSelect,
+}) {
   const { matchResult, btts, overUnder, expectedGoals } = prediction;
   const [trackedMarkets, setTrackedMarkets] = useState([]);
   const [showPicker, setShowPicker] = useState(false);
+  const { toggleLeg, isSelected } = useSlip();
 
   const matchInfo = { homeTeam, awayTeam, competition, kickoff, matchId };
 
@@ -39,20 +65,64 @@ export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, 
 
     setTrackedMarkets((prev) => [...prev, pill.key]);
 
-    const result = await trackPrediction(matchInfo, pill.key, pill.label, pill.value.probability);
+    const result = await trackPrediction(
+      matchInfo,
+      pill.key,
+      pill.label,
+      pill.value.probability
+    );
 
     if (result.error && !result.duplicate) {
       setTrackedMarkets((prev) => prev.filter((k) => k !== pill.key));
     }
   }
 
+  function handleSelectPill(e, pill) {
+    e.stopPropagation();
+    const leanKey = PILL_TO_LEAN[pill.key];
+    if (!leanKey) return;
+    toggleLeg({
+      homeTeam,
+      awayTeam,
+      competition,
+      kickoff,
+      matchId,
+      leanKey,
+      market: `${pill.icon} ${leanKey}`,
+      matchLabel: `${homeTeam} vs ${awayTeam}`,
+      probability: pill.value.probability,
+      confidence: pill.value.confidence,
+    });
+  }
+
   return (
-    <div style={styles.card} onClick={() => onSelect({ competition, homeTeam, awayTeam, homeCrest, awayCrest, kickoff, prediction })}>
+    <div
+      style={styles.card}
+      onClick={() =>
+        onSelect({
+          competition,
+          homeTeam,
+          awayTeam,
+          homeCrest,
+          awayCrest,
+          kickoff,
+          prediction,
+        })
+      }
+    >
       <div style={styles.topRow}>
         {competition && <div style={styles.competitionTag}>{competition}</div>}
         {kickoff && (
           <div style={styles.kickoff}>
-            {new Date(kickoff).toLocaleDateString(undefined, { month: "short", day: "numeric" })} · {new Date(kickoff).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" })}
+            {new Date(kickoff).toLocaleDateString(undefined, {
+              month: "short",
+              day: "numeric",
+            })}{" "}
+            ·{" "}
+            {new Date(kickoff).toLocaleTimeString(undefined, {
+              hour: "numeric",
+              minute: "2-digit",
+            })}
           </div>
         )}
       </div>
@@ -70,7 +140,9 @@ export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, 
       </div>
 
       <div style={styles.summaryLine}>
-        Model exp. goals {expectedGoals.home} – {expectedGoals.away} · BTTS {btts.yes.probability.toFixed(0)}% · O2.5 {overUnder.over25.probability.toFixed(0)}%
+        Model exp. goals {expectedGoals.home} – {expectedGoals.away} · BTTS{" "}
+        {btts.yes.probability.toFixed(0)}% · O2.5{" "}
+        {overUnder.over25.probability.toFixed(0)}%
       </div>
 
       {recommendedMarket && (
@@ -79,25 +151,54 @@ export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, 
           <span style={styles.recommendedMarket}>
             {recommendedMarket.icon} {recommendedMarket.key}
           </span>
-          <span style={styles.recommendedProb}>{recommendedMarket.data.probability.toFixed(1)}%</span>
+          <span style={styles.recommendedProb}>
+            {recommendedMarket.data.probability.toFixed(1)}%
+          </span>
         </div>
       )}
 
       <div style={styles.grid}>
-        {pills.map((p, i) => (
-          <div key={i} style={{ ...styles.pill, borderTop: `2px solid ${confidenceColor(p.value.confidence)}` }}>
-            <div style={styles.pillTop}>
-              <span>{p.icon} {p.label}</span>
+        {pills.map((p, i) => {
+          const selected = isSelected({
+            homeTeam,
+            awayTeam,
+            kickoff,
+            leanKey: PILL_TO_LEAN[p.key],
+          });
+          return (
+            <div
+              key={i}
+              role="button"
+              onClick={(e) => handleSelectPill(e, p)}
+              style={{
+                ...styles.pill,
+                borderTop: `2px solid ${confidenceColor(p.value.confidence)}`,
+                ...(selected ? styles.pillSelected : {}),
+              }}
+            >
+              <div style={styles.pillTop}>
+                <span>
+                  {p.icon} {p.label}
+                </span>
+              </div>
+              <div style={styles.pillBottom}>
+                <span style={styles.pillValue}>{p.value.probability}%</span>
+                <span
+                  style={{
+                    ...styles.pillDot,
+                    background: confidenceColor(p.value.confidence),
+                  }}
+                />
+              </div>
+              {selected && <div style={styles.pillCheck}>✓</div>}
             </div>
-            <div style={styles.pillBottom}>
-              <span style={styles.pillValue}>{p.value.probability}%</span>
-              <span style={{ ...styles.pillDot, background: confidenceColor(p.value.confidence) }} />
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      <div style={styles.footerHint}>Tap for full analysis →</div>
+      <div style={styles.footerHint}>
+        Tap a market to add to slip · card body opens analysis
+      </div>
 
       <button
         onClick={(e) => {
@@ -123,7 +224,9 @@ export default function MatchCard({ competition, homeTeam, awayTeam, homeCrest, 
                   ...(isTracked ? styles.pickerItemDone : {}),
                 }}
               >
-                <span>{p.icon} {p.label} · {p.value.probability}%</span>
+                <span>
+                  {p.icon} {p.label} · {p.value.probability}%
+                </span>
                 <span>{isTracked ? "✓" : "Track"}</span>
               </button>
             );
@@ -139,38 +242,33 @@ const styles = {
     background: "linear-gradient(160deg, #1a0f33, #120a22)",
     border: "1px solid rgba(255,255,255,0.08)",
     borderRadius: "18px",
-    padding: "18px",
-    margin: "14px 0",
-    boxShadow: "0 8px 24px rgba(0,0,0,0.45)",
-    cursor: "pointer",
+    padding: "16px",
+    marginBottom: "14px",
+    color: "#fff",
+    fontFamily: "sans-serif",
   },
   topRow: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: "10px",
+    marginBottom: "12px",
   },
   competitionTag: {
-    background: "linear-gradient(90deg, #8b5cf6, #ec4899)",
-    color: "#fff",
     fontSize: "10px",
     fontWeight: 800,
-    padding: "4px 10px",
-    borderRadius: "20px",
+    letterSpacing: "0.4px",
     textTransform: "uppercase",
-    letterSpacing: "0.6px",
+    background: "linear-gradient(90deg, #8b5cf6, #ec4899)",
+    borderRadius: "999px",
+    padding: "4px 10px",
   },
-  kickoff: {
-    color: "#8b7aa8",
-    fontSize: "11px",
-    fontWeight: 600,
-  },
+  kickoff: { fontSize: "11px", color: "#a191c4" },
   header: {
-    display: "grid",
-    gridTemplateColumns: "1fr auto 1fr",
+    display: "flex",
     alignItems: "center",
+    justifyContent: "space-between",
     gap: "8px",
-    marginBottom: "8px",
+    marginBottom: "10px",
   },
   teamBlock: {
     display: "flex",
@@ -196,7 +294,8 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    background: "linear-gradient(90deg, rgba(139,92,246,0.18), rgba(236,72,153,0.18))",
+    background:
+      "linear-gradient(90deg, rgba(139,92,246,0.18), rgba(236,72,153,0.18))",
     border: "1px solid rgba(236,72,153,0.4)",
     borderRadius: "12px",
     padding: "10px 12px",
@@ -230,6 +329,20 @@ const styles = {
     background: "rgba(255,255,255,0.03)",
     borderRadius: "10px",
     padding: "8px 10px",
+    position: "relative",
+    cursor: "pointer",
+  },
+  pillSelected: {
+    background: "rgba(139,92,246,0.25)",
+    boxShadow: "0 0 0 1px rgba(139,92,246,0.7)",
+  },
+  pillCheck: {
+    position: "absolute",
+    top: "4px",
+    right: "6px",
+    fontSize: "11px",
+    color: "#22e584",
+    fontWeight: 900,
   },
   pillTop: {
     fontSize: "10px",
