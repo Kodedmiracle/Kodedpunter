@@ -5,6 +5,7 @@ import Picks from "./pages/Picks";
 import Leagues from "./pages/Leagues";
 import Tracker from "./pages/Tracker";
 import Profile from "./pages/Profile";
+import Basketball from "./pages/Basketball";
 import BottomNav from "./components/BottomNav";
 import { ensureAnonymousSession } from "./supabaseClient";
 import { SlipProvider } from "./SlipContext";
@@ -22,6 +23,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/picks" element={<Picks />} />
+            <Route path="/basketball" element={<Basketball />} />
             <Route path="/leagues" element={<Leagues />} />
             <Route path="/tracker" element={<Tracker />} />
             <Route path="/profile" element={<Profile />} />
