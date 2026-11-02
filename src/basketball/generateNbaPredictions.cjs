@@ -9,6 +9,7 @@ if (!KEY) {
 
 const BASE = "https://nba.highlightly.net";
 const HOME_ADV = 3.0;
+const SHRINK_GAMES = 15;
 
 async function get(path) {
   const res = await fetch(BASE + path, {
@@ -54,9 +55,22 @@ function buildTeamTable(standingsBody) {
   return byId;
 }
 
+function leagueAvgPpg(teams) {
+  let sum = 0;
+  let n = 0;
+  for (const t of teams.values()) {
+    if (t.wins + t.losses > 0) {
+      sum += t.ppg;
+      n++;
+    }
+  }
+  return n ? sum / n : 112;
+}
+
 function homeWinProb(expectedMargin) {
-  const p = 1 / (1 + Math.exp(-expectedMargin / 6));
-  return Math.round(p * 1000) / 10;
+  const p = 1 / (1 + Math.exp(-expectedMargin / 7));
+  const capped = Math.min(0.85, Math.max(0.15, p));
+  return Math.round(capped * 1000) / 10;
 }
 
 function predictGame(match, teams) {
@@ -64,8 +78,14 @@ function predictGame(match, teams) {
   const away = teams.get(match.awayTeam && match.awayTeam.id);
   if (!home || !away) return null;
 
-  const expHome = (home.ppg + away.oppPpg) / 2 + HOME_ADV;
-  const expAway = (away.ppg + home.oppPpg) / 2;
+  const lg = leagueAvgPpg(teams);
+  const sh = (t, v) => {
+    const g = t.wins + t.losses;
+    const w = g / (g + SHRINK_GAMES);
+    return w * v + (1 - w) * lg;
+  };
+  const expHome = (sh(home, home.ppg) + sh(away, away.oppPpg)) / 2 + HOME_ADV;
+  const expAway = (sh(away, away.ppg) + sh(home, home.oppPpg)) / 2;
   const total = expHome + expAway;
   const margin = expHome - expAway;
   const homePct = homeWinProb(margin);
@@ -89,11 +109,11 @@ function predictGame(match, teams) {
       moneyline: {
         home: {
           probability: homePct,
-          confidence: homePct >= 65 ? "HIGH" : homePct >= 55 ? "MEDIUM" : "LOW",
+          confidence: homePct >= 70 ? "HIGH" : homePct >= 58 ? "MEDIUM" : "LOW",
         },
         away: {
           probability: awayPct,
-          confidence: awayPct >= 65 ? "HIGH" : awayPct >= 55 ? "MEDIUM" : "LOW",
+          confidence: awayPct >= 70 ? "HIGH" : awayPct >= 58 ? "MEDIUM" : "LOW",
         },
       },
       totalPoints: {
