@@ -4,8 +4,6 @@ import {
   resolvePickToOutcome,
   moneylineOdds,
   totalOdds,
-  resolveNbaTotal,
-  resolveNbaMoneyline,
 } from "../sportyNba.js";
 
 function confFromProb(p) {
@@ -14,20 +12,22 @@ function confFromProb(p) {
   return "LOW";
 }
 
-/** Build moneyline + full / 1H / 2H total leans for ranking */
 function buildBestPicks(games, limit = 50) {
   const rows = [];
   for (const g of games) {
     const ml = g.prediction.moneyline;
     const ep = g.prediction.expectedPoints || {};
-    const full = Number(ep.total) || 0;
-    // rough half splits (until we have a real half model)
+    const isNcaa = (g.competition || "") === "NCAAB";
+    let full = Number(ep.total) || 0;
+
+    if (isNcaa && full > 0 && full < 150) full = Math.max(full, 152);
+    if (!isNcaa && full > 0 && full < 200) full = Math.max(full, 220);
+
     let proj1h = full * 0.49;
     let proj2h = full * 0.51;
-    // NCAAB model sometimes under-shoots full totals; bump halves toward \~70–80 range users see
-    if ((g.competition || "") === "NCAAB" && full > 0 && full < 110) {
-      proj1h = Math.max(proj1h, 70);
-      proj2h = Math.max(proj2h, 72);
+    if (isNcaa) {
+      proj1h = Math.max(proj1h, 76);
+      proj2h = Math.max(proj2h, 78);
     }
 
     const homeFav = ml.home.probability >= ml.away.probability;
@@ -36,7 +36,7 @@ function buildBestPicks(games, limit = 50) {
     const mlProb = homeFav ? ml.home.probability : ml.away.probability;
 
     rows.push({
-      matchId: g.matchId,
+      matchId: String(g.matchId),
       homeTeam: g.homeTeam,
       awayTeam: g.awayTeam,
       matchLabel: g.awayTeam + " @ " + g.homeTeam,
@@ -52,9 +52,8 @@ function buildBestPicks(games, limit = 50) {
       projected2h: proj2h,
     });
 
-    // Full-game total: lean the side farther from a neutral mid line
     if (full > 0) {
-      const mid = (g.competition || "") === "NCAAB" ? 145 : 225;
+      const mid = isNcaa ? 156 : 228;
       const side = full >= mid ? "Over" : "Under";
       const edge = Math.min(18, Math.abs(full - mid) * 1.2);
       const prob = Math.round(Math.min(78, 52 + edge) * 10) / 10;
@@ -63,8 +62,8 @@ function buildBestPicks(games, limit = 50) {
         homeTeam: g.homeTeam,
         awayTeam: g.awayTeam,
         matchLabel: g.awayTeam + " @ " + g.homeTeam,
-        leanKey: side + " " + (g.prediction.totalPoints && g.prediction.totalPoints.line),
-        market: side + " full · proj " + full,
+        leanKey: side + " full",
+        market: side + " full · proj " + Math.round(full * 10) / 10,
         probability: prob,
         confidence: confFromProb(prob),
         kickoff: g.kickoff,
@@ -77,9 +76,8 @@ function buildBestPicks(games, limit = 50) {
       });
     }
 
-    // 1H total (market 68)
     if (proj1h > 0) {
-      const mid1 = 72;
+      const mid1 = isNcaa ? 78 : 110;
       const side = proj1h >= mid1 ? "Over" : "Under";
       const edge = Math.min(16, Math.abs(proj1h - mid1) * 1.4);
       const prob = Math.round(Math.min(76, 53 + edge) * 10) / 10;
@@ -102,9 +100,8 @@ function buildBestPicks(games, limit = 50) {
       });
     }
 
-    // 2H total (market 228)
     if (proj2h > 0) {
-      const mid2 = 74;
+      const mid2 = isNcaa ? 80 : 112;
       const side = proj2h >= mid2 ? "Over" : "Under";
       const edge = Math.min(16, Math.abs(proj2h - mid2) * 1.4);
       const prob = Math.round(Math.min(76, 53 + edge) * 10) / 10;
@@ -402,7 +399,9 @@ export default function Basketball() {
           disabled={status === "loading"}
           onClick={() => bookPicks(bestAll, "all")}
         >
-          {status === "loading" ? "Booking…" : "Book all Best Picks on SportyBet NG"}
+          {status === "loading"
+            ? "Booking…"
+            : "Book all Best Picks on SportyBet NG"}
         </button>
         <button
           type="button"
@@ -478,7 +477,8 @@ export default function Basketball() {
         {status === "error" && <div style={styles.err}>{bookError}</div>}
         <p style={styles.hint}>
           Markets: moneyline (219), full O/U (225), 1H O/U (68), 2H O/U (228).
-          Half models are approximate. Only fixtures SportyBet returns can book.
+          Booking uses the closest live SportyBet line (e.g. 156.5), not a fake
+          145.5. Half models are approximate.
         </p>
       </div>
 
@@ -500,7 +500,9 @@ export default function Basketball() {
         ))}
       </div>
 
-      <h2 style={{ fontSize: "16px", margin: "18px 0 10px" }}>NCAAB top leans</h2>
+      <h2 style={{ fontSize: "16px", margin: "18px 0 10px" }}>
+        NCAAB top leans
+      </h2>
       <div style={{ ...styles.bestBox, borderColor: "rgba(34,211,238,0.35)" }}>
         {bestNcaa.slice(0, 12).map((p, i) => (
           <div key={p.matchId + "-ncaa"} style={styles.bestRow}>
@@ -530,7 +532,9 @@ export default function Basketball() {
         <GameCard key={"nba-" + g.matchId} g={g} />
       ))}
 
-      <h2 style={{ fontSize: "16px", margin: "20px 0 10px" }}>All NCAAB games</h2>
+      <h2 style={{ fontSize: "16px", margin: "20px 0 10px" }}>
+        All NCAAB games
+      </h2>
       {ncaa.map((g) => (
         <GameCard key={"ncaa-" + g.matchId} g={g} />
       ))}
