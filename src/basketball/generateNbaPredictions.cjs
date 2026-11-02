@@ -114,14 +114,25 @@ async function main() {
   for (const [id, t] of buildTeamTable(west)) teams.set(id, t);
   console.log("Teams loaded:", teams.size);
 
-  console.log("Fetching matches…");
-  const matchesBody = await get("/matches?league=NBA&limit=30");
-  const matches = matchesBody.data || [];
+console.log("Fetching matches for next 8 days…");
+  const matches = [];
+  const seen = new Set();
+  const start = new Date();
+  for (let i = 0; i < 8; i++) {
+    const d = new Date(start.getTime() + i * 24 * 60 * 60 * 1000);
+    const day = d.toISOString().slice(0, 10);
+    const body = await get("/matches?league=NBA&date=" + day + "&limit=30");
+    for (const m of body.data || []) {
+      if (seen.has(m.id)) continue;
+      seen.add(m.id);
+      matches.push(m);
+    }
+  }
   const scheduled = matches.filter(function (m) {
-    const d = (m.state && m.state.description) || "";
-    return d.toLowerCase().indexOf("schedule") !== -1;
+    const desc = ((m.state && m.state.description) || "").toLowerCase();
+    return desc.indexOf("schedule") !== -1;
   });
-
+  console.log("Scheduled games:", scheduled.length);
   const predictions = [];
   for (const m of scheduled) {
     const p = predictGame(m, teams);
