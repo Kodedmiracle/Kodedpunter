@@ -1,39 +1,134 @@
 import { useEffect, useState, useMemo } from "react";
 import {
   sameNbaMatch,
-  resolveNbaMoneyline,
+  resolvePickToOutcome,
   moneylineOdds,
+  totalOdds,
+  resolveNbaTotal,
+  resolveNbaMoneyline,
 } from "../sportyNba.js";
 
-function buildBestPicks(games, limit = 40) {
-  return games
-    .map((g) => {
-      const ml = g.prediction.moneyline;
-      const tp = g.prediction.totalPoints || {};
-      const ep = g.prediction.expectedPoints || {};
-      const homeFav = ml.home.probability >= ml.away.probability;
-      const leanSide = homeFav ? "Home" : "Away";
-      const leanTeam = homeFav ? g.homeTeam : g.awayTeam;
-      const probability = homeFav ? ml.home.probability : ml.away.probability;
-      const confidence = homeFav ? ml.home.confidence : ml.away.confidence;
-      return {
-        matchId: g.matchId,
+function confFromProb(p) {
+  if (p >= 65) return "HIGH";
+  if (p >= 55) return "MEDIUM";
+  return "LOW";
+}
+
+/** Build moneyline + full / 1H / 2H total leans for ranking */
+function buildBestPicks(games, limit = 50) {
+  const rows = [];
+  for (const g of games) {
+    const ml = g.prediction.moneyline;
+    const ep = g.prediction.expectedPoints || {};
+    const full = Number(ep.total) || 0;
+    // rough half splits (until we have a real half model)
+    let proj1h = full * 0.49;
+    let proj2h = full * 0.51;
+    // NCAAB model sometimes under-shoots full totals; bump halves toward \~70–80 range users see
+    if ((g.competition || "") === "NCAAB" && full > 0 && full < 110) {
+      proj1h = Math.max(proj1h, 70);
+      proj2h = Math.max(proj2h, 72);
+    }
+
+    const homeFav = ml.home.probability >= ml.away.probability;
+    const leanSide = homeFav ? "Home" : "Away";
+    const leanTeam = homeFav ? g.homeTeam : g.awayTeam;
+    const mlProb = homeFav ? ml.home.probability : ml.away.probability;
+
+    rows.push({
+      matchId: g.matchId,
+      homeTeam: g.homeTeam,
+      awayTeam: g.awayTeam,
+      matchLabel: g.awayTeam + " @ " + g.homeTeam,
+      leanKey: leanSide + " Win",
+      market: leanSide + " Win · " + leanTeam,
+      probability: mlProb,
+      confidence: confFromProb(mlProb),
+      kickoff: g.kickoff,
+      competition: g.competition || "NBA",
+      marketType: "moneyline",
+      projected: full,
+      projected1h: proj1h,
+      projected2h: proj2h,
+    });
+
+    // Full-game total: lean the side farther from a neutral mid line
+    if (full > 0) {
+      const mid = (g.competition || "") === "NCAAB" ? 145 : 225;
+      const side = full >= mid ? "Over" : "Under";
+      const edge = Math.min(18, Math.abs(full - mid) * 1.2);
+      const prob = Math.round(Math.min(78, 52 + edge) * 10) / 10;
+      rows.push({
+        matchId: g.matchId + "-tot",
         homeTeam: g.homeTeam,
         awayTeam: g.awayTeam,
         matchLabel: g.awayTeam + " @ " + g.homeTeam,
-        leanKey: leanSide + " Win",
-        leanTeam,
-        market: leanSide + " Win · " + leanTeam,
-        probability,
-        confidence,
-        totalLine: tp.line,
-        projected: ep.total,
+        leanKey: side + " " + (g.prediction.totalPoints && g.prediction.totalPoints.line),
+        market: side + " full · proj " + full,
+        probability: prob,
+        confidence: confFromProb(prob),
         kickoff: g.kickoff,
         competition: g.competition || "NBA",
-      };
-    })
-    .sort((a, b) => b.probability - a.probability)
-    .slice(0, limit);
+        marketType: "total",
+        totalSide: side,
+        projected: full,
+        projected1h: proj1h,
+        projected2h: proj2h,
+      });
+    }
+
+    // 1H total (market 68)
+    if (proj1h > 0) {
+      const mid1 = 72;
+      const side = proj1h >= mid1 ? "Over" : "Under";
+      const edge = Math.min(16, Math.abs(proj1h - mid1) * 1.4);
+      const prob = Math.round(Math.min(76, 53 + edge) * 10) / 10;
+      rows.push({
+        matchId: g.matchId + "-1h",
+        homeTeam: g.homeTeam,
+        awayTeam: g.awayTeam,
+        matchLabel: g.awayTeam + " @ " + g.homeTeam,
+        leanKey: "1H " + side,
+        market: "1H " + side + " · proj " + Math.round(proj1h * 10) / 10,
+        probability: prob,
+        confidence: confFromProb(prob),
+        kickoff: g.kickoff,
+        competition: g.competition || "NBA",
+        marketType: "1h_total",
+        totalSide: side,
+        projected: full,
+        projected1h: proj1h,
+        projected2h: proj2h,
+      });
+    }
+
+    // 2H total (market 228)
+    if (proj2h > 0) {
+      const mid2 = 74;
+      const side = proj2h >= mid2 ? "Over" : "Under";
+      const edge = Math.min(16, Math.abs(proj2h - mid2) * 1.4);
+      const prob = Math.round(Math.min(76, 53 + edge) * 10) / 10;
+      rows.push({
+        matchId: g.matchId + "-2h",
+        homeTeam: g.homeTeam,
+        awayTeam: g.awayTeam,
+        matchLabel: g.awayTeam + " @ " + g.homeTeam,
+        leanKey: "2H " + side,
+        market: "2H " + side + " · proj " + Math.round(proj2h * 10) / 10,
+        probability: prob,
+        confidence: confFromProb(prob),
+        kickoff: g.kickoff,
+        competition: g.competition || "NBA",
+        marketType: "2h_total",
+        totalSide: side,
+        projected: full,
+        projected1h: proj1h,
+        projected2h: proj2h,
+      });
+    }
+  }
+
+  return rows.sort((a, b) => b.probability - a.probability).slice(0, limit);
 }
 
 function isToday(kickoff) {
@@ -131,11 +226,11 @@ export default function Basketball() {
   }, []);
 
   const allGames = useMemo(() => [...nba, ...ncaa], [nba, ncaa]);
-  const bestAll = useMemo(() => buildBestPicks(allGames, 40), [allGames]);
-  const bestNba = useMemo(() => buildBestPicks(nba, 20), [nba]);
-  const bestNcaa = useMemo(() => buildBestPicks(ncaa, 20), [ncaa]);
+  const bestAll = useMemo(() => buildBestPicks(allGames, 60), [allGames]);
+  const bestNba = useMemo(() => buildBestPicks(nba, 30), [nba]);
+  const bestNcaa = useMemo(() => buildBestPicks(ncaa, 30), [ncaa]);
   const todayPicks = useMemo(
-    () => buildBestPicks(allGames.filter((g) => isToday(g.kickoff)), 50),
+    () => buildBestPicks(allGames.filter((g) => isToday(g.kickoff)), 80),
     [allGames]
   );
 
@@ -162,7 +257,16 @@ export default function Basketball() {
       const oddsOf = (pick) => {
         const ev = findEv(pick);
         if (!ev) return null;
-        return moneylineOdds(ev, pick);
+        const out = resolvePickToOutcome(pick, ev);
+        if (!out) return null;
+        if ((pick.marketType || "moneyline") === "moneyline") {
+          return moneylineOdds(ev, pick);
+        }
+        return totalOdds(ev, {
+          marketId: out.marketId,
+          specifier: out.specifier,
+          outcomeId: out.outcomeId,
+        });
       };
 
       let chosen = picks;
@@ -174,6 +278,7 @@ export default function Basketball() {
         let run = 1;
         for (const p of eligible) {
           const o = oddsOf(p);
+          if (!o) continue;
           const next = run * o;
           if (next >= target) {
             if (
@@ -193,6 +298,7 @@ export default function Basketball() {
       const outcomes = [];
       const missed = [];
       let combined = 1;
+      const seenEventMarket = new Set();
 
       for (const pick of chosen) {
         const ev = findEv(pick);
@@ -200,18 +306,26 @@ export default function Basketball() {
           missed.push(pick.matchLabel);
           continue;
         }
-        const lean = resolveNbaMoneyline(pick, ev);
-        if (!lean) {
-          missed.push(pick.matchLabel + " (market)");
+        const out = resolvePickToOutcome(pick, ev);
+        if (!out) {
+          missed.push(pick.matchLabel + " (" + (pick.marketType || "") + ")");
           continue;
         }
-        const o = moneylineOdds(ev, pick);
+        const dedupe =
+          out.eventId + "|" + out.marketId + "|" + (out.specifier || "");
+        if (seenEventMarket.has(dedupe)) continue;
+        seenEventMarket.add(dedupe);
+
+        const o = oddsOf(pick);
         if (o) combined *= o;
-        outcomes.push({
-          eventId: ev.eventId,
-          marketId: lean.marketId,
-          outcomeId: lean.outcomeId,
-        });
+
+        const payload = {
+          eventId: out.eventId,
+          marketId: out.marketId,
+          outcomeId: out.outcomeId,
+        };
+        if (out.specifier) payload.specifier = out.specifier;
+        outcomes.push(payload);
       }
 
       setSkipped(missed);
@@ -219,7 +333,7 @@ export default function Basketball() {
         throw new Error(
           "None matched SportyBet. Only " +
             (list.count || 0) +
-            " basketball events listed right now — try Best 5 or wait for more fixtures."
+            " events listed — try Best 5 or Today."
         );
       }
 
@@ -252,14 +366,14 @@ export default function Basketball() {
     <div className="page">
       <h1>Basketball</h1>
       <p style={{ color: "#a191c4", fontSize: "13px", marginBottom: "16px" }}>
-        NBA + NCAAB · moneyline booking
+        Moneyline + full / 1H / 2H totals
         {nbaMeta?.matchCount != null ? " · NBA " + nbaMeta.matchCount : ""}
         {ncaaMeta?.matchCount != null ? " · NCAAB " + ncaaMeta.matchCount : ""}
       </p>
 
       <div style={styles.bestBox}>
-        <h2 style={styles.bestTitle}>Best Picks (NBA + NCAAB)</h2>
-        {bestAll.slice(0, 15).map((p, i) => (
+        <h2 style={styles.bestTitle}>Best Picks (all markets)</h2>
+        {bestAll.slice(0, 20).map((p, i) => (
           <div key={p.matchId + "-all"} style={styles.bestRow}>
             <div style={styles.rank}>{i + 1}</div>
             <div style={{ flex: 1 }}>
@@ -271,7 +385,7 @@ export default function Basketball() {
                 >
                   {p.competition}
                 </span>{" "}
-                {p.market}
+                <span style={styles.mtag}>{p.marketType}</span> {p.market}
               </div>
               <div style={styles.matchLabel}>{p.matchLabel}</div>
             </div>
@@ -288,9 +402,7 @@ export default function Basketball() {
           disabled={status === "loading"}
           onClick={() => bookPicks(bestAll, "all")}
         >
-          {status === "loading"
-            ? "Booking…"
-            : "Book all Best Picks on SportyBet NG"}
+          {status === "loading" ? "Booking…" : "Book all Best Picks on SportyBet NG"}
         </button>
         <button
           type="button"
@@ -299,6 +411,14 @@ export default function Basketball() {
           onClick={() => bookPicks(bestAll, "top", 5)}
         >
           Best 5 picks
+        </button>
+        <button
+          type="button"
+          style={{ ...styles.button, marginTop: "8px" }}
+          disabled={status === "loading"}
+          onClick={() => bookPicks(bestAll, "top", 10)}
+        >
+          Best 10 picks
         </button>
 
         <div
@@ -331,7 +451,7 @@ export default function Basketball() {
 
         <div style={styles.todayBox}>
           <div style={styles.todayTitle}>
-            Today’s games · {todayPicks.length} model leans
+            Today’s games · {todayPicks.length} leans (all markets)
           </div>
           <button
             type="button"
@@ -339,7 +459,7 @@ export default function Basketball() {
             disabled={status === "loading" || todayPicks.length === 0}
             onClick={() => bookPicks(todayPicks, "all")}
           >
-            Book all today’s games on SportyBet NG
+            Book all today’s leans on SportyBet NG
           </button>
         </div>
 
@@ -357,33 +477,32 @@ export default function Basketball() {
         )}
         {status === "error" && <div style={styles.err}>{bookError}</div>}
         <p style={styles.hint}>
-          Moneyline only. SportyBet lists fewer games than our model — unmatched
-          names show as Skipped. Prefer Best 5 when the board is short.
+          Markets: moneyline (219), full O/U (225), 1H O/U (68), 2H O/U (228).
+          Half models are approximate. Only fixtures SportyBet returns can book.
         </p>
       </div>
 
-      <h2 style={{ fontSize: "16px", margin: "18px 0 10px" }}>NBA Best Picks</h2>
+      <h2 style={{ fontSize: "16px", margin: "18px 0 10px" }}>NBA top leans</h2>
       <div style={styles.bestBox}>
-        {bestNba.slice(0, 10).map((p, i) => (
+        {bestNba.slice(0, 12).map((p, i) => (
           <div key={p.matchId + "-nba"} style={styles.bestRow}>
             <div style={styles.rank}>{i + 1}</div>
             <div style={{ flex: 1 }}>
-              <div style={styles.market}>{p.market}</div>
+              <div style={styles.market}>
+                <span style={styles.mtag}>{p.marketType}</span> {p.market}
+              </div>
               <div style={styles.matchLabel}>{p.matchLabel}</div>
             </div>
             <div style={{ textAlign: "right" }}>
               <div style={styles.prob}>{p.probability}%</div>
-              <div style={styles.conf}>{p.confidence}</div>
             </div>
           </div>
         ))}
       </div>
 
-      <h2 style={{ fontSize: "16px", margin: "18px 0 10px" }}>
-        NCAAB Best Picks
-      </h2>
+      <h2 style={{ fontSize: "16px", margin: "18px 0 10px" }}>NCAAB top leans</h2>
       <div style={{ ...styles.bestBox, borderColor: "rgba(34,211,238,0.35)" }}>
-        {bestNcaa.slice(0, 10).map((p, i) => (
+        {bestNcaa.slice(0, 12).map((p, i) => (
           <div key={p.matchId + "-ncaa"} style={styles.bestRow}>
             <div
               style={{
@@ -394,12 +513,13 @@ export default function Basketball() {
               {i + 1}
             </div>
             <div style={{ flex: 1 }}>
-              <div style={styles.market}>{p.market}</div>
+              <div style={styles.market}>
+                <span style={styles.mtag}>{p.marketType}</span> {p.market}
+              </div>
               <div style={styles.matchLabel}>{p.matchLabel}</div>
             </div>
             <div style={{ textAlign: "right" }}>
               <div style={styles.prob}>{p.probability}%</div>
-              <div style={styles.conf}>{p.confidence}</div>
             </div>
           </div>
         ))}
@@ -410,9 +530,7 @@ export default function Basketball() {
         <GameCard key={"nba-" + g.matchId} g={g} />
       ))}
 
-      <h2 style={{ fontSize: "16px", margin: "20px 0 10px" }}>
-        All NCAAB games
-      </h2>
+      <h2 style={{ fontSize: "16px", margin: "20px 0 10px" }}>All NCAAB games</h2>
       {ncaa.map((g) => (
         <GameCard key={"ncaa-" + g.matchId} g={g} />
       ))}
@@ -443,12 +561,18 @@ const styles = {
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
   },
-  market: { fontSize: "14px", fontWeight: 700 },
+  market: { fontSize: "13px", fontWeight: 700 },
   matchLabel: { fontSize: "12px", color: "#a191c4", marginTop: "2px" },
   prob: { fontSize: "16px", fontWeight: 900, color: "#22e584" },
   conf: { fontSize: "11px", color: "#a191c4", fontWeight: 700 },
   miniNba: { fontSize: "10px", color: "#fdba74", fontWeight: 800 },
   miniNcaa: { fontSize: "10px", color: "#67e8f9", fontWeight: 800 },
+  mtag: {
+    fontSize: "9px",
+    textTransform: "uppercase",
+    color: "#c4b5fd",
+    marginRight: "4px",
+  },
   button: {
     marginTop: "14px",
     width: "100%",

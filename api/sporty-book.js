@@ -16,7 +16,7 @@ const FOOTBALL = {
   keepLines: new Set(["", "total=0.5", "total=1.5", "total=2.5", "total=3.5"]),
 };
 
-const BASKETBALL = {
+const BASKETBALL = {marketId: "219,225,68,228,1,18",
   sportId: "sr:sport:2",
   // 219 = winner (common), 225 = total points (common) — we keep whatever comes back
   marketId: "219,225,1,18",
