@@ -1,25 +1,34 @@
-const LIST_URL =
-  "https://www.sportybet.com/api/ng/factsCenter/pcUpcomingEvents" +
-  "?sportId=sr:sport:1&marketId=1,18,10,29&pageSize=100&option=1";
-
 const SHARE_URL =
   "https://www.sportybet.com/api/ng/orders/share?throwInvalidEvent=true";
 
 const HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (Linux; Android 12; Mobile) AppleWebKit/537.36 Chrome/122.0.0.0 Mobile Safari/537.36",
-  Referer: "https://www.sportybet.com/ng/sport/football",
+  Referer: "https://www.sportybet.com/ng/",
   Origin: "https://www.sportybet.com",
   Accept: "application/json, text/plain, */*",
 };
 
-const KEEP_LINES = new Set(["", "total=0.5", "total=1.5", "total=2.5", "total=3.5"]);
+const FOOTBALL = {
+  sportId: "sr:sport:1",
+  marketId: "1,18,10,29",
+  referer: "https://www.sportybet.com/ng/sport/football",
+  keepLines: new Set(["", "total=0.5", "total=1.5", "total=2.5", "total=3.5"]),
+};
 
-function oddsFor(ev) {
+const BASKETBALL = {
+  sportId: "sr:sport:2",
+  // 219 = winner (common), 225 = total points (common) — we keep whatever comes back
+  marketId: "219,225,1,18",
+  referer: "https://www.sportybet.com/ng/sport/basketball",
+  keepLines: null,
+};
+
+function oddsFor(ev, keepLines) {
   const out = {};
   for (const m of ev.markets || []) {
     const spec = m.specifier || "";
-    if (m.id === "18" && !KEEP_LINES.has(spec)) continue;
+    if (keepLines && m.id === "18" && !keepLines.has(spec)) continue;
     for (const o of m.outcomes || []) {
       if (o.isActive !== 1) continue;
       const v = parseFloat(o.odds);
@@ -27,6 +36,20 @@ function oddsFor(ev) {
     }
   }
   return out;
+}
+
+function listUrl(cfg, pageNum) {
+  return (
+    "https://www.sportybet.com/api/ng/factsCenter/pcUpcomingEvents" +
+    "?sportId=" +
+    cfg.sportId +
+    "&marketId=" +
+    cfg.marketId +
+    "&pageSize=100&option=1&pageNum=" +
+    pageNum +
+    "&_t=" +
+    Date.now()
+  );
 }
 
 export default async function handler(req, res) {
@@ -37,14 +60,16 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === "GET") {
+      const sport = (req.query.sport || "football").toLowerCase();
+      const cfg = sport === "basketball" || sport === "nba" ? BASKETBALL : FOOTBALL;
+      const headers = { ...HEADERS, Referer: cfg.referer };
+
       const events = [];
       const seen = new Set();
+      const pages = sport === "basketball" || sport === "nba" ? 6 : 12;
 
-      for (const page of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) {
-        const r = await fetch(
-          LIST_URL + "&pageNum=" + page + "&_t=" + Date.now(),
-          { headers: HEADERS }
-        );
+      for (let page = 1; page <= pages; page++) {
+        const r = await fetch(listUrl(cfg, page), { headers });
         const json = await r.json();
         if (json.bizCode !== 10000) continue;
         for (const tour of json.data.tournaments || []) {
@@ -57,13 +82,25 @@ export default async function handler(req, res) {
               home: ev.homeTeamName,
               away: ev.awayTeamName,
               start: ev.estimateStartTime,
-              odds: oddsFor(ev),
+              odds: oddsFor(ev, cfg.keepLines),
+              marketsRaw: (ev.markets || []).map((m) => ({
+                id: m.id,
+                specifier: m.specifier || "",
+                outcomes: (m.outcomes || [])
+                  .filter((o) => o.isActive === 1)
+                  .map((o) => ({ id: o.id, desc: o.desc || o.name, odds: o.odds })),
+              })),
             });
           }
         }
       }
 
-      return res.status(200).json({ ok: true, count: events.length, events });
+      return res.status(200).json({
+        ok: true,
+        sport,
+        count: events.length,
+        events,
+      });
     }
 
     if (req.method === "POST") {
@@ -79,18 +116,18 @@ export default async function handler(req, res) {
       });
       const json = await r.json();
       if (json.bizCode !== 10000 || !json.data || !json.data.shareCode) {
-        console.log("SportyBet share rejected:", JSON.stringify(json));
         return res.status(502).json({
           ok: false,
           message: json.message || "SportyBet did not return a code",
           bizCode: json.bizCode,
-          debug: json,
         });
       }
       return res.status(200).json({
         ok: true,
         shareCode: json.data.shareCode,
-        shareURL: json.data.shareURL || `https://www.sportybet.com/ng/?shareCode=${json.data.shareCode}`,
+        shareURL:
+          json.data.shareURL ||
+          "https://www.sportybet.com/ng/?shareCode=" + json.data.shareCode,
       });
     }
 
