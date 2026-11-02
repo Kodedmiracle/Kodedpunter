@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { sameNbaMatch, nbaLeanToSporty } from "../sportyNba.js";
 
-function buildBestPicks(games, limit = 12) {
+function buildBestPicks(games, limit = 40) {
   return games
     .map((g) => {
       const ml = g.prediction.moneyline;
@@ -30,6 +30,20 @@ function buildBestPicks(games, limit = 12) {
     })
     .sort((a, b) => b.probability - a.probability)
     .slice(0, limit);
+}
+
+function isToday(kickoff) {
+  if (!kickoff) return false;
+  const wat = new Date(new Date(kickoff).getTime() + 60 * 60 * 1000);
+  const now = new Date(Date.now() + 60 * 60 * 1000);
+  return wat.toISOString().slice(0, 10) === now.toISOString().slice(0, 10);
+}
+
+function moneylineOdds(ev, leanKey) {
+  if (!ev || !ev.odds) return null;
+  if (leanKey === "Home Win") return ev.odds["219||4"] || null;
+  if (leanKey === "Away Win") return ev.odds["219||5"] || null;
+  return null;
 }
 
 function GameCard({ g }) {
@@ -79,31 +93,6 @@ function GameCard({ g }) {
   );
 }
 
-function BestBlock({ title, best, accent, bookSlot }) {
-  return (
-    <div style={{ ...styles.bestBox, borderColor: accent }}>
-      <h2 style={styles.bestTitle}>{title}</h2>
-      {best.length === 0 && (
-        <p style={styles.hint}>No picks yet — run the generator.</p>
-      )}
-      {best.map((p, i) => (
-        <div key={p.matchId + title} style={styles.bestRow}>
-          <div style={{ ...styles.rank, background: accent }}>{i + 1}</div>
-          <div style={{ flex: 1 }}>
-            <div style={styles.market}>{p.market}</div>
-            <div style={styles.matchLabel}>{p.matchLabel}</div>
-          </div>
-          <div style={{ textAlign: "right" }}>
-            <div style={styles.prob}>{p.probability}%</div>
-            <div style={styles.conf}>{p.confidence}</div>
-          </div>
-        </div>
-      ))}
-      {bookSlot}
-    </div>
-  );
-}
-
 export default function Basketball() {
   const [nba, setNba] = useState([]);
   const [ncaa, setNcaa] = useState([]);
@@ -118,6 +107,7 @@ export default function Basketball() {
   const [bookError, setBookError] = useState("");
   const [skipped, setSkipped] = useState([]);
   const [summary, setSummary] = useState("");
+  const [targetOdds, setTargetOdds] = useState(10);
 
   useEffect(() => {
     Promise.all([
@@ -143,10 +133,16 @@ export default function Basketball() {
       });
   }, []);
 
-  const nbaBest = useMemo(() => buildBestPicks(nba, 12), [nba]);
-  const ncaaBest = useMemo(() => buildBestPicks(ncaa, 12), [ncaa]);
+  const allGames = useMemo(() => [...nba, ...ncaa], [nba, ncaa]);
+  const bestAll = useMemo(() => buildBestPicks(allGames, 40), [allGames]);
+  const bestNba = useMemo(() => buildBestPicks(nba, 20), [nba]);
+  const bestNcaa = useMemo(() => buildBestPicks(ncaa, 20), [ncaa]);
+  const todayPicks = useMemo(
+    () => buildBestPicks(allGames.filter((g) => isToday(g.kickoff)), 50),
+    [allGames]
+  );
 
-  async function bookBestPicks(limit) {
+  async function bookPicks(picks, mode, target) {
     setStatus("loading");
     setBookError("");
     setCode("");
@@ -159,9 +155,40 @@ export default function Basketball() {
       const list = await listRes.json();
       if (!list.ok) throw new Error(list.message || "Could not load SportyBet basketball");
 
-      const chosen = nbaBest.slice(0, limit || nbaBest.length);
+      const oddsOf = (pick) => {
+        const ev = (list.events || []).find((e) =>
+          sameNbaMatch(pick.homeTeam, pick.awayTeam, e.home, e.away)
+        );
+        return moneylineOdds(ev, pick.leanKey);
+      };
+
+      let chosen = picks;
+      if (mode === "top") {
+        chosen = picks.filter((p) => oddsOf(p)).slice(0, target);
+      } else if (mode === "odds") {
+        const eligible = picks.filter((p) => oddsOf(p));
+        chosen = [];
+        let run = 1;
+        for (const p of eligible) {
+          const o = oddsOf(p);
+          const next = run * o;
+          if (next >= target) {
+            if (
+              chosen.length === 0 ||
+              Math.abs(Math.log(next / target)) < Math.abs(Math.log(run / target))
+            ) {
+              chosen.push(p);
+            }
+            break;
+          }
+          chosen.push(p);
+          run = next;
+        }
+      }
+
       const outcomes = [];
       const missed = [];
+      let combined = 1;
 
       for (const pick of chosen) {
         const lean = nbaLeanToSporty(pick.leanKey);
@@ -176,6 +203,8 @@ export default function Basketball() {
           missed.push(pick.matchLabel);
           continue;
         }
+        const o = moneylineOdds(ev, pick.leanKey);
+        if (o) combined *= o;
         outcomes.push({
           eventId: ev.eventId,
           marketId: lean.marketId,
@@ -185,7 +214,7 @@ export default function Basketball() {
 
       setSkipped(missed);
       if (outcomes.length === 0) {
-        throw new Error("None of these NBA picks matched SportyBet fixtures");
+        throw new Error("None of these picks matched SportyBet fixtures");
       }
 
       const bookRes = await fetch("/api/sporty-book", {
@@ -198,7 +227,9 @@ export default function Basketball() {
         throw new Error(booked.message || "SportyBet rejected the slip");
       }
 
-      setSummary(outcomes.length + " NBA picks booked");
+      setSummary(
+        outcomes.length + " picks · combined odds \~" + combined.toFixed(2)
+      );
       setCode(booked.shareCode);
       setUrl(booked.shareURL);
       setStatus("done");
@@ -215,67 +246,144 @@ export default function Basketball() {
     <div className="page">
       <h1>Basketball</h1>
       <p style={{ color: "#a191c4", fontSize: "13px", marginBottom: "16px" }}>
-        NBA + NCAAB moneyline leans
-        {nbaMeta?.generatedAt
-          ? " · NBA " + new Date(nbaMeta.generatedAt).toLocaleString()
-          : ""}
-        {ncaaMeta?.matchCount != null ? " · NCAAB " + ncaaMeta.matchCount + " games" : ""}
+        NBA + NCAAB · moneyline booking like football
+        {nbaMeta?.matchCount != null ? " · NBA " + nbaMeta.matchCount : ""}
+        {ncaaMeta?.matchCount != null ? " · NCAAB " + ncaaMeta.matchCount : ""}
       </p>
 
-      <BestBlock
-        title="NBA Best Picks"
-        best={nbaBest}
-        accent="linear-gradient(90deg, #f97316, #ef4444)"
-        bookSlot={
-          <>
-            <button
-              type="button"
-              style={styles.button}
-              disabled={status === "loading" || nbaBest.length === 0}
-              onClick={() => bookBestPicks(12)}
-            >
-              {status === "loading" ? "Booking…" : "Book NBA Best Picks on SportyBet NG"}
-            </button>
-            <button
-              type="button"
-              style={{ ...styles.button, marginTop: "8px", opacity: 0.9 }}
-              disabled={status === "loading" || nbaBest.length === 0}
-              onClick={() => bookBestPicks(5)}
-            >
-              Book NBA top 5 only
-            </button>
-            {status === "done" && (
-              <div style={styles.result}>
-                <div style={styles.code}>{code}</div>
-                {summary && <div style={styles.skip}>{summary}</div>}
-                <a href={url} style={styles.link} target="_blank" rel="noreferrer">
-                  Open slip on SportyBet
-                </a>
-                {skipped.length > 0 && (
-                  <div style={styles.skip}>Skipped: {skipped.join(", ")}</div>
-                )}
+      {/* Combined Best Picks + book controls */}
+      <div style={styles.bestBox}>
+        <h2 style={styles.bestTitle}>Best Picks (NBA + NCAAB)</h2>
+        {bestAll.slice(0, 15).map((p, i) => (
+          <div key={p.matchId + "-all"} style={styles.bestRow}>
+            <div style={styles.rank}>{i + 1}</div>
+            <div style={{ flex: 1 }}>
+              <div style={styles.market}>
+                <span style={p.competition === "NCAAB" ? styles.miniNcaa : styles.miniNba}>
+                  {p.competition}
+                </span>{" "}
+                {p.market}
               </div>
+              <div style={styles.matchLabel}>{p.matchLabel}</div>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <div style={styles.prob}>{p.probability}%</div>
+              <div style={styles.conf}>{p.confidence}</div>
+            </div>
+          </div>
+        ))}
+
+        <button
+          type="button"
+          style={styles.button}
+          disabled={status === "loading"}
+          onClick={() => bookPicks(bestAll, "all")}
+        >
+          {status === "loading" ? "Booking…" : "Book all Best Picks on SportyBet NG"}
+        </button>
+        <button
+          type="button"
+          style={{ ...styles.button, marginTop: "8px" }}
+          disabled={status === "loading"}
+          onClick={() => bookPicks(bestAll, "top", 5)}
+        >
+          Best 5 picks
+        </button>
+
+        <div style={{ display: "flex", gap: "8px", alignItems: "center", marginTop: "8px" }}>
+          <input
+            type="number"
+            min="2"
+            step="1"
+            value={targetOdds}
+            onChange={(e) => setTargetOdds(e.target.value)}
+            style={styles.input}
+          />
+          <button
+            type="button"
+            style={{ ...styles.button, marginTop: 0, flex: 1 }}
+            disabled={status === "loading"}
+            onClick={() => bookPicks(bestAll, "odds", Number(targetOdds) || 10)}
+          >
+            Around {targetOdds} odds
+          </button>
+        </div>
+
+        <div style={styles.todayBox}>
+          <div style={styles.todayTitle}>
+            Today’s games · {todayPicks.length} model leans
+          </div>
+          <button
+            type="button"
+            style={{ ...styles.button, marginTop: "8px" }}
+            disabled={status === "loading" || todayPicks.length === 0}
+            onClick={() => bookPicks(todayPicks, "all")}
+          >
+            Book all today’s games on SportyBet NG
+          </button>
+        </div>
+
+        {status === "done" && (
+          <div style={styles.result}>
+            <div style={styles.code}>{code}</div>
+            {summary && <div style={styles.skip}>{summary}</div>}
+            <a href={url} style={styles.link} target="_blank" rel="noreferrer">
+              Open slip on SportyBet
+            </a>
+            {skipped.length > 0 && (
+              <div style={styles.skip}>Skipped: {skipped.join(", ")}</div>
             )}
-            {status === "error" && <div style={styles.err}>{bookError}</div>}
-            <p style={styles.hint}>
-              NBA moneyline booking. NCAAB is shown below (book later when SportyBet lists them).
-            </p>
-          </>
-        }
-      />
+          </div>
+        )}
+        {status === "error" && <div style={styles.err}>{bookError}</div>}
+        <p style={styles.hint}>
+          Moneyline only for now. Odds target uses SportyBet prices when the game is listed.
+          Unmatched names are skipped (add aliases if needed).
+        </p>
+      </div>
 
-      <BestBlock
-        title="NCAAB Best Picks"
-        best={ncaaBest}
-        accent="linear-gradient(90deg, #22d3ee, #3b82f6)"
-      />
+      <h2 style={{ fontSize: "16px", margin: "18px 0 10px" }}>NBA Best Picks</h2>
+      <div style={styles.bestBox}>
+        {bestNba.slice(0, 10).map((p, i) => (
+          <div key={p.matchId + "-nba"} style={styles.bestRow}>
+            <div style={styles.rank}>{i + 1}</div>
+            <div style={{ flex: 1 }}>
+              <div style={styles.market}>{p.market}</div>
+              <div style={styles.matchLabel}>{p.matchLabel}</div>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <div style={styles.prob}>{p.probability}%</div>
+              <div style={styles.conf}>{p.confidence}</div>
+            </div>
+          </div>
+        ))}
+      </div>
 
-      <h2 style={{ fontSize: "16px", margin: "20px 0 10px" }}>NBA games</h2>
+      <h2 style={{ fontSize: "16px", margin: "18px 0 10px" }}>NCAAB Best Picks</h2>
+      <div style={{ ...styles.bestBox, borderColor: "rgba(34,211,238,0.35)" }}>
+        {bestNcaa.slice(0, 10).map((p, i) => (
+          <div key={p.matchId + "-ncaa"} style={styles.bestRow}>
+            <div style={{ ...styles.rank, background: "linear-gradient(90deg,#22d3ee,#3b82f6)" }}>
+              {i + 1}
+            </div>
+            <div style={{ flex: 1 }}>
+              <div style={styles.market}>{p.market}</div>
+              <div style={styles.matchLabel}>{p.matchLabel}</div>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <div style={styles.prob}>{p.probability}%</div>
+              <div style={styles.conf}>{p.confidence}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 style={{ fontSize: "16px", margin: "20px 0 10px" }}>All NBA games</h2>
       {nba.map((g) => (
         <GameCard key={"nba-" + g.matchId} g={g} />
       ))}
 
-      <h2 style={{ fontSize: "16px", margin: "20px 0 10px" }}>NCAAB games</h2>
+      <h2 style={{ fontSize: "16px", margin: "20px 0 10px" }}>All NCAAB games</h2>
       {ncaa.map((g) => (
         <GameCard key={"ncaa-" + g.matchId} g={g} />
       ))}
@@ -302,14 +410,24 @@ const styles = {
   rank: {
     width: "22px",
     fontWeight: 900,
+    background: "linear-gradient(90deg, #f97316, #ef4444)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
-    background: "linear-gradient(90deg, #f97316, #ef4444)",
   },
   market: { fontSize: "14px", fontWeight: 700 },
   matchLabel: { fontSize: "12px", color: "#a191c4", marginTop: "2px" },
   prob: { fontSize: "16px", fontWeight: 900, color: "#22e584" },
   conf: { fontSize: "11px", color: "#a191c4", fontWeight: 700 },
+  miniNba: {
+    fontSize: "10px",
+    color: "#fdba74",
+    fontWeight: 800,
+  },
+  miniNcaa: {
+    fontSize: "10px",
+    color: "#67e8f9",
+    fontWeight: 800,
+  },
   button: {
     marginTop: "14px",
     width: "100%",
@@ -320,6 +438,22 @@ const styles = {
     color: "#fff",
     background: "linear-gradient(90deg, #f97316, #ef4444)",
   },
+  input: {
+    width: "80px",
+    padding: "12px",
+    borderRadius: "10px",
+    border: "1px solid #444",
+    background: "#1a1a1a",
+    color: "#fff",
+    fontSize: "15px",
+  },
+  todayBox: {
+    marginTop: "14px",
+    padding: "12px",
+    borderRadius: "12px",
+    background: "rgba(255,255,255,0.04)",
+  },
+  todayTitle: { fontSize: "13px", fontWeight: 700, color: "#e0c4ff" },
   result: { marginTop: "12px", textAlign: "center" },
   code: { fontSize: "22px", fontWeight: 900, letterSpacing: "2px" },
   link: { color: "#fdba74", fontSize: "13px" },
