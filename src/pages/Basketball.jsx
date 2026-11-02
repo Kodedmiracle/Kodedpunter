@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { sameNbaMatch, nbaLeanToSporty } from "../sportyNba.js";
 
 function buildBestPicks(games, limit = 12) {
   return games
@@ -13,6 +14,8 @@ function buildBestPicks(games, limit = 12) {
       const confidence = homeFav ? ml.home.confidence : ml.away.confidence;
       return {
         matchId: g.matchId,
+        homeTeam: g.homeTeam,
+        awayTeam: g.awayTeam,
         matchLabel: g.awayTeam + " @ " + g.homeTeam,
         leanKey: leanSide + " Win",
         leanTeam,
@@ -33,6 +36,13 @@ export default function Basketball() {
   const [meta, setMeta] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [status, setStatus] = useState("idle");
+  const [code, setCode] = useState("");
+  const [url, setUrl] = useState("");
+  const [bookError, setBookError] = useState("");
+  const [skipped, setSkipped] = useState([]);
+  const [summary, setSummary] = useState("");
 
   useEffect(() => {
     Promise.all([
@@ -56,6 +66,68 @@ export default function Basketball() {
   }, []);
 
   const best = useMemo(() => buildBestPicks(games, 12), [games]);
+
+  async function bookBestPicks(limit) {
+    setStatus("loading");
+    setBookError("");
+    setCode("");
+    setUrl("");
+    setSkipped([]);
+    setSummary("");
+
+    try {
+      const listRes = await fetch("/api/sporty-book?sport=basketball");
+      const list = await listRes.json();
+      if (!list.ok) throw new Error(list.message || "Could not load SportyBet basketball");
+
+      const chosen = best.slice(0, limit || best.length);
+      const outcomes = [];
+      const missed = [];
+
+      for (const pick of chosen) {
+        const lean = nbaLeanToSporty(pick.leanKey);
+        if (!lean) {
+          missed.push(pick.matchLabel + " (unknown market)");
+          continue;
+        }
+        const ev = (list.events || []).find((e) =>
+          sameNbaMatch(pick.homeTeam, pick.awayTeam, e.home, e.away)
+        );
+        if (!ev) {
+          missed.push(pick.matchLabel);
+          continue;
+        }
+        outcomes.push({
+          eventId: ev.eventId,
+          marketId: lean.marketId,
+          outcomeId: lean.outcomeId,
+        });
+      }
+
+      setSkipped(missed);
+      if (outcomes.length === 0) {
+        throw new Error("None of these NBA picks matched SportyBet fixtures");
+      }
+
+      const bookRes = await fetch("/api/sporty-book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ outcomes }),
+      });
+      const booked = await bookRes.json();
+      if (!booked.ok) {
+        throw new Error(booked.message || "SportyBet rejected the slip");
+      }
+
+      setSummary(outcomes.length + " NBA picks booked");
+      setCode(booked.shareCode);
+      setUrl(booked.shareURL);
+      setStatus("done");
+    } catch (err) {
+      setBookError(err.message);
+      setStatus("error");
+    }
+  }
 
   if (loading) return <div className="page">Loading NBA…</div>;
   if (error) return <div className="page">Error: {error}</div>;
@@ -85,6 +157,40 @@ export default function Basketball() {
             </div>
           </div>
         ))}
+
+        <button
+          type="button"
+          style={styles.button}
+          disabled={status === "loading" || best.length === 0}
+          onClick={() => bookBestPicks(12)}
+        >
+          {status === "loading" ? "Booking…" : "Book Best Picks on SportyBet NG"}
+        </button>
+        <button
+          type="button"
+          style={{ ...styles.button, marginTop: "8px", opacity: 0.9 }}
+          disabled={status === "loading" || best.length === 0}
+          onClick={() => bookBestPicks(5)}
+        >
+          Book top 5 only
+        </button>
+
+        {status === "done" && (
+          <div style={styles.result}>
+            <div style={styles.code}>{code}</div>
+            {summary && <div style={styles.skip}>{summary}</div>}
+            <a href={url} style={styles.link} target="_blank" rel="noreferrer">
+              Open slip on SportyBet
+            </a>
+            {skipped.length > 0 && (
+              <div style={styles.skip}>Skipped: {skipped.join(", ")}</div>
+            )}
+          </div>
+        )}
+        {status === "error" && <div style={styles.err}>{bookError}</div>}
+        <p style={styles.hint}>
+          Books moneyline (Home/Away) only for now. Skipped games are not listed on SportyBet yet.
+        </p>
       </div>
 
       <h2 style={{ fontSize: "16px", margin: "20px 0 10px" }}>All games</h2>
@@ -163,6 +269,22 @@ const styles = {
   matchLabel: { fontSize: "12px", color: "#a191c4", marginTop: "2px" },
   prob: { fontSize: "16px", fontWeight: 900, color: "#22e584" },
   conf: { fontSize: "11px", color: "#a191c4", fontWeight: 700 },
+  button: {
+    marginTop: "14px",
+    width: "100%",
+    border: 0,
+    borderRadius: "12px",
+    padding: "12px",
+    fontWeight: 800,
+    color: "#fff",
+    background: "linear-gradient(90deg, #f97316, #ef4444)",
+  },
+  result: { marginTop: "12px", textAlign: "center" },
+  code: { fontSize: "22px", fontWeight: 900, letterSpacing: "2px" },
+  link: { color: "#fdba74", fontSize: "13px" },
+  skip: { marginTop: "8px", fontSize: "11px", color: "#a191c4" },
+  err: { marginTop: "10px", color: "#fca5a5", fontSize: "13px" },
+  hint: { marginTop: "8px", fontSize: "11px", color: "#a191c4", lineHeight: 1.4 },
   card: {
     background: "linear-gradient(160deg, #1a0f33, #120a22)",
     border: "1px solid rgba(255,255,255,0.08)",
