@@ -227,7 +227,7 @@ export default function Basketball() {
   const bestNba = useMemo(() => buildBestPicks(nba, 30), [nba]);
   const bestNcaa = useMemo(() => buildBestPicks(ncaa, 30), [ncaa]);
   const todayPicks = useMemo(
-    () => buildBestPicks(allGames.filter((g) => isToday(g.kickoff)), 80),
+    () => buildBestPicks(allGames.filter((g) => isToday(g.kickoff) && new Date(g.kickoff).getTime() > Date.now()), 80),
     [allGames]
   );
 
@@ -330,7 +330,7 @@ export default function Basketball() {
         throw new Error(
           "None matched SportyBet. Only " +
             (list.count || 0) +
-            " events listed — try Best 5 or Today."
+            " events listed, but none of these games are on SportyBet right now (started games and games too far ahead are not listed). Try Best 5."
         );
       }
 
