@@ -15,14 +15,14 @@ function confFromProb(p) {
 function onePerGame(list) {
   const byGame = new Map();
   for (const p of list) {
-    const cur = byGame.get(p.matchId);
+    const cur = byGame.get(p.matchLabel);
     if (!cur) {
-      byGame.set(p.matchId, p);
+      byGame.set(p.matchLabel, p);
     } else if (p.marketType === "moneyline" && cur.marketType !== "moneyline") {
-      byGame.set(p.matchId, p);
+      byGame.set(p.matchLabel, p);
     }
   }
-  return list.filter((p) => byGame.get(p.matchId) === p);
+  return list.filter((p) => byGame.get(p.matchLabel) === p);
 }
 
 function capMedium(c) {
