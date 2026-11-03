@@ -12,6 +12,10 @@ function confFromProb(p) {
   return "LOW";
 }
 
+function capMedium(c) {
+  return c === "HIGH" ? "MEDIUM" : c;
+}
+
 function buildBestPicks(games, limit = 50) {
   const rows = [];
   for (const g of games) {
@@ -34,6 +38,7 @@ function buildBestPicks(games, limit = 50) {
     const leanSide = homeFav ? "Home" : "Away";
     const leanTeam = homeFav ? g.homeTeam : g.awayTeam;
     const mlProb = homeFav ? ml.home.probability : ml.away.probability;
+    const mlConf = (homeFav ? ml.home.confidence : ml.away.confidence) || confFromProb(mlProb);
 
     rows.push({
       matchId: String(g.matchId),
@@ -43,7 +48,7 @@ function buildBestPicks(games, limit = 50) {
       leanKey: leanSide + " Win",
       market: leanSide + " Win · " + leanTeam,
       probability: mlProb,
-      confidence: confFromProb(mlProb),
+      confidence: mlConf,
       kickoff: g.kickoff,
       competition: g.competition || "NBA",
       marketType: "moneyline",
@@ -65,7 +70,7 @@ function buildBestPicks(games, limit = 50) {
         leanKey: side + " full",
         market: side + " full · proj " + Math.round(full * 10) / 10,
         probability: prob,
-        confidence: confFromProb(prob),
+        confidence: capMedium(confFromProb(prob)),
         kickoff: g.kickoff,
         competition: g.competition || "NBA",
         marketType: "total",
@@ -89,7 +94,7 @@ function buildBestPicks(games, limit = 50) {
         leanKey: "1H " + side,
         market: "1H " + side + " · proj " + Math.round(proj1h * 10) / 10,
         probability: prob,
-        confidence: confFromProb(prob),
+        confidence: capMedium(confFromProb(prob)),
         kickoff: g.kickoff,
         competition: g.competition || "NBA",
         marketType: "1h_total",
@@ -113,7 +118,7 @@ function buildBestPicks(games, limit = 50) {
         leanKey: "2H " + side,
         market: "2H " + side + " · proj " + Math.round(proj2h * 10) / 10,
         probability: prob,
-        confidence: confFromProb(prob),
+        confidence: capMedium(confFromProb(prob)),
         kickoff: g.kickoff,
         competition: g.competition || "NBA",
         marketType: "2h_total",
