@@ -12,6 +12,19 @@ function confFromProb(p) {
   return "LOW";
 }
 
+function onePerGame(list) {
+  const byGame = new Map();
+  for (const p of list) {
+    const cur = byGame.get(p.matchId);
+    if (!cur) {
+      byGame.set(p.matchId, p);
+    } else if (p.marketType === "moneyline" && cur.marketType !== "moneyline") {
+      byGame.set(p.matchId, p);
+    }
+  }
+  return list.filter((p) => byGame.get(p.matchId) === p);
+}
+
 function capMedium(c) {
   return c === "HIGH" ? "MEDIUM" : c;
 }
@@ -245,7 +258,8 @@ export default function Basketball() {
     [allGames]
   );
 
-  async function bookPicks(picks, mode, target) {
+  async function bookPicks(allPicks, mode, target) {
+    const picks = onePerGame(allPicks);
     setStatus("loading");
     setBookError("");
     setCode("");
