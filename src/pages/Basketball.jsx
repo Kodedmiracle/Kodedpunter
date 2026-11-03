@@ -227,7 +227,7 @@ export default function Basketball() {
   const bestNba = useMemo(() => buildBestPicks(nba, 30), [nba]);
   const bestNcaa = useMemo(() => buildBestPicks(ncaa, 30), [ncaa]);
   const todayPicks = useMemo(
-    () => buildBestPicks(allGames.filter((g) => isToday(g.kickoff) && new Date(g.kickoff).getTime() > Date.now()), 80),
+    () => buildBestPicks(allGames.filter((g) => new Date(g.kickoff).getTime() > Date.now() && new Date(g.kickoff).getTime() < Date.now() + 24 * 60 * 60 * 1000), 80),
     [allGames]
   );
 
