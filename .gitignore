@@ -1,3 +1,13 @@
 .env
 node_modules/
 dist
+
+ncaaStandingsRaw.json
+test*.cjs
+diagNcaa*.cjs
+hl-test.json
+sb-nba.json
+east.json
+west.json
+today.json
+danfo_bot.py
