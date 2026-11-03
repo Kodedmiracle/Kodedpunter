@@ -11,6 +11,8 @@ if (!KEY) {
 
 const BASE = "https://nba.highlightly.net";
 const HOME_ADV = 3.5;
+const SHRINK_GAMES = 12;
+const MIN_GAMES_HIGH = 5;
 const CONFS = ["ACC", "BIG10", "BIG12", "SEC", "BIGE", "BIG12", "PAC12", "AAC", "ATL10", "WCC"];
 
 async function get(path) {
@@ -44,13 +46,28 @@ function buildTeamTable(body, byId) {
         logo: t.logo || null,
         ppg: num(s["Points Per Game"], 72),
         oppPpg: num(s["Opponent Points Per Game"], 72),
+        games: num(s["Wins"], 0) + num(s["Losses"], 0),
       });
     }
   }
 }
 
+function leagueAvgPpg(teams) {
+  let sum = 0;
+  let n = 0;
+  for (const t of teams.values()) {
+    if ((t.games || 0) > 0) {
+      sum += t.ppg;
+      n++;
+    }
+  }
+  return n ? sum / n : 72;
+}
+
 function homeWinProb(margin) {
-  return Math.round((1 / (1 + Math.exp(-margin / 6))) * 1000) / 10;
+  const p = 1 / (1 + Math.exp(-margin / 7));
+  const capped = Math.min(0.85, Math.max(0.15, p));
+  return Math.round(capped * 1000) / 10;
 }
 
 function predictGame(match, teams) {
@@ -67,8 +84,17 @@ function predictGame(match, teams) {
     oppPpg: 72,
   };
 
-  const expHome = (home.ppg + away.oppPpg) / 2 + HOME_ADV;
-  const expAway = (away.ppg + home.oppPpg) / 2;
+  const lg = leagueAvgPpg(teams);
+  const sh = (t, v) => {
+    const g = t.games || 0;
+    const w = g / (g + SHRINK_GAMES);
+    return w * v + (1 - w) * lg;
+  };
+  const thin = home.prior || away.prior || (home.games || 0) < MIN_GAMES_HIGH || (away.games || 0) < MIN_GAMES_HIGH;
+  const missing = !((home.games || 0) > 0 && (away.games || 0) > 0);
+  const conf = (pct) => (missing ? "LOW" : pct >= 70 && !thin ? "HIGH" : pct >= 58 ? "MEDIUM" : "LOW");
+  const expHome = (sh(home, home.ppg) + sh(away, away.oppPpg)) / 2 + HOME_ADV;
+  const expAway = (sh(away, away.ppg) + sh(home, home.oppPpg)) / 2;
   const total = expHome + expAway;
   const homePct = homeWinProb(expHome - expAway);
   const awayPct = Math.round((100 - homePct) * 10) / 10;
@@ -91,33 +117,36 @@ function predictGame(match, teams) {
       moneyline: {
         home: {
           probability: homePct,
-          confidence: homePct >= 65 ? "HIGH" : homePct >= 55 ? "MEDIUM" : "LOW",
+          confidence: conf(homePct),
         },
         away: {
           probability: awayPct,
-          confidence: awayPct >= 65 ? "HIGH" : awayPct >= 55 ? "MEDIUM" : "LOW",
+          confidence: conf(awayPct),
         },
       },
       totalPoints: {
         line: totalLine,
         projected: Math.round(total * 10) / 10,
       },
+      sample: { homeGames: home.games || 0, awayGames: away.games || 0 },
     },
   };
 }
 
 async function main() {
   const teams = new Map();
-  console.log("Loading a few NCAA conference standings…");
-  for (const ab of CONFS) {
-    try {
-      const body = await get(
-        "/standings?leagueType=NCAA&abbreviation=" + ab + "&limit=30"
-      );
-      buildTeamTable(body, teams);
-    } catch (e) {
-      console.log("skip", ab, e.message);
-    }
+  const statsFile = JSON.parse(fs.readFileSync("public/ncaa-team-stats.json", "utf8"));
+  for (const id of Object.keys(statsFile)) {
+    const e = statsFile[id];
+    teams.set(Number(id), {
+      id: Number(id),
+      name: e.name,
+      logo: null,
+      ppg: e.ppg,
+      oppPpg: e.oppg,
+      games: e.year === 2027 ? e.games : Math.min(e.games, 10),
+      prior: e.year !== 2027,
+    });
   }
   console.log("Teams with stats:", teams.size);
 
@@ -141,6 +170,12 @@ async function main() {
     return desc.indexOf("schedule") !== -1;
   });
 
+  for (const m of scheduled) {
+    const h = m.homeTeam && teams.get(m.homeTeam.id);
+    const w = m.awayTeam && teams.get(m.awayTeam.id);
+    if (h && !h.logo) h.logo = m.homeTeam.logo || null;
+    if (w && !w.logo) w.logo = m.awayTeam.logo || null;
+  }
   const predictions = [];
   for (const m of scheduled) {
     predictions.push(predictGame(m, teams));
