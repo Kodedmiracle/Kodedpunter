@@ -236,6 +236,15 @@ export default function Basketball() {
     [allGames]
   );
 
+  const oddsPool = useMemo(
+    () =>
+      buildBestPicks(
+        allGames.filter((g) => new Date(g.kickoff).getTime() > Date.now()),
+        400
+      ).filter((p) => !/^(1h|2h)/.test(p.marketType || "")),
+    [allGames]
+  );
+
   async function bookPicks(picks, mode, target) {
     setStatus("loading");
     setBookError("");
@@ -446,7 +455,7 @@ export default function Basketball() {
             style={{ ...styles.button, marginTop: 0, flex: 1 }}
             disabled={status === "loading"}
             onClick={() =>
-              bookPicks(bestAll, "odds", Number(targetOdds) || 10)
+              bookPicks(oddsPool, "odds", Number(targetOdds) || 10)
             }
           >
             Around {targetOdds} odds
