@@ -33,12 +33,16 @@ function num(v, fallback) {
 
 function buildTeamTable(standingsBody) {
   const byId = new Map();
-  const blocks = standingsBody.data || [];
+  const rank = (b) =>
+    (b.year || 0) * 10 + (/pre/i.test(b.seasonType || "") ? 0 : /post/i.test(b.seasonType || "") ? 1 : 2);
+  const blocks = [...(standingsBody.data || [])].sort((a, b) => rank(a) - rank(b));
   for (const block of blocks) {
     for (const row of block.data || []) {
       const t = row.team;
       if (!t || t.id == null) continue;
       const s = statMap(row.statistics);
+      const gp = num(s["Wins"], 0) + num(s["Losses"], 0);
+      if (gp === 0 && byId.has(t.id)) continue;
       byId.set(t.id, {
         id: t.id,
         name: t.displayName || t.name,
