@@ -2959,6 +2959,40 @@
   },
   {
     "competition": "NCAAB",
+    "matchId": 1556242,
+    "homeTeam": "Furman Paladins",
+    "awayTeam": "Northern Iowa Panthers",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/13328.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11277.png",
+    "kickoff": "2026-11-07T22:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 76.2,
+        "away": 73.1,
+        "total": 149.3
+      },
+      "moneyline": {
+        "home": {
+          "probability": 60.6,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 39.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 149.5,
+        "projected": 149.3
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
     "matchId": 1556241,
     "homeTeam": "UTSA Roadrunners",
     "awayTeam": "VMI Keydets",
@@ -3256,40 +3290,6 @@
       "totalPoints": {
         "line": 157,
         "projected": 156.8
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1556242,
-    "homeTeam": "Furman Paladins",
-    "awayTeam": "Northern Iowa Panthers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/13328.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11277.png",
-    "kickoff": "2026-11-07T21:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 76.2,
-        "away": 73.1,
-        "total": 149.3
-      },
-      "moneyline": {
-        "home": {
-          "probability": 60.6,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 39.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 149.5,
-        "projected": 149.3
       },
       "sample": {
         "homeGames": 10,
