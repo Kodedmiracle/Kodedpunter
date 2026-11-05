@@ -1,5 +1,11 @@
 // src/basketball/generateNbaPredictions.cjs
+// Phase A: standings + last-five form blend + NO_BET band
 const fs = require("fs");
+const {
+  formFromLastFive,
+  blendPpg,
+  blendOpp,
+} = require("./formFromLastFive.cjs");
 
 const KEY = process.env.HIGHLIGHTLY_API_KEY;
 if (!KEY) {
@@ -10,6 +16,11 @@ if (!KEY) {
 const BASE = "https://nba.highlightly.net";
 const HOME_ADV = 3.0;
 const SHRINK_GAMES = 15;
+const SEASON_W = 0.4;
+const FORM_W = 0.6;
+// NO_BET if favourite side is inside this band (too close)
+const NO_BET_LOW = 52;
+const NO_BET_HIGH = 58;
 
 async function get(path) {
   const res = await fetch(BASE + path, {
@@ -18,6 +29,7 @@ async function get(path) {
   if (!res.ok) throw new Error(path + " → HTTP " + res.status);
   return res.json();
 }
+
 function statMap(statistics) {
   const m = {};
   for (const s of statistics || []) {
@@ -34,8 +46,15 @@ function num(v, fallback) {
 function buildTeamTable(standingsBody) {
   const byId = new Map();
   const rank = (b) =>
-    (b.year || 0) * 10 + (/pre/i.test(b.seasonType || "") ? 0 : /post/i.test(b.seasonType || "") ? 1 : 2);
-  const blocks = [...(standingsBody.data || [])].sort((a, b) => rank(a) - rank(b));
+    (b.year || 0) * 10 +
+    (/pre/i.test(b.seasonType || "")
+      ? 0
+      : /post/i.test(b.seasonType || "")
+        ? 1
+        : 2);
+  const blocks = [...(standingsBody.data || [])].sort(
+    (a, b) => rank(a) - rank(b)
+  );
   for (const block of blocks) {
     for (const row of block.data || []) {
       const t = row.team;
@@ -53,6 +72,7 @@ function buildTeamTable(standingsBody) {
         wins: num(s["Wins"], 0),
         losses: num(s["Losses"], 0),
         winPct: num(s["Win Percentage"], 0.5),
+        form: null,
       });
     }
   }
@@ -77,23 +97,44 @@ function homeWinProb(expectedMargin) {
   return Math.round(capped * 1000) / 10;
 }
 
+function confLabel(prob, noBet) {
+  if (noBet) return "NO_BET";
+  if (prob >= 65) return "HIGH";
+  if (prob >= 55) return "MEDIUM";
+  return "LOW";
+}
+
 function predictGame(match, teams) {
   const home = teams.get(match.homeTeam && match.homeTeam.id);
   const away = teams.get(match.awayTeam && match.awayTeam.id);
   if (!home || !away) return null;
 
   const lg = leagueAvgPpg(teams);
-  const sh = (t, v) => {
+  const shrink = (t, v) => {
     const g = t.wins + t.losses;
     const w = g / (g + SHRINK_GAMES);
     return w * v + (1 - w) * lg;
   };
-  const expHome = (sh(home, home.ppg) + sh(away, away.oppPpg)) / 2 + HOME_ADV;
-  const expAway = (sh(away, away.ppg) + sh(home, home.oppPpg)) / 2;
+
+  // Season shrunk, then blend with L5 form when present
+  let homePpg = shrink(home, home.ppg);
+  let homeOpp = shrink(home, home.oppPpg);
+  let awayPpg = shrink(away, away.ppg);
+  let awayOpp = shrink(away, away.oppPpg);
+
+  homePpg = blendPpg(homePpg, home.form, SEASON_W, FORM_W);
+  homeOpp = blendOpp(homeOpp, home.form, SEASON_W, FORM_W);
+  awayPpg = blendPpg(awayPpg, away.form, SEASON_W, FORM_W);
+  awayOpp = blendOpp(awayOpp, away.form, SEASON_W, FORM_W);
+
+  const expHome = (homePpg + awayOpp) / 2 + HOME_ADV;
+  const expAway = (awayPpg + homeOpp) / 2;
   const total = expHome + expAway;
   const margin = expHome - expAway;
   const homePct = homeWinProb(margin);
   const awayPct = Math.round((100 - homePct) * 10) / 10;
+  const favPct = Math.max(homePct, awayPct);
+  const noBet = favPct >= NO_BET_LOW && favPct < NO_BET_HIGH;
   const totalLine = Math.round(total * 2) / 2;
 
   return {
@@ -104,6 +145,15 @@ function predictGame(match, teams) {
     homeCrest: home.logo,
     awayCrest: away.logo,
     kickoff: match.date,
+    noBet: noBet,
+    form: {
+      home: home.form
+        ? { games: home.form.games, ppg: home.form.ppg, oppPpg: home.form.oppPpg }
+        : null,
+      away: away.form
+        ? { games: away.form.games, ppg: away.form.ppg, oppPpg: away.form.oppPpg }
+        : null,
+    },
     prediction: {
       expectedPoints: {
         home: Math.round(expHome * 10) / 10,
@@ -113,11 +163,11 @@ function predictGame(match, teams) {
       moneyline: {
         home: {
           probability: homePct,
-          confidence: homePct >= 70 ? "HIGH" : homePct >= 58 ? "MEDIUM" : "LOW",
+          confidence: confLabel(homePct, noBet && homePct >= awayPct),
         },
         away: {
           probability: awayPct,
-          confidence: awayPct >= 70 ? "HIGH" : awayPct >= 58 ? "MEDIUM" : "LOW",
+          confidence: confLabel(awayPct, noBet && awayPct > homePct),
         },
       },
       totalPoints: {
@@ -138,7 +188,7 @@ async function main() {
   for (const [id, t] of buildTeamTable(west)) teams.set(id, t);
   console.log("Teams loaded:", teams.size);
 
-console.log("Fetching matches for next 8 days…");
+  console.log("Fetching matches for next 8 days…");
   const matches = [];
   const seen = new Set();
   const start = new Date();
@@ -157,10 +207,38 @@ console.log("Fetching matches for next 8 days…");
     return desc.indexOf("schedule") !== -1;
   });
   console.log("Scheduled games:", scheduled.length);
+
+  // Last-five only for teams on the board (saves quota)
+  const boardIds = new Set();
+  for (const m of scheduled) {
+    if (m.homeTeam && m.homeTeam.id != null) boardIds.add(m.homeTeam.id);
+    if (m.awayTeam && m.awayTeam.id != null) boardIds.add(m.awayTeam.id);
+  }
+  console.log("Fetching last-five for", boardIds.size, "board teams…");
+  let formOk = 0;
+  for (const id of boardIds) {
+    try {
+      const raw = await get("/last-five-games?teamId=" + id);
+      const form = formFromLastFive(id, raw);
+      const t = teams.get(id);
+      if (t && form) {
+        t.form = form;
+        formOk++;
+      }
+    } catch (e) {
+      console.log("L5 skip", id, e.message);
+    }
+  }
+  console.log("Form loaded for", formOk, "teams");
+
   const predictions = [];
+  let noBetCount = 0;
   for (const m of scheduled) {
     const p = predictGame(m, teams);
-    if (p) predictions.push(p);
+    if (p) {
+      if (p.noBet) noBetCount++;
+      predictions.push(p);
+    }
   }
 
   fs.mkdirSync("public", { recursive: true });
@@ -171,7 +249,13 @@ console.log("Fetching matches for next 8 days…");
   fs.writeFileSync(
     "public/nba-meta.json",
     JSON.stringify(
-      { generatedAt: new Date().toISOString(), matchCount: predictions.length },
+      {
+        generatedAt: new Date().toISOString(),
+        matchCount: predictions.length,
+        formTeams: formOk,
+        noBetCount: noBetCount,
+        phase: "A-last5",
+      },
       null,
       2
     )
@@ -180,7 +264,10 @@ console.log("Fetching matches for next 8 days…");
   console.log(
     "Saved",
     predictions.length,
-    "NBA predictions → public/nba-predictions.json"
+    "NBA predictions · form teams",
+    formOk,
+    "· NO_BET",
+    noBetCount
   );
   if (predictions[0]) {
     const s = predictions[0];
@@ -192,8 +279,17 @@ console.log("Fetching matches for next 8 days…");
       "| home",
       s.prediction.moneyline.home.probability + "%",
       "| total \~",
-      s.prediction.expectedPoints.total
+      s.prediction.expectedPoints.total,
+      s.noBet ? "| NO_BET" : ""
     );
+    if (s.form && s.form.home) {
+      console.log(
+        "  home L5 ppg",
+        s.form.home.ppg,
+        "opp",
+        s.form.home.oppPpg
+      );
+    }
   }
 }
 
