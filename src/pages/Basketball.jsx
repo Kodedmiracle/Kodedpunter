@@ -32,6 +32,7 @@ function capMedium(c) {
 function buildBestPicks(games, limit = 50) {
   const rows = [];
   for (const g of games) {
+    if (g.prediction && g.prediction.noBet) continue;
     const ml = g.prediction.moneyline;
     const ep = g.prediction.expectedPoints || {};
     const isNcaa = (g.competition || "") === "NCAAB";
@@ -142,7 +143,6 @@ function buildBestPicks(games, limit = 50) {
       });
     }
   }
-
   return rows.sort((a, b) => b.probability - a.probability).slice(0, limit);
 }
 

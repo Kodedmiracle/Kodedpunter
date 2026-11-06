@@ -8,7 +8,7 @@ if (!url || !key || !HL) {
   console.error('Missing env vars (Supabase or HIGHLIGHTLY_API_KEY)');
   process.exit(1);
 }
-const MAX_MATCHES = 25;
+const MAX_MATCHES = 20;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const sum = (a) => (Array.isArray(a) ? a.reduce((x, y) => x + (Number(y) || 0), 0) : 0);
 
