@@ -11,9 +11,13 @@ const HEADERS = {
 
 const FOOTBALL = {
   sportId: "sr:sport:1",
-  marketId: "1,18,10,29",
+  marketId: "1,18,10,29,68,547",
   referer: "https://www.sportybet.com/ng/sport/football",
-  keepLines: new Set(["", "total=0.5", "total=1.5", "total=2.5", "total=3.5"]),
+  keepLines: new Set(["", "total=0.5", "total=1.5", "total=2.5", "total=3.5", "total=4.5"]),
+  keepBy: {
+    "68": new Set(["total=1.5", "total=2.5", "total=3.5"]),
+    "547": new Set(["total=4.5"]),
+  },
 };
 
 const BASKETBALL = {marketId: "219,225,68,228,1,18",
@@ -24,11 +28,12 @@ const BASKETBALL = {marketId: "219,225,68,228,1,18",
   keepLines: null,
 };
 
-function oddsFor(ev, keepLines) {
+function oddsFor(ev, keepLines, keepBy) {
   const out = {};
   for (const m of ev.markets || []) {
     const spec = m.specifier || "";
     if (keepLines && m.id === "18" && !keepLines.has(spec)) continue;
+    if (keepBy && keepBy[m.id] && !keepBy[m.id].has(spec)) continue;
     for (const o of m.outcomes || []) {
       if (o.isActive !== 1) continue;
       const v = parseFloat(o.odds);
@@ -82,8 +87,8 @@ export default async function handler(req, res) {
               home: ev.homeTeamName,
               away: ev.awayTeamName,
               start: ev.estimateStartTime,
-              odds: oddsFor(ev, cfg.keepLines),
-              marketsRaw: (ev.markets || []).map((m) => ({
+              odds: oddsFor(ev, cfg.keepLines, cfg.keepBy),
+              marketsRaw: (cfg.keepRaw ? ev.markets || [] : []).map((m) => ({
                 id: m.id,
                 specifier: m.specifier || "",
                 outcomes: (m.outcomes || [])
