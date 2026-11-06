@@ -104,7 +104,16 @@ export default function BookToday({ matches, allMatches }) {
       setSkipped(missed);
 
       if (outcomes.length === 0) {
-        throw new Error("No match qualified for this market. Try a lower percentage or another market.");
+        const notOffered = missed.filter((x) => x.includes("not offered")).length;
+        const below = missed.filter((x) => x.includes("is below")).length;
+        throw new Error(
+          "No match qualified. " +
+            (notOffered ? notOffered + " not offered on SportyBet. " : "") +
+            (below ? below + " below " + minProb + "%. " : "") +
+            "Try another market" +
+            (below ? " or a lower percentage" : "") +
+            "."
+        );
       }
 
       const bookRes = await fetch("/api/sporty-book", {

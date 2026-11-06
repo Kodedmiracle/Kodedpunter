@@ -35,7 +35,7 @@ function firstHalfUnder(line) {
 }
 
 export const BOOK_OPTIONS = [
-  { key: "1h_u35", label: "1st Half Under 3.5", minProb: 92, approx: true,
+  { key: "1h_u35", label: "1st Half Under 3.5 (rarely offered)", minProb: 92, approx: true,
     sporty: { marketId: "68", outcomeId: "13", specifier: "total=3.5" }, prob: firstHalfUnder(3.5) },
   { key: "1h_u25", label: "1st Half Under 2.5", minProb: 82, approx: true,
     sporty: { marketId: "68", outcomeId: "13", specifier: "total=2.5" }, prob: firstHalfUnder(2.5) },
