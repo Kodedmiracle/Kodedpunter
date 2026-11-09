@@ -1741,876 +1741,6 @@
   },
   {
     "competition": "La Liga",
-    "matchId": 564738,
-    "homeTeam": "Elche CF",
-    "awayTeam": "Real Betis Balompié",
-    "homeCrest": "https://crests.football-data.org/285.png",
-    "awayCrest": "https://crests.football-data.org/90.png",
-    "kickoff": "2026-11-08T13:00:00Z",
-    "prediction": {
-      "matchResult": {
-        "homeWin": {
-          "probability": 20.9,
-          "confidence": "VERY LOW"
-        },
-        "draw": {
-          "probability": 33.8,
-          "confidence": "VERY LOW"
-        },
-        "awayWin": {
-          "probability": 45.3,
-          "confidence": "LOW"
-        }
-      },
-      "doubleChance": {
-        "homeOrDraw": {
-          "probability": 54.7,
-          "confidence": "MEDIUM"
-        },
-        "homeOrAway": {
-          "probability": 66.2,
-          "confidence": "HIGH"
-        },
-        "drawOrAway": {
-          "probability": 79.1,
-          "confidence": "HIGH"
-        }
-      },
-      "btts": {
-        "yes": {
-          "probability": 37.5,
-          "confidence": "LOW"
-        },
-        "no": {
-          "probability": 62.5,
-          "confidence": "MEDIUM"
-        }
-      },
-      "overUnder": {
-        "over05": {
-          "probability": 83.6,
-          "confidence": "VERY HIGH"
-        },
-        "under05": {
-          "probability": 16.4,
-          "confidence": "VERY LOW"
-        },
-        "over15": {
-          "probability": 58.7,
-          "confidence": "MEDIUM"
-        },
-        "under15": {
-          "probability": 41.3,
-          "confidence": "LOW"
-        },
-        "over25": {
-          "probability": 30,
-          "confidence": "VERY LOW"
-        },
-        "under25": {
-          "probability": 70,
-          "confidence": "HIGH"
-        },
-        "over35": {
-          "probability": 12.8,
-          "confidence": "VERY LOW"
-        },
-        "under35": {
-          "probability": 87.2,
-          "confidence": "VERY HIGH"
-        }
-      },
-      "topScorelines": [
-        {
-          "score": "0-0",
-          "probability": 16.4
-        },
-        {
-          "score": "0-1",
-          "probability": 15.9
-        },
-        {
-          "score": "1-1",
-          "probability": 14.4
-        },
-        {
-          "score": "0-2",
-          "probability": 10.4
-        },
-        {
-          "score": "1-0",
-          "probability": 9.1
-        }
-      ],
-      "expectedGoals": {
-        "home": 0.73,
-        "away": 1.19
-      },
-      "scoreMatrix": [
-        [
-          16.4,
-          15.9,
-          10.4,
-          4.1,
-          1.2,
-          0.3,
-          0.1
-        ],
-        [
-          9.1,
-          14.4,
-          7.6,
-          3,
-          0.9,
-          0.2,
-          0
-        ],
-        [
-          3.9,
-          4.6,
-          2.7,
-          1.1,
-          0.3,
-          0.1,
-          0
-        ],
-        [
-          0.9,
-          1.1,
-          0.7,
-          0.3,
-          0.1,
-          0,
-          0
-        ],
-        [
-          0.2,
-          0.2,
-          0.1,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ]
-      ]
-    }
-  },
-  {
-    "competition": "La Liga",
-    "matchId": 564743,
-    "homeTeam": "Real Sociedad de Fútbol",
-    "awayTeam": "Rayo Vallecano de Madrid",
-    "homeCrest": "https://crests.football-data.org/92.png",
-    "awayCrest": "https://crests.football-data.org/87.png",
-    "kickoff": "2026-11-08T15:15:00Z",
-    "prediction": {
-      "matchResult": {
-        "homeWin": {
-          "probability": 87.1,
-          "confidence": "VERY HIGH"
-        },
-        "draw": {
-          "probability": 8.3,
-          "confidence": "VERY LOW"
-        },
-        "awayWin": {
-          "probability": 4.6,
-          "confidence": "VERY LOW"
-        }
-      },
-      "doubleChance": {
-        "homeOrDraw": {
-          "probability": 95.4,
-          "confidence": "VERY HIGH"
-        },
-        "homeOrAway": {
-          "probability": 91.7,
-          "confidence": "VERY HIGH"
-        },
-        "drawOrAway": {
-          "probability": 12.9,
-          "confidence": "VERY LOW"
-        }
-      },
-      "btts": {
-        "yes": {
-          "probability": 66.3,
-          "confidence": "HIGH"
-        },
-        "no": {
-          "probability": 33.7,
-          "confidence": "VERY LOW"
-        }
-      },
-      "overUnder": {
-        "over05": {
-          "probability": 99.2,
-          "confidence": "VERY HIGH"
-        },
-        "under05": {
-          "probability": 0.8,
-          "confidence": "VERY LOW"
-        },
-        "over15": {
-          "probability": 97.2,
-          "confidence": "VERY HIGH"
-        },
-        "under15": {
-          "probability": 2.8,
-          "confidence": "VERY LOW"
-        },
-        "over25": {
-          "probability": 89.8,
-          "confidence": "VERY HIGH"
-        },
-        "under25": {
-          "probability": 10.2,
-          "confidence": "VERY LOW"
-        },
-        "over35": {
-          "probability": 76.6,
-          "confidence": "HIGH"
-        },
-        "under35": {
-          "probability": 23.4,
-          "confidence": "VERY LOW"
-        }
-      },
-      "topScorelines": [
-        {
-          "score": "4-1",
-          "probability": 8.3
-        },
-        {
-          "score": "4-0",
-          "probability": 7.5
-        },
-        {
-          "score": "3-1",
-          "probability": 7.5
-        },
-        {
-          "score": "5-1",
-          "probability": 7.4
-        },
-        {
-          "score": "3-0",
-          "probability": 6.8
-        }
-      ],
-      "expectedGoals": {
-        "home": 4.44,
-        "away": 1.11
-      },
-      "scoreMatrix": [
-        [
-          0.8,
-          0.2,
-          0.3,
-          0.1,
-          0,
-          0,
-          0
-        ],
-        [
-          1.8,
-          2.6,
-          1.3,
-          0.5,
-          0.1,
-          0,
-          0
-        ],
-        [
-          4.6,
-          5.1,
-          2.8,
-          1,
-          0.3,
-          0.1,
-          0
-        ],
-        [
-          6.8,
-          7.5,
-          4.2,
-          1.5,
-          0.4,
-          0.1,
-          0
-        ],
-        [
-          7.5,
-          8.3,
-          4.6,
-          1.7,
-          0.5,
-          0.1,
-          0
-        ],
-        [
-          6.7,
-          7.4,
-          4.1,
-          1.5,
-          0.4,
-          0.1,
-          0
-        ],
-        [
-          4.9,
-          5.5,
-          3,
-          1.1,
-          0.3,
-          0.1,
-          0
-        ]
-      ]
-    }
-  },
-  {
-    "competition": "La Liga",
-    "matchId": 564742,
-    "homeTeam": "RC Celta de Vigo",
-    "awayTeam": "Levante UD",
-    "homeCrest": "https://crests.football-data.org/558.png",
-    "awayCrest": "https://crests.football-data.org/88.png",
-    "kickoff": "2026-11-08T17:30:00Z",
-    "prediction": {
-      "matchResult": {
-        "homeWin": {
-          "probability": 29.2,
-          "confidence": "VERY LOW"
-        },
-        "draw": {
-          "probability": 40.3,
-          "confidence": "LOW"
-        },
-        "awayWin": {
-          "probability": 30.5,
-          "confidence": "VERY LOW"
-        }
-      },
-      "doubleChance": {
-        "homeOrDraw": {
-          "probability": 69.5,
-          "confidence": "HIGH"
-        },
-        "homeOrAway": {
-          "probability": 59.7,
-          "confidence": "MEDIUM"
-        },
-        "drawOrAway": {
-          "probability": 70.8,
-          "confidence": "HIGH"
-        }
-      },
-      "btts": {
-        "yes": {
-          "probability": 28.9,
-          "confidence": "VERY LOW"
-        },
-        "no": {
-          "probability": 71.1,
-          "confidence": "HIGH"
-        }
-      },
-      "overUnder": {
-        "over05": {
-          "probability": 75.5,
-          "confidence": "HIGH"
-        },
-        "under05": {
-          "probability": 24.5,
-          "confidence": "VERY LOW"
-        },
-        "over15": {
-          "probability": 45,
-          "confidence": "LOW"
-        },
-        "under15": {
-          "probability": 55,
-          "confidence": "MEDIUM"
-        },
-        "over25": {
-          "probability": 18.5,
-          "confidence": "VERY LOW"
-        },
-        "under25": {
-          "probability": 81.5,
-          "confidence": "VERY HIGH"
-        },
-        "over35": {
-          "probability": 6.3,
-          "confidence": "VERY LOW"
-        },
-        "under35": {
-          "probability": 93.7,
-          "confidence": "VERY HIGH"
-        }
-      },
-      "topScorelines": [
-        {
-          "score": "0-0",
-          "probability": 24.5
-        },
-        {
-          "score": "0-1",
-          "probability": 15.5
-        },
-        {
-          "score": "1-0",
-          "probability": 15
-        },
-        {
-          "score": "1-1",
-          "probability": 14.1
-        },
-        {
-          "score": "0-2",
-          "probability": 6.4
-        }
-      ],
-      "expectedGoals": {
-        "home": 0.73,
-        "away": 0.75
-      },
-      "scoreMatrix": [
-        [
-          24.5,
-          15.5,
-          6.4,
-          1.6,
-          0.3,
-          0,
-          0
-        ],
-        [
-          15,
-          14.1,
-          4.7,
-          1.2,
-          0.2,
-          0,
-          0
-        ],
-        [
-          6,
-          4.5,
-          1.7,
-          0.4,
-          0.1,
-          0,
-          0
-        ],
-        [
-          1.5,
-          1.1,
-          0.4,
-          0.1,
-          0,
-          0,
-          0
-        ],
-        [
-          0.3,
-          0.2,
-          0.1,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ]
-      ]
-    }
-  },
-  {
-    "competition": "La Liga",
-    "matchId": 564747,
-    "homeTeam": "Villarreal CF",
-    "awayTeam": "Getafe CF",
-    "homeCrest": "https://crests.football-data.org/94.png",
-    "awayCrest": "https://crests.football-data.org/82.png",
-    "kickoff": "2026-11-08T17:30:00Z",
-    "prediction": {
-      "matchResult": {
-        "homeWin": {
-          "probability": 73.5,
-          "confidence": "HIGH"
-        },
-        "draw": {
-          "probability": 19.6,
-          "confidence": "VERY LOW"
-        },
-        "awayWin": {
-          "probability": 6.9,
-          "confidence": "VERY LOW"
-        }
-      },
-      "doubleChance": {
-        "homeOrDraw": {
-          "probability": 93.1,
-          "confidence": "VERY HIGH"
-        },
-        "homeOrAway": {
-          "probability": 80.4,
-          "confidence": "VERY HIGH"
-        },
-        "drawOrAway": {
-          "probability": 26.5,
-          "confidence": "VERY LOW"
-        }
-      },
-      "btts": {
-        "yes": {
-          "probability": 37.1,
-          "confidence": "LOW"
-        },
-        "no": {
-          "probability": 62.9,
-          "confidence": "MEDIUM"
-        }
-      },
-      "overUnder": {
-        "over05": {
-          "probability": 91.9,
-          "confidence": "VERY HIGH"
-        },
-        "under05": {
-          "probability": 8.1,
-          "confidence": "VERY LOW"
-        },
-        "over15": {
-          "probability": 75.2,
-          "confidence": "HIGH"
-        },
-        "under15": {
-          "probability": 24.8,
-          "confidence": "VERY LOW"
-        },
-        "over25": {
-          "probability": 49.3,
-          "confidence": "LOW"
-        },
-        "under25": {
-          "probability": 50.7,
-          "confidence": "MEDIUM"
-        },
-        "over35": {
-          "probability": 27.2,
-          "confidence": "VERY LOW"
-        },
-        "under35": {
-          "probability": 72.8,
-          "confidence": "HIGH"
-        }
-      },
-      "topScorelines": [
-        {
-          "score": "2-0",
-          "probability": 16
-        },
-        {
-          "score": "1-0",
-          "probability": 14
-        },
-        {
-          "score": "3-0",
-          "probability": 11.4
-        },
-        {
-          "score": "1-1",
-          "probability": 9
-        },
-        {
-          "score": "2-1",
-          "probability": 8.4
-        }
-      ],
-      "expectedGoals": {
-        "home": 2.13,
-        "away": 0.53
-      },
-      "scoreMatrix": [
-        [
-          8.1,
-          2.7,
-          1,
-          0.2,
-          0,
-          0,
-          0
-        ],
-        [
-          14,
-          9,
-          2.1,
-          0.4,
-          0,
-          0,
-          0
-        ],
-        [
-          16,
-          8.4,
-          2.2,
-          0.4,
-          0.1,
-          0,
-          0
-        ],
-        [
-          11.4,
-          6,
-          1.6,
-          0.3,
-          0,
-          0,
-          0
-        ],
-        [
-          6,
-          3.2,
-          0.8,
-          0.1,
-          0,
-          0,
-          0
-        ],
-        [
-          2.6,
-          1.4,
-          0.4,
-          0.1,
-          0,
-          0,
-          0
-        ],
-        [
-          0.9,
-          0.5,
-          0.1,
-          0,
-          0,
-          0,
-          0
-        ]
-      ]
-    }
-  },
-  {
-    "competition": "La Liga",
-    "matchId": 564746,
-    "homeTeam": "Club Atlético de Madrid",
-    "awayTeam": "FC Barcelona",
-    "homeCrest": "https://crests.football-data.org/78.png",
-    "awayCrest": "https://crests.football-data.org/81.png",
-    "kickoff": "2026-11-08T20:00:00Z",
-    "prediction": {
-      "matchResult": {
-        "homeWin": {
-          "probability": 23.9,
-          "confidence": "VERY LOW"
-        },
-        "draw": {
-          "probability": 28.7,
-          "confidence": "VERY LOW"
-        },
-        "awayWin": {
-          "probability": 47.4,
-          "confidence": "LOW"
-        }
-      },
-      "doubleChance": {
-        "homeOrDraw": {
-          "probability": 52.6,
-          "confidence": "MEDIUM"
-        },
-        "homeOrAway": {
-          "probability": 71.3,
-          "confidence": "HIGH"
-        },
-        "drawOrAway": {
-          "probability": 76.1,
-          "confidence": "HIGH"
-        }
-      },
-      "btts": {
-        "yes": {
-          "probability": 52.2,
-          "confidence": "MEDIUM"
-        },
-        "no": {
-          "probability": 47.8,
-          "confidence": "LOW"
-        }
-      },
-      "overUnder": {
-        "over05": {
-          "probability": 90.8,
-          "confidence": "VERY HIGH"
-        },
-        "under05": {
-          "probability": 9.2,
-          "confidence": "VERY LOW"
-        },
-        "over15": {
-          "probability": 74.3,
-          "confidence": "HIGH"
-        },
-        "under15": {
-          "probability": 25.7,
-          "confidence": "VERY LOW"
-        },
-        "over25": {
-          "probability": 47.4,
-          "confidence": "LOW"
-        },
-        "under25": {
-          "probability": 52.6,
-          "confidence": "MEDIUM"
-        },
-        "over35": {
-          "probability": 25.7,
-          "confidence": "VERY LOW"
-        },
-        "under35": {
-          "probability": 74.3,
-          "confidence": "HIGH"
-        }
-      },
-      "topScorelines": [
-        {
-          "score": "1-1",
-          "probability": 13.7
-        },
-        {
-          "score": "0-1",
-          "probability": 10.2
-        },
-        {
-          "score": "1-2",
-          "probability": 9.4
-        },
-        {
-          "score": "0-0",
-          "probability": 9.2
-        },
-        {
-          "score": "0-2",
-          "probability": 9
-        }
-      ],
-      "expectedGoals": {
-        "home": 1.03,
-        "away": 1.54
-      },
-      "scoreMatrix": [
-        [
-          9.2,
-          10.2,
-          9,
-          4.6,
-          1.8,
-          0.5,
-          0.1
-        ],
-        [
-          6.3,
-          13.7,
-          9.4,
-          4.8,
-          1.8,
-          0.6,
-          0.1
-        ],
-        [
-          4.1,
-          6.3,
-          4.8,
-          2.5,
-          1,
-          0.3,
-          0.1
-        ],
-        [
-          1.4,
-          2.2,
-          1.7,
-          0.9,
-          0.3,
-          0.1,
-          0
-        ],
-        [
-          0.4,
-          0.6,
-          0.4,
-          0.2,
-          0.1,
-          0,
-          0
-        ],
-        [
-          0.1,
-          0.1,
-          0.1,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ]
-      ]
-    }
-  },
-  {
-    "competition": "La Liga",
     "matchId": 564748,
     "homeTeam": "Athletic Club",
     "awayTeam": "RCD Espanyol de Barcelona",
@@ -3125,6 +2255,876 @@
           0,
           0,
           0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "competition": "La Liga",
+    "matchId": 564756,
+    "homeTeam": "Sevilla",
+    "awayTeam": "Real Betis Balompié",
+    "homeCrest": "https://crests.football-data.org/559.png",
+    "awayCrest": "https://crests.football-data.org/90.png",
+    "kickoff": "2026-11-21T17:30:00Z",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 53.6,
+          "confidence": "MEDIUM"
+        },
+        "draw": {
+          "probability": 25.2,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 21.2,
+          "confidence": "VERY LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 78.8,
+          "confidence": "HIGH"
+        },
+        "homeOrAway": {
+          "probability": 74.8,
+          "confidence": "HIGH"
+        },
+        "drawOrAway": {
+          "probability": 46.4,
+          "confidence": "LOW"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 58.7,
+          "confidence": "MEDIUM"
+        },
+        "no": {
+          "probability": 41.3,
+          "confidence": "LOW"
+        }
+      },
+      "overUnder": {
+        "over05": {
+          "probability": 93.7,
+          "confidence": "VERY HIGH"
+        },
+        "under05": {
+          "probability": 6.3,
+          "confidence": "VERY LOW"
+        },
+        "over15": {
+          "probability": 81.6,
+          "confidence": "VERY HIGH"
+        },
+        "under15": {
+          "probability": 18.4,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 57.9,
+          "confidence": "MEDIUM"
+        },
+        "under25": {
+          "probability": 42.1,
+          "confidence": "LOW"
+        },
+        "over35": {
+          "probability": 35.4,
+          "confidence": "LOW"
+        },
+        "under35": {
+          "probability": 64.6,
+          "confidence": "MEDIUM"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "1-1",
+          "probability": 11.8
+        },
+        {
+          "score": "2-1",
+          "probability": 9.9
+        },
+        {
+          "score": "2-0",
+          "probability": 8.8
+        },
+        {
+          "score": "1-0",
+          "probability": 7.9
+        },
+        {
+          "score": "0-0",
+          "probability": 6.3
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.89,
+        "away": 1.13
+      },
+      "scoreMatrix": [
+        [
+          6.3,
+          4.2,
+          3.1,
+          1.2,
+          0.3,
+          0.1,
+          0
+        ],
+        [
+          7.9,
+          11.8,
+          5.9,
+          2.2,
+          0.6,
+          0.1,
+          0
+        ],
+        [
+          8.8,
+          9.9,
+          5.6,
+          2.1,
+          0.6,
+          0.1,
+          0
+        ],
+        [
+          5.5,
+          6.2,
+          3.5,
+          1.3,
+          0.4,
+          0.1,
+          0
+        ],
+        [
+          2.6,
+          2.9,
+          1.7,
+          0.6,
+          0.2,
+          0,
+          0
+        ],
+        [
+          1,
+          1.1,
+          0.6,
+          0.2,
+          0.1,
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.3,
+          0.2,
+          0.1,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "competition": "La Liga",
+    "matchId": 564754,
+    "homeTeam": "Real Madrid CF",
+    "awayTeam": "RC Celta de Vigo",
+    "homeCrest": "https://crests.football-data.org/86.png",
+    "awayCrest": "https://crests.football-data.org/558.png",
+    "kickoff": "2026-11-21T20:00:00Z",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 80.2,
+          "confidence": "VERY HIGH"
+        },
+        "draw": {
+          "probability": 16.6,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 3.2,
+          "confidence": "VERY LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 96.8,
+          "confidence": "VERY HIGH"
+        },
+        "homeOrAway": {
+          "probability": 83.4,
+          "confidence": "VERY HIGH"
+        },
+        "drawOrAway": {
+          "probability": 19.8,
+          "confidence": "VERY LOW"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 22.8,
+          "confidence": "VERY LOW"
+        },
+        "no": {
+          "probability": 77.2,
+          "confidence": "HIGH"
+        }
+      },
+      "overUnder": {
+        "over05": {
+          "probability": 90.5,
+          "confidence": "VERY HIGH"
+        },
+        "under05": {
+          "probability": 9.5,
+          "confidence": "VERY LOW"
+        },
+        "over15": {
+          "probability": 70.4,
+          "confidence": "HIGH"
+        },
+        "under15": {
+          "probability": 29.6,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 43.5,
+          "confidence": "LOW"
+        },
+        "under25": {
+          "probability": 56.5,
+          "confidence": "MEDIUM"
+        },
+        "over35": {
+          "probability": 22.3,
+          "confidence": "VERY LOW"
+        },
+        "under35": {
+          "probability": 77.7,
+          "confidence": "HIGH"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "2-0",
+          "probability": 20.3
+        },
+        {
+          "score": "1-0",
+          "probability": 18.2
+        },
+        {
+          "score": "3-0",
+          "probability": 14.5
+        },
+        {
+          "score": "0-0",
+          "probability": 9.5
+        },
+        {
+          "score": "4-0",
+          "probability": 7.8
+        }
+      ],
+      "expectedGoals": {
+        "home": 2.14,
+        "away": 0.29
+      },
+      "scoreMatrix": [
+        [
+          9.5,
+          1.8,
+          0.4,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          18.2,
+          6.2,
+          0.8,
+          0.1,
+          0,
+          0,
+          0
+        ],
+        [
+          20.3,
+          5.9,
+          0.8,
+          0.1,
+          0,
+          0,
+          0
+        ],
+        [
+          14.5,
+          4.2,
+          0.6,
+          0.1,
+          0,
+          0,
+          0
+        ],
+        [
+          7.8,
+          2.2,
+          0.3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3.3,
+          1,
+          0.1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1.2,
+          0.3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "competition": "La Liga",
+    "matchId": 564749,
+    "homeTeam": "FC Barcelona",
+    "awayTeam": "Villarreal CF",
+    "homeCrest": "https://crests.football-data.org/81.png",
+    "awayCrest": "https://crests.football-data.org/94.png",
+    "kickoff": "2026-11-22T13:00:00Z",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 67,
+          "confidence": "HIGH"
+        },
+        "draw": {
+          "probability": 18.1,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 14.8,
+          "confidence": "VERY LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 85.2,
+          "confidence": "VERY HIGH"
+        },
+        "homeOrAway": {
+          "probability": 81.9,
+          "confidence": "VERY HIGH"
+        },
+        "drawOrAway": {
+          "probability": 33,
+          "confidence": "VERY LOW"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 68.4,
+          "confidence": "HIGH"
+        },
+        "no": {
+          "probability": 31.6,
+          "confidence": "VERY LOW"
+        }
+      },
+      "overUnder": {
+        "over05": {
+          "probability": 97.4,
+          "confidence": "VERY HIGH"
+        },
+        "under05": {
+          "probability": 2.6,
+          "confidence": "VERY LOW"
+        },
+        "over15": {
+          "probability": 91.8,
+          "confidence": "VERY HIGH"
+        },
+        "under15": {
+          "probability": 8.2,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 76.4,
+          "confidence": "HIGH"
+        },
+        "under25": {
+          "probability": 23.6,
+          "confidence": "VERY LOW"
+        },
+        "over35": {
+          "probability": 56.6,
+          "confidence": "MEDIUM"
+        },
+        "under35": {
+          "probability": 43.4,
+          "confidence": "LOW"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "2-1",
+          "probability": 8.8
+        },
+        {
+          "score": "3-1",
+          "probability": 8.1
+        },
+        {
+          "score": "1-1",
+          "probability": 7.1
+        },
+        {
+          "score": "2-0",
+          "probability": 6.8
+        },
+        {
+          "score": "3-0",
+          "probability": 6.3
+        }
+      ],
+      "expectedGoals": {
+        "home": 2.77,
+        "away": 1.28
+      },
+      "scoreMatrix": [
+        [
+          2.6,
+          1.5,
+          1.5,
+          0.6,
+          0.2,
+          0.1,
+          0
+        ],
+        [
+          4.1,
+          7.1,
+          4.1,
+          1.7,
+          0.6,
+          0.1,
+          0
+        ],
+        [
+          6.8,
+          8.8,
+          5.6,
+          2.4,
+          0.8,
+          0.2,
+          0
+        ],
+        [
+          6.3,
+          8.1,
+          5.2,
+          2.2,
+          0.7,
+          0.2,
+          0
+        ],
+        [
+          4.4,
+          5.6,
+          3.6,
+          1.5,
+          0.5,
+          0.1,
+          0
+        ],
+        [
+          2.4,
+          3.1,
+          2,
+          0.9,
+          0.3,
+          0.1,
+          0
+        ],
+        [
+          1.1,
+          1.4,
+          0.9,
+          0.4,
+          0.1,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "competition": "La Liga",
+    "matchId": 564750,
+    "homeTeam": "Real Racing Club de Santander",
+    "awayTeam": "Real Sociedad de Fútbol",
+    "homeCrest": "https://crests.football-data.org/5335.png",
+    "awayCrest": "https://crests.football-data.org/92.png",
+    "kickoff": "2026-11-22T15:15:00Z",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 8.9,
+          "confidence": "VERY LOW"
+        },
+        "draw": {
+          "probability": 10.3,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 80.8,
+          "confidence": "VERY HIGH"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 19.2,
+          "confidence": "VERY LOW"
+        },
+        "homeOrAway": {
+          "probability": 89.7,
+          "confidence": "VERY HIGH"
+        },
+        "drawOrAway": {
+          "probability": 91.1,
+          "confidence": "VERY HIGH"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 81.8,
+          "confidence": "VERY HIGH"
+        },
+        "no": {
+          "probability": 18.2,
+          "confidence": "VERY LOW"
+        }
+      },
+      "overUnder": {
+        "over05": {
+          "probability": 99.6,
+          "confidence": "VERY HIGH"
+        },
+        "under05": {
+          "probability": 0.4,
+          "confidence": "VERY LOW"
+        },
+        "over15": {
+          "probability": 98.9,
+          "confidence": "VERY HIGH"
+        },
+        "under15": {
+          "probability": 1.1,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 94.8,
+          "confidence": "VERY HIGH"
+        },
+        "under25": {
+          "probability": 5.2,
+          "confidence": "VERY LOW"
+        },
+        "over35": {
+          "probability": 86.5,
+          "confidence": "VERY HIGH"
+        },
+        "under35": {
+          "probability": 13.5,
+          "confidence": "VERY LOW"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "1-4",
+          "probability": 7
+        },
+        {
+          "score": "1-5",
+          "probability": 6.8
+        },
+        {
+          "score": "2-4",
+          "probability": 6.1
+        },
+        {
+          "score": "2-5",
+          "probability": 5.9
+        },
+        {
+          "score": "1-3",
+          "probability": 5.8
+        }
+      ],
+      "expectedGoals": {
+        "home": 1.74,
+        "away": 4.84
+      },
+      "scoreMatrix": [
+        [
+          0.4,
+          0.7,
+          2.1,
+          3.3,
+          4,
+          3.9,
+          3.2
+        ],
+        [
+          0.1,
+          1.7,
+          3.6,
+          5.8,
+          7,
+          6.8,
+          5.5
+        ],
+        [
+          0.3,
+          1.3,
+          3.1,
+          5.1,
+          6.1,
+          5.9,
+          4.8
+        ],
+        [
+          0.2,
+          0.8,
+          1.8,
+          2.9,
+          3.6,
+          3.5,
+          2.8
+        ],
+        [
+          0.1,
+          0.3,
+          0.8,
+          1.3,
+          1.6,
+          1.5,
+          1.2
+        ],
+        [
+          0,
+          0.1,
+          0.3,
+          0.4,
+          0.5,
+          0.5,
+          0.4
+        ],
+        [
+          0,
+          0,
+          0.1,
+          0.1,
+          0.2,
+          0.2,
+          0.1
+        ]
+      ]
+    }
+  },
+  {
+    "competition": "La Liga",
+    "matchId": 564752,
+    "homeTeam": "CA Osasuna",
+    "awayTeam": "Málaga CF",
+    "homeCrest": "https://crests.football-data.org/79.png",
+    "awayCrest": "https://crests.football-data.org/84.png",
+    "kickoff": "2026-11-22T17:30:00Z",
+    "prediction": {
+      "matchResult": {
+        "homeWin": {
+          "probability": 50.9,
+          "confidence": "MEDIUM"
+        },
+        "draw": {
+          "probability": 22.5,
+          "confidence": "VERY LOW"
+        },
+        "awayWin": {
+          "probability": 26.6,
+          "confidence": "VERY LOW"
+        }
+      },
+      "doubleChance": {
+        "homeOrDraw": {
+          "probability": 73.4,
+          "confidence": "HIGH"
+        },
+        "homeOrAway": {
+          "probability": 77.5,
+          "confidence": "HIGH"
+        },
+        "drawOrAway": {
+          "probability": 49.1,
+          "confidence": "LOW"
+        }
+      },
+      "btts": {
+        "yes": {
+          "probability": 72,
+          "confidence": "HIGH"
+        },
+        "no": {
+          "probability": 28,
+          "confidence": "VERY LOW"
+        }
+      },
+      "overUnder": {
+        "over05": {
+          "probability": 96.8,
+          "confidence": "VERY HIGH"
+        },
+        "under05": {
+          "probability": 3.2,
+          "confidence": "VERY LOW"
+        },
+        "over15": {
+          "probability": 90.3,
+          "confidence": "VERY HIGH"
+        },
+        "under15": {
+          "probability": 9.7,
+          "confidence": "VERY LOW"
+        },
+        "over25": {
+          "probability": 73.2,
+          "confidence": "HIGH"
+        },
+        "under25": {
+          "probability": 26.8,
+          "confidence": "VERY LOW"
+        },
+        "over35": {
+          "probability": 52.6,
+          "confidence": "MEDIUM"
+        },
+        "under35": {
+          "probability": 47.4,
+          "confidence": "LOW"
+        }
+      },
+      "topScorelines": [
+        {
+          "score": "1-1",
+          "probability": 8.9
+        },
+        {
+          "score": "2-1",
+          "probability": 8.7
+        },
+        {
+          "score": "2-2",
+          "probability": 7
+        },
+        {
+          "score": "3-1",
+          "probability": 6.5
+        },
+        {
+          "score": "1-2",
+          "probability": 6.2
+        }
+      ],
+      "expectedGoals": {
+        "home": 2.23,
+        "away": 1.59
+      },
+      "scoreMatrix": [
+        [
+          3.2,
+          2.5,
+          2.8,
+          1.5,
+          0.6,
+          0.2,
+          0
+        ],
+        [
+          3.9,
+          8.9,
+          6.2,
+          3.3,
+          1.3,
+          0.4,
+          0.1
+        ],
+        [
+          5.5,
+          8.7,
+          7,
+          3.7,
+          1.5,
+          0.5,
+          0.1
+        ],
+        [
+          4.1,
+          6.5,
+          5.2,
+          2.7,
+          1.1,
+          0.3,
+          0.1
+        ],
+        [
+          2.3,
+          3.6,
+          2.9,
+          1.5,
+          0.6,
+          0.2,
+          0.1
+        ],
+        [
+          1,
+          1.6,
+          1.3,
+          0.7,
+          0.3,
+          0.1,
+          0
+        ],
+        [
+          0.4,
+          0.6,
+          0.5,
+          0.3,
+          0.1,
           0,
           0
         ]
