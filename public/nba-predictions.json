@@ -1,510 +1,6 @@
 [
   {
     "competition": "NBA",
-    "matchId": 1558013,
-    "homeTeam": "Golden State Warriors",
-    "awayTeam": "New Orleans Pelicans",
-    "homeCrest": "https://highlightly.net/nba/images/teams/43.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/64.png",
-    "kickoff": "2026-11-10T03:00:00.000Z",
-    "prediction": {
-      "noBet": false,
-      "noBetReason": null,
-      "risks": [
-        "New Orleans Pelicans is on a back-to-back"
-      ],
-      "evidence": {
-        "seasonMargin": 4.1,
-        "formMargin": 8.1,
-        "homeForm": {
-          "ppg": 119.6,
-          "oppPpg": 107.8,
-          "wins": 5,
-          "games": 5
-        },
-        "awayForm": {
-          "ppg": 121.6,
-          "oppPpg": 120,
-          "wins": 3,
-          "games": 5
-        },
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 121.4,
-        "away": 113.8,
-        "total": 235.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 75,
-          "confidence": "HIGH"
-        },
-        "away": {
-          "probability": 25,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 235,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 235.2
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1558012,
-    "homeTeam": "Phoenix Suns",
-    "awayTeam": "San Antonio Spurs",
-    "homeCrest": "https://highlightly.net/nba/images/teams/46.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/37.png",
-    "kickoff": "2026-11-10T02:00:00.000Z",
-    "prediction": {
-      "noBet": true,
-      "noBetReason": "projected gap is under 3.5 points",
-      "risks": [],
-      "evidence": {
-        "seasonMargin": -0.1,
-        "formMargin": -4.7,
-        "homeForm": {
-          "ppg": 114.2,
-          "oppPpg": 115.6,
-          "wins": 2,
-          "games": 5
-        },
-        "awayForm": {
-          "ppg": 120.2,
-          "oppPpg": 106.2,
-          "wins": 5,
-          "games": 5
-        },
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 114.3,
-        "away": 116.3,
-        "total": 230.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 43,
-          "confidence": "NO BET"
-        },
-        "away": {
-          "probability": 57,
-          "confidence": "NO BET"
-        }
-      },
-      "totalPoints": {
-        "line": 230.5,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 230.6
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1558011,
-    "homeTeam": "Houston Rockets",
-    "awayTeam": "Denver Nuggets",
-    "homeCrest": "https://highlightly.net/nba/images/teams/28.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/3.png",
-    "kickoff": "2026-11-10T01:30:00.000Z",
-    "prediction": {
-      "noBet": true,
-      "noBetReason": "projected gap is under 3.5 points",
-      "risks": [],
-      "evidence": {
-        "seasonMargin": 4.4,
-        "formMargin": 0.6,
-        "homeForm": {
-          "ppg": 109,
-          "oppPpg": 105.2,
-          "wins": 2,
-          "games": 5
-        },
-        "awayForm": {
-          "ppg": 116.6,
-          "oppPpg": 108,
-          "wins": 4,
-          "games": 5
-        },
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 114.7,
-        "away": 111.8,
-        "total": 226.5
-      },
-      "moneyline": {
-        "home": {
-          "probability": 60.2,
-          "confidence": "NO BET"
-        },
-        "away": {
-          "probability": 39.8,
-          "confidence": "NO BET"
-        }
-      },
-      "totalPoints": {
-        "line": 226.5,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 226.5
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1558010,
-    "homeTeam": "Dallas Mavericks",
-    "awayTeam": "Indiana Pacers",
-    "homeCrest": "https://highlightly.net/nba/images/teams/40.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/36.png",
-    "kickoff": "2026-11-10T01:00:00.000Z",
-    "prediction": {
-      "noBet": false,
-      "noBetReason": null,
-      "risks": [
-        "Dallas Mavericks is on a back-to-back"
-      ],
-      "evidence": {
-        "seasonMargin": 4.7,
-        "formMargin": 10.8,
-        "homeForm": {
-          "ppg": 113.8,
-          "oppPpg": 106.2,
-          "wins": 3,
-          "games": 5
-        },
-        "awayForm": {
-          "ppg": 105.6,
-          "oppPpg": 113.6,
-          "wins": 1,
-          "games": 5
-        },
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 115.6,
-        "away": 110.5,
-        "total": 226.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 67.6,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 32.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 226,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 226.1
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1558009,
-    "homeTeam": "Toronto Raptors",
-    "awayTeam": "Memphis Grizzlies",
-    "homeCrest": "https://highlightly.net/nba/images/teams/34.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/42.png",
-    "kickoff": "2026-11-10T00:30:00.000Z",
-    "prediction": {
-      "noBet": true,
-      "noBetReason": "projected gap is under 3.5 points",
-      "risks": [],
-      "evidence": {
-        "seasonMargin": 2.9,
-        "formMargin": 0.3,
-        "homeForm": {
-          "ppg": 118.8,
-          "oppPpg": 121,
-          "wins": 2,
-          "games": 5
-        },
-        "awayForm": {
-          "ppg": 118.8,
-          "oppPpg": 115.6,
-          "wins": 2,
-          "games": 5
-        },
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 118.2,
-        "away": 116.4,
-        "total": 234.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 56.5,
-          "confidence": "NO BET"
-        },
-        "away": {
-          "probability": 43.5,
-          "confidence": "NO BET"
-        }
-      },
-      "totalPoints": {
-        "line": 234.5,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 234.6
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1558008,
-    "homeTeam": "Detroit Pistons",
-    "awayTeam": "Washington Wizards",
-    "homeCrest": "https://highlightly.net/nba/images/teams/25.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/50.png",
-    "kickoff": "2026-11-10T00:00:00.000Z",
-    "prediction": {
-      "noBet": false,
-      "noBetReason": null,
-      "risks": [
-        "Detroit Pistons is on a back-to-back"
-      ],
-      "evidence": {
-        "seasonMargin": 5.4,
-        "formMargin": 11.2,
-        "homeForm": {
-          "ppg": 110.6,
-          "oppPpg": 101.4,
-          "wins": 3,
-          "games": 5
-        },
-        "awayForm": {
-          "ppg": 102,
-          "oppPpg": 109.2,
-          "wins": 2,
-          "games": 5
-        },
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 113.7,
-        "away": 107.9,
-        "total": 221.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 69.4,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 30.6,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 221.5,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 221.6
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1558007,
-    "homeTeam": "Charlotte Hornets",
-    "awayTeam": "Cleveland Cavaliers",
-    "homeCrest": "https://highlightly.net/nba/images/teams/33.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/35.png",
-    "kickoff": "2026-11-10T00:00:00.000Z",
-    "prediction": {
-      "noBet": false,
-      "noBetReason": null,
-      "risks": [],
-      "evidence": {
-        "seasonMargin": -0.4,
-        "formMargin": -9.7,
-        "homeForm": {
-          "ppg": 91.6,
-          "oppPpg": 112.2,
-          "wins": 0,
-          "games": 5
-        },
-        "awayForm": {
-          "ppg": 116,
-          "oppPpg": 111.2,
-          "wins": 2,
-          "games": 5
-        },
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 109.6,
-        "away": 113.7,
-        "total": 223.3
-      },
-      "moneyline": {
-        "home": {
-          "probability": 35.8,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 64.2,
-          "confidence": "MEDIUM"
-        }
-      },
-      "totalPoints": {
-        "line": 223.5,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 223.3
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1558006,
-    "homeTeam": "Atlanta Hawks",
-    "awayTeam": "Los Angeles Lakers",
-    "homeCrest": "https://highlightly.net/nba/images/teams/23.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/4.png",
-    "kickoff": "2026-11-10T00:00:00.000Z",
-    "prediction": {
-      "noBet": true,
-      "noBetReason": "season stats and recent form disagree",
-      "risks": [
-        "Los Angeles Lakers is on a back-to-back"
-      ],
-      "evidence": {
-        "seasonMargin": 2.1,
-        "formMargin": -1.4,
-        "homeForm": {
-          "ppg": 118,
-          "oppPpg": 116.6,
-          "wins": 4,
-          "games": 5
-        },
-        "awayForm": {
-          "ppg": 126,
-          "oppPpg": 115.8,
-          "wins": 5,
-          "games": 5
-        },
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 119.6,
-        "away": 116.9,
-        "total": 236.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 59.5,
-          "confidence": "NO BET"
-        },
-        "away": {
-          "probability": 40.5,
-          "confidence": "NO BET"
-        }
-      },
-      "totalPoints": {
-        "line": 236.5,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 236.4
-      }
-    }
-  },
-  {
-    "competition": "NBA",
     "matchId": 1559288,
     "homeTeam": "Portland Trail Blazers",
     "awayTeam": "Oklahoma City Thunder",
@@ -513,13 +9,23 @@
     "kickoff": "2026-11-11T04:00:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "no recent-form data yet",
+      "noBetReason": "season stats and recent form disagree",
       "risks": [],
       "evidence": {
         "seasonMargin": 2.4,
-        "formMargin": null,
-        "homeForm": null,
-        "awayForm": null,
+        "formMargin": -1.7,
+        "homeForm": {
+          "ppg": 116.6,
+          "oppPpg": 113.6,
+          "wins": 3,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 116.2,
+          "oppPpg": 103.8,
+          "wins": 4,
+          "games": 5
+        },
         "notChecked": [
           "injuries",
           "lineups",
@@ -527,22 +33,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 115.6,
-        "away": 113.2,
-        "total": 228.8
+        "home": 114.6,
+        "away": 113.8,
+        "total": 228.5
       },
       "moneyline": {
         "home": {
-          "probability": 58.6,
+          "probability": 52.8,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 41.4,
+          "probability": 47.2,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 229,
+        "line": 228.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -551,7 +57,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 228.8
+        "projected": 228.5
       }
     }
   },
@@ -565,18 +71,23 @@
     "kickoff": "2026-11-11T03:00:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "no recent-form data yet",
+      "noBetReason": "projected gap is under 3.5 points",
       "risks": [],
       "evidence": {
         "seasonMargin": 2.1,
-        "formMargin": null,
+        "formMargin": 1.3,
         "homeForm": {
           "ppg": 108,
           "oppPpg": 118,
           "wins": 1,
           "games": 5
         },
-        "awayForm": null,
+        "awayForm": {
+          "ppg": 107,
+          "oppPpg": 113.6,
+          "wins": 1,
+          "games": 5
+        },
         "notChecked": [
           "injuries",
           "lineups",
@@ -584,22 +95,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 116,
-        "away": 113.9,
-        "total": 229.9
+        "home": 115.1,
+        "away": 113.3,
+        "total": 228.4
       },
       "moneyline": {
         "home": {
-          "probability": 57.3,
+          "probability": 56.2,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 42.7,
+          "probability": 43.8,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 230,
+        "line": 228.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -608,7 +119,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 229.9
+        "projected": 228.4
       }
     }
   },
@@ -683,15 +194,17 @@
     "awayCrest": "https://highlightly.net/nba/images/teams/30.png",
     "kickoff": "2026-11-11T02:00:00.000Z",
     "prediction": {
-      "noBet": false,
-      "noBetReason": null,
-      "risks": [],
+      "noBet": true,
+      "noBetReason": "projected gap is under 3.5 points",
+      "risks": [
+        "Phoenix Suns is on a back-to-back"
+      ],
       "evidence": {
-        "seasonMargin": 2.7,
-        "formMargin": 5.3,
+        "seasonMargin": 2.2,
+        "formMargin": 3.4,
         "homeForm": {
-          "ppg": 114.2,
-          "oppPpg": 115.6,
+          "ppg": 109.4,
+          "oppPpg": 114.6,
           "wins": 2,
           "games": 5
         },
@@ -708,22 +221,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 118.7,
-        "away": 115,
-        "total": 233.7
+        "home": 116.5,
+        "away": 115.9,
+        "total": 232.4
       },
       "moneyline": {
         "home": {
-          "probability": 63,
-          "confidence": "MEDIUM"
+          "probability": 52.4,
+          "confidence": "NO BET"
         },
         "away": {
-          "probability": 37,
-          "confidence": "LOW"
+          "probability": 47.6,
+          "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 233.5,
+        "line": 232.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -732,7 +245,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 233.7
+        "projected": 232.4
       }
     }
   },
@@ -770,9 +283,9 @@
         ]
       },
       "expectedPoints": {
-        "home": 111.8,
+        "home": 111.7,
         "away": 111.6,
-        "total": 223.4
+        "total": 223.3
       },
       "moneyline": {
         "home": {
@@ -794,7 +307,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 223.4
+        "projected": 223.3
       }
     }
   },
@@ -870,73 +383,21 @@
     "kickoff": "2026-11-12T03:00:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "no recent-form data yet",
-      "risks": [],
-      "evidence": {
-        "seasonMargin": 2.4,
-        "formMargin": null,
-        "homeForm": null,
-        "awayForm": null,
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 115.6,
-        "away": 113.2,
-        "total": 228.8
-      },
-      "moneyline": {
-        "home": {
-          "probability": 58.6,
-          "confidence": "NO BET"
-        },
-        "away": {
-          "probability": 41.4,
-          "confidence": "NO BET"
-        }
-      },
-      "totalPoints": {
-        "line": 229,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 228.8
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1560244,
-    "homeTeam": "Houston Rockets",
-    "awayTeam": "Golden State Warriors",
-    "homeCrest": "https://highlightly.net/nba/images/teams/28.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/43.png",
-    "kickoff": "2026-11-12T02:30:00.000Z",
-    "prediction": {
-      "noBet": true,
       "noBetReason": "season stats and recent form disagree",
       "risks": [],
       "evidence": {
-        "seasonMargin": 3.8,
-        "formMargin": -1,
+        "seasonMargin": 2.4,
+        "formMargin": -1.7,
         "homeForm": {
-          "ppg": 109,
-          "oppPpg": 105.2,
-          "wins": 2,
+          "ppg": 116.6,
+          "oppPpg": 113.6,
+          "wins": 3,
           "games": 5
         },
         "awayForm": {
-          "ppg": 119.6,
-          "oppPpg": 107.8,
-          "wins": 5,
+          "ppg": 116.2,
+          "oppPpg": 103.8,
+          "wins": 4,
           "games": 5
         },
         "notChecked": [
@@ -946,74 +407,17 @@
         ]
       },
       "expectedPoints": {
-        "home": 114.7,
-        "away": 112.8,
-        "total": 227.5
+        "home": 114.6,
+        "away": 113.8,
+        "total": 228.5
       },
       "moneyline": {
         "home": {
-          "probability": 56.7,
+          "probability": 52.8,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 43.3,
-          "confidence": "NO BET"
-        }
-      },
-      "totalPoints": {
-        "line": 227.5,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 227.5
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1560243,
-    "homeTeam": "Utah Jazz",
-    "awayTeam": "Orlando Magic",
-    "homeCrest": "https://highlightly.net/nba/images/teams/45.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/24.png",
-    "kickoff": "2026-11-12T02:00:00.000Z",
-    "prediction": {
-      "noBet": true,
-      "noBetReason": "no recent-form data yet",
-      "risks": [],
-      "evidence": {
-        "seasonMargin": 2.4,
-        "formMargin": null,
-        "homeForm": {
-          "ppg": 100,
-          "oppPpg": 115.6,
-          "wins": 0,
-          "games": 5
-        },
-        "awayForm": null,
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 115.4,
-        "away": 113,
-        "total": 228.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 58.4,
-          "confidence": "NO BET"
-        },
-        "away": {
-          "probability": 41.6,
+          "probability": 47.2,
           "confidence": "NO BET"
         }
       },
@@ -1027,7 +431,126 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 228.4
+        "projected": 228.5
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1560244,
+    "homeTeam": "Houston Rockets",
+    "awayTeam": "Golden State Warriors",
+    "homeCrest": "https://highlightly.net/nba/images/teams/28.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/43.png",
+    "kickoff": "2026-11-12T02:30:00.000Z",
+    "prediction": {
+      "noBet": true,
+      "noBetReason": "no recent-form data yet",
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 3,
+        "formMargin": null,
+        "homeForm": {
+          "ppg": 108.8,
+          "oppPpg": 102,
+          "wins": 3,
+          "games": 5
+        },
+        "awayForm": null,
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 116.3,
+        "away": 113.3,
+        "total": 229.6
+      },
+      "moneyline": {
+        "home": {
+          "probability": 60.5,
+          "confidence": "NO BET"
+        },
+        "away": {
+          "probability": 39.5,
+          "confidence": "NO BET"
+        }
+      },
+      "totalPoints": {
+        "line": 229.5,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 229.6
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1560243,
+    "homeTeam": "Utah Jazz",
+    "awayTeam": "Orlando Magic",
+    "homeCrest": "https://highlightly.net/nba/images/teams/45.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/24.png",
+    "kickoff": "2026-11-12T02:00:00.000Z",
+    "prediction": {
+      "noBet": true,
+      "noBetReason": "season stats and recent form disagree",
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 2.4,
+        "formMargin": -1.5,
+        "homeForm": {
+          "ppg": 100,
+          "oppPpg": 115.6,
+          "wins": 0,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 107,
+          "oppPpg": 113.6,
+          "wins": 1,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 113.2,
+        "away": 112.3,
+        "total": 225.5
+      },
+      "moneyline": {
+        "home": {
+          "probability": 53,
+          "confidence": "NO BET"
+        },
+        "away": {
+          "probability": 47,
+          "confidence": "NO BET"
+        }
+      },
+      "totalPoints": {
+        "line": 225.5,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 225.5
       }
     }
   },
@@ -1041,18 +564,23 @@
     "kickoff": "2026-11-12T01:00:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "no recent-form data yet",
+      "noBetReason": "season stats and recent form disagree",
       "risks": [],
       "evidence": {
-        "seasonMargin": 4.7,
-        "formMargin": null,
+        "seasonMargin": 3.8,
+        "formMargin": 0,
         "homeForm": {
-          "ppg": 121.6,
-          "oppPpg": 120,
-          "wins": 3,
+          "ppg": 114.8,
+          "oppPpg": 127.8,
+          "wins": 2,
           "games": 5
         },
-        "awayForm": null,
+        "awayForm": {
+          "ppg": 103.2,
+          "oppPpg": 110.2,
+          "wins": 2,
+          "games": 5
+        },
         "notChecked": [
           "injuries",
           "lineups",
@@ -1060,17 +588,17 @@
         ]
       },
       "expectedPoints": {
-        "home": 118.2,
-        "away": 113.5,
-        "total": 231.7
+        "home": 116.8,
+        "away": 114.5,
+        "total": 231.3
       },
       "moneyline": {
         "home": {
-          "probability": 66.3,
+          "probability": 58,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 33.7,
+          "probability": 42,
           "confidence": "NO BET"
         }
       },
@@ -1084,7 +612,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 231.7
+        "projected": 231.3
       }
     }
   },
@@ -1101,8 +629,8 @@
       "noBetReason": null,
       "risks": [],
       "evidence": {
-        "seasonMargin": -1.2,
-        "formMargin": -9.9,
+        "seasonMargin": -1.4,
+        "formMargin": -10.3,
         "homeForm": {
           "ppg": 103.4,
           "oppPpg": 119,
@@ -1110,8 +638,8 @@
           "games": 5
         },
         "awayForm": {
-          "ppg": 126,
-          "oppPpg": 115.8,
+          "ppg": 124.6,
+          "oppPpg": 113.6,
           "wins": 5,
           "games": 5
         },
@@ -1122,22 +650,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 114.4,
-        "away": 119.1,
-        "total": 233.4
+        "home": 113.9,
+        "away": 118.9,
+        "total": 232.8
       },
       "moneyline": {
         "home": {
-          "probability": 33.9,
+          "probability": 33.1,
           "confidence": "LOW"
         },
         "away": {
-          "probability": 66.1,
+          "probability": 66.9,
           "confidence": "MEDIUM"
         }
       },
       "totalPoints": {
-        "line": 233.5,
+        "line": 233,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -1146,7 +674,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 233.4
+        "projected": 232.8
       }
     }
   },
@@ -1163,18 +691,18 @@
       "noBetReason": "projected gap is under 3.5 points",
       "risks": [],
       "evidence": {
-        "seasonMargin": 3.8,
-        "formMargin": 0.3,
+        "seasonMargin": 4.3,
+        "formMargin": 2.1,
         "homeForm": {
-          "ppg": 118.8,
-          "oppPpg": 115.6,
+          "ppg": 117.6,
+          "oppPpg": 115.4,
           "wins": 2,
           "games": 5
         },
         "awayForm": {
-          "ppg": 116.6,
-          "oppPpg": 108,
-          "wins": 4,
+          "ppg": 115.8,
+          "oppPpg": 111.8,
+          "wins": 3,
           "games": 5
         },
         "notChecked": [
@@ -1184,17 +712,17 @@
         ]
       },
       "expectedPoints": {
-        "home": 116.8,
-        "away": 114.5,
+        "home": 117.3,
+        "away": 113.9,
         "total": 231.3
       },
       "moneyline": {
         "home": {
-          "probability": 58.4,
+          "probability": 61.9,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 41.6,
+          "probability": 38.1,
           "confidence": "NO BET"
         }
       },
@@ -1221,16 +749,21 @@
     "awayCrest": "https://highlightly.net/nba/images/teams/37.png",
     "kickoff": "2026-11-12T01:00:00.000Z",
     "prediction": {
-      "noBet": true,
-      "noBetReason": "no recent-form data yet",
+      "noBet": false,
+      "noBetReason": null,
       "risks": [],
       "evidence": {
-        "seasonMargin": -2.2,
-        "formMargin": null,
-        "homeForm": null,
+        "seasonMargin": -2.6,
+        "formMargin": -13.1,
+        "homeForm": {
+          "ppg": 114.2,
+          "oppPpg": 129.2,
+          "wins": 0,
+          "games": 5
+        },
         "awayForm": {
-          "ppg": 120.2,
-          "oppPpg": 106.2,
+          "ppg": 120.4,
+          "oppPpg": 103.2,
           "wins": 5,
           "games": 5
         },
@@ -1241,22 +774,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 115.1,
-        "away": 117.3,
-        "total": 232.5
+        "home": 113.6,
+        "away": 120.4,
+        "total": 233.9
       },
       "moneyline": {
         "home": {
-          "probability": 42.3,
-          "confidence": "NO BET"
+          "probability": 27.5,
+          "confidence": "LOW"
         },
         "away": {
-          "probability": 57.7,
-          "confidence": "NO BET"
+          "probability": 72.5,
+          "confidence": "HIGH"
         }
       },
       "totalPoints": {
-        "line": 232.5,
+        "line": 234,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -1265,7 +798,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 232.5
+        "projected": 233.9
       }
     }
   },
@@ -1282,11 +815,11 @@
       "noBetReason": "season stats and recent form disagree",
       "risks": [],
       "evidence": {
-        "seasonMargin": 1.9,
-        "formMargin": -4.2,
+        "seasonMargin": 1.5,
+        "formMargin": -5.1,
         "homeForm": {
-          "ppg": 118.8,
-          "oppPpg": 121,
+          "ppg": 116.4,
+          "oppPpg": 120.4,
           "wins": 2,
           "games": 5
         },
@@ -1303,22 +836,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 113.6,
-        "away": 114.2,
-        "total": 227.8
+        "home": 113,
+        "away": 114.1,
+        "total": 227
       },
       "moneyline": {
         "home": {
-          "probability": 48,
+          "probability": 46,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 52,
+          "probability": 54,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 228,
+        "line": 227,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -1327,7 +860,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 227.8
+        "projected": 227
       }
     }
   },
@@ -1344,8 +877,8 @@
       "noBetReason": null,
       "risks": [],
       "evidence": {
-        "seasonMargin": 3.5,
-        "formMargin": 6.2,
+        "seasonMargin": 3.8,
+        "formMargin": 9.9,
         "homeForm": {
           "ppg": 114.6,
           "oppPpg": 103.4,
@@ -1353,9 +886,9 @@
           "games": 5
         },
         "awayForm": {
-          "ppg": 116,
-          "oppPpg": 111.2,
-          "wins": 2,
+          "ppg": 111.2,
+          "oppPpg": 113.8,
+          "wins": 1,
           "games": 5
         },
         "notChecked": [
@@ -1365,22 +898,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 115.8,
-        "away": 111.3,
-        "total": 227.1
+        "home": 116.5,
+        "away": 110.3,
+        "total": 226.7
       },
       "moneyline": {
         "home": {
-          "probability": 65.8,
-          "confidence": "MEDIUM"
+          "probability": 70.8,
+          "confidence": "HIGH"
         },
         "away": {
-          "probability": 34.2,
+          "probability": 29.2,
           "confidence": "LOW"
         }
       },
       "totalPoints": {
-        "line": 227,
+        "line": 226.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -1389,7 +922,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 227.1
+        "projected": 226.7
       }
     }
   },
@@ -1402,22 +935,22 @@
     "awayCrest": "https://highlightly.net/nba/images/teams/50.png",
     "kickoff": "2026-11-12T00:00:00.000Z",
     "prediction": {
-      "noBet": true,
-      "noBetReason": "projected gap is under 3.5 points",
+      "noBet": false,
+      "noBetReason": null,
       "risks": [],
       "evidence": {
-        "seasonMargin": 3.2,
-        "formMargin": 2.6,
+        "seasonMargin": 3.3,
+        "formMargin": 7,
         "homeForm": {
-          "ppg": 105.6,
-          "oppPpg": 113.6,
+          "ppg": 105,
+          "oppPpg": 109.6,
           "wins": 1,
           "games": 5
         },
         "awayForm": {
-          "ppg": 102,
-          "oppPpg": 109.2,
-          "wins": 2,
+          "ppg": 105.2,
+          "oppPpg": 117.8,
+          "wins": 1,
           "games": 5
         },
         "notChecked": [
@@ -1427,22 +960,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 113.5,
+        "home": 115.3,
         "away": 110.5,
-        "total": 224
+        "total": 225.8
       },
       "moneyline": {
         "home": {
-          "probability": 60.3,
-          "confidence": "NO BET"
+          "probability": 66.5,
+          "confidence": "MEDIUM"
         },
         "away": {
-          "probability": 39.7,
-          "confidence": "NO BET"
+          "probability": 33.5,
+          "confidence": "LOW"
         }
       },
       "totalPoints": {
-        "line": 224,
+        "line": 226,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -1451,7 +984,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 224
+        "projected": 225.8
       }
     }
   },
@@ -1464,24 +997,19 @@
     "awayCrest": "https://highlightly.net/nba/images/teams/33.png",
     "kickoff": "2026-11-13T02:00:00.000Z",
     "prediction": {
-      "noBet": false,
-      "noBetReason": null,
+      "noBet": true,
+      "noBetReason": "no recent-form data yet",
       "risks": [],
       "evidence": {
-        "seasonMargin": 4.7,
-        "formMargin": 12.6,
+        "seasonMargin": 3.9,
+        "formMargin": null,
         "homeForm": {
-          "ppg": 114.2,
-          "oppPpg": 115.6,
+          "ppg": 109.4,
+          "oppPpg": 114.6,
           "wins": 2,
           "games": 5
         },
-        "awayForm": {
-          "ppg": 91.6,
-          "oppPpg": 112.2,
-          "wins": 0,
-          "games": 5
-        },
+        "awayForm": null,
         "notChecked": [
           "injuries",
           "lineups",
@@ -1489,22 +1017,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 115.8,
-        "away": 107.9,
-        "total": 223.7
+        "home": 115.1,
+        "away": 111.3,
+        "total": 226.4
       },
       "moneyline": {
         "home": {
-          "probability": 75.5,
-          "confidence": "HIGH"
+          "probability": 63.5,
+          "confidence": "NO BET"
         },
         "away": {
-          "probability": 24.5,
-          "confidence": "LOW"
+          "probability": 36.5,
+          "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 223.5,
+        "line": 226.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -1513,7 +1041,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 223.7
+        "projected": 226.4
       }
     }
   },
@@ -1533,12 +1061,7 @@
         "seasonMargin": 4.4,
         "formMargin": null,
         "homeForm": null,
-        "awayForm": {
-          "ppg": 113.8,
-          "oppPpg": 106.2,
-          "wins": 3,
-          "games": 5
-        },
+        "awayForm": null,
         "notChecked": [
           "injuries",
           "lineups",
@@ -1546,22 +1069,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 116.5,
-        "away": 112.1,
-        "total": 228.5
+        "home": 116.6,
+        "away": 112.3,
+        "total": 228.9
       },
       "moneyline": {
         "home": {
-          "probability": 65.2,
+          "probability": 65.1,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 34.8,
+          "probability": 34.9,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 228.5,
+        "line": 229,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -1570,7 +1093,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 228.5
+        "projected": 228.9
       }
     }
   },
@@ -1584,23 +1107,18 @@
     "kickoff": "2026-11-13T00:00:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "season stats and recent form disagree",
+      "noBetReason": "no recent-form data yet",
       "risks": [],
       "evidence": {
-        "seasonMargin": 0.6,
-        "formMargin": -5.2,
+        "seasonMargin": 0.3,
+        "formMargin": null,
         "homeForm": {
-          "ppg": 102,
-          "oppPpg": 109.2,
-          "wins": 2,
+          "ppg": 105.2,
+          "oppPpg": 117.8,
+          "wins": 1,
           "games": 5
         },
-        "awayForm": {
-          "ppg": 110.6,
-          "oppPpg": 101.4,
-          "wins": 3,
-          "games": 5
-        },
+        "awayForm": null,
         "notChecked": [
           "injuries",
           "lineups",
@@ -1608,22 +1126,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 109.9,
-        "away": 111.7,
-        "total": 221.6
+        "home": 113.4,
+        "away": 113.2,
+        "total": 226.6
       },
       "moneyline": {
         "home": {
-          "probability": 43.9,
+          "probability": 50.9,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 56.1,
+          "probability": 49.1,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 221.5,
+        "line": 226.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -1632,7 +1150,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 221.6
+        "projected": 226.6
       }
     }
   },
@@ -1649,8 +1167,8 @@
       "noBetReason": null,
       "risks": [],
       "evidence": {
-        "seasonMargin": 2.6,
-        "formMargin": 5.3,
+        "seasonMargin": 3,
+        "formMargin": 6.2,
         "homeForm": {
           "ppg": 113.8,
           "oppPpg": 111.4,
@@ -1658,8 +1176,8 @@
           "games": 5
         },
         "awayForm": {
-          "ppg": 118.8,
-          "oppPpg": 121,
+          "ppg": 116.4,
+          "oppPpg": 120.4,
           "wins": 2,
           "games": 5
         },
@@ -1670,18 +1188,142 @@
         ]
       },
       "expectedPoints": {
-        "home": 117.6,
-        "away": 113.9,
+        "home": 117.5,
+        "away": 113.2,
+        "total": 230.7
+      },
+      "moneyline": {
+        "home": {
+          "probability": 64.8,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 35.2,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 230.5,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 230.7
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1567220,
+    "homeTeam": "LA Clippers",
+    "awayTeam": "Oklahoma City Thunder",
+    "homeCrest": "https://highlightly.net/nba/images/teams/30.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/38.png",
+    "kickoff": "2026-11-14T03:30:00.000Z",
+    "prediction": {
+      "noBet": true,
+      "noBetReason": "season stats and recent form disagree",
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 0.7,
+        "formMargin": -6.2,
+        "homeForm": {
+          "ppg": 117.2,
+          "oppPpg": 123.2,
+          "wins": 1,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 116.2,
+          "oppPpg": 103.8,
+          "wins": 4,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 114,
+        "away": 116.1,
+        "total": 230
+      },
+      "moneyline": {
+        "home": {
+          "probability": 42.6,
+          "confidence": "NO BET"
+        },
+        "away": {
+          "probability": 57.4,
+          "confidence": "NO BET"
+        }
+      },
+      "totalPoints": {
+        "line": 230,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 230
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1567219,
+    "homeTeam": "Sacramento Kings",
+    "awayTeam": "Portland Trail Blazers",
+    "homeCrest": "https://highlightly.net/nba/images/teams/32.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/31.png",
+    "kickoff": "2026-11-14T03:00:00.000Z",
+    "prediction": {
+      "noBet": true,
+      "noBetReason": "projected gap is under 3.5 points",
+      "risks": [],
+      "evidence": {
+        "seasonMargin": -0.7,
+        "formMargin": -3.5,
+        "homeForm": {
+          "ppg": 108,
+          "oppPpg": 118,
+          "wins": 1,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 116.6,
+          "oppPpg": 113.6,
+          "wins": 3,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 114.8,
+        "away": 116.6,
         "total": 231.5
       },
       "moneyline": {
         "home": {
-          "probability": 62.9,
-          "confidence": "MEDIUM"
+          "probability": 43.6,
+          "confidence": "NO BET"
         },
         "away": {
-          "probability": 37.1,
-          "confidence": "LOW"
+          "probability": 56.4,
+          "confidence": "NO BET"
         }
       },
       "totalPoints": {
@@ -1700,120 +1342,6 @@
   },
   {
     "competition": "NBA",
-    "matchId": 1567220,
-    "homeTeam": "LA Clippers",
-    "awayTeam": "Oklahoma City Thunder",
-    "homeCrest": "https://highlightly.net/nba/images/teams/30.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/38.png",
-    "kickoff": "2026-11-14T03:30:00.000Z",
-    "prediction": {
-      "noBet": true,
-      "noBetReason": "no recent-form data yet",
-      "risks": [],
-      "evidence": {
-        "seasonMargin": 0.7,
-        "formMargin": null,
-        "homeForm": {
-          "ppg": 117.2,
-          "oppPpg": 123.2,
-          "wins": 1,
-          "games": 5
-        },
-        "awayForm": null,
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 114.3,
-        "away": 113.7,
-        "total": 228
-      },
-      "moneyline": {
-        "home": {
-          "probability": 52.3,
-          "confidence": "NO BET"
-        },
-        "away": {
-          "probability": 47.7,
-          "confidence": "NO BET"
-        }
-      },
-      "totalPoints": {
-        "line": 228,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 228
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1567219,
-    "homeTeam": "Sacramento Kings",
-    "awayTeam": "Portland Trail Blazers",
-    "homeCrest": "https://highlightly.net/nba/images/teams/32.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/31.png",
-    "kickoff": "2026-11-14T03:00:00.000Z",
-    "prediction": {
-      "noBet": true,
-      "noBetReason": "no recent-form data yet",
-      "risks": [],
-      "evidence": {
-        "seasonMargin": -0.7,
-        "formMargin": null,
-        "homeForm": {
-          "ppg": 108,
-          "oppPpg": 118,
-          "wins": 1,
-          "games": 5
-        },
-        "awayForm": null,
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 115.5,
-        "away": 116.2,
-        "total": 231.8
-      },
-      "moneyline": {
-        "home": {
-          "probability": 47.5,
-          "confidence": "NO BET"
-        },
-        "away": {
-          "probability": 52.5,
-          "confidence": "NO BET"
-        }
-      },
-      "totalPoints": {
-        "line": 232,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 231.8
-      }
-    }
-  },
-  {
-    "competition": "NBA",
     "matchId": 1567218,
     "homeTeam": "San Antonio Spurs",
     "awayTeam": "Golden State Warriors",
@@ -1821,24 +1349,19 @@
     "awayCrest": "https://highlightly.net/nba/images/teams/43.png",
     "kickoff": "2026-11-14T02:30:00.000Z",
     "prediction": {
-      "noBet": false,
-      "noBetReason": null,
+      "noBet": true,
+      "noBetReason": "no recent-form data yet",
       "risks": [],
       "evidence": {
-        "seasonMargin": 4.1,
-        "formMargin": 4.1,
+        "seasonMargin": 3.5,
+        "formMargin": null,
         "homeForm": {
-          "ppg": 120.2,
-          "oppPpg": 106.2,
+          "ppg": 120.4,
+          "oppPpg": 103.2,
           "wins": 5,
           "games": 5
         },
-        "awayForm": {
-          "ppg": 119.6,
-          "oppPpg": 107.8,
-          "wins": 5,
-          "games": 5
-        },
+        "awayForm": null,
         "notChecked": [
           "injuries",
           "lineups",
@@ -1846,18 +1369,18 @@
         ]
       },
       "expectedPoints": {
-        "home": 117.2,
-        "away": 113.1,
+        "home": 117,
+        "away": 113.4,
         "total": 230.4
       },
       "moneyline": {
         "home": {
-          "probability": 64.2,
-          "confidence": "MEDIUM"
+          "probability": 62.3,
+          "confidence": "NO BET"
         },
         "away": {
-          "probability": 35.8,
-          "confidence": "LOW"
+          "probability": 37.7,
+          "confidence": "NO BET"
         }
       },
       "totalPoints": {
@@ -1887,12 +1410,12 @@
       "noBetReason": null,
       "risks": [],
       "evidence": {
-        "seasonMargin": 7.1,
-        "formMargin": 12.7,
+        "seasonMargin": 7.3,
+        "formMargin": 14.2,
         "homeForm": {
-          "ppg": 109,
-          "oppPpg": 105.2,
-          "wins": 2,
+          "ppg": 108.8,
+          "oppPpg": 102,
+          "wins": 3,
           "games": 5
         },
         "awayForm": {
@@ -1908,22 +1431,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 116.8,
-        "away": 107.4,
-        "total": 224.2
+        "home": 116.7,
+        "away": 106.6,
+        "total": 223.3
       },
       "moneyline": {
         "home": {
-          "probability": 79.2,
+          "probability": 80.8,
           "confidence": "HIGH"
         },
         "away": {
-          "probability": 20.8,
+          "probability": 19.2,
           "confidence": "LOW"
         }
       },
       "totalPoints": {
-        "line": 224,
+        "line": 223.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -1932,7 +1455,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 224.2
+        "projected": 223.3
       }
     }
   },
@@ -1946,20 +1469,20 @@
     "kickoff": "2026-11-14T01:00:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "projected gap is under 3.5 points",
+      "noBetReason": "season stats and recent form disagree",
       "risks": [],
       "evidence": {
-        "seasonMargin": 1.8,
-        "formMargin": 2.2,
+        "seasonMargin": 0.5,
+        "formMargin": -4.6,
         "homeForm": {
-          "ppg": 121.6,
-          "oppPpg": 120,
-          "wins": 3,
+          "ppg": 114.8,
+          "oppPpg": 127.8,
+          "wins": 2,
           "games": 5
         },
         "awayForm": {
-          "ppg": 118.8,
-          "oppPpg": 115.6,
+          "ppg": 117.6,
+          "oppPpg": 115.4,
           "wins": 2,
           "games": 5
         },
@@ -1970,22 +1493,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 119.1,
-        "away": 117.2,
-        "total": 236.3
+        "home": 117.2,
+        "away": 118.7,
+        "total": 236
       },
       "moneyline": {
         "home": {
-          "probability": 56.9,
+          "probability": 44.6,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 43.1,
+          "probability": 55.4,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 236.5,
+        "line": 236,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -1994,7 +1517,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 236.3
+        "projected": 236
       }
     }
   },
@@ -2011,77 +1534,15 @@
       "noBetReason": "no recent-form data yet",
       "risks": [],
       "evidence": {
-        "seasonMargin": -0.8,
+        "seasonMargin": -0.6,
         "formMargin": null,
-        "homeForm": null,
-        "awayForm": {
-          "ppg": 118,
-          "oppPpg": 116.6,
-          "wins": 4,
-          "games": 5
-        },
-        "notChecked": [
-          "injuries",
-          "lineups",
-          "travel"
-        ]
-      },
-      "expectedPoints": {
-        "home": 116.6,
-        "away": 117.4,
-        "total": 234.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 47.3,
-          "confidence": "NO BET"
-        },
-        "away": {
-          "probability": 52.7,
-          "confidence": "NO BET"
-        }
-      },
-      "totalPoints": {
-        "line": 234,
-        "over": {
-          "probability": 52,
-          "confidence": "MEDIUM"
-        },
-        "under": {
-          "probability": 48,
-          "confidence": "MEDIUM"
-        },
-        "projected": 234.1
-      }
-    }
-  },
-  {
-    "competition": "NBA",
-    "matchId": 1567214,
-    "homeTeam": "Miami Heat",
-    "awayTeam": "Cleveland Cavaliers",
-    "homeCrest": "https://highlightly.net/nba/images/teams/1.png",
-    "awayCrest": "https://highlightly.net/nba/images/teams/35.png",
-    "kickoff": "2026-11-14T01:00:00.000Z",
-    "prediction": {
-      "noBet": true,
-      "noBetReason": "season stats and recent form disagree",
-      "risks": [],
-      "evidence": {
-        "seasonMargin": 1.4,
-        "formMargin": -0.8,
         "homeForm": {
-          "ppg": 118.6,
-          "oppPpg": 121.4,
-          "wins": 3,
+          "ppg": 114.2,
+          "oppPpg": 129.2,
+          "wins": 0,
           "games": 5
         },
-        "awayForm": {
-          "ppg": 116,
-          "oppPpg": 111.2,
-          "wins": 2,
-          "games": 5
-        },
+        "awayForm": null,
         "notChecked": [
           "injuries",
           "lineups",
@@ -2089,17 +1550,17 @@
         ]
       },
       "expectedPoints": {
-        "home": 117.3,
-        "away": 116.8,
+        "home": 116.8,
+        "away": 117.4,
         "total": 234.2
       },
       "moneyline": {
         "home": {
-          "probability": 51.8,
+          "probability": 47.9,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 48.2,
+          "probability": 52.1,
           "confidence": "NO BET"
         }
       },
@@ -2119,6 +1580,68 @@
   },
   {
     "competition": "NBA",
+    "matchId": 1567214,
+    "homeTeam": "Miami Heat",
+    "awayTeam": "Cleveland Cavaliers",
+    "homeCrest": "https://highlightly.net/nba/images/teams/1.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/35.png",
+    "kickoff": "2026-11-14T01:00:00.000Z",
+    "prediction": {
+      "noBet": true,
+      "noBetReason": "projected gap is under 3.5 points",
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 1.6,
+        "formMargin": 2.9,
+        "homeForm": {
+          "ppg": 118.6,
+          "oppPpg": 121.4,
+          "wins": 3,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 111.2,
+          "oppPpg": 113.8,
+          "wins": 1,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 118,
+        "away": 115.8,
+        "total": 233.8
+      },
+      "moneyline": {
+        "home": {
+          "probability": 57.6,
+          "confidence": "NO BET"
+        },
+        "away": {
+          "probability": 42.4,
+          "confidence": "NO BET"
+        }
+      },
+      "totalPoints": {
+        "line": 234,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 233.8
+      }
+    }
+  },
+  {
+    "competition": "NBA",
     "matchId": 1567213,
     "homeTeam": "Orlando Magic",
     "awayTeam": "Milwaukee Bucks",
@@ -2126,13 +1649,18 @@
     "awayCrest": "https://highlightly.net/nba/images/teams/39.png",
     "kickoff": "2026-11-14T00:00:00.000Z",
     "prediction": {
-      "noBet": true,
-      "noBetReason": "no recent-form data yet",
+      "noBet": false,
+      "noBetReason": null,
       "risks": [],
       "evidence": {
         "seasonMargin": 3.9,
-        "formMargin": null,
-        "homeForm": null,
+        "formMargin": 7.5,
+        "homeForm": {
+          "ppg": 107,
+          "oppPpg": 113.6,
+          "wins": 1,
+          "games": 5
+        },
         "awayForm": {
           "ppg": 103.4,
           "oppPpg": 119,
@@ -2146,22 +1674,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 116.8,
-        "away": 112.9,
-        "total": 229.6
+        "home": 116.4,
+        "away": 111.1,
+        "total": 227.5
       },
       "moneyline": {
         "home": {
-          "probability": 63.6,
-          "confidence": "NO BET"
+          "probability": 68.2,
+          "confidence": "MEDIUM"
         },
         "away": {
-          "probability": 36.4,
-          "confidence": "NO BET"
+          "probability": 31.8,
+          "confidence": "LOW"
         }
       },
       "totalPoints": {
-        "line": 229.5,
+        "line": 227.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2170,7 +1698,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 229.6
+        "projected": 227.5
       }
     }
   },
@@ -2187,11 +1715,11 @@
       "noBetReason": "season stats and recent form disagree",
       "risks": [],
       "evidence": {
-        "seasonMargin": 1.2,
-        "formMargin": -6.6,
+        "seasonMargin": 1.1,
+        "formMargin": -4.9,
         "homeForm": {
-          "ppg": 105.6,
-          "oppPpg": 113.6,
+          "ppg": 105,
+          "oppPpg": 109.6,
           "wins": 1,
           "games": 5
         },
@@ -2209,21 +1737,21 @@
       },
       "expectedPoints": {
         "home": 111.4,
-        "away": 113.3,
-        "total": 224.7
+        "away": 112.7,
+        "total": 224
       },
       "moneyline": {
         "home": {
-          "probability": 43.1,
+          "probability": 45.4,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 56.9,
+          "probability": 54.6,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 224.5,
+        "line": 224,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2232,7 +1760,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 224.7
+        "projected": 224
       }
     }
   },
@@ -2249,11 +1777,11 @@
       "noBetReason": "season stats and recent form disagree",
       "risks": [],
       "evidence": {
-        "seasonMargin": 2.9,
-        "formMargin": -3.7,
+        "seasonMargin": 2.6,
+        "formMargin": -4.6,
         "homeForm": {
-          "ppg": 118.8,
-          "oppPpg": 121,
+          "ppg": 116.4,
+          "oppPpg": 120.4,
           "wins": 2,
           "games": 5
         },
@@ -2270,22 +1798,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 114.9,
-        "away": 114.7,
-        "total": 229.6
+        "home": 114.3,
+        "away": 114.6,
+        "total": 228.9
       },
       "moneyline": {
         "home": {
-          "probability": 51,
+          "probability": 49,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 49,
+          "probability": 51,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 229.5,
+        "line": 229,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2294,7 +1822,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 229.6
+        "projected": 228.9
       }
     }
   },
@@ -2307,24 +1835,19 @@
     "awayCrest": "https://highlightly.net/nba/images/teams/40.png",
     "kickoff": "2026-11-15T23:00:00.000Z",
     "prediction": {
-      "noBet": false,
-      "noBetReason": null,
+      "noBet": true,
+      "noBetReason": "no recent-form data yet",
       "risks": [],
       "evidence": {
         "seasonMargin": 4.2,
-        "formMargin": 5.3,
+        "formMargin": null,
         "homeForm": {
           "ppg": 109.2,
           "oppPpg": 97,
           "wins": 4,
           "games": 5
         },
-        "awayForm": {
-          "ppg": 113.8,
-          "oppPpg": 106.2,
-          "wins": 3,
-          "games": 5
-        },
+        "awayForm": null,
         "notChecked": [
           "injuries",
           "lineups",
@@ -2332,22 +1855,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 113.8,
-        "away": 109.1,
-        "total": 222.9
+        "home": 116,
+        "away": 111.8,
+        "total": 227.8
       },
       "moneyline": {
         "home": {
-          "probability": 66,
-          "confidence": "MEDIUM"
+          "probability": 64.5,
+          "confidence": "NO BET"
         },
         "away": {
-          "probability": 34,
-          "confidence": "LOW"
+          "probability": 35.5,
+          "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 223,
+        "line": 228,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2356,7 +1879,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 222.9
+        "projected": 227.8
       }
     }
   },
@@ -2373,8 +1896,8 @@
       "noBetReason": null,
       "risks": [],
       "evidence": {
-        "seasonMargin": -1.4,
-        "formMargin": -11.8,
+        "seasonMargin": -1.8,
+        "formMargin": -13.4,
         "homeForm": {
           "ppg": 100,
           "oppPpg": 115.6,
@@ -2382,8 +1905,8 @@
           "games": 5
         },
         "awayForm": {
-          "ppg": 120.2,
-          "oppPpg": 106.2,
+          "ppg": 120.4,
+          "oppPpg": 103.2,
           "wins": 5,
           "games": 5
         },
@@ -2394,22 +1917,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 110.7,
-        "away": 116.3,
-        "total": 227
+        "home": 109.9,
+        "away": 116.4,
+        "total": 226.3
       },
       "moneyline": {
         "home": {
-          "probability": 31.1,
+          "probability": 28.5,
           "confidence": "LOW"
         },
         "away": {
-          "probability": 68.9,
-          "confidence": "MEDIUM"
+          "probability": 71.5,
+          "confidence": "HIGH"
         }
       },
       "totalPoints": {
-        "line": 227,
+        "line": 226.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2418,7 +1941,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 227
+        "projected": 226.3
       }
     }
   },
@@ -2431,24 +1954,19 @@
     "awayCrest": "https://highlightly.net/nba/images/teams/33.png",
     "kickoff": "2026-11-15T21:30:00.000Z",
     "prediction": {
-      "noBet": false,
-      "noBetReason": null,
+      "noBet": true,
+      "noBetReason": "no recent-form data yet",
       "risks": [],
       "evidence": {
-        "seasonMargin": 5,
-        "formMargin": 10.3,
+        "seasonMargin": 4.7,
+        "formMargin": null,
         "homeForm": {
           "ppg": 117.2,
           "oppPpg": 123.2,
           "wins": 1,
           "games": 5
         },
-        "awayForm": {
-          "ppg": 91.6,
-          "oppPpg": 112.2,
-          "wins": 0,
-          "games": 5
-        },
+        "awayForm": null,
         "notChecked": [
           "injuries",
           "lineups",
@@ -2456,22 +1974,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 116.4,
-        "away": 109.2,
-        "total": 225.6
+        "home": 115.5,
+        "away": 110.8,
+        "total": 226.3
       },
       "moneyline": {
         "home": {
-          "probability": 73.5,
-          "confidence": "HIGH"
+          "probability": 66.2,
+          "confidence": "NO BET"
         },
         "away": {
-          "probability": 26.5,
-          "confidence": "LOW"
+          "probability": 33.8,
+          "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 225.5,
+        "line": 226.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2480,7 +1998,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 225.6
+        "projected": 226.3
       }
     }
   },
@@ -2494,20 +2012,20 @@
     "kickoff": "2026-11-15T21:00:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "season stats and recent form disagree",
+      "noBetReason": "projected gap is under 3.5 points",
       "risks": [],
       "evidence": {
-        "seasonMargin": 0.4,
-        "formMargin": -2.8,
+        "seasonMargin": -0.3,
+        "formMargin": -5.1,
         "homeForm": {
-          "ppg": 114.2,
-          "oppPpg": 115.6,
+          "ppg": 109.4,
+          "oppPpg": 114.6,
           "wins": 2,
           "games": 5
         },
         "awayForm": {
-          "ppg": 126,
-          "oppPpg": 115.8,
+          "ppg": 124.6,
+          "oppPpg": 113.6,
           "wins": 5,
           "games": 5
         },
@@ -2518,22 +2036,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 117,
-        "away": 117.9,
-        "total": 235
+        "home": 115.4,
+        "away": 117.6,
+        "total": 233
       },
       "moneyline": {
         "home": {
-          "probability": 46.8,
+          "probability": 42.2,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 53.2,
+          "probability": 57.8,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 235,
+        "line": 233,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2542,7 +2060,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 235
+        "projected": 233
       }
     }
   },
@@ -2559,8 +2077,8 @@
       "noBetReason": null,
       "risks": [],
       "evidence": {
-        "seasonMargin": 4.4,
-        "formMargin": 8.2,
+        "seasonMargin": 4.5,
+        "formMargin": 6.5,
         "homeForm": {
           "ppg": 113.8,
           "oppPpg": 111.4,
@@ -2568,8 +2086,8 @@
           "games": 5
         },
         "awayForm": {
-          "ppg": 105.6,
-          "oppPpg": 113.6,
+          "ppg": 105,
+          "oppPpg": 109.6,
           "wins": 1,
           "games": 5
         },
@@ -2580,22 +2098,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 116.3,
+        "home": 115.6,
         "away": 110.3,
-        "total": 226.6
+        "total": 225.9
       },
       "moneyline": {
         "home": {
-          "probability": 70,
-          "confidence": "HIGH"
+          "probability": 68,
+          "confidence": "MEDIUM"
         },
         "away": {
-          "probability": 30,
+          "probability": 32,
           "confidence": "LOW"
         }
       },
       "totalPoints": {
-        "line": 226.5,
+        "line": 226,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2604,7 +2122,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 226.6
+        "projected": 225.9
       }
     }
   },
@@ -2624,7 +2142,12 @@
         "seasonMargin": 8.5,
         "formMargin": null,
         "homeForm": null,
-        "awayForm": null,
+        "awayForm": {
+          "ppg": 114.2,
+          "oppPpg": 129.2,
+          "wins": 0,
+          "games": 5
+        },
         "notChecked": [
           "injuries",
           "lineups",
@@ -2634,7 +2157,7 @@
       "expectedPoints": {
         "home": 120.3,
         "away": 111.8,
-        "total": 232.2
+        "total": 232.1
       },
       "moneyline": {
         "home": {
@@ -2656,7 +2179,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 232.2
+        "projected": 232.1
       }
     }
   },
@@ -2669,19 +2192,24 @@
     "awayCrest": "https://highlightly.net/nba/images/teams/49.png",
     "kickoff": "2026-11-15T01:00:00.000Z",
     "prediction": {
-      "noBet": true,
-      "noBetReason": "no recent-form data yet",
+      "noBet": false,
+      "noBetReason": null,
       "risks": [],
       "evidence": {
-        "seasonMargin": 5.9,
-        "formMargin": null,
+        "seasonMargin": 6.2,
+        "formMargin": 7.6,
         "homeForm": {
-          "ppg": 118.8,
-          "oppPpg": 115.6,
+          "ppg": 117.6,
+          "oppPpg": 115.4,
           "wins": 2,
           "games": 5
         },
-        "awayForm": null,
+        "awayForm": {
+          "ppg": 103.2,
+          "oppPpg": 110.2,
+          "wins": 2,
+          "games": 5
+        },
         "notChecked": [
           "injuries",
           "lineups",
@@ -2689,22 +2217,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 117.6,
-        "away": 111.7,
-        "total": 229.3
+        "home": 117.4,
+        "away": 110.6,
+        "total": 227.9
       },
       "moneyline": {
         "home": {
-          "probability": 70,
-          "confidence": "NO BET"
+          "probability": 72.5,
+          "confidence": "HIGH"
         },
         "away": {
-          "probability": 30,
-          "confidence": "NO BET"
+          "probability": 27.5,
+          "confidence": "LOW"
         }
       },
       "totalPoints": {
-        "line": 229.5,
+        "line": 228,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2713,7 +2241,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 229.3
+        "projected": 227.9
       }
     }
   },
@@ -2727,23 +2255,18 @@
     "kickoff": "2026-11-15T01:00:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "season stats and recent form disagree",
+      "noBetReason": "no recent-form data yet",
       "risks": [],
       "evidence": {
-        "seasonMargin": 0.5,
-        "formMargin": -3,
+        "seasonMargin": 0.3,
+        "formMargin": null,
         "homeForm": {
           "ppg": 118.6,
           "oppPpg": 121.4,
           "wins": 3,
           "games": 5
         },
-        "awayForm": {
-          "ppg": 110.6,
-          "oppPpg": 101.4,
-          "wins": 3,
-          "games": 5
-        },
+        "awayForm": null,
         "notChecked": [
           "injuries",
           "lineups",
@@ -2751,17 +2274,17 @@
         ]
       },
       "expectedPoints": {
-        "home": 114.2,
-        "away": 115.1,
-        "total": 229.3
+        "home": 115,
+        "away": 114.7,
+        "total": 229.7
       },
       "moneyline": {
         "home": {
-          "probability": 46.7,
+          "probability": 51.1,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 53.3,
+          "probability": 48.9,
           "confidence": "NO BET"
         }
       },
@@ -2775,7 +2298,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 229.3
+        "projected": 229.7
       }
     }
   },
@@ -2789,23 +2312,18 @@
     "kickoff": "2026-11-15T00:30:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "projected gap is under 3.5 points",
+      "noBetReason": "no recent-form data yet",
       "risks": [],
       "evidence": {
-        "seasonMargin": 2.6,
-        "formMargin": 1.6,
+        "seasonMargin": 2.3,
+        "formMargin": null,
         "homeForm": {
-          "ppg": 116,
-          "oppPpg": 111.2,
-          "wins": 2,
+          "ppg": 111.2,
+          "oppPpg": 113.8,
+          "wins": 1,
           "games": 5
         },
-        "awayForm": {
-          "ppg": 113.8,
-          "oppPpg": 106.2,
-          "wins": 3,
-          "games": 5
-        },
+        "awayForm": null,
         "notChecked": [
           "injuries",
           "lineups",
@@ -2813,22 +2331,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 115.4,
-        "away": 113.1,
-        "total": 228.5
+        "home": 116.3,
+        "away": 114,
+        "total": 230.3
       },
       "moneyline": {
         "home": {
-          "probability": 57.8,
+          "probability": 58.3,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 42.2,
+          "probability": 41.7,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 228.5,
+        "line": 230.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2837,7 +2355,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 228.5
+        "projected": 230.3
       }
     }
   },
@@ -2854,18 +2372,18 @@
       "noBetReason": "season stats and recent form disagree",
       "risks": [],
       "evidence": {
-        "seasonMargin": 2.6,
-        "formMargin": -0.5,
+        "seasonMargin": 1.8,
+        "formMargin": -5.5,
         "homeForm": {
-          "ppg": 121.6,
-          "oppPpg": 120,
-          "wins": 3,
+          "ppg": 114.8,
+          "oppPpg": 127.8,
+          "wins": 2,
           "games": 5
         },
         "awayForm": {
-          "ppg": 116.6,
-          "oppPpg": 108,
-          "wins": 4,
+          "ppg": 115.8,
+          "oppPpg": 111.8,
+          "wins": 3,
           "games": 5
         },
         "notChecked": [
@@ -2875,22 +2393,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 117.7,
-        "away": 116.4,
-        "total": 234.1
+        "home": 116.8,
+        "away": 117.9,
+        "total": 234.6
       },
       "moneyline": {
         "home": {
-          "probability": 54.8,
+          "probability": 46,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 45.2,
+          "probability": 54,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 234,
+        "line": 234.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2899,7 +2417,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 234.1
+        "projected": 234.6
       }
     }
   },
@@ -2912,19 +2430,24 @@
     "awayCrest": "https://highlightly.net/nba/images/teams/38.png",
     "kickoff": "2026-11-16T02:00:00.000Z",
     "prediction": {
-      "noBet": true,
-      "noBetReason": "no recent-form data yet",
+      "noBet": false,
+      "noBetReason": null,
       "risks": [],
       "evidence": {
         "seasonMargin": -1.3,
-        "formMargin": null,
+        "formMargin": -8.2,
         "homeForm": {
           "ppg": 108,
           "oppPpg": 118,
           "wins": 1,
           "games": 5
         },
-        "awayForm": null,
+        "awayForm": {
+          "ppg": 116.2,
+          "oppPpg": 103.8,
+          "wins": 4,
+          "games": 5
+        },
         "notChecked": [
           "injuries",
           "lineups",
@@ -2932,22 +2455,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 113.6,
-        "away": 114.9,
-        "total": 228.5
+        "home": 111.7,
+        "away": 115.8,
+        "total": 227.5
       },
       "moneyline": {
         "home": {
-          "probability": 45.5,
-          "confidence": "NO BET"
+          "probability": 36,
+          "confidence": "LOW"
         },
         "away": {
-          "probability": 54.5,
-          "confidence": "NO BET"
+          "probability": 64,
+          "confidence": "MEDIUM"
         }
       },
       "totalPoints": {
-        "line": 228.5,
+        "line": 227.5,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -2956,7 +2479,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 228.5
+        "projected": 227.5
       }
     }
   },
@@ -2970,23 +2493,18 @@
     "kickoff": "2026-11-16T01:00:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "projected gap is under 3.5 points",
+      "noBetReason": "no recent-form data yet",
       "risks": [],
       "evidence": {
-        "seasonMargin": -0.3,
-        "formMargin": -5.5,
+        "seasonMargin": -0.1,
+        "formMargin": null,
         "homeForm": {
           "ppg": 103.4,
           "oppPpg": 119,
           "wins": 0,
           "games": 5
         },
-        "awayForm": {
-          "ppg": 118,
-          "oppPpg": 116.6,
-          "wins": 4,
-          "games": 5
-        },
+        "awayForm": null,
         "notChecked": [
           "injuries",
           "lineups",
@@ -2994,22 +2512,22 @@
         ]
       },
       "expectedPoints": {
-        "home": 114.7,
-        "away": 117,
-        "total": 231.7
+        "home": 115.9,
+        "away": 116,
+        "total": 232
       },
       "moneyline": {
         "home": {
-          "probability": 41.6,
+          "probability": 49.6,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 58.4,
+          "probability": 50.4,
           "confidence": "NO BET"
         }
       },
       "totalPoints": {
-        "line": 231.5,
+        "line": 232,
         "over": {
           "probability": 52,
           "confidence": "MEDIUM"
@@ -3018,7 +2536,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 231.7
+        "projected": 232
       }
     }
   },
@@ -3032,20 +2550,82 @@
     "kickoff": "2026-11-16T00:00:00.000Z",
     "prediction": {
       "noBet": true,
-      "noBetReason": "season stats and recent form disagree",
+      "noBetReason": "projected gap is under 3.5 points",
       "risks": [],
       "evidence": {
-        "seasonMargin": 0.3,
-        "formMargin": -2.5,
+        "seasonMargin": 0,
+        "formMargin": -6.7,
         "homeForm": {
-          "ppg": 102,
-          "oppPpg": 109.2,
-          "wins": 2,
+          "ppg": 105.2,
+          "oppPpg": 117.8,
+          "wins": 1,
           "games": 5
         },
         "awayForm": {
-          "ppg": 109,
-          "oppPpg": 105.2,
+          "ppg": 108.8,
+          "oppPpg": 102,
+          "wins": 3,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 110.9,
+        "away": 113.6,
+        "total": 224.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 40.4,
+          "confidence": "NO BET"
+        },
+        "away": {
+          "probability": 59.6,
+          "confidence": "NO BET"
+        }
+      },
+      "totalPoints": {
+        "line": 224.5,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 224.4
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1573810,
+    "homeTeam": "Denver Nuggets",
+    "awayTeam": "Phoenix Suns",
+    "homeCrest": "https://highlightly.net/nba/images/teams/3.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/46.png",
+    "kickoff": "2026-11-17T02:00:00.000Z",
+    "prediction": {
+      "noBet": false,
+      "noBetReason": null,
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 4.7,
+        "formMargin": 7.6,
+        "homeForm": {
+          "ppg": 115.8,
+          "oppPpg": 111.8,
+          "wins": 3,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 109.4,
+          "oppPpg": 114.6,
           "wins": 2,
           "games": 5
         },
@@ -3056,18 +2636,442 @@
         ]
       },
       "expectedPoints": {
-        "home": 111,
+        "home": 117.7,
         "away": 111.8,
-        "total": 222.8
+        "total": 229.6
       },
       "moneyline": {
         "home": {
-          "probability": 47,
+          "probability": 69.8,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 30.2,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 229.5,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 229.6
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1573809,
+    "homeTeam": "New Orleans Pelicans",
+    "awayTeam": "Golden State Warriors",
+    "homeCrest": "https://highlightly.net/nba/images/teams/64.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/43.png",
+    "kickoff": "2026-11-17T01:00:00.000Z",
+    "prediction": {
+      "noBet": true,
+      "noBetReason": "no recent-form data yet",
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 0,
+        "formMargin": null,
+        "homeForm": {
+          "ppg": 114.8,
+          "oppPpg": 127.8,
+          "wins": 2,
+          "games": 5
+        },
+        "awayForm": null,
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 116.7,
+        "away": 116.7,
+        "total": 233.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 50.1,
           "confidence": "NO BET"
         },
         "away": {
-          "probability": 53,
+          "probability": 49.9,
           "confidence": "NO BET"
+        }
+      },
+      "totalPoints": {
+        "line": 233.5,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 233.4
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1573808,
+    "homeTeam": "Minnesota Timberwolves",
+    "awayTeam": "Portland Trail Blazers",
+    "homeCrest": "https://highlightly.net/nba/images/teams/41.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/31.png",
+    "kickoff": "2026-11-17T01:00:00.000Z",
+    "prediction": {
+      "noBet": true,
+      "noBetReason": "no recent-form data yet",
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 4.3,
+        "formMargin": null,
+        "homeForm": null,
+        "awayForm": {
+          "ppg": 116.6,
+          "oppPpg": 113.6,
+          "wins": 3,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 117.4,
+        "away": 113.1,
+        "total": 230.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 64.9,
+          "confidence": "NO BET"
+        },
+        "away": {
+          "probability": 35.1,
+          "confidence": "NO BET"
+        }
+      },
+      "totalPoints": {
+        "line": 230.5,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 230.4
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1573807,
+    "homeTeam": "Miami Heat",
+    "awayTeam": "Houston Rockets",
+    "homeCrest": "https://highlightly.net/nba/images/teams/1.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/28.png",
+    "kickoff": "2026-11-17T00:30:00.000Z",
+    "prediction": {
+      "noBet": true,
+      "noBetReason": "season stats and recent form disagree",
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 0,
+        "formMargin": -1.8,
+        "homeForm": {
+          "ppg": 118.6,
+          "oppPpg": 121.4,
+          "wins": 3,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 108.8,
+          "oppPpg": 102,
+          "wins": 3,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 114.5,
+        "away": 115.2,
+        "total": 229.7
+      },
+      "moneyline": {
+        "home": {
+          "probability": 47.5,
+          "confidence": "NO BET"
+        },
+        "away": {
+          "probability": 52.5,
+          "confidence": "NO BET"
+        }
+      },
+      "totalPoints": {
+        "line": 229.5,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 229.7
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1573806,
+    "homeTeam": "Brooklyn Nets",
+    "awayTeam": "Philadelphia 76ers",
+    "homeCrest": "https://highlightly.net/nba/images/teams/49.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/71.png",
+    "kickoff": "2026-11-17T00:30:00.000Z",
+    "prediction": {
+      "noBet": true,
+      "noBetReason": "season stats and recent form disagree",
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 0.5,
+        "formMargin": -1.7,
+        "homeForm": {
+          "ppg": 103.2,
+          "oppPpg": 110.2,
+          "wins": 2,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 113.8,
+          "oppPpg": 111.4,
+          "wins": 4,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 112.4,
+        "away": 112.8,
+        "total": 225.2
+      },
+      "moneyline": {
+        "home": {
+          "probability": 48.7,
+          "confidence": "NO BET"
+        },
+        "away": {
+          "probability": 51.3,
+          "confidence": "NO BET"
+        }
+      },
+      "totalPoints": {
+        "line": 225,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 225.2
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1573805,
+    "homeTeam": "Washington Wizards",
+    "awayTeam": "Memphis Grizzlies",
+    "homeCrest": "https://highlightly.net/nba/images/teams/50.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/42.png",
+    "kickoff": "2026-11-17T00:00:00.000Z",
+    "prediction": {
+      "noBet": true,
+      "noBetReason": "season stats and recent form disagree",
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 0.5,
+        "formMargin": -4.4,
+        "homeForm": {
+          "ppg": 105.2,
+          "oppPpg": 117.8,
+          "wins": 1,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 117.6,
+          "oppPpg": 115.4,
+          "wins": 2,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 114.1,
+        "away": 115.6,
+        "total": 229.7
+      },
+      "moneyline": {
+        "home": {
+          "probability": 44.7,
+          "confidence": "NO BET"
+        },
+        "away": {
+          "probability": 55.3,
+          "confidence": "NO BET"
+        }
+      },
+      "totalPoints": {
+        "line": 229.5,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 229.7
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1573804,
+    "homeTeam": "Cleveland Cavaliers",
+    "awayTeam": "Chicago Bulls",
+    "homeCrest": "https://highlightly.net/nba/images/teams/35.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/27.png",
+    "kickoff": "2026-11-17T00:00:00.000Z",
+    "prediction": {
+      "noBet": false,
+      "noBetReason": null,
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 6.4,
+        "formMargin": 9.2,
+        "homeForm": {
+          "ppg": 111.2,
+          "oppPpg": 113.8,
+          "wins": 1,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 114.2,
+          "oppPpg": 129.2,
+          "wins": 0,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 121.2,
+        "away": 113.7,
+        "total": 235
+      },
+      "moneyline": {
+        "home": {
+          "probability": 74.6,
+          "confidence": "HIGH"
+        },
+        "away": {
+          "probability": 25.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 235,
+        "over": {
+          "probability": 52,
+          "confidence": "MEDIUM"
+        },
+        "under": {
+          "probability": 48,
+          "confidence": "MEDIUM"
+        },
+        "projected": 235
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1573803,
+    "homeTeam": "Boston Celtics",
+    "awayTeam": "Orlando Magic",
+    "homeCrest": "https://highlightly.net/nba/images/teams/2.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/24.png",
+    "kickoff": "2026-11-17T00:00:00.000Z",
+    "prediction": {
+      "noBet": false,
+      "noBetReason": null,
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 6.9,
+        "formMargin": 12.4,
+        "homeForm": {
+          "ppg": 109.2,
+          "oppPpg": 97,
+          "wins": 4,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 107,
+          "oppPpg": 113.6,
+          "wins": 1,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 116.1,
+        "away": 107,
+        "total": 223
+      },
+      "moneyline": {
+        "home": {
+          "probability": 78.5,
+          "confidence": "HIGH"
+        },
+        "away": {
+          "probability": 21.5,
+          "confidence": "LOW"
         }
       },
       "totalPoints": {
@@ -3080,7 +3084,7 @@
           "probability": 48,
           "confidence": "MEDIUM"
         },
-        "projected": 222.8
+        "projected": 223
       }
     }
   }
