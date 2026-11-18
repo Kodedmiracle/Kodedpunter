@@ -1,210 +1,6 @@
 [
   {
     "competition": "NCAAB",
-    "matchId": 1575935,
-    "homeTeam": "Dartmouth Big Green",
-    "awayTeam": "Maine Augusta Moose",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/14439.png",
-    "awayCrest": null,
-    "kickoff": "2026-11-17T23:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.2,
-        "away": 75.9,
-        "total": 155.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 61.6,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 38.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155,
-        "projected": 155.1
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575934,
-    "homeTeam": "Purdue Boilermakers",
-    "awayTeam": "Lipscomb Bisons",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11356.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11546.png",
-    "kickoff": "2026-11-17T23:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.5,
-        "away": 75.4,
-        "total": 155.9
-      },
-      "moneyline": {
-        "home": {
-          "probability": 67.5,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 32.5,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 156,
-        "projected": 155.9
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575904,
-    "homeTeam": "Stony Brook Seawolves",
-    "awayTeam": "SUNY Potsdam SUNY-POTSDAM",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11464.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/246091.png",
-    "kickoff": "2026-11-17T23:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.3,
-        "away": 74.7,
-        "total": 152.9
-      },
-      "moneyline": {
-        "home": {
-          "probability": 62.6,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 37.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 153,
-        "projected": 152.9
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575939,
-    "homeTeam": "Southern Illinois Salukis",
-    "awayTeam": "Liberty Flames",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11474.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11547.png",
-    "kickoff": "2026-11-17T23:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77.4,
-        "away": 74.8,
-        "total": 152.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 59.3,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 40.7,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 152,
-        "projected": 152.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575933,
-    "homeTeam": "Army Black Knights",
-    "awayTeam": "Marist Red Foxes",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12732.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11542.png",
-    "kickoff": "2026-11-17T23:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 75.7,
-        "away": 74.7,
-        "total": 150.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 53.6,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 46.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 150.5,
-        "projected": 150.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575932,
-    "homeTeam": "UMass Lowell River Hawks",
-    "awayTeam": "Saint Peter's Peacocks",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11139.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11541.png",
-    "kickoff": "2026-11-17T23:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77.3,
-        "away": 74.7,
-        "total": 152.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 59.3,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 40.7,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 152,
-        "projected": 152.1
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
     "matchId": 1578271,
     "homeTeam": "Winthrop Eagles",
     "awayTeam": "Chattanooga Mocs",
@@ -409,1162 +205,6 @@
   },
   {
     "competition": "NCAAB",
-    "matchId": 1578259,
-    "homeTeam": "Baylor Bears",
-    "awayTeam": "Jackson State Tigers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11130.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12722.png",
-    "kickoff": "2026-11-18T17:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 82.4,
-        "away": 74.6,
-        "total": 157
-      },
-      "moneyline": {
-        "home": {
-          "probability": 75.3,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 24.7,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 157,
-        "projected": 157
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575966,
-    "homeTeam": "Auburn Tigers",
-    "awayTeam": "West Virginia Mountaineers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11163.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11280.png",
-    "kickoff": "2026-11-18T04:59:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.6,
-        "away": 75.2,
-        "total": 153.8
-      },
-      "moneyline": {
-        "home": {
-          "probability": 61.7,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 38.3,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154,
-        "projected": 153.8
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575905,
-    "homeTeam": "Gonzaga Bulldogs",
-    "awayTeam": "Montana State Bobcats",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11253.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11550.png",
-    "kickoff": "2026-11-18T04:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.2,
-        "away": 74,
-        "total": 154.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 70.6,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 29.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154,
-        "projected": 154.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1808643,
-    "homeTeam": "Washington Huskies",
-    "awayTeam": "Simon Fraser Red Leafs",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11131.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/234747.png",
-    "kickoff": "2026-11-18T03:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.5,
-        "away": 75.2,
-        "total": 154.7
-      },
-      "moneyline": {
-        "home": {
-          "probability": 64.9,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 35.1,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154.5,
-        "projected": 154.7
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575965,
-    "homeTeam": "California Baptist Lancers",
-    "awayTeam": "Seattle U Redhawks",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12077.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11152.png",
-    "kickoff": "2026-11-18T03:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 76.6,
-        "away": 73,
-        "total": 149.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 62.4,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 37.6,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 149.5,
-        "projected": 149.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575964,
-    "homeTeam": "Stanford Cardinal",
-    "awayTeam": "UC Irvine Anteaters",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11191.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11484.png",
-    "kickoff": "2026-11-18T03:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77.6,
-        "away": 75.4,
-        "total": 153.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 57.8,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 42.2,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 153,
-        "projected": 153.1
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575922,
-    "homeTeam": "Pacific Tigers",
-    "awayTeam": "Pacific Union PACIFIC UNION",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11189.png",
-    "awayCrest": null,
-    "kickoff": "2026-11-18T03:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.5,
-        "away": 74.1,
-        "total": 152.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 65.2,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 34.8,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 152.5,
-        "projected": 152.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575963,
-    "homeTeam": "Kansas Jayhawks",
-    "awayTeam": "UNLV Rebels",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11226.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11168.png",
-    "kickoff": "2026-11-18T02:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.6,
-        "away": 74.9,
-        "total": 154.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 66.3,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 33.7,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154.5,
-        "projected": 154.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575962,
-    "homeTeam": "Tennessee Volunteers",
-    "awayTeam": "Michigan State Spartans",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11247.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11088.png",
-    "kickoff": "2026-11-18T02:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.2,
-        "away": 75,
-        "total": 153.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 61.2,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 38.8,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 153,
-        "projected": 153.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575961,
-    "homeTeam": "Virginia Cavaliers",
-    "awayTeam": "Old Dominion Monarchs",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11212.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11583.png",
-    "kickoff": "2026-11-18T02:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.8,
-        "away": 74.2,
-        "total": 155
-      },
-      "moneyline": {
-        "home": {
-          "probability": 71.7,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 28.3,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155,
-        "projected": 155
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575923,
-    "homeTeam": "UC Davis Aggies",
-    "awayTeam": "Alabama State Hornets",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11487.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/13805.png",
-    "kickoff": "2026-11-18T02:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80,
-        "away": 75,
-        "total": 155
-      },
-      "moneyline": {
-        "home": {
-          "probability": 67.1,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 32.9,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155,
-        "projected": 155
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575960,
-    "homeTeam": "Wyoming Cowboys",
-    "awayTeam": "Sam Houston Bearkats",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11186.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11119.png",
-    "kickoff": "2026-11-18T01:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.3,
-        "away": 76.6,
-        "total": 155.9
-      },
-      "moneyline": {
-        "home": {
-          "probability": 59.7,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 40.3,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 156,
-        "projected": 155.9
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575915,
-    "homeTeam": "Utah Utes",
-    "awayTeam": "Eastern Washington Eagles",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11710.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11109.png",
-    "kickoff": "2026-11-18T01:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.6,
-        "away": 77,
-        "total": 156.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 59.2,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 40.8,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 156.5,
-        "projected": 156.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575907,
-    "homeTeam": "Ole Miss Rebels",
-    "awayTeam": "Nicholls Colonels",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11966.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11173.png",
-    "kickoff": "2026-11-18T01:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.1,
-        "away": 75,
-        "total": 154.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 64,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 36,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154,
-        "projected": 154.1
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575959,
-    "homeTeam": "DePaul Blue Demons",
-    "awayTeam": "Maryland Eastern Shore Hawks",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11335.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/13605.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 76.8,
-        "away": 71.7,
-        "total": 148.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 67.5,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 32.5,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 148.5,
-        "projected": 148.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575958,
-    "homeTeam": "Rice Owls",
-    "awayTeam": "Texas A&M-Corpus Christi Islanders",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11311.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11179.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77,
-        "away": 74.7,
-        "total": 151.7
-      },
-      "moneyline": {
-        "home": {
-          "probability": 58,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 42,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 151.5,
-        "projected": 151.7
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575957,
-    "homeTeam": "Omaha Mavericks",
-    "awayTeam": "Lamar Cardinals",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11211.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11095.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77.8,
-        "away": 74.5,
-        "total": 152.3
-      },
-      "moneyline": {
-        "home": {
-          "probability": 61.3,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 38.7,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 152.5,
-        "projected": 152.3
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575956,
-    "homeTeam": "Northern Arizona Lumberjacks",
-    "awayTeam": "Embry Riddle (AZ) Eagles",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11309.png",
-    "awayCrest": null,
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.2,
-        "away": 75.8,
-        "total": 154
-      },
-      "moneyline": {
-        "home": {
-          "probability": 58.3,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 41.7,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154,
-        "projected": 154
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575955,
-    "homeTeam": "Southern Miss Golden Eagles",
-    "awayTeam": "UT Arlington Mavericks",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11588.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11557.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 76.9,
-        "away": 74,
-        "total": 150.9
-      },
-      "moneyline": {
-        "home": {
-          "probability": 60.3,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 39.7,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 151,
-        "projected": 150.9
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575938,
-    "homeTeam": "Georgia Southern Eagles",
-    "awayTeam": "Middle Tennessee Blue Raiders",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11566.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11605.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.7,
-        "away": 76.5,
-        "total": 156.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 61.2,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 38.8,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 156,
-        "projected": 156.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575921,
-    "homeTeam": "Austin Peay Governors",
-    "awayTeam": "Life University Running Eagles",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/14653.png",
-    "awayCrest": null,
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.5,
-        "away": 75.1,
-        "total": 155.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 68.4,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 31.6,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155.5,
-        "projected": 155.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575920,
-    "homeTeam": "SMU Mustangs",
-    "awayTeam": "Oral Roberts Golden Eagles",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11178.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12071.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 81.5,
-        "away": 75.6,
-        "total": 157.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 69.8,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 30.2,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 157,
-        "projected": 157.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575917,
-    "homeTeam": "Evansville Purple Aces",
-    "awayTeam": "Le Moyne Dolphins",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11475.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/17931.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 76.6,
-        "away": 75.3,
-        "total": 151.9
-      },
-      "moneyline": {
-        "home": {
-          "probability": 54.9,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 45.1,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 152,
-        "projected": 151.9
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575914,
-    "homeTeam": "Kansas City Roos",
-    "awayTeam": "Newman Jets",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11183.png",
-    "awayCrest": null,
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77.7,
-        "away": 77.5,
-        "total": 155.3
-      },
-      "moneyline": {
-        "home": {
-          "probability": 50.6,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 49.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155.5,
-        "projected": 155.3
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575913,
-    "homeTeam": "Illinois State Redbirds",
-    "awayTeam": "Bellarmine Knights",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11101.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11572.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.3,
-        "away": 75,
-        "total": 155.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 68.1,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 31.9,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155.5,
-        "projected": 155.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575910,
-    "homeTeam": "Vanderbilt Commodores",
-    "awayTeam": "Eastern Illinois Panthers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11472.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11085.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.2,
-        "away": 73.6,
-        "total": 153.8
-      },
-      "moneyline": {
-        "home": {
-          "probability": 72.1,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 27.9,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154,
-        "projected": 153.8
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575902,
-    "homeTeam": "Northern Iowa Panthers",
-    "awayTeam": "Lindenwood Lions",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11277.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/15527.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77.1,
-        "away": 73,
-        "total": 150.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 64.1,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 35.9,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 150,
-        "projected": 150.1
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1574619,
-    "homeTeam": "North Dakota Fighting Hawks",
-    "awayTeam": "SIU Edwardsville Cougars",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12001.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/13310.png",
-    "kickoff": "2026-11-18T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 76.9,
-        "away": 75,
-        "total": 151.9
-      },
-      "moneyline": {
-        "home": {
-          "probability": 56.8,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 43.2,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 152,
-        "projected": 151.9
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575954,
-    "homeTeam": "Massachusetts Minutemen",
-    "awayTeam": "Bryant Bulldogs",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11842.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12086.png",
-    "kickoff": "2026-11-18T00:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.5,
-        "away": 73.6,
-        "total": 153.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 69.7,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 30.3,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 153,
-        "projected": 153.1
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575953,
-    "homeTeam": "Indiana Hoosiers",
-    "awayTeam": "Arkansas Razorbacks",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11145.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11624.png",
-    "kickoff": "2026-11-18T00:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 81,
-        "away": 78.2,
-        "total": 159.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 59.8,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 40.2,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 159,
-        "projected": 159.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575952,
-    "homeTeam": "Louisiana Tech Bulldogs",
-    "awayTeam": "Jacksonville State Gamecocks",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11586.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11146.png",
-    "kickoff": "2026-11-18T00:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 76.2,
-        "away": 72.6,
-        "total": 148.8
-      },
-      "moneyline": {
-        "home": {
-          "probability": 62.7,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 37.3,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 149,
-        "projected": 148.8
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575926,
-    "homeTeam": "Alabama Crimson Tide",
-    "awayTeam": "Kennesaw State Owls",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11190.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11239.png",
-    "kickoff": "2026-11-18T00:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 82.8,
-        "away": 78.9,
-        "total": 161.7
-      },
-      "moneyline": {
-        "home": {
-          "probability": 63.5,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 36.5,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 161.5,
-        "projected": 161.7
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1575918,
-    "homeTeam": "UAB Blazers",
-    "awayTeam": "Florida International Panthers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11609.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11582.png",
-    "kickoff": "2026-11-18T00:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.5,
-        "away": 76.4,
-        "total": 156.9
-      },
-      "moneyline": {
-        "home": {
-          "probability": 64.3,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 35.7,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 157,
-        "projected": 156.9
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1580616,
-    "homeTeam": "South Alabama Jaguars",
-    "awayTeam": "Spring Hill Badgers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11567.png",
-    "awayCrest": null,
-    "kickoff": "2026-11-18T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.9,
-        "away": 74.4,
-        "total": 153.3
-      },
-      "moneyline": {
-        "home": {
-          "probability": 65.5,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 34.5,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 153.5,
-        "projected": 153.3
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
     "matchId": 1580723,
     "homeTeam": "Murray State Racers",
     "awayTeam": "NC State Wolfpack",
@@ -1624,6 +264,40 @@
       "totalPoints": {
         "line": 157,
         "projected": 157.2
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1822626,
+    "homeTeam": "Auburn Tigers",
+    "awayTeam": "UNLV Rebels",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11163.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11168.png",
+    "kickoff": "2026-11-19T03:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 81.4,
+        "away": 77.1,
+        "total": 158.6
+      },
+      "moneyline": {
+        "home": {
+          "probability": 65,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 35,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 158.5,
+        "projected": 158.6
       },
       "sample": {
         "homeGames": 10,
@@ -2585,6 +1259,40 @@
   },
   {
     "competition": "NCAAB",
+    "matchId": 1822625,
+    "homeTeam": "West Virginia Mountaineers",
+    "awayTeam": "Kansas Jayhawks",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11280.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11226.png",
+    "kickoff": "2026-11-19T00:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 76.5,
+        "away": 73.3,
+        "total": 149.8
+      },
+      "moneyline": {
+        "home": {
+          "probability": 61.4,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 38.6,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 150,
+        "projected": 149.8
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
     "matchId": 1578279,
     "homeTeam": "Marquette Golden Eagles",
     "awayTeam": "Northern Illinois Huskies",
@@ -2852,74 +1560,6 @@
       "sample": {
         "homeGames": 10,
         "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1578274,
-    "homeTeam": "George Mason Patriots",
-    "awayTeam": "North Carolina Central Eagles",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12033.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11303.png",
-    "kickoff": "2026-11-19T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.6,
-        "away": 73,
-        "total": 151.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 69,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 31,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 151.5,
-        "projected": 151.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1578273,
-    "homeTeam": "St. John's Red Storm",
-    "awayTeam": "Siena Saints",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11157.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12570.png",
-    "kickoff": "2026-11-19T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.1,
-        "away": 73.1,
-        "total": 151.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 67.2,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 32.8,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 151,
-        "projected": 151.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
       }
     }
   },
@@ -5441,6 +4081,40 @@
   },
   {
     "competition": "NCAAB",
+    "matchId": 1583375,
+    "homeTeam": "LSU Tigers",
+    "awayTeam": "Queens University Royals",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11176.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/18485.png",
+    "kickoff": "2026-11-21T18:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 82.3,
+        "away": 78.3,
+        "total": 160.6
+      },
+      "moneyline": {
+        "home": {
+          "probability": 63.7,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 36.3,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 160.5,
+        "projected": 160.6
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
     "matchId": 1583372,
     "homeTeam": "New Haven Chargers",
     "awayTeam": "New Hampshire Wildcats",
@@ -5611,31 +4285,1357 @@
   },
   {
     "competition": "NCAAB",
-    "matchId": 1582014,
-    "homeTeam": "Saint Mary's Gaels",
-    "awayTeam": "Saint Louis Billikens",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11768.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11679.png",
-    "kickoff": "2026-11-21T04:00:00.000Z",
+    "matchId": 1584829,
+    "homeTeam": "Minnesota Golden Gophers",
+    "awayTeam": "Utah Utes",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11174.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11710.png",
+    "kickoff": "2026-11-22T23:00:00.000Z",
     "prediction": {
       "expectedPoints": {
-        "home": 78.4,
-        "away": 75.8,
-        "total": 154.1
+        "home": 78.5,
+        "away": 73.7,
+        "total": 152.3
       },
       "moneyline": {
         "home": {
-          "probability": 59.2,
+          "probability": 66.5,
           "confidence": "MEDIUM"
         },
         "away": {
-          "probability": 40.8,
+          "probability": 33.5,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152.5,
+        "projected": 152.3
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584828,
+    "homeTeam": "Valparaiso Beacons",
+    "awayTeam": "Southern Miss Golden Eagles",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/12126.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11588.png",
+    "kickoff": "2026-11-22T23:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 77.9,
+        "away": 74.5,
+        "total": 152.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 62,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 38,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152.5,
+        "projected": 152.4
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584827,
+    "homeTeam": "Boston College Eagles",
+    "awayTeam": "NJIT Highlanders",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11156.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11469.png",
+    "kickoff": "2026-11-22T22:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 76.7,
+        "away": 72.6,
+        "total": 149.3
+      },
+      "moneyline": {
+        "home": {
+          "probability": 64.4,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 35.6,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 149.5,
+        "projected": 149.3
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584826,
+    "homeTeam": "Portland State Vikings",
+    "awayTeam": "Cal State Fullerton Titans",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/12714.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11490.png",
+    "kickoff": "2026-11-22T22:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 80.8,
+        "away": 76.1,
+        "total": 156.9
+      },
+      "moneyline": {
+        "home": {
+          "probability": 66,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 34,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 157,
+        "projected": 156.9
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584825,
+    "homeTeam": "Lipscomb Bisons",
+    "awayTeam": "Milligan Buffaloes",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11546.png",
+    "awayCrest": null,
+    "kickoff": "2026-11-22T22:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 80.1,
+        "away": 75.7,
+        "total": 155.8
+      },
+      "moneyline": {
+        "home": {
+          "probability": 65.2,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 34.8,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 156,
+        "projected": 155.8
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 0
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584824,
+    "homeTeam": "Samford Bulldogs",
+    "awayTeam": "UNC Asheville Bulldogs",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/12591.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/12088.png",
+    "kickoff": "2026-11-22T22:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.3,
+        "away": 75.1,
+        "total": 154.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 64.6,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 35.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 154.5,
+        "projected": 154.4
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584823,
+    "homeTeam": "Lamar Cardinals",
+    "awayTeam": "Rice Owls",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11095.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11311.png",
+    "kickoff": "2026-11-22T22:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 77.6,
+        "away": 73.8,
+        "total": 151.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 63.3,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 36.7,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 151.5,
+        "projected": 151.4
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584822,
+    "homeTeam": "Loyola Marymount Lions",
+    "awayTeam": "UC Irvine Anteaters",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11175.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11484.png",
+    "kickoff": "2026-11-22T21:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 77.3,
+        "away": 75.2,
+        "total": 152.5
+      },
+      "moneyline": {
+        "home": {
+          "probability": 57.2,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 42.8,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152.5,
+        "projected": 152.5
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584821,
+    "homeTeam": "Liberty Flames",
+    "awayTeam": "Richmond Spiders",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11547.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11223.png",
+    "kickoff": "2026-11-22T21:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.2,
+        "away": 74.7,
+        "total": 154
+      },
+      "moneyline": {
+        "home": {
+          "probability": 65.5,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 34.5,
           "confidence": "LOW"
         }
       },
       "totalPoints": {
         "line": 154,
-        "projected": 154.1
+        "projected": 154
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584800,
+    "homeTeam": "Maryland Eastern Shore Hawks",
+    "awayTeam": "IU Indianapolis Jaguars",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/13605.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11576.png",
+    "kickoff": "2026-11-22T21:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.5,
+        "away": 76.3,
+        "total": 155.8
+      },
+      "moneyline": {
+        "home": {
+          "probability": 61,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 39,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 156,
+        "projected": 155.8
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584819,
+    "homeTeam": "Eastern Kentucky Colonels",
+    "awayTeam": "Alice Lloyd Eagles",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11167.png",
+    "awayCrest": null,
+    "kickoff": "2026-11-22T21:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 80.2,
+        "away": 77.1,
+        "total": 157.3
+      },
+      "moneyline": {
+        "home": {
+          "probability": 61.1,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 38.9,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 157.5,
+        "projected": 157.3
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 0
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584818,
+    "homeTeam": "Oklahoma State Cowboys",
+    "awayTeam": "Virginia Tech Hokies",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11395.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11228.png",
+    "kickoff": "2026-11-22T20:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 80.9,
+        "away": 78.1,
+        "total": 159
+      },
+      "moneyline": {
+        "home": {
+          "probability": 59.8,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 40.2,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 159,
+        "projected": 159
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584817,
+    "homeTeam": "UAlbany Great Danes",
+    "awayTeam": "Mercyhurst Lakers",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/13397.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/24822.png",
+    "kickoff": "2026-11-22T20:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 76.5,
+        "away": 73.6,
+        "total": 150.1
+      },
+      "moneyline": {
+        "home": {
+          "probability": 60,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 40,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 150,
+        "projected": 150.1
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584798,
+    "homeTeam": "Texas State Bobcats",
+    "awayTeam": "McNeese Cowboys",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11181.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11200.png",
+    "kickoff": "2026-11-22T20:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 76.8,
+        "away": 75.5,
+        "total": 152.3
+      },
+      "moneyline": {
+        "home": {
+          "probability": 54.4,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 45.6,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152.5,
+        "projected": 152.3
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584816,
+    "homeTeam": "South Alabama Jaguars",
+    "awayTeam": "West Florida Argonauts",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11567.png",
+    "awayCrest": null,
+    "kickoff": "2026-11-22T20:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 78.9,
+        "away": 74.4,
+        "total": 153.3
+      },
+      "moneyline": {
+        "home": {
+          "probability": 65.5,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 34.5,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 153.5,
+        "projected": 153.3
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 0
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584815,
+    "homeTeam": "Nicholls Colonels",
+    "awayTeam": "Troy Trojans",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11173.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11243.png",
+    "kickoff": "2026-11-22T20:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 77.9,
+        "away": 76.3,
+        "total": 154.2
+      },
+      "moneyline": {
+        "home": {
+          "probability": 55.5,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 44.5,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 154,
+        "projected": 154.2
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584796,
+    "homeTeam": "Texas Longhorns",
+    "awayTeam": "Southern Indiana Screaming Eagles",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11096.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/15897.png",
+    "kickoff": "2026-11-22T20:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 80.3,
+        "away": 74.2,
+        "total": 154.6
+      },
+      "moneyline": {
+        "home": {
+          "probability": 70.6,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 29.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 154.5,
+        "projected": 154.6
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584814,
+    "homeTeam": "New Mexico State Aggies",
+    "awayTeam": "Robert Morris Colonials",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/12076.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11281.png",
+    "kickoff": "2026-11-22T19:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 78.2,
+        "away": 75.2,
+        "total": 153.5
+      },
+      "moneyline": {
+        "home": {
+          "probability": 60.6,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 39.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 153.5,
+        "projected": 153.5
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584813,
+    "homeTeam": "Fordham Rams",
+    "awayTeam": "San Diego Toreros",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/13482.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11918.png",
+    "kickoff": "2026-11-22T19:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 78.3,
+        "away": 73.1,
+        "total": 151.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 67.9,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 32.1,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 151.5,
+        "projected": 151.4
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584812,
+    "homeTeam": "Youngstown State Penguins",
+    "awayTeam": "William & Mary Tribe",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11453.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11199.png",
+    "kickoff": "2026-11-22T19:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 80.2,
+        "away": 76.8,
+        "total": 156.9
+      },
+      "moneyline": {
+        "home": {
+          "probability": 61.9,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 38.1,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 157,
+        "projected": 156.9
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584811,
+    "homeTeam": "Duquesne Dukes",
+    "awayTeam": "Wyoming Cowboys",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11148.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11186.png",
+    "kickoff": "2026-11-22T19:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.2,
+        "away": 75.8,
+        "total": 155
+      },
+      "moneyline": {
+        "home": {
+          "probability": 61.6,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 38.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 155,
+        "projected": 155
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584810,
+    "homeTeam": "Utah Tech Trailblazers",
+    "awayTeam": "South Dakota Coyotes",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11503.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/12069.png",
+    "kickoff": "2026-11-22T19:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 80.5,
+        "away": 76.4,
+        "total": 156.9
+      },
+      "moneyline": {
+        "home": {
+          "probability": 64.1,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 35.9,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 157,
+        "projected": 156.9
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584809,
+    "homeTeam": "Western Kentucky Hilltoppers",
+    "awayTeam": "George Washington Revolutionaries",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11593.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/13199.png",
+    "kickoff": "2026-11-22T19:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.7,
+        "away": 77.1,
+        "total": 156.7
+      },
+      "moneyline": {
+        "home": {
+          "probability": 59.1,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 40.9,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 156.5,
+        "projected": 156.7
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584803,
+    "homeTeam": "Memphis Tigers",
+    "awayTeam": "Evansville Purple Aces",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/12221.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11475.png",
+    "kickoff": "2026-11-22T19:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.3,
+        "away": 73.9,
+        "total": 153.2
+      },
+      "moneyline": {
+        "home": {
+          "probability": 68.1,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 31.9,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 153,
+        "projected": 153.2
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584799,
+    "homeTeam": "Cincinnati Bearcats",
+    "awayTeam": "UMass Lowell River Hawks",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11301.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11139.png",
+    "kickoff": "2026-11-22T19:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 78.7,
+        "away": 73.7,
+        "total": 152.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 67.3,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 32.7,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152.5,
+        "projected": 152.4
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584820,
+    "homeTeam": "American University Eagles",
+    "awayTeam": "Towson Tigers",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/13459.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/13412.png",
+    "kickoff": "2026-11-22T18:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 76.8,
+        "away": 73.2,
+        "total": 150
+      },
+      "moneyline": {
+        "home": {
+          "probability": 62.4,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 37.6,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 150,
+        "projected": 150
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584808,
+    "homeTeam": "Butler Bulldogs",
+    "awayTeam": "Nebraska Cornhuskers",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11353.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11293.png",
+    "kickoff": "2026-11-22T18:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 77.8,
+        "away": 76.4,
+        "total": 154.2
+      },
+      "moneyline": {
+        "home": {
+          "probability": 55.2,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 44.8,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 154,
+        "projected": 154.2
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584807,
+    "homeTeam": "Marquette Golden Eagles",
+    "awayTeam": "Chicago State Cougars",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11234.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11111.png",
+    "kickoff": "2026-11-22T18:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.2,
+        "away": 73.5,
+        "total": 152.6
+      },
+      "moneyline": {
+        "home": {
+          "probability": 69.3,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 30.7,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152.5,
+        "projected": 152.6
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584806,
+    "homeTeam": "Northwestern Wildcats",
+    "awayTeam": "Dayton Flyers",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11388.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11903.png",
+    "kickoff": "2026-11-22T18:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 77.1,
+        "away": 74.5,
+        "total": 151.6
+      },
+      "moneyline": {
+        "home": {
+          "probability": 59.4,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 40.6,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 151.5,
+        "projected": 151.6
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584805,
+    "homeTeam": "Canisius Golden Griffins",
+    "awayTeam": "Western Illinois Leathernecks",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11459.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11225.png",
+    "kickoff": "2026-11-22T18:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 76.5,
+        "away": 72.1,
+        "total": 148.6
+      },
+      "moneyline": {
+        "home": {
+          "probability": 65.5,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 34.5,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 148.5,
+        "projected": 148.6
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584802,
+    "homeTeam": "Long Island University Sharks",
+    "awayTeam": "Fairfield Stags",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/12010.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11554.png",
+    "kickoff": "2026-11-22T18:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 77.8,
+        "away": 74.5,
+        "total": 152.2
+      },
+      "moneyline": {
+        "home": {
+          "probability": 61.5,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 38.5,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152,
+        "projected": 152.2
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584804,
+    "homeTeam": "UIC Flames",
+    "awayTeam": "Miami (OH) RedHawks",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11493.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11194.png",
+    "kickoff": "2026-11-22T17:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.1,
+        "away": 77.7,
+        "total": 156.8
+      },
+      "moneyline": {
+        "home": {
+          "probability": 55,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 45,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 157,
+        "projected": 156.8
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1584801,
+    "homeTeam": "UMBC Retrievers",
+    "awayTeam": "Lancaster Bible Chargers",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11456.png",
+    "awayCrest": null,
+    "kickoff": "2026-11-22T17:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.3,
+        "away": 73.8,
+        "total": 153.2
+      },
+      "moneyline": {
+        "home": {
+          "probability": 68.7,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 31.3,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 153,
+        "projected": 153.2
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 0
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1583422,
+    "homeTeam": "Duke Blue Devils",
+    "awayTeam": "Washington State Cougars",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11106.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/12204.png",
+    "kickoff": "2026-11-22T04:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 80.9,
+        "away": 73,
+        "total": 154
+      },
+      "moneyline": {
+        "home": {
+          "probability": 75.6,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 24.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 154,
+        "projected": 154
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1583384,
+    "homeTeam": "Pacific Tigers",
+    "awayTeam": "Bradley Braves",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11189.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11419.png",
+    "kickoff": "2026-11-22T03:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 78,
+        "away": 74.5,
+        "total": 152.5
+      },
+      "moneyline": {
+        "home": {
+          "probability": 62.5,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 37.5,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152.5,
+        "projected": 152.5
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1583369,
+    "homeTeam": "Texas Southern Tigers",
+    "awayTeam": "New Orleans Privateers",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11187.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/12734.png",
+    "kickoff": "2026-11-22T01:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.5,
+        "away": 75.9,
+        "total": 155.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 62.4,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 37.6,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 155.5,
+        "projected": 155.4
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1583421,
+    "homeTeam": "Abilene Christian Wildcats",
+    "awayTeam": "Southwestern Adventist Knights",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11275.png",
+    "awayCrest": null,
+    "kickoff": "2026-11-22T01:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 78,
+        "away": 74.9,
+        "total": 152.9
+      },
+      "moneyline": {
+        "home": {
+          "probability": 60.6,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 39.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 153,
+        "projected": 152.9
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 0
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1583420,
+    "homeTeam": "Oral Roberts Golden Eagles",
+    "awayTeam": "Texas A&M-Corpus Christi Islanders",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/12071.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11179.png",
+    "kickoff": "2026-11-22T01:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 76.8,
+        "away": 75.4,
+        "total": 152.2
+      },
+      "moneyline": {
+        "home": {
+          "probability": 55.2,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 44.8,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152,
+        "projected": 152.2
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1583419,
+    "homeTeam": "Valparaiso Beacons",
+    "awayTeam": "Troy Trojans",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/12126.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11243.png",
+    "kickoff": "2026-11-22T01:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 77.8,
+        "away": 75.6,
+        "total": 153.3
+      },
+      "moneyline": {
+        "home": {
+          "probability": 57.9,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 42.1,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 153.5,
+        "projected": 153.3
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1583418,
+    "homeTeam": "Tennessee Tech Golden Eagles",
+    "awayTeam": "Presbyterian Blue Hose",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11170.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/12025.png",
+    "kickoff": "2026-11-22T00:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 77.8,
+        "away": 74.7,
+        "total": 152.5
+      },
+      "moneyline": {
+        "home": {
+          "probability": 61.2,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 38.8,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152.5,
+        "projected": 152.5
       },
       "sample": {
         "homeGames": 10,
