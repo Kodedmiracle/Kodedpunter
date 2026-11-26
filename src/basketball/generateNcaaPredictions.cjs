@@ -2,6 +2,7 @@
 // Usage: HIGHLIGHTLY_API_KEY=xxx node src/basketball/generateNcaaPredictions.cjs
 
 const fs = require("fs");
+const { totalMarket, SIGMA } = require("./totals.cjs");
 
 const KEY = process.env.HIGHLIGHTLY_API_KEY;
 if (!KEY) {
@@ -124,7 +125,7 @@ function predictGame(match, teams) {
           confidence: conf(awayPct),
         },
       },
-      totalPoints: {
+      totalPoints: totalMarket(total, totalLine, SIGMA.NCAAB) || {
         line: totalLine,
         projected: Math.round(total * 10) / 10,
       },

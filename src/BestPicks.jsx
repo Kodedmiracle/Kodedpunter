@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { sameMatch } from "./sportyNames.js";
 import { leanToSporty } from "./sportyMarkets.js";
+import { hasKickedOff } from "./kickoff.js";
 
 export default function BestPicks({ picks }) {
   const [status, setStatus] = useState("idle");
@@ -28,6 +29,7 @@ export default function BestPicks({ picks }) {
 
       const outcomes = [];
       const missed = [];
+      const livePicks = picks.filter((p) => !hasKickedOff(p.kickoff));
 
       const oddsOf = (pick) => {
         const lean = leanToSporty(pick.leanKey);
@@ -44,9 +46,9 @@ export default function BestPicks({ picks }) {
       };
 
       let combined = 1;
-      let chosen = picks;
+      let chosen = livePicks;
       if (mode === "top" || mode === "odds") {
-        const eligible = picks.filter((p) => oddsOf(p));
+        const eligible = livePicks.filter((p) => oddsOf(p));
         if (mode === "top") {
           chosen = eligible.slice(0, target);
         } else {
@@ -130,7 +132,10 @@ export default function BestPicks({ picks }) {
           <div style={styles.rank}>{i + 1}</div>
           <div style={styles.info}>
             <div style={styles.market}>{pick.market}</div>
-            <div style={styles.matchLabel}>{pick.matchLabel}</div>
+            <div style={styles.matchLabel}>
+              {pick.matchLabel}
+              {pick.value ? ` · model above the price on ${pick.value.selection}` : ""}
+            </div>
           </div>
           <div style={styles.right}>
             <div style={styles.probability}>{pick.probability}%</div>

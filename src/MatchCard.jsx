@@ -167,6 +167,13 @@ export default function MatchCard({
         {overUnder.over25.probability.toFixed(0)}%
       </div>
 
+      {prediction.value && (
+        <div style={styles.valueFlag}>
+          Model is {prediction.value.edge} points above the bookmaker on{" "}
+          {prediction.value.selection}
+        </div>
+      )}
+
       {recommendedMarket && (
         <div
           role="button"
@@ -327,6 +334,12 @@ const styles = {
     fontSize: "12px",
     color: "#a191c4",
     marginBottom: "12px",
+  },
+  valueFlag: {
+    fontSize: "12px",
+    color: "#fbbf24",
+    marginBottom: "10px",
+    fontWeight: 700,
   },
   recommended: {
     display: "flex",

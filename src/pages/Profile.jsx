@@ -80,13 +80,16 @@ function Profile() {
       <footer style={styles.footer}>
         <p style={styles.footerTitle}>How this works</p>
         <p style={styles.footerText}>
-          Predictions come from a Poisson goal model built on each team's
-          season goals scored/conceded, weighted recent form, and home
-          advantage. Markets like BTTS and Over/Under are derived directly
-          from the resulting expected-goals distribution — not separately
-          guessed. Teams with fewer than 10 games played this season are
-          pulled toward the league average to avoid overreacting to small
-          samples. These are statistical estimates, not guarantees.
+          Predictions come from a Poisson goal model with a Dixon-Coles
+          adjustment for low scores. Each team has attack and defence
+          strengths from the season so far, pulled toward average when the
+          sample is small. Recent matches are mixed in with exponential
+          decay, so a game last week counts more than one last month, and
+          both goals scored and conceded matter. When SportyBet prices are
+          available, the win, draw and loss chances are blended with the
+          bookmaker's margin removed, and a pick is flagged when the model
+          is meaningfully above that price. These are statistical estimates,
+          not guarantees.
         </p>
       </footer>
 

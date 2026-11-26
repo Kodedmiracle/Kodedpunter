@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-11-26T04:36:16.681Z",
+  "dataset": {
+    "source": "data/history.json results plus data/results.json",
+    "fixturesLoaded": 9144,
+    "scored": 6104,
+    "minSeasonGames": 5,
+    "train": 4264,
+    "test": 1840,
+    "trainEndsBefore": "2025-01-17"
+  },
+  "selection": "Production defaults from src/engine/poissonModel.cjs, previously chosen on the training window only.",
+  "params": {
+    "halfLifeDays": 21,
+    "formBlend": 0.3,
+    "rho": -0.08,
+    "homeAdvantage": 1.28,
+    "xgShrink": 0.7,
+    "maxGoals": 10
+  },
+  "gridTrace": null,
+  "metrics": {
+    "definition": "Hit rate is the share of matches where the most likely home/draw/away outcome happened. Brier is the average sum of squared errors across the three outcomes (lower is better, range 0 to 2). Log loss is the average negative log probability of the actual outcome (lower is better).",
+    "train": {
+      "legacy": {
+        "n": 4264,
+        "hitRate": 45.36,
+        "brier": 0.6516,
+        "logLoss": 1.0934
+      },
+      "new": {
+        "n": 4264,
+        "hitRate": 47.89,
+        "brier": 0.6161,
+        "logLoss": 1.0263
+      }
+    },
+    "test": {
+      "legacy": {
+        "n": 1840,
+        "hitRate": 47.88,
+        "brier": 0.6252,
+        "logLoss": 1.0509
+      },
+      "new": {
+        "n": 1840,
+        "hitRate": 50.27,
+        "brier": 0.5921,
+        "logLoss": 0.9928
+      }
+    }
+  },
+  "marketBlend": "Not in these numbers. The historical files do not contain bookmaker odds. Live pages blend de-vigged SportyBet 1X2 prices when that feed answers.",
+  "information": "Each prediction uses only earlier matches in the same league: season-to-date goals and the last eight results. Same-day matches are not used as inputs."
+}

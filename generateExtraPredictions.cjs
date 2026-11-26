@@ -29,7 +29,12 @@ const mainSkipped = new Set();
 let mainCount = 0;
 let noData = 0;
 
+let pastCount = 0;
 upcoming.forEach((u) => {
+  if (u.kickoff && new Date(u.kickoff).getTime() <= Date.now()) {
+    pastCount++;
+    return;
+  }
   if (MAIN_LEAGUES.has(u.league)) {
     mainCount++;
     mainSkipped.add(u.country + ' - ' + u.leagueName);
@@ -63,10 +68,11 @@ upcoming.forEach((u) => {
 });
 
 out.sort((a, b) => a.kickoff.localeCompare(b.kickoff));
-fs.writeFileSync('public/extra-predictions.json', JSON.stringify(out));
+fs.writeFileSync('public/extra-predictions.json', JSON.stringify(out) + "\n");
 
 console.log('Extra predictions written:', out.length);
 console.log('  full confidence:', tiers.FULL, '| capped MEDIUM:', tiers.MEDIUM, '| capped LOW:', tiers.LOW);
 console.log('Skipped, covered by main model:', mainCount);
 console.log('  leagues:', [...mainSkipped].join('; '));
 console.log('Skipped, no data:', noData);
+console.log('Skipped, already kicked off:', pastCount);

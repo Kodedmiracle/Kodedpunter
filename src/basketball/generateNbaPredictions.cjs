@@ -1,11 +1,8 @@
 // src/basketball/generateNbaPredictions.cjs
 // Phase A: standings + last-five form blend + NO_BET band
 const fs = require("fs");
-const {
-  formFromLastFive,
-  blendPpg,
-  blendOpp,
-} = require("./formFromLastFive.cjs");
+const { formFromLastFive } = require("./formFromLastFive.cjs");
+const { totalMarket, SIGMA } = require("./totals.cjs");
 
 const KEY = process.env.HIGHLIGHTLY_API_KEY;
 if (!KEY) {
@@ -104,54 +101,30 @@ function confLabel(prob, noBet) {
   return "LOW";
 }
 
-const sumArr = (a) => (Array.isArray(a) ? a.reduce((x, y) => x + (Number(y) || 0), 0) : 0);
 const pause = (ms) => new Promise((r) => setTimeout(r, ms));
 const r1 = (x) => Math.round(x * 10) / 10;
-const FORM_WINDOW_MS = 48 * 60 * 60 * 1000;
-const FORM_MAX_TEAMS = Number(process.env.FORM_MAX || 24);
 const MIN_GAMES = 6;
 const SEASON_WEIGHT = 0.6;
 const MIN_MARGIN = 3.5;
 
 async function loadForm(scheduled) {
-  const now = Date.now();
-  const soon = scheduled
-    .filter((m) => {
-      const t = new Date(m.date).getTime();
-      return t > now && t < now + FORM_WINDOW_MS;
-    })
-    .sort((x, y) => new Date(x.date) - new Date(y.date));
   const ids = [];
-  for (const m of soon) {
+  for (const m of scheduled) {
     for (const t of [m.homeTeam, m.awayTeam]) {
       if (t && t.id != null && !ids.includes(t.id)) ids.push(t.id);
     }
   }
-  const use = ids.slice(0, FORM_MAX_TEAMS);
-  console.log("Loading recent form for", use.length, "of", ids.length, "teams…");
+  console.log("Loading recent form for", ids.length, "NBA teams…");
   const form = new Map();
-  for (const id of use) {
+  for (const id of ids) {
     try {
       const body = await get("/last-five-games?teamId=" + id);
-      const list = Array.isArray(body) ? body : body.data || [];
-      let pf = 0, pa = 0, wins = 0, n = 0, last = 0;
-      for (const m of list) {
-        if (!m.state || m.state.description !== "Finished") continue;
-        const isHome = m.homeTeam.id === id;
-        const mine = sumArr(m.state.score[isHome ? "homeTeam" : "awayTeam"]);
-        const theirs = sumArr(m.state.score[isHome ? "awayTeam" : "homeTeam"]);
-        if (!mine || !theirs) continue;
-        pf += mine;
-        pa += theirs;
-        n++;
-        if (mine > theirs) wins++;
-        last = Math.max(last, new Date(m.date).getTime());
-      }
-      if (n >= 3) form.set(id, { n, ppg: pf / n, oppPpg: pa / n, wins, last });
+      const parsed = formFromLastFive(id, body);
+      if (parsed && parsed.games >= 3) form.set(id, parsed);
     } catch (e) {
       console.log("form failed for team", id, e.message);
     }
-    await pause(800);
+    await pause(350);
   }
   console.log("Form loaded for", form.size, "teams");
   return form;
@@ -183,10 +156,13 @@ function predictGame(match, teams, form) {
   let noBetReason = null;
 
   const played = Math.min(home.wins + home.losses, away.wins + away.losses);
+  let formMissing = false;
   if (played < MIN_GAMES) {
     noBetReason = "fewer than " + MIN_GAMES + " games played this season";
   } else if (!fh || !fa) {
-    noBetReason = "no recent-form data yet";
+    // Missing form is not a reason to hide the game. Season ratings still produce a lean.
+    formMissing = true;
+    risks.push("recent form unavailable, using season stats");
   } else {
     const expHomeF = (fh.ppg + fa.oppPpg) / 2 + HOME_ADV;
     const expAwayF = (fa.ppg + fh.oppPpg) / 2;
@@ -209,8 +185,8 @@ function predictGame(match, teams, form) {
   }
 
   const margin = expHome - expAway;
-  if (!noBetReason) {
-    if (Math.sign(marginS) !== Math.sign(marginF)) {
+  if (!noBetReason && !formMissing) {
+    if (marginF != null && Math.sign(marginS) !== Math.sign(marginF) && Math.sign(marginS) !== 0 && Math.sign(marginF) !== 0) {
       noBetReason = "season stats and recent form disagree";
     } else if (Math.abs(margin) < MIN_MARGIN) {
       noBetReason = "projected gap is under " + MIN_MARGIN + " points";
@@ -224,10 +200,12 @@ function predictGame(match, teams, form) {
   const favB2B = margin >= 0 ? hb : ab;
   const conf = (pct) => {
     if (noBetReason) return "NO BET";
+    if (formMissing) return pct >= 58 ? "MEDIUM" : "LOW";
     if (pct >= 70) return favB2B ? "MEDIUM" : "HIGH";
     return pct >= 58 ? "MEDIUM" : "LOW";
   };
-  const fmt = (f) => (f ? { ppg: r1(f.ppg), oppPpg: r1(f.oppPpg), wins: f.wins, games: f.n } : null);
+  const fmt = (f) => (f ? { ppg: r1(f.ppg), oppPpg: r1(f.oppPpg), wins: f.wins, games: f.games || f.n } : null);
+  const totals = totalMarket(total, totalLine, SIGMA.NBA);
 
   return {
     competition: "NBA",
@@ -257,10 +235,8 @@ function predictGame(match, teams, form) {
         home: { probability: homePct, confidence: conf(homePct) },
         away: { probability: awayPct, confidence: conf(awayPct) },
       },
-      totalPoints: {
+      totalPoints: totals || {
         line: totalLine,
-        over: { probability: 52, confidence: "MEDIUM" },
-        under: { probability: 48, confidence: "MEDIUM" },
         projected: Math.round(total * 10) / 10,
       },
     },
@@ -295,36 +271,14 @@ async function main() {
   });
   console.log("Scheduled games:", scheduled.length);
   const form = await loadForm(scheduled);
-
-  // Last-five only for teams on the board (saves quota)
-  const boardIds = new Set();
-  for (const m of scheduled) {
-    if (m.homeTeam && m.homeTeam.id != null) boardIds.add(m.homeTeam.id);
-    if (m.awayTeam && m.awayTeam.id != null) boardIds.add(m.awayTeam.id);
-  }
-  console.log("Fetching last-five for", boardIds.size, "board teams…");
-  let formOk = 0;
-  for (const id of boardIds) {
-    try {
-      const raw = await get("/last-five-games?teamId=" + id);
-      const form = formFromLastFive(id, raw);
-      const t = teams.get(id);
-      if (t && form) {
-        t.form = form;
-        formOk++;
-      }
-    } catch (e) {
-      console.log("L5 skip", id, e.message);
-    }
-  }
-  console.log("Form loaded for", formOk, "teams");
+  const formOk = form.size;
 
   const predictions = [];
   let noBetCount = 0;
   for (const m of scheduled) {
     const p = predictGame(m, teams, form);
     if (p) {
-      if (p.noBet) noBetCount++;
+      if (p.prediction && p.prediction.noBet) noBetCount++;
       predictions.push(p);
     }
   }
