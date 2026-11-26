@@ -1,5 +1,24 @@
-// poissonModel.cjs
-// Core Poisson-based prediction engine for Kodedpunter
+// Goal model for Kodedpunter.
+// Attack and defence come from season results, shrunk toward average.
+// Recent matches are mixed in with exponential decay (newer games count more)
+// and both goals scored and conceded are used. Expected goals feed a
+// Dixon-Coles adjustment of the Poisson score grid. A shrink step pulls
+// extreme score rates back toward the league, which is how the probabilities
+// were calibrated on historical matches.
+
+const { confidenceLabel } = require("./marketOdds.cjs");
+
+// Chosen on the training portion of data/history.json + data/results.json
+// by coordinate descent on log loss. See backtestFootball.cjs. Do not retune
+// these on the held-out window.
+const DEFAULTS = {
+  halfLifeDays: 21,
+  formBlend: 0.3,
+  rho: -0.08,
+  homeAdvantage: 1.28,
+  xgShrink: 0.7,
+  maxGoals: 10,
+};
 
 function factorial(n) {
   if (n <= 1) return 1;
@@ -12,14 +31,6 @@ function poissonProb(lambda, k) {
   return (Math.pow(lambda, k) * Math.exp(-lambda)) / factorial(k);
 }
 
-/**
- * Calculate attack/defense strength for a team relative to league average.
- * Uses regression toward the mean for small sample sizes: a team's raw
- * strength ratio is blended with 1.0 (perfectly average), weighted by how
- * many games they've played. Full confidence in raw stats is reached at
- * FULL_CONFIDENCE_GAMES; below that, results get pulled toward average
- * proportionally, so 2-3 games can't create wild 90%+/1% swings.
- */
 const FULL_CONFIDENCE_GAMES = 10;
 
 function calculateStrength(stats, leagueAvg) {
@@ -29,10 +40,11 @@ function calculateStrength(stats, leagueAvg) {
 
   const avgFor = stats.goalsFor / stats.playedGames;
   const avgAgainst = stats.goalsAgainst / stats.playedGames;
+  const leagueFor = leagueAvg.avgGoalsFor || 1.35;
+  const leagueAgainst = leagueAvg.avgGoalsAgainst || leagueFor;
 
-  const rawAttack = avgFor / leagueAvg.avgGoalsFor;
-  const rawDefense = avgAgainst / leagueAvg.avgGoalsAgainst;
-
+  const rawAttack = avgFor / leagueFor;
+  const rawDefense = avgAgainst / leagueAgainst;
   const confidence = Math.min(stats.playedGames / FULL_CONFIDENCE_GAMES, 1);
 
   return {
@@ -41,58 +53,121 @@ function calculateStrength(stats, leagueAvg) {
   };
 }
 
-function calculateFormModifier(recentMatches, seasonAvgGoalsFor) {
-  if (!recentMatches || recentMatches.length === 0) return 1.0;
+function ageDays(match, index, asOfMs) {
+  if (match && Number.isFinite(match.daysAgo)) return Math.max(0, match.daysAgo);
+  if (match && match.date && asOfMs) {
+    const t = new Date(match.date).getTime();
+    if (Number.isFinite(t)) return Math.max(0, (asOfMs - t) / 86400000);
+  }
+  return (index + 0.5) * 7;
+}
 
-  const weights = [0.35, 0.25, 0.2, 0.12, 0.08];
+function decayWeight(days, halfLifeDays) {
+  const life = halfLifeDays > 0 ? halfLifeDays : 21;
+  return Math.pow(0.5, Math.max(0, days) / life);
+}
+
+// Kept for callers and tests. Uses exponential decay when dates or daysAgo
+// are present, and counts goals conceded as well as goals scored.
+function calculateFormModifier(recentMatches, seasonAvgGoalsFor, options = {}) {
+  if (!recentMatches || recentMatches.length === 0) return 1.0;
+  const halfLife = options.halfLifeDays || DEFAULTS.halfLifeDays;
+  const asOfMs = options.asOf ? new Date(options.asOf).getTime() : Date.now();
   let weightedFor = 0;
   let totalWeight = 0;
-
-  recentMatches.slice(0, 5).forEach((match, i) => {
-    const w = weights[i] || 0.05;
-    weightedFor += match.goalsFor * w;
+  recentMatches.slice(0, 8).forEach((match, i) => {
+    const w = decayWeight(ageDays(match, i, asOfMs), halfLife);
+    const gf = Number(match.goalsFor);
+    if (!Number.isFinite(gf)) return;
+    weightedFor += gf * w;
     totalWeight += w;
   });
-
+  if (totalWeight <= 0) return 1.0;
   const recentAvg = weightedFor / totalWeight;
   const ratio = seasonAvgGoalsFor > 0 ? recentAvg / seasonAvgGoalsFor : 1.0;
-
   return Math.max(0.6, Math.min(1.6, ratio));
+}
+
+function recentStrength(recentMatches, leagueAvg, halfLifeDays, asOfMs) {
+  if (!recentMatches || recentMatches.length === 0) return null;
+  const leagueFor = leagueAvg.avgGoalsFor || 1.35;
+  const leagueAgainst = leagueAvg.avgGoalsAgainst || leagueFor;
+  let weight = 0;
+  let goalsFor = 0;
+  let goalsAgainst = 0;
+  let sawAgainst = false;
+
+  recentMatches.slice(0, 8).forEach((match, i) => {
+    const gf = Number(match.goalsFor);
+    if (!Number.isFinite(gf)) return;
+    const w = decayWeight(ageDays(match, i, asOfMs), halfLifeDays);
+    weight += w;
+    goalsFor += w * gf;
+    const ga = Number(match.goalsAgainst);
+    if (Number.isFinite(ga)) {
+      sawAgainst = true;
+      goalsAgainst += w * ga;
+    }
+  });
+
+  if (weight <= 0) return null;
+  const trust = weight / (weight + 3);
+  const rawAttack = goalsFor / weight / leagueFor;
+  const attackStrength = rawAttack * trust + 1 * (1 - trust);
+  let defenseStrength = null;
+  if (sawAgainst) {
+    const rawDefense = goalsAgainst / weight / leagueAgainst;
+    defenseStrength = rawDefense * trust + 1 * (1 - trust);
+  }
+  return { attackStrength, defenseStrength, weight };
+}
+
+function blendStrength(season, recent, formBlend) {
+  if (!recent) return season;
+  const b = Math.min(1, Math.max(0, formBlend));
+  return {
+    attackStrength: (1 - b) * season.attackStrength + b * recent.attackStrength,
+    defenseStrength:
+      recent.defenseStrength == null
+        ? season.defenseStrength
+        : (1 - b) * season.defenseStrength + b * recent.defenseStrength,
+  };
 }
 
 function calculateExpectedGoals({
   homeStrength,
   awayStrength,
-  homeForm,
-  awayForm,
   leagueAvg,
-  homeAdvantage = 1.2,
+  homeAdvantage = DEFAULTS.homeAdvantage,
+  xgShrink = DEFAULTS.xgShrink,
 }) {
-  const homeXG =
-    leagueAvg.avgGoalsFor *
-    homeStrength.attackStrength *
-    awayStrength.defenseStrength *
-    homeAdvantage *
-    homeForm;
+  const avg = leagueAvg.avgGoalsFor || 1.35;
+  let homeXG =
+    avg * homeStrength.attackStrength * awayStrength.defenseStrength * homeAdvantage;
+  let awayXG = avg * awayStrength.attackStrength * homeStrength.defenseStrength;
 
-  const awayXG =
-    leagueAvg.avgGoalsFor *
-    awayStrength.attackStrength *
-    homeStrength.defenseStrength *
-    awayForm;
+  const shrink = Math.min(1, Math.max(0.5, xgShrink));
+  const baseHome = avg * homeAdvantage;
+  const baseAway = avg;
+  homeXG = baseHome + (homeXG - baseHome) * shrink;
+  awayXG = baseAway + (awayXG - baseAway) * shrink;
 
-  return { homeXG: Math.max(homeXG, 0.1), awayXG: Math.max(awayXG, 0.1) };
-}const DIXON_COLES_RHO = -0.13;
-
-function tau(homeGoals, awayGoals, homeXG, awayXG, rho) {
-  if (homeGoals === 0 && awayGoals === 0) return 1 - homeXG * awayXG * rho;
-  if (homeGoals === 0 && awayGoals === 1) return 1 + homeXG * rho;
-  if (homeGoals === 1 && awayGoals === 0) return 1 + awayXG * rho;
-  if (homeGoals === 1 && awayGoals === 1) return 1 - rho;
-  return 1;
+  return {
+    homeXG: Math.min(4.5, Math.max(0.15, homeXG)),
+    awayXG: Math.min(4.5, Math.max(0.15, awayXG)),
+  };
 }
 
-function buildScoreMatrix(homeXG, awayXG, maxGoals = 6) {
+function tau(homeGoals, awayGoals, homeXG, awayXG, rho) {
+  let factor = 1;
+  if (homeGoals === 0 && awayGoals === 0) factor = 1 - homeXG * awayXG * rho;
+  else if (homeGoals === 0 && awayGoals === 1) factor = 1 + homeXG * rho;
+  else if (homeGoals === 1 && awayGoals === 0) factor = 1 + awayXG * rho;
+  else if (homeGoals === 1 && awayGoals === 1) factor = 1 - rho;
+  return factor < 0 ? 0 : factor;
+}
+
+function buildScoreMatrix(homeXG, awayXG, maxGoals = DEFAULTS.maxGoals, rho = DEFAULTS.rho) {
   const matrix = [];
   let total = 0;
 
@@ -100,7 +175,7 @@ function buildScoreMatrix(homeXG, awayXG, maxGoals = 6) {
     const row = [];
     for (let a = 0; a <= maxGoals; a++) {
       const raw = poissonProb(homeXG, h) * poissonProb(awayXG, a);
-      const adjusted = raw * tau(h, a, homeXG, awayXG, DIXON_COLES_RHO);
+      const adjusted = raw * tau(h, a, homeXG, awayXG, rho);
       row.push(adjusted);
       total += adjusted;
     }
@@ -119,22 +194,24 @@ function buildScoreMatrix(homeXG, awayXG, maxGoals = 6) {
 }
 
 function deriveMarkets(matrix) {
-  let homeWin = 0, draw = 0, awayWin = 0;
+  let homeWin = 0;
+  let draw = 0;
+  let awayWin = 0;
   let btts = 0;
-  let over05 = 0, over15 = 0, over25 = 0, over35 = 0;
-  let scorelines = [];
+  let over05 = 0;
+  let over15 = 0;
+  let over25 = 0;
+  let over35 = 0;
+  const scorelines = [];
 
   for (let h = 0; h < matrix.length; h++) {
     for (let a = 0; a < matrix[h].length; a++) {
       const p = matrix[h][a];
       scorelines.push({ home: h, away: a, prob: p });
-
       if (h > a) homeWin += p;
       else if (h === a) draw += p;
       else awayWin += p;
-
       if (h > 0 && a > 0) btts += p;
-
       const totalGoals = h + a;
       if (totalGoals > 0.5) over05 += p;
       if (totalGoals > 1.5) over15 += p;
@@ -146,103 +223,86 @@ function deriveMarkets(matrix) {
   scorelines.sort((a, b) => b.prob - a.prob);
 
   return {
-    matchResult: {
-      homeWin: round(homeWin),
-      draw: round(draw),
-      awayWin: round(awayWin),
-    },
+    matchResult: { homeWin, draw, awayWin },
     doubleChance: {
-      homeOrDraw: round(homeWin + draw),
-      homeOrAway: round(homeWin + awayWin),
-      drawOrAway: round(draw + awayWin),
+      homeOrDraw: homeWin + draw,
+      homeOrAway: homeWin + awayWin,
+      drawOrAway: draw + awayWin,
     },
-    btts: {
-      yes: round(btts),
-      no: round(1 - btts),
-    },
+    btts: { yes: btts, no: 1 - btts },
     overUnder: {
-      over05: round(over05),
-      under05: round(1 - over05),
-      over15: round(over15),
-      under15: round(1 - over15),
-      over25: round(over25),
-      under25: round(1 - over25),
-      over35: round(over35),
-      under35: round(1 - over35),
+      over05,
+      under05: 1 - over05,
+      over15,
+      under15: 1 - over15,
+      over25,
+      under25: 1 - over25,
+      over35,
+      under35: 1 - over35,
     },
     topScorelines: scorelines.slice(0, 5).map((s) => ({
       score: `${s.home}-${s.away}`,
-      probability: round(s.prob),
+      probability: roundPct(s.prob),
     })),
   };
 }
 
-function round(p) {
+function roundPct(p) {
   return Math.round(p * 1000) / 10;
-}
-
-function getConfidence(probabilityPercent) {
-  if (probabilityPercent >= 80) return "VERY HIGH";
-  if (probabilityPercent >= 65) return "HIGH";
-  if (probabilityPercent >= 50) return "MEDIUM";
-  if (probabilityPercent >= 35) return "LOW";
-  return "VERY LOW";
-}function predictMatch({
-  homeTeamStats,
-  awayTeamStats,
-  homeRecentMatches,
-  awayRecentMatches,
-  leagueAvg,
-  homeAdvantage = 1.2,
-}) {
-  const homeStrength = calculateStrength(homeTeamStats, leagueAvg);
-  const awayStrength = calculateStrength(awayTeamStats, leagueAvg);
-
-  const homeSeasonAvg = homeTeamStats.goalsFor / (homeTeamStats.playedGames || 1);
-  const awaySeasonAvg = awayTeamStats.goalsFor / (awayTeamStats.playedGames || 1);
-
-  const homeForm = calculateFormModifier(homeRecentMatches, homeSeasonAvg);
-  const awayForm = calculateFormModifier(awayRecentMatches, awaySeasonAvg);
-
-  const { homeXG, awayXG } = calculateExpectedGoals({
-    homeStrength,
-    awayStrength,
-    homeForm,
-    awayForm,
-    leagueAvg,
-    homeAdvantage,
-  });
-
-  const matrix = buildScoreMatrix(homeXG, awayXG);
-  const markets = deriveMarkets(matrix);
-
-  const withConfidence = {
-    matchResult: mapConfidence(markets.matchResult),
-    doubleChance: mapConfidence(markets.doubleChance),
-    btts: mapConfidence(markets.btts),
-    overUnder: mapConfidence(markets.overUnder),
-    topScorelines: markets.topScorelines,
-    expectedGoals: {
-      home: Math.round(homeXG * 100) / 100,
-      away: Math.round(awayXG * 100) / 100,
-    },
-    scoreMatrix: matrix.map((row) => row.map((p) => Math.round(p * 1000) / 10)),
-  };
-
-  return withConfidence;
 }
 
 function mapConfidence(marketObj) {
   const out = {};
   for (const [key, value] of Object.entries(marketObj)) {
-    out[key] = { probability: value, confidence: getConfidence(value) };
+    const probability = roundPct(value);
+    out[key] = { probability, confidence: confidenceLabel(probability) };
   }
   return out;
 }
 
-function predictFromXG(homeXG, awayXG) {
-  const matrix = buildScoreMatrix(homeXG, awayXG);
+function resolveModel(model) {
+  if (!model) return { ...DEFAULTS };
+  return { ...DEFAULTS, ...model };
+}
+
+function ratesFor(input) {
+  const model = resolveModel(input.model);
+  const asOfMs = input.asOf ? new Date(input.asOf).getTime() : Date.now();
+  const leagueAvg = input.leagueAvg || { avgGoalsFor: 1.35, avgGoalsAgainst: 1.35 };
+
+  const homeSeason = calculateStrength(input.homeTeamStats || {}, leagueAvg);
+  const awaySeason = calculateStrength(input.awayTeamStats || {}, leagueAvg);
+  const homeRecent = recentStrength(
+    input.homeRecentMatches,
+    leagueAvg,
+    model.halfLifeDays,
+    asOfMs
+  );
+  const awayRecent = recentStrength(
+    input.awayRecentMatches,
+    leagueAvg,
+    model.halfLifeDays,
+    asOfMs
+  );
+
+  const homeStrength = blendStrength(homeSeason, homeRecent, model.formBlend);
+  const awayStrength = blendStrength(awaySeason, awayRecent, model.formBlend);
+
+  return calculateExpectedGoals({
+    homeStrength,
+    awayStrength,
+    leagueAvg,
+    homeAdvantage: model.homeAdvantage,
+    xgShrink: model.xgShrink,
+  });
+}
+
+function predictMatch(input) {
+  const model = resolveModel(input.model);
+  const { homeXG, awayXG } = ratesFor(input);
+  const matrix = buildScoreMatrix(homeXG, awayXG, model.maxGoals, model.rho);
   const markets = deriveMarkets(matrix);
+
   return {
     matchResult: mapConfidence(markets.matchResult),
     doubleChance: mapConfidence(markets.doubleChance),
@@ -257,7 +317,32 @@ function predictFromXG(homeXG, awayXG) {
   };
 }
 
+function predictFromXG(homeXG, awayXG, model) {
+  const opts = resolveModel(model);
+  const hx = Math.min(4.5, Math.max(0.15, homeXG));
+  const ax = Math.min(4.5, Math.max(0.15, awayXG));
+  const matrix = buildScoreMatrix(hx, ax, opts.maxGoals, opts.rho);
+  const markets = deriveMarkets(matrix);
+  return {
+    matchResult: mapConfidence(markets.matchResult),
+    doubleChance: mapConfidence(markets.doubleChance),
+    btts: mapConfidence(markets.btts),
+    overUnder: mapConfidence(markets.overUnder),
+    topScorelines: markets.topScorelines,
+    expectedGoals: {
+      home: Math.round(hx * 100) / 100,
+      away: Math.round(ax * 100) / 100,
+    },
+    scoreMatrix: matrix.map((row) => row.map((p) => Math.round(p * 1000) / 10)),
+  };
+}
+
+function getConfidence(probabilityPercent) {
+  return confidenceLabel(probabilityPercent);
+}
+
 module.exports = {
+  DEFAULTS,
   predictMatch,
   predictFromXG,
   calculateStrength,
@@ -266,4 +351,6 @@ module.exports = {
   buildScoreMatrix,
   deriveMarkets,
   getConfidence,
+  decayWeight,
+  recentStrength,
 };

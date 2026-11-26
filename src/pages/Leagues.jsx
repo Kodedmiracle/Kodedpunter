@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import MatchCard from "../MatchCard";
 import MatchDetail from "../MatchDetail";
 import { getRecommendedMarket } from "../bestPicks.js";
+import { hasKickedOff } from "../kickoff.js";
 
 function Leagues() {
   const [matches, setMatches] = useState([]);
@@ -17,7 +18,7 @@ function Leagues() {
         return res.json();
       })
       .then((data) => {
-        setMatches(data);
+        setMatches(Array.isArray(data) ? data.filter((m) => !hasKickedOff(m.kickoff)) : []);
         setLoading(false);
       })
       .catch((err) => {

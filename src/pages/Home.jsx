@@ -5,6 +5,8 @@ import BestPicks from "../BestPicks";
 import BookToday from "../BookToday";
 import FilterBar from "../FilterBar";
 import { extractBestPicks, getRecommendedMarket } from "../bestPicks.js";
+import { hasKickedOff } from "../kickoff.js";
+import { applyMarketToMatches } from "../applyMarket.js";
 import "../App.css";
 
 function timeAgo(isoString) {
@@ -29,6 +31,7 @@ function Home() {
   const [competitionFilter, setCompetitionFilter] = useState("ALL");
   const [sortBy, setSortBy] = useState("default");
   const [dateFilter, setDateFilter] = useState("TODAY");
+  const [marketEvents, setMarketEvents] = useState(null);
 
   useEffect(() => {
     Promise.all([
@@ -51,6 +54,21 @@ function Home() {
   }, []);
 
   useEffect(() => {
+    let alive = true;
+    fetch("/api/sporty-book")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (alive && data && data.ok && Array.isArray(data.events)) {
+          setMarketEvents(data.events);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  useEffect(() => {
     fetch("/meta.json")
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
@@ -64,8 +82,13 @@ function Home() {
     return [...set];
   }, [matches]);
 
+  const pricedMatches = useMemo(
+    () => applyMarketToMatches(matches, marketEvents),
+    [matches, marketEvents]
+  );
+
   const filteredMatches = useMemo(() => {
-    let result = [...matches];
+    let result = pricedMatches.filter((m) => !hasKickedOff(m.kickoff));
 
     if (dateFilter === "TODAY") {
       const watNow = new Date(Date.now() + 60 * 60 * 1000);
@@ -110,7 +133,7 @@ function Home() {
     }
 
     return result;
-  }, [matches, competitionFilter, searchTerm, sortBy, dateFilter]);
+  }, [pricedMatches, competitionFilter, searchTerm, sortBy, dateFilter]);
 
   if (selectedMatch) {
     return (
@@ -157,11 +180,11 @@ function Home() {
 
           <BestPicks picks={bestPicks} />
 
-          <BookToday matches={filteredMatches} allMatches={matches} />
+          <BookToday matches={filteredMatches} allMatches={pricedMatches} />
 
           {filteredMatches.length === 0 && dateFilter === "TODAY" && (
             <p style={styles.status}>
-              No matches in our tracked leagues today — check back tomorrow, or switch to "All Upcoming" to see what's coming this week.
+              No matches still to kick off today. Switch to All Upcoming for the rest of the week.
             </p>
           )}
           {filteredMatches.length === 0 && dateFilter !== "TODAY" && (

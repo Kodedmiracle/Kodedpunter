@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
+    "test": "node --test tests/*.test.cjs tests/*.test.js",
+    "backtest": "node backtestFootball.cjs",
     "preview": "vite preview"
   },
   "dependencies": {

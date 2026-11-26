@@ -1,6 +1,8 @@
 require('dotenv').config({ quiet: true });
 const fs = require('fs');
 
+const { skipReason } = require('./src/engine/extraLeagueNote.cjs');
+
 const KEY = process.env.API_FOOTBALL_KEY;
 const BASE = 'https://v3.football.api-sports.io';
 const DONE = ['FT', 'AET', 'PEN'];
@@ -16,7 +18,11 @@ async function fixturesFor(offsetDays) {
 }
 
 (async () => {
-  if (!KEY) throw new Error('API_FOOTBALL_KEY missing');
+  const reason = skipReason(KEY);
+  if (reason) {
+    console.log(reason);
+    return;
+  }
   fs.mkdirSync('data', { recursive: true });
 
   const yesterday = await fixturesFor(-1);
@@ -70,3 +76,5 @@ async function fixturesFor(offsetDays) {
   console.log('FAILED:', e.message);
   process.exit(1);
 });
+
+module.exports = { skipReason };

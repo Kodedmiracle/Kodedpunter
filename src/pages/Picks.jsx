@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import MatchCard from "../MatchCard";
 import MatchDetail from "../MatchDetail";
 import { getRecommendedMarket } from "../bestPicks.js";
+import { hasKickedOff } from "../kickoff.js";
 
 const MARKET_FILTERS = [
   { value: "ALL", label: "All Markets" },
@@ -24,7 +25,7 @@ function Picks() {
         return res.json();
       })
       .then((data) => {
-        setMatches(data);
+        setMatches(Array.isArray(data) ? data.filter((m) => !hasKickedOff(m.kickoff)) : []);
         setLoading(false);
       })
       .catch((err) => {

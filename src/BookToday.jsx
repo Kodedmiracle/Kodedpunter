@@ -3,6 +3,7 @@ import { sameMatch } from "./sportyNames.js";
 import { leanToSporty } from "./sportyMarkets.js";
 import { getRecommendedMarket } from "./bestPicks.js";
 import { BOOK_OPTIONS, oddsKey } from "./footballOptions.js";
+import { hasKickedOff } from "./kickoff.js";
 
 export default function BookToday({ matches, allMatches }) {
   const [status, setStatus] = useState("idle");
@@ -44,6 +45,10 @@ export default function BookToday({ matches, allMatches }) {
 
       for (const m of matches) {
         const label = `${m.homeTeam} vs ${m.awayTeam}`;
+        if (hasKickedOff(m.kickoff)) {
+          missed.push(`${label} (already kicked off)`);
+          continue;
+        }
         const ev = (list.events || []).find((e) =>
           sameMatch(m.homeTeam, m.awayTeam, e.home, e.away)
         );

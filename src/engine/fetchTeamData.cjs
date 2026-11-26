@@ -13,7 +13,7 @@ async function fetchStandings(competitionCode) {
   return data.standings[0].table;
 }
 
-async function fetchRecentMatches(teamId, limit = 5) {
+async function fetchRecentMatches(teamId, limit = 8) {
   const res = await fetch(
     `${BASE_URL}/teams/${teamId}/matches?status=FINISHED&limit=${limit}`,
     { headers: { "X-Auth-Token": API_TOKEN } }
@@ -21,12 +21,14 @@ async function fetchRecentMatches(teamId, limit = 5) {
   if (!res.ok) throw new Error(`Recent matches fetch failed: ${res.status}`);
   const data = await res.json();
 
-  return data.matches.map((m) => {
-    const isHome = m.homeTeam.id === teamId;
-    const goalsFor = isHome ? m.score.fullTime.home : m.score.fullTime.away;
-    const goalsAgainst = isHome ? m.score.fullTime.away : m.score.fullTime.home;
-    return { goalsFor, goalsAgainst };
-  });
+  return data.matches
+    .map((m) => {
+      const isHome = m.homeTeam.id === teamId;
+      const goalsFor = isHome ? m.score.fullTime.home : m.score.fullTime.away;
+      const goalsAgainst = isHome ? m.score.fullTime.away : m.score.fullTime.home;
+      return { goalsFor, goalsAgainst, date: m.utcDate };
+    })
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
 async function fetchUpcomingFixtures(competitionCode, limit = 5) {

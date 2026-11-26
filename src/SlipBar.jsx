@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSlip } from "./SlipContext";
 import { sameMatch } from "./sportyNames.js";
 import { leanToSporty } from "./sportyMarkets.js";
+import { hasKickedOff } from "./kickoff.js";
 
 export default function SlipBar() {
   const { legs, clearSlip } = useSlip();
@@ -29,6 +30,10 @@ export default function SlipBar() {
       const missed = [];
 
       for (const pick of legs) {
+        if (hasKickedOff(pick.kickoff)) {
+          missed.push(pick.matchLabel + " (already kicked off)");
+          continue;
+        }
         const lean = leanToSporty(pick.leanKey);
         if (!lean) {
           missed.push(pick.matchLabel + " (unknown market)");
