@@ -1,1264 +1,6 @@
 [
   {
     "competition": "NCAAB",
-    "matchId": 1591106,
-    "homeTeam": "Penn State Nittany Lions",
-    "awayTeam": "Memphis Tigers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11432.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12221.png",
-    "kickoff": "2026-11-25T23:35:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79,
-        "away": 76.4,
-        "total": 155.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 59.1,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 40.9,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155.5,
-        "projected": 155.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1891625,
-    "homeTeam": "Creighton Bluejays",
-    "awayTeam": "TCU Horned Frogs",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11210.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11652.png",
-    "kickoff": "2026-11-26T23:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.3,
-        "away": 76,
-        "total": 154.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 58.1,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 41.9,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154,
-        "projected": 154.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1597202,
-    "homeTeam": "UCLA Bruins",
-    "awayTeam": "Saint Mary's Gaels",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11099.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11768.png",
-    "kickoff": "2026-11-26T22:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77,
-        "away": 75,
-        "total": 152
-      },
-      "moneyline": {
-        "home": {
-          "probability": 56.9,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 43.1,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 152,
-        "projected": 152
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1597201,
-    "homeTeam": "USC Trojans",
-    "awayTeam": "Utah State Aggies",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12175.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12333.png",
-    "kickoff": "2026-11-26T21:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.7,
-        "away": 77.7,
-        "total": 156.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 53.7,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 46.3,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 156.5,
-        "projected": 156.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1597200,
-    "homeTeam": "Michigan State Spartans",
-    "awayTeam": "Arkansas Razorbacks",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11088.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11624.png",
-    "kickoff": "2026-11-26T21:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 81.1,
-        "away": 77.3,
-        "total": 158.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 63.2,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 36.8,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 158.5,
-        "projected": 158.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1891621,
-    "homeTeam": "Michigan Wolverines",
-    "awayTeam": "Miami Hurricanes",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11104.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11519.png",
-    "kickoff": "2026-11-26T20:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.8,
-        "away": 75.6,
-        "total": 156.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 67.8,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 32.2,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 156.5,
-        "projected": 156.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1891620,
-    "homeTeam": "Iowa State Cyclones",
-    "awayTeam": "Tennessee Volunteers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11289.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11247.png",
-    "kickoff": "2026-11-26T20:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.2,
-        "away": 74.1,
-        "total": 153.3
-      },
-      "moneyline": {
-        "home": {
-          "probability": 67.6,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 32.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 153.5,
-        "projected": 153.3
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1597199,
-    "homeTeam": "Texas Longhorns",
-    "awayTeam": "Georgetown Hoyas",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11096.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11294.png",
-    "kickoff": "2026-11-26T19:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.2,
-        "away": 75.3,
-        "total": 155.5
-      },
-      "moneyline": {
-        "home": {
-          "probability": 66.6,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 33.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155.5,
-        "projected": 155.5
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1597198,
-    "homeTeam": "Arizona State Sun Devils",
-    "awayTeam": "South Carolina Gamecocks",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11132.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11251.png",
-    "kickoff": "2026-11-26T19:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.5,
-        "away": 76.1,
-        "total": 155.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 61.9,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 38.1,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155.5,
-        "projected": 155.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1597197,
-    "homeTeam": "UCF Knights",
-    "awayTeam": "Boston College Eagles",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11162.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11156.png",
-    "kickoff": "2026-11-26T18:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.2,
-        "away": 74.4,
-        "total": 153.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 66.4,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 33.6,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 153.5,
-        "projected": 153.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1891616,
-    "homeTeam": "Maryland Terrapins",
-    "awayTeam": "San Diego State Aztecs",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11332.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11098.png",
-    "kickoff": "2026-11-26T18:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 76.8,
-        "away": 76.5,
-        "total": 153.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 51.1,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 48.9,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 153,
-        "projected": 153.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1597196,
-    "homeTeam": "Purdue Boilermakers",
-    "awayTeam": "Oklahoma Sooners",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11356.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11420.png",
-    "kickoff": "2026-11-26T17:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.9,
-        "away": 76.1,
-        "total": 157.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 66.4,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 33.6,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 157,
-        "projected": 157.1
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1597194,
-    "homeTeam": "UTSA Roadrunners",
-    "awayTeam": "Army Black Knights",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11549.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12732.png",
-    "kickoff": "2026-11-26T17:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.1,
-        "away": 76,
-        "total": 154.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 57.4,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 42.6,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154,
-        "projected": 154.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1597195,
-    "homeTeam": "Cincinnati Bearcats",
-    "awayTeam": "Georgia Bulldogs",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11301.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12169.png",
-    "kickoff": "2026-11-26T16:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.5,
-        "away": 77,
-        "total": 156.5
-      },
-      "moneyline": {
-        "home": {
-          "probability": 59.1,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 40.9,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 156.5,
-        "projected": 156.5
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1891612,
-    "homeTeam": "Colorado State Rams",
-    "awayTeam": "Clemson Tigers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12609.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11347.png",
-    "kickoff": "2026-11-26T05:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77.1,
-        "away": 74.2,
-        "total": 151.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 60.3,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 39.7,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 151.5,
-        "projected": 151.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1893100,
-    "homeTeam": "Saint Louis Billikens",
-    "awayTeam": "Stanford Cardinal",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11679.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11191.png",
-    "kickoff": "2026-11-26T04:59:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 81.2,
-        "away": 74.6,
-        "total": 155.8
-      },
-      "moneyline": {
-        "home": {
-          "probability": 72,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 28,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 156,
-        "projected": 155.8
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591122,
-    "homeTeam": "Hawai'i Rainbow Warriors",
-    "awayTeam": "Incarnate Word Cardinals",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11494.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11513.png",
-    "kickoff": "2026-11-26T04:59:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.6,
-        "away": 74.2,
-        "total": 153.8
-      },
-      "moneyline": {
-        "home": {
-          "probability": 68.5,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 31.5,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154,
-        "projected": 153.8
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591072,
-    "homeTeam": "Jacksonville State Gamecocks",
-    "awayTeam": "Pacific Tigers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11146.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11189.png",
-    "kickoff": "2026-11-26T03:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 76.9,
-        "away": 73.3,
-        "total": 150.3
-      },
-      "moneyline": {
-        "home": {
-          "probability": 62.6,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 37.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 150.5,
-        "projected": 150.3
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1891609,
-    "homeTeam": "VCU Rams",
-    "awayTeam": "Washington Huskies",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12544.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11131.png",
-    "kickoff": "2026-11-26T03:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.9,
-        "away": 75.1,
-        "total": 155
-      },
-      "moneyline": {
-        "home": {
-          "probability": 66.3,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 33.7,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155,
-        "projected": 155
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1893101,
-    "homeTeam": "Colorado Buffaloes",
-    "awayTeam": "Grand Canyon Lopes",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11265.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11322.png",
-    "kickoff": "2026-11-26T02:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.6,
-        "away": 76.6,
-        "total": 155.2
-      },
-      "moneyline": {
-        "home": {
-          "probability": 57.2,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 42.8,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155,
-        "projected": 155.2
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591121,
-    "homeTeam": "Loyola Marymount Lions",
-    "awayTeam": "Eastern Washington Eagles",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11175.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11109.png",
-    "kickoff": "2026-11-26T02:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.6,
-        "away": 75.4,
-        "total": 155
-      },
-      "moneyline": {
-        "home": {
-          "probability": 64.6,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 35.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155,
-        "projected": 155
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591120,
-    "homeTeam": "Montana State Bobcats",
-    "awayTeam": "Northwest Indian RedHawks",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11550.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/16185.png",
-    "kickoff": "2026-11-26T02:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.7,
-        "away": 74.7,
-        "total": 154.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 67.1,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 32.9,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154.5,
-        "projected": 154.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591065,
-    "homeTeam": "New Mexico Lobos",
-    "awayTeam": "Mississippi Valley State Delta Devils",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12102.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12598.png",
-    "kickoff": "2026-11-26T02:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 82.1,
-        "away": 72,
-        "total": 154.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 80.9,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 19.1,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 154,
-        "projected": 154.1
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1891605,
-    "homeTeam": "UTEP Miners",
-    "awayTeam": "Eastern Michigan Eagles",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11589.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11089.png",
-    "kickoff": "2026-11-26T01:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77.2,
-        "away": 73.8,
-        "total": 151
-      },
-      "moneyline": {
-        "home": {
-          "probability": 62,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 38,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 151,
-        "projected": 151
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591119,
-    "homeTeam": "UC Davis Aggies",
-    "awayTeam": "Omaha Mavericks",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11487.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11211.png",
-    "kickoff": "2026-11-26T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.8,
-        "away": 75.6,
-        "total": 155.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 64.4,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 35.6,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 155.5,
-        "projected": 155.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591118,
-    "homeTeam": "Pepperdine Waves",
-    "awayTeam": "Cal State Bakersfield Roadrunners",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11121.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11486.png",
-    "kickoff": "2026-11-26T01:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.9,
-        "away": 76,
-        "total": 155.9
-      },
-      "moneyline": {
-        "home": {
-          "probability": 63.6,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 36.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 156,
-        "projected": 155.9
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591117,
-    "homeTeam": "Mississippi State Bulldogs",
-    "awayTeam": "Wake Forest Demon Deacons",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11180.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11360.png",
-    "kickoff": "2026-11-26T00:30:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 79.9,
-        "away": 77.8,
-        "total": 157.7
-      },
-      "moneyline": {
-        "home": {
-          "probability": 57.5,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 42.5,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 157.5,
-        "projected": 157.7
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591116,
-    "homeTeam": "Wisconsin Badgers",
-    "awayTeam": "Northeastern Huskies",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11084.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11509.png",
-    "kickoff": "2026-11-26T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 82.1,
-        "away": 75.6,
-        "total": 157.7
-      },
-      "moneyline": {
-        "home": {
-          "probability": 71.5,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 28.5,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 157.5,
-        "projected": 157.7
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591115,
-    "homeTeam": "NC State Wolfpack",
-    "awayTeam": "Norfolk State Spartans",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11198.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12868.png",
-    "kickoff": "2026-11-26T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.5,
-        "away": 76,
-        "total": 156.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 65.5,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 34.5,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 156.5,
-        "projected": 156.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591114,
-    "homeTeam": "Utah State Aggies",
-    "awayTeam": "SMU Mustangs",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12333.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11178.png",
-    "kickoff": "2026-11-26T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 81.2,
-        "away": 76.5,
-        "total": 157.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 66.2,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 33.8,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 157.5,
-        "projected": 157.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591113,
-    "homeTeam": "George Mason Patriots",
-    "awayTeam": "Longwood Lancers",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12033.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11407.png",
-    "kickoff": "2026-11-26T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.3,
-        "away": 74.3,
-        "total": 152.6
-      },
-      "moneyline": {
-        "home": {
-          "probability": 63.7,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 36.3,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 152.5,
-        "projected": 152.6
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591112,
-    "homeTeam": "Northern Kentucky Norse",
-    "awayTeam": "Bellarmine Knights",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11560.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11572.png",
-    "kickoff": "2026-11-26T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 82.2,
-        "away": 77.1,
-        "total": 159.3
-      },
-      "moneyline": {
-        "home": {
-          "probability": 67.6,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 32.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 159.5,
-        "projected": 159.3
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591111,
-    "homeTeam": "Cleveland State Vikings",
-    "awayTeam": "Case Western Reserve Spartans",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11321.png",
-    "awayCrest": null,
-    "kickoff": "2026-11-26T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 80.1,
-        "away": 78,
-        "total": 158.1
-      },
-      "moneyline": {
-        "home": {
-          "probability": 57.5,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 42.5,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 158,
-        "projected": 158.1
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 0
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591110,
-    "homeTeam": "Duke Blue Devils",
-    "awayTeam": "UConn Huskies",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11106.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11392.png",
-    "kickoff": "2026-11-26T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.1,
-        "away": 73.1,
-        "total": 151.3
-      },
-      "moneyline": {
-        "home": {
-          "probability": 67.1,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 32.9,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 151.5,
-        "projected": 151.3
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591070,
-    "homeTeam": "UNC Wilmington Seahawks",
-    "awayTeam": "St. Thomas-Minnesota Tommies",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/13569.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/13311.png",
-    "kickoff": "2026-11-26T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.4,
-        "away": 75.3,
-        "total": 153.7
-      },
-      "moneyline": {
-        "home": {
-          "probability": 60.8,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 39.2,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 153.5,
-        "projected": 153.7
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591068,
-    "homeTeam": "SIU Edwardsville Cougars",
-    "awayTeam": "Northern Illinois Huskies",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/13310.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11315.png",
-    "kickoff": "2026-11-26T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 78.6,
-        "away": 71.8,
-        "total": 150.4
-      },
-      "moneyline": {
-        "home": {
-          "probability": 72.6,
-          "confidence": "MEDIUM"
-        },
-        "away": {
-          "probability": 27.4,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 150.5,
-        "projected": 150.4
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
-    "matchId": 1591066,
-    "homeTeam": "The Citadel Bulldogs",
-    "awayTeam": "South Carolina Upstate Spartans",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/12552.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/12019.png",
-    "kickoff": "2026-11-26T00:00:00.000Z",
-    "prediction": {
-      "expectedPoints": {
-        "home": 77.5,
-        "away": 75.8,
-        "total": 153.3
-      },
-      "moneyline": {
-        "home": {
-          "probability": 56.2,
-          "confidence": "LOW"
-        },
-        "away": {
-          "probability": 43.8,
-          "confidence": "LOW"
-        }
-      },
-      "totalPoints": {
-        "line": 153.5,
-        "projected": 153.3
-      },
-      "sample": {
-        "homeGames": 10,
-        "awayGames": 10
-      }
-    }
-  },
-  {
-    "competition": "NCAAB",
     "matchId": 1651647,
     "homeTeam": "South Carolina Upstate Spartans",
     "awayTeam": "Southern Wesleyan Warriors",
@@ -1283,7 +25,18 @@
       },
       "totalPoints": {
         "line": 154,
-        "projected": 154.1
+        "projected": 154.1,
+        "over": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1317,7 +70,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 155
+        "projected": 155,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1351,7 +115,18 @@
       },
       "totalPoints": {
         "line": 151,
-        "projected": 151
+        "projected": 151,
+        "over": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1385,7 +160,18 @@
       },
       "totalPoints": {
         "line": 156,
-        "projected": 155.9
+        "projected": 155.9,
+        "over": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1419,7 +205,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.6
+        "projected": 154.6,
+        "over": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1453,7 +250,18 @@
       },
       "totalPoints": {
         "line": 156,
-        "projected": 156
+        "projected": 156,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1487,7 +295,18 @@
       },
       "totalPoints": {
         "line": 158,
-        "projected": 157.9
+        "projected": 157.9,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1521,7 +340,18 @@
       },
       "totalPoints": {
         "line": 152.5,
-        "projected": 152.5
+        "projected": 152.5,
+        "over": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1555,7 +385,18 @@
       },
       "totalPoints": {
         "line": 149.5,
-        "projected": 149.4
+        "projected": 149.4,
+        "over": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1589,7 +430,18 @@
       },
       "totalPoints": {
         "line": 149.5,
-        "projected": 149.4
+        "projected": 149.4,
+        "over": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1623,7 +475,18 @@
       },
       "totalPoints": {
         "line": 154,
-        "projected": 154.2
+        "projected": 154.2,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1657,7 +520,18 @@
       },
       "totalPoints": {
         "line": 155.5,
-        "projected": 155.6
+        "projected": 155.6,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1691,7 +565,18 @@
       },
       "totalPoints": {
         "line": 157,
-        "projected": 157.2
+        "projected": 157.2,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1725,7 +610,18 @@
       },
       "totalPoints": {
         "line": 152.5,
-        "projected": 152.7
+        "projected": 152.7,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1759,7 +655,18 @@
       },
       "totalPoints": {
         "line": 151,
-        "projected": 150.8
+        "projected": 150.8,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1793,7 +700,18 @@
       },
       "totalPoints": {
         "line": 158.5,
-        "projected": 158.5
+        "projected": 158.5,
+        "over": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1827,7 +745,18 @@
       },
       "totalPoints": {
         "line": 149.5,
-        "projected": 149.7
+        "projected": 149.7,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1861,7 +790,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 155.2
+        "projected": 155.2,
+        "over": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1895,7 +835,18 @@
       },
       "totalPoints": {
         "line": 151,
-        "projected": 150.8
+        "projected": 150.8,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1929,7 +880,18 @@
       },
       "totalPoints": {
         "line": 149,
-        "projected": 149
+        "projected": 149,
+        "over": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1963,7 +925,18 @@
       },
       "totalPoints": {
         "line": 151,
-        "projected": 150.8
+        "projected": 150.8,
+        "over": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -1997,7 +970,18 @@
       },
       "totalPoints": {
         "line": 152,
-        "projected": 152
+        "projected": 152,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2031,7 +1015,18 @@
       },
       "totalPoints": {
         "line": 157,
-        "projected": 156.8
+        "projected": 156.8,
+        "over": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2065,7 +1060,63 @@
       },
       "totalPoints": {
         "line": 158.5,
-        "projected": 158.4
+        "projected": 158.4,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1902698,
+    "homeTeam": "Memphis Tigers",
+    "awayTeam": "Wake Forest Demon Deacons",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/12221.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11360.png",
+    "kickoff": "2026-11-27T18:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.3,
+        "away": 76.6,
+        "total": 156
+      },
+      "moneyline": {
+        "home": {
+          "probability": 59.6,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 40.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 156,
+        "projected": 156,
+        "over": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2099,7 +1150,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 154.8
+        "projected": 154.8,
+        "over": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2133,7 +1195,18 @@
       },
       "totalPoints": {
         "line": 152.5,
-        "projected": 152.4
+        "projected": 152.4,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2167,7 +1240,18 @@
       },
       "totalPoints": {
         "line": 149,
-        "projected": 149
+        "projected": 149,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2201,7 +1285,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.6
+        "projected": 154.6,
+        "over": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2235,7 +1330,18 @@
       },
       "totalPoints": {
         "line": 156,
-        "projected": 156.1
+        "projected": 156.1,
+        "over": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2246,30 +1352,41 @@
   {
     "competition": "NCAAB",
     "matchId": 1891633,
-    "homeTeam": "Baylor Bears",
-    "awayTeam": "Gonzaga Bulldogs",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11130.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11253.png",
+    "homeTeam": "Gonzaga Bulldogs",
+    "awayTeam": "Baylor Bears",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11253.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11130.png",
     "kickoff": "2026-11-27T04:30:00.000Z",
     "prediction": {
       "expectedPoints": {
-        "home": 78.4,
-        "away": 77.8,
+        "home": 81.3,
+        "away": 74.9,
         "total": 156.2
       },
       "moneyline": {
         "home": {
-          "probability": 52.1,
-          "confidence": "LOW"
+          "probability": 71.4,
+          "confidence": "MEDIUM"
         },
         "away": {
-          "probability": 47.9,
+          "probability": 28.6,
           "confidence": "LOW"
         }
       },
       "totalPoints": {
         "line": 156,
-        "projected": 156.2
+        "projected": 156.2,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2303,7 +1420,18 @@
       },
       "totalPoints": {
         "line": 154,
-        "projected": 153.8
+        "projected": 153.8,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2337,7 +1465,18 @@
       },
       "totalPoints": {
         "line": 153,
-        "projected": 152.9
+        "projected": 152.9,
+        "over": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2348,30 +1487,41 @@
   {
     "competition": "NCAAB",
     "matchId": 1891630,
-    "homeTeam": "Alabama Crimson Tide",
-    "awayTeam": "Kansas State Wildcats",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11190.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11182.png",
+    "homeTeam": "Kansas State Wildcats",
+    "awayTeam": "Alabama Crimson Tide",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11182.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11190.png",
     "kickoff": "2026-11-27T02:00:00.000Z",
     "prediction": {
       "expectedPoints": {
-        "home": 84.1,
-        "away": 78.2,
+        "home": 81.7,
+        "away": 80.6,
         "total": 162.3
       },
       "moneyline": {
         "home": {
-          "probability": 70,
-          "confidence": "MEDIUM"
+          "probability": 53.8,
+          "confidence": "LOW"
         },
         "away": {
-          "probability": 30,
+          "probability": 46.2,
           "confidence": "LOW"
         }
       },
       "totalPoints": {
         "line": 162.5,
-        "projected": 162.3
+        "projected": 162.3,
+        "over": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2382,30 +1532,41 @@
   {
     "competition": "NCAAB",
     "matchId": 1891629,
-    "homeTeam": "Louisville Cardinals",
-    "awayTeam": "St. John's Red Storm",
-    "homeCrest": "https://highlightly.net/ncaab/images/teams/11362.png",
-    "awayCrest": "https://highlightly.net/ncaab/images/teams/11157.png",
+    "homeTeam": "St. John's Red Storm",
+    "awayTeam": "Louisville Cardinals",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11157.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11362.png",
     "kickoff": "2026-11-27T02:00:00.000Z",
     "prediction": {
       "expectedPoints": {
-        "home": 79.8,
-        "away": 76.1,
+        "home": 79.6,
+        "away": 76.3,
         "total": 155.9
       },
       "moneyline": {
         "home": {
-          "probability": 62.6,
+          "probability": 61.9,
           "confidence": "MEDIUM"
         },
         "away": {
-          "probability": 37.4,
+          "probability": 38.1,
           "confidence": "LOW"
         }
       },
       "totalPoints": {
         "line": 156,
-        "projected": 155.9
+        "projected": 155.9,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2439,7 +1600,18 @@
       },
       "totalPoints": {
         "line": 153,
-        "projected": 152.8
+        "projected": 152.8,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2473,7 +1645,18 @@
       },
       "totalPoints": {
         "line": 150,
-        "projected": 150.2
+        "projected": 150.2,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2507,7 +1690,18 @@
       },
       "totalPoints": {
         "line": 159,
-        "projected": 159.2
+        "projected": 159.2,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2541,7 +1735,18 @@
       },
       "totalPoints": {
         "line": 154,
-        "projected": 154.1
+        "projected": 154.1,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2575,7 +1780,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 154.8
+        "projected": 154.8,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2609,7 +1825,18 @@
       },
       "totalPoints": {
         "line": 154,
-        "projected": 153.8
+        "projected": 153.8,
+        "over": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2643,7 +1870,18 @@
       },
       "totalPoints": {
         "line": 153,
-        "projected": 152.9
+        "projected": 152.9,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2677,7 +1915,18 @@
       },
       "totalPoints": {
         "line": 152.5,
-        "projected": 152.6
+        "projected": 152.6,
+        "over": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2711,7 +1960,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.3
+        "projected": 154.3,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2745,7 +2005,18 @@
       },
       "totalPoints": {
         "line": 154,
-        "projected": 154
+        "projected": 154,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2779,7 +2050,18 @@
       },
       "totalPoints": {
         "line": 151,
-        "projected": 150.9
+        "projected": 150.9,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2813,7 +2095,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 154.9
+        "projected": 154.9,
+        "over": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2847,7 +2140,18 @@
       },
       "totalPoints": {
         "line": 159.5,
-        "projected": 159.5
+        "projected": 159.5,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2881,7 +2185,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.7
+        "projected": 154.7,
+        "over": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2915,7 +2230,18 @@
       },
       "totalPoints": {
         "line": 148.5,
-        "projected": 148.5
+        "projected": 148.5,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2949,7 +2275,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.7
+        "projected": 154.7,
+        "over": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -2983,7 +2320,18 @@
       },
       "totalPoints": {
         "line": 153.5,
-        "projected": 153.6
+        "projected": 153.6,
+        "over": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3017,7 +2365,18 @@
       },
       "totalPoints": {
         "line": 157,
-        "projected": 156.8
+        "projected": 156.8,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3051,7 +2410,18 @@
       },
       "totalPoints": {
         "line": 154,
-        "projected": 154.1
+        "projected": 154.1,
+        "over": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3085,7 +2455,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 155.1
+        "projected": 155.1,
+        "over": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3119,7 +2500,18 @@
       },
       "totalPoints": {
         "line": 150.5,
-        "projected": 150.7
+        "projected": 150.7,
+        "over": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3153,7 +2545,18 @@
       },
       "totalPoints": {
         "line": 148,
-        "projected": 148.2
+        "projected": 148.2,
+        "over": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3187,7 +2590,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.7
+        "projected": 154.7,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3221,7 +2635,18 @@
       },
       "totalPoints": {
         "line": 150,
-        "projected": 149.9
+        "projected": 149.9,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3255,7 +2680,18 @@
       },
       "totalPoints": {
         "line": 156.5,
-        "projected": 156.5
+        "projected": 156.5,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3289,7 +2725,18 @@
       },
       "totalPoints": {
         "line": 152,
-        "projected": 151.9
+        "projected": 151.9,
+        "over": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3323,7 +2770,18 @@
       },
       "totalPoints": {
         "line": 156,
-        "projected": 156.2
+        "projected": 156.2,
+        "over": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3357,7 +2815,18 @@
       },
       "totalPoints": {
         "line": 152,
-        "projected": 152
+        "projected": 152,
+        "over": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3391,7 +2860,18 @@
       },
       "totalPoints": {
         "line": 149,
-        "projected": 149.1
+        "projected": 149.1,
+        "over": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3425,7 +2905,18 @@
       },
       "totalPoints": {
         "line": 150,
-        "projected": 150.1
+        "projected": 150.1,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3459,7 +2950,18 @@
       },
       "totalPoints": {
         "line": 151,
-        "projected": 150.8
+        "projected": 150.8,
+        "over": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3493,7 +2995,18 @@
       },
       "totalPoints": {
         "line": 154,
-        "projected": 153.9
+        "projected": 153.9,
+        "over": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3527,7 +3040,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 154.8
+        "projected": 154.8,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3561,7 +3085,18 @@
       },
       "totalPoints": {
         "line": 157,
-        "projected": 157.1
+        "projected": 157.1,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3595,7 +3130,18 @@
       },
       "totalPoints": {
         "line": 150.5,
-        "projected": 150.7
+        "projected": 150.7,
+        "over": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3629,7 +3175,18 @@
       },
       "totalPoints": {
         "line": 152.5,
-        "projected": 152.5
+        "projected": 152.5,
+        "over": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3663,7 +3220,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.5
+        "projected": 154.5,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3697,7 +3265,18 @@
       },
       "totalPoints": {
         "line": 151.5,
-        "projected": 151.4
+        "projected": 151.4,
+        "over": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3731,7 +3310,18 @@
       },
       "totalPoints": {
         "line": 149.5,
-        "projected": 149.6
+        "projected": 149.6,
+        "over": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3765,7 +3355,18 @@
       },
       "totalPoints": {
         "line": 148,
-        "projected": 147.9
+        "projected": 147.9,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3799,7 +3400,18 @@
       },
       "totalPoints": {
         "line": 156,
-        "projected": 155.8
+        "projected": 155.8,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3833,7 +3445,18 @@
       },
       "totalPoints": {
         "line": 152.5,
-        "projected": 152.6
+        "projected": 152.6,
+        "over": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3867,7 +3490,18 @@
       },
       "totalPoints": {
         "line": 150,
-        "projected": 150
+        "projected": 150,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3901,7 +3535,18 @@
       },
       "totalPoints": {
         "line": 153,
-        "projected": 152.8
+        "projected": 152.8,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3935,7 +3580,18 @@
       },
       "totalPoints": {
         "line": 156,
-        "projected": 155.9
+        "projected": 155.9,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -3969,7 +3625,18 @@
       },
       "totalPoints": {
         "line": 155.5,
-        "projected": 155.6
+        "projected": 155.6,
+        "over": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4003,7 +3670,18 @@
       },
       "totalPoints": {
         "line": 152.5,
-        "projected": 152.5
+        "projected": 152.5,
+        "over": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4037,7 +3715,18 @@
       },
       "totalPoints": {
         "line": 155.5,
-        "projected": 155.5
+        "projected": 155.5,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4071,7 +3760,18 @@
       },
       "totalPoints": {
         "line": 151.5,
-        "projected": 151.6
+        "projected": 151.6,
+        "over": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4105,7 +3805,18 @@
       },
       "totalPoints": {
         "line": 151,
-        "projected": 151.2
+        "projected": 151.2,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4139,7 +3850,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.7
+        "projected": 154.7,
+        "over": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4173,7 +3895,18 @@
       },
       "totalPoints": {
         "line": 156.5,
-        "projected": 156.3
+        "projected": 156.3,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4207,7 +3940,18 @@
       },
       "totalPoints": {
         "line": 153.5,
-        "projected": 153.5
+        "projected": 153.5,
+        "over": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4241,7 +3985,18 @@
       },
       "totalPoints": {
         "line": 150.5,
-        "projected": 150.7
+        "projected": 150.7,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4275,7 +4030,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.7
+        "projected": 154.7,
+        "over": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4309,7 +4075,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.7
+        "projected": 154.7,
+        "over": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4343,7 +4120,18 @@
       },
       "totalPoints": {
         "line": 151,
-        "projected": 151
+        "projected": 151,
+        "over": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4377,7 +4165,18 @@
       },
       "totalPoints": {
         "line": 151.5,
-        "projected": 151.7
+        "projected": 151.7,
+        "over": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4411,7 +4210,18 @@
       },
       "totalPoints": {
         "line": 156,
-        "projected": 155.9
+        "projected": 155.9,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4445,7 +4255,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.4
+        "projected": 154.4,
+        "over": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4479,7 +4300,18 @@
       },
       "totalPoints": {
         "line": 159,
-        "projected": 159
+        "projected": 159,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4513,7 +4345,18 @@
       },
       "totalPoints": {
         "line": 159,
-        "projected": 159.2
+        "projected": 159.2,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4547,7 +4390,18 @@
       },
       "totalPoints": {
         "line": 156,
-        "projected": 155.8
+        "projected": 155.8,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4581,7 +4435,18 @@
       },
       "totalPoints": {
         "line": 151.5,
-        "projected": 151.3
+        "projected": 151.3,
+        "over": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4615,7 +4480,18 @@
       },
       "totalPoints": {
         "line": 156.5,
-        "projected": 156.4
+        "projected": 156.4,
+        "over": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4649,7 +4525,18 @@
       },
       "totalPoints": {
         "line": 157.5,
-        "projected": 157.7
+        "projected": 157.7,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4683,7 +4570,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 155
+        "projected": 155,
+        "over": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4717,7 +4615,18 @@
       },
       "totalPoints": {
         "line": 152,
-        "projected": 152
+        "projected": 152,
+        "over": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4751,7 +4660,18 @@
       },
       "totalPoints": {
         "line": 150.5,
-        "projected": 150.6
+        "projected": 150.6,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4785,7 +4705,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 155.2
+        "projected": 155.2,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4819,7 +4750,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 155.2
+        "projected": 155.2,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4853,7 +4795,18 @@
       },
       "totalPoints": {
         "line": 152.5,
-        "projected": 152.4
+        "projected": 152.4,
+        "over": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4887,7 +4840,18 @@
       },
       "totalPoints": {
         "line": 156,
-        "projected": 156.2
+        "projected": 156.2,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4921,7 +4885,18 @@
       },
       "totalPoints": {
         "line": 151,
-        "projected": 150.9
+        "projected": 150.9,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4955,7 +4930,18 @@
       },
       "totalPoints": {
         "line": 152.5,
-        "projected": 152.6
+        "projected": 152.6,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -4989,7 +4975,18 @@
       },
       "totalPoints": {
         "line": 154,
-        "projected": 154.1
+        "projected": 154.1,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -5023,7 +5020,18 @@
       },
       "totalPoints": {
         "line": 152,
-        "projected": 152.1
+        "projected": 152.1,
+        "over": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -5057,7 +5065,18 @@
       },
       "totalPoints": {
         "line": 155.5,
-        "projected": 155.4
+        "projected": 155.4,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -5091,7 +5110,18 @@
       },
       "totalPoints": {
         "line": 153.5,
-        "projected": 153.3
+        "projected": 153.3,
+        "over": {
+          "probability": 49.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.7,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.7,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -5125,7 +5155,18 @@
       },
       "totalPoints": {
         "line": 154.5,
-        "projected": 154.5
+        "projected": 154.5,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -5159,7 +5200,18 @@
       },
       "totalPoints": {
         "line": 155,
-        "projected": 155
+        "projected": 155,
+        "over": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -5193,7 +5245,18 @@
       },
       "totalPoints": {
         "line": 156.5,
-        "projected": 156.4
+        "projected": 156.4,
+        "over": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.2,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
@@ -5227,7 +5290,198 @@
       },
       "totalPoints": {
         "line": 161,
-        "projected": 161.2
+        "projected": 161.2,
+        "over": {
+          "probability": 50.6,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.4,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.6,
+        "confidence": "LOW"
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1617404,
+    "homeTeam": "UConn Huskies",
+    "awayTeam": "Rider Broncs",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11392.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11555.png",
+    "kickoff": "2026-11-30T23:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.5,
+        "away": 70.5,
+        "total": 150
+      },
+      "moneyline": {
+        "home": {
+          "probability": 78.2,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 21.8,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 150,
+        "projected": 150,
+        "over": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.1,
+        "confidence": "LOW"
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1617403,
+    "homeTeam": "Texas A&M-Corpus Christi Islanders",
+    "awayTeam": "Southwestern Adventist Knights",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11179.png",
+    "awayCrest": null,
+    "kickoff": "2026-11-30T17:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 78.5,
+        "away": 73.9,
+        "total": 152.3
+      },
+      "moneyline": {
+        "home": {
+          "probability": 65.8,
+          "confidence": "LOW"
+        },
+        "away": {
+          "probability": 34.2,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152.5,
+        "projected": 152.3,
+        "over": {
+          "probability": 49.5,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.5,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.5,
+        "confidence": "LOW"
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 0
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1609793,
+    "homeTeam": "Grand Canyon Lopes",
+    "awayTeam": "Incarnate Word Cardinals",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11322.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/11513.png",
+    "kickoff": "2026-11-30T01:00:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 78.7,
+        "away": 73.8,
+        "total": 152.5
+      },
+      "moneyline": {
+        "home": {
+          "probability": 66.9,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 33.1,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 152.5,
+        "projected": 152.5,
+        "over": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50,
+        "confidence": "LOW"
+      },
+      "sample": {
+        "homeGames": 10,
+        "awayGames": 10
+      }
+    }
+  },
+  {
+    "competition": "NCAAB",
+    "matchId": 1609792,
+    "homeTeam": "Washington Huskies",
+    "awayTeam": "Norfolk State Spartans",
+    "homeCrest": "https://highlightly.net/ncaab/images/teams/11131.png",
+    "awayCrest": "https://highlightly.net/ncaab/images/teams/12868.png",
+    "kickoff": "2026-11-30T00:30:00.000Z",
+    "prediction": {
+      "expectedPoints": {
+        "home": 79.1,
+        "away": 75.4,
+        "total": 154.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 62.9,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 37.1,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 154.5,
+        "projected": 154.4,
+        "over": {
+          "probability": 49.9,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.1,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.1,
+        "confidence": "LOW"
       },
       "sample": {
         "homeGames": 10,
