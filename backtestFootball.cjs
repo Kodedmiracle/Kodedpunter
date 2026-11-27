@@ -107,6 +107,8 @@ function buildSamples(rows) {
             date: m.d,
             league: lg,
             outcome: outcomeOf(m.gh, m.ga),
+            goalsHome: m.gh,
+            goalsAway: m.ga,
             leagueAvg: { avgGoalsFor: avg, avgGoalsAgainst: avg },
             homeTeamStats: { goalsFor: home.gf, goalsAgainst: home.ga, playedGames: home.n },
             awayTeamStats: { goalsFor: away.gf, goalsAgainst: away.ga, playedGames: away.n },
@@ -331,4 +333,6 @@ function main() {
   console.log(better ? "Test log loss and Brier improved." : "Test scores did not both improve.");
 }
 
-main();
+if (require.main === module) main();
+
+module.exports = { loadMatches, buildSamples, splitSamples };

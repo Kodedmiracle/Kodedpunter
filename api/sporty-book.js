@@ -9,14 +9,32 @@ const HEADERS = {
   Accept: "application/json, text/plain, */*",
 };
 
+function handicapSpecifiers() {
+  const euro = new Set();
+  const asian = new Set();
+  for (let n = 1; n <= 5; n++) {
+    euro.add("hcp=" + n + ":0");
+    euro.add("hcp=0:" + n);
+    const half = n - 0.5;
+    asian.add("hcp=" + half);
+    asian.add("hcp=-" + half);
+  }
+  return { euro, asian };
+}
+
+const HCP_SPECS = handicapSpecifiers();
+
 const FOOTBALL = {
   sportId: "sr:sport:1",
-  marketId: "1,18,10,29,68,547",
+  marketId: "1,18,10,29,68,547,14,16",
   referer: "https://www.sportybet.com/ng/sport/football",
   keepLines: new Set(["", "total=0.5", "total=1.5", "total=2.5", "total=3.5", "total=4.5"]),
   keepBy: {
     "68": new Set(["total=1.5", "total=2.5", "total=3.5"]),
     "547": new Set(["total=4.5"]),
+    // 14 = European 3-way handicap, 16 = Asian handicap (2-way).
+    "14": HCP_SPECS.euro,
+    "16": HCP_SPECS.asian,
   },
 };
 

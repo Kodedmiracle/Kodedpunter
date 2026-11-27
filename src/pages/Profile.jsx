@@ -88,8 +88,9 @@ function Profile() {
           both goals scored and conceded matter. When SportyBet prices are
           available, the win, draw and loss chances are blended with the
           bookmaker's margin removed, and a pick is flagged when the model
-          is meaningfully above that price. These are statistical estimates,
-          not guarantees.
+          is meaningfully above that price. Positive handicaps come from the
+          same score grid: the smallest line that reaches the cover chance
+          you set. These are statistical estimates, not guarantees.
         </p>
       </footer>
 
