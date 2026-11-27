@@ -34,7 +34,7 @@ export default function SlipBar() {
           missed.push(pick.matchLabel + " (already kicked off)");
           continue;
         }
-        const lean = leanToSporty(pick.leanKey);
+        const lean = pick.sporty || leanToSporty(pick.leanKey);
         if (!lean) {
           missed.push(pick.matchLabel + " (unknown market)");
           continue;

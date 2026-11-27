@@ -7,6 +7,7 @@ import FilterBar from "../FilterBar";
 import { extractBestPicks, getRecommendedMarket } from "../bestPicks.js";
 import { hasKickedOff } from "../kickoff.js";
 import { applyMarketToMatches } from "../applyMarket.js";
+import HandicapList from "../HandicapList";
 import "../App.css";
 
 function timeAgo(isoString) {
@@ -58,11 +59,13 @@ function Home() {
     fetch("/api/sporty-book")
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
-        if (alive && data && data.ok && Array.isArray(data.events)) {
-          setMarketEvents(data.events);
-        }
+        if (!alive) return;
+        if (data && data.ok && Array.isArray(data.events)) setMarketEvents(data.events);
+        else setMarketEvents([]);
       })
-      .catch(() => {});
+      .catch(() => {
+        if (alive) setMarketEvents([]);
+      });
     return () => {
       alive = false;
     };
@@ -181,6 +184,8 @@ function Home() {
           <BestPicks picks={bestPicks} />
 
           <BookToday matches={filteredMatches} allMatches={pricedMatches} />
+
+          <HandicapList matches={filteredMatches} events={marketEvents} />
 
           {filteredMatches.length === 0 && dateFilter === "TODAY" && (
             <p style={styles.status}>

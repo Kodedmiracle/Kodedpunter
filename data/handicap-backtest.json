@@ -1,0 +1,237 @@
+{
+  "generatedAt": "2026-11-27T05:57:44.563Z",
+  "definition": "Cover means the side is strictly ahead after receiving that many goals (European +N). A loss by exactly N is not a cover; on an Asian +N line that score is a push, not a win. Mean predicted and actual cover rate are percentages. Gap is actual minus predicted, in percentage points. Brier is the average squared error of the cover probability (lower is better).",
+  "dataset": {
+    "scored": 6104,
+    "train": 4264,
+    "test": 1840,
+    "testStarts": "2025-01-17"
+  },
+  "test": {
+    "lines": {
+      "+1": {
+        "n": 3680,
+        "meanPredicted": 62.65,
+        "actualCoverRate": 63.07,
+        "gap": 0.42,
+        "brier": 0.2028
+      },
+      "+2": {
+        "n": 3680,
+        "meanPredicted": 80.69,
+        "actualCoverRate": 82.5,
+        "gap": 1.81,
+        "brier": 0.1259
+      },
+      "+3": {
+        "n": 3680,
+        "meanPredicted": 91.54,
+        "actualCoverRate": 92.07,
+        "gap": 0.53,
+        "brier": 0.0635
+      },
+      "+4": {
+        "n": 3680,
+        "meanPredicted": 96.6,
+        "actualCoverRate": 96.79,
+        "gap": 0.2,
+        "brier": 0.0281
+      },
+      "+5": {
+        "n": 3680,
+        "meanPredicted": 98.65,
+        "actualCoverRate": 98.53,
+        "gap": -0.12,
+        "brier": 0.0134
+      }
+    },
+    "home": {
+      "+1": {
+        "n": 1840,
+        "meanPredicted": 69.83,
+        "actualCoverRate": 69.35,
+        "gap": -0.48,
+        "brier": 0.1907
+      },
+      "+2": {
+        "n": 1840,
+        "meanPredicted": 85.86,
+        "actualCoverRate": 87.23,
+        "gap": 1.37,
+        "brier": 0.1009
+      },
+      "+3": {
+        "n": 1840,
+        "meanPredicted": 94.45,
+        "actualCoverRate": 94.24,
+        "gap": -0.21,
+        "brier": 0.0496
+      },
+      "+4": {
+        "n": 1840,
+        "meanPredicted": 97.98,
+        "actualCoverRate": 98.1,
+        "gap": 0.11,
+        "brier": 0.0179
+      },
+      "+5": {
+        "n": 1840,
+        "meanPredicted": 99.23,
+        "actualCoverRate": 99.57,
+        "gap": 0.33,
+        "brier": 0.0043
+      }
+    },
+    "away": {
+      "+1": {
+        "n": 1840,
+        "meanPredicted": 55.48,
+        "actualCoverRate": 56.79,
+        "gap": 1.31,
+        "brier": 0.2149
+      },
+      "+2": {
+        "n": 1840,
+        "meanPredicted": 75.52,
+        "actualCoverRate": 77.77,
+        "gap": 2.26,
+        "brier": 0.151
+      },
+      "+3": {
+        "n": 1840,
+        "meanPredicted": 88.62,
+        "actualCoverRate": 89.89,
+        "gap": 1.27,
+        "brier": 0.0774
+      },
+      "+4": {
+        "n": 1840,
+        "meanPredicted": 95.21,
+        "actualCoverRate": 95.49,
+        "gap": 0.28,
+        "brier": 0.0382
+      },
+      "+5": {
+        "n": 1840,
+        "meanPredicted": 98.07,
+        "actualCoverRate": 97.5,
+        "gap": -0.57,
+        "brier": 0.0224
+      }
+    }
+  },
+  "train": {
+    "lines": {
+      "+1": {
+        "n": 8528,
+        "meanPredicted": 63.28,
+        "actualCoverRate": 63.33,
+        "gap": 0.06,
+        "brier": 0.2117
+      },
+      "+2": {
+        "n": 8528,
+        "meanPredicted": 81.66,
+        "actualCoverRate": 83.26,
+        "gap": 1.59,
+        "brier": 0.1289
+      },
+      "+3": {
+        "n": 8528,
+        "meanPredicted": 92.25,
+        "actualCoverRate": 92.72,
+        "gap": 0.47,
+        "brier": 0.0628
+      },
+      "+4": {
+        "n": 8528,
+        "meanPredicted": 96.97,
+        "actualCoverRate": 97.23,
+        "gap": 0.26,
+        "brier": 0.0247
+      },
+      "+5": {
+        "n": 8528,
+        "meanPredicted": 98.81,
+        "actualCoverRate": 98.89,
+        "gap": 0.08,
+        "brier": 0.0101
+      }
+    },
+    "home": {
+      "+1": {
+        "n": 4264,
+        "meanPredicted": 69.97,
+        "actualCoverRate": 70.52,
+        "gap": 0.55,
+        "brier": 0.1941
+      },
+      "+2": {
+        "n": 4264,
+        "meanPredicted": 86.37,
+        "actualCoverRate": 87.78,
+        "gap": 1.41,
+        "brier": 0.1011
+      },
+      "+3": {
+        "n": 4264,
+        "meanPredicted": 94.81,
+        "actualCoverRate": 95.15,
+        "gap": 0.34,
+        "brier": 0.0443
+      },
+      "+4": {
+        "n": 4264,
+        "meanPredicted": 98.13,
+        "actualCoverRate": 98.5,
+        "gap": 0.37,
+        "brier": 0.0141
+      },
+      "+5": {
+        "n": 4264,
+        "meanPredicted": 99.28,
+        "actualCoverRate": 99.39,
+        "gap": 0.11,
+        "brier": 0.0057
+      }
+    },
+    "away": {
+      "+1": {
+        "n": 4264,
+        "meanPredicted": 56.58,
+        "actualCoverRate": 56.14,
+        "gap": -0.44,
+        "brier": 0.2293
+      },
+      "+2": {
+        "n": 4264,
+        "meanPredicted": 76.95,
+        "actualCoverRate": 78.73,
+        "gap": 1.77,
+        "brier": 0.1567
+      },
+      "+3": {
+        "n": 4264,
+        "meanPredicted": 89.68,
+        "actualCoverRate": 90.29,
+        "gap": 0.61,
+        "brier": 0.0813
+      },
+      "+4": {
+        "n": 4264,
+        "meanPredicted": 95.8,
+        "actualCoverRate": 95.97,
+        "gap": 0.16,
+        "brier": 0.0354
+      },
+      "+5": {
+        "n": 4264,
+        "meanPredicted": 98.34,
+        "actualCoverRate": 98.38,
+        "gap": 0.04,
+        "brier": 0.0146
+      }
+    }
+  },
+  "limitation": "The score grid stops at 10 goals and is rescaled, so a tiny share of blowouts beyond 10-0 is folded into the grid. Asian half-lines +(N-0.5) win on the same scores as European +N, so they are not a separate row. Prices are not in the historical files."
+}
