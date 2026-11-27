@@ -3248,5 +3248,330 @@
         "confidence": "LOW"
       }
     }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1625982,
+    "homeTeam": "Portland Trail Blazers",
+    "awayTeam": "Utah Jazz",
+    "homeCrest": "https://highlightly.net/nba/images/teams/31.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/45.png",
+    "kickoff": "2026-12-04T03:00:00.000Z",
+    "prediction": {
+      "noBet": false,
+      "noBetReason": null,
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 6.9,
+        "formMargin": 5,
+        "homeForm": {
+          "ppg": 113.8,
+          "oppPpg": 107.8,
+          "wins": 3,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 110,
+          "oppPpg": 108,
+          "wins": 2,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 116.3,
+        "away": 110.1,
+        "total": 226.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 70.6,
+          "confidence": "HIGH"
+        },
+        "away": {
+          "probability": 29.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 226.5,
+        "projected": 226.4,
+        "over": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.3,
+        "confidence": "LOW"
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1625981,
+    "homeTeam": "San Antonio Spurs",
+    "awayTeam": "Toronto Raptors",
+    "homeCrest": "https://highlightly.net/nba/images/teams/37.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/34.png",
+    "kickoff": "2026-12-04T01:00:00.000Z",
+    "prediction": {
+      "noBet": false,
+      "noBetReason": null,
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 6.2,
+        "formMargin": 8.3,
+        "homeForm": {
+          "ppg": 113,
+          "oppPpg": 106.2,
+          "wins": 3,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 105,
+          "oppPpg": 108.8,
+          "wins": 1,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 115.7,
+        "away": 108.7,
+        "total": 224.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 73.2,
+          "confidence": "HIGH"
+        },
+        "away": {
+          "probability": 26.8,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 224.5,
+        "projected": 224.4,
+        "over": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.2,
+        "confidence": "LOW"
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1625980,
+    "homeTeam": "Chicago Bulls",
+    "awayTeam": "Cleveland Cavaliers",
+    "homeCrest": "https://highlightly.net/nba/images/teams/27.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/35.png",
+    "kickoff": "2026-12-04T01:00:00.000Z",
+    "prediction": {
+      "noBet": false,
+      "noBetReason": null,
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 1.2,
+        "formMargin": 8.2,
+        "homeForm": {
+          "ppg": 121,
+          "oppPpg": 113.8,
+          "wins": 3,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 117,
+          "oppPpg": 120.2,
+          "wins": 2,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 120.3,
+        "away": 116.3,
+        "total": 236.7
+      },
+      "moneyline": {
+        "home": {
+          "probability": 63.9,
+          "confidence": "MEDIUM"
+        },
+        "away": {
+          "probability": 36.1,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 236.5,
+        "projected": 236.7,
+        "over": {
+          "probability": 50.4,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.6,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.4,
+        "confidence": "LOW"
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1625979,
+    "homeTeam": "Miami Heat",
+    "awayTeam": "Washington Wizards",
+    "homeCrest": "https://highlightly.net/nba/images/teams/1.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/50.png",
+    "kickoff": "2026-12-04T00:30:00.000Z",
+    "prediction": {
+      "noBet": false,
+      "noBetReason": null,
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 4.8,
+        "formMargin": 8.1,
+        "homeForm": {
+          "ppg": 125.8,
+          "oppPpg": 116.2,
+          "wins": 4,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 110.6,
+          "oppPpg": 111.2,
+          "wins": 3,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 119.9,
+        "away": 113.8,
+        "total": 233.6
+      },
+      "moneyline": {
+        "home": {
+          "probability": 70.5,
+          "confidence": "HIGH"
+        },
+        "away": {
+          "probability": 29.5,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 233.5,
+        "projected": 233.6,
+        "over": {
+          "probability": 50.3,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 49.7,
+          "confidence": "LOW"
+        },
+        "side": "Over",
+        "probability": 50.3,
+        "confidence": "LOW"
+      }
+    }
+  },
+  {
+    "competition": "NBA",
+    "matchId": 1625978,
+    "homeTeam": "Atlanta Hawks",
+    "awayTeam": "Indiana Pacers",
+    "homeCrest": "https://highlightly.net/nba/images/teams/23.png",
+    "awayCrest": "https://highlightly.net/nba/images/teams/36.png",
+    "kickoff": "2026-12-04T00:00:00.000Z",
+    "prediction": {
+      "noBet": false,
+      "noBetReason": null,
+      "risks": [],
+      "evidence": {
+        "seasonMargin": 4.7,
+        "formMargin": 9.1,
+        "homeForm": {
+          "ppg": 113,
+          "oppPpg": 107.4,
+          "wins": 4,
+          "games": 5
+        },
+        "awayForm": {
+          "ppg": 115.6,
+          "oppPpg": 122.2,
+          "wins": 1,
+          "games": 5
+        },
+        "notChecked": [
+          "injuries",
+          "lineups",
+          "travel"
+        ]
+      },
+      "expectedPoints": {
+        "home": 118.9,
+        "away": 112.5,
+        "total": 231.4
+      },
+      "moneyline": {
+        "home": {
+          "probability": 71.6,
+          "confidence": "HIGH"
+        },
+        "away": {
+          "probability": 28.4,
+          "confidence": "LOW"
+        }
+      },
+      "totalPoints": {
+        "line": 231.5,
+        "projected": 231.4,
+        "over": {
+          "probability": 49.8,
+          "confidence": "LOW"
+        },
+        "under": {
+          "probability": 50.2,
+          "confidence": "LOW"
+        },
+        "side": "Under",
+        "probability": 50.2,
+        "confidence": "LOW"
+      }
+    }
   }
 ]
